@@ -10,6 +10,7 @@ canvas {
 </style>
 </head>
 <body onload="startGame()">
+<a href="url">link text</a>
 <script>
 
 var myGamePiece;
