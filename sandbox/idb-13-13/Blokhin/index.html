@@ -8,5 +8,27 @@
 Простая игра наподобие Flappy Bird <br>
 <iframe src="game.html" height="500" width="500"></iframe>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#1").click(function(){
+        $("#2").hide();
+    });
+    $("#2").click(function(){
+        $("#1").hide();
+    });
+	
+	$("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="1">Нажмите здесь, чтобы скрыть запись на английском языке.</p>
+<p id="2">If you click here, text in russian will disapear</p>
+
+<button id="show">Показать все</button>
 </body>
 </html>
