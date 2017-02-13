@@ -2,8 +2,23 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $("#rus").hide(1000);
+		$("#main").text('Переключиться на русский');
+    });
+});
+</script>
+<button>Hide</button>
+<p id="main">Switch to english</p>
+<p id="rus">Русский параграф.</p>
+<p id="eng">English par.</p>
 <h1> Тут страничка в страничке </h1>
-<iframe src="index.html" height="400" width="600" style="border:none:"></iframe>
+<iframe src="index.html" height="400" width="600" style="border:none:"></iframe><br>
 </body>
 </html>
