@@ -1,167 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>СПИСОК ГРУПП</title>
-</head>
-<body>
-    <table border="1px">
-        <tr>
-            <th>ФИО</th><th>М1</th><th>М2</th>
-        </tr>
-        <tr>
-            <td>
-<a href="Akimov">Акимов	Михаил Владимирович
-</a> </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-<a href="babenko">Бабенко	Евгения	Васильевна
-</a>
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-<a href="djamilov">Джамилов	Джамал	Орудж оглы
-</a>
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-<a href="dirsha">Дирша	Алеся	Николаевна
-</a>
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-<a href="dorin">Дорин	Денис	Владимирович
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td>
-<a href="isaev">Исаев	Фаиг	Илгар оглы
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>        <tr>
-            <td>
-<a href="mutalimov">Муталимов	Тимур	Магомед-Солтанович
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>        <tr>
-            <td>
-<a href="panfilkin">Панфилкин	Алексей	Александрович
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>        <tr>
-            <td>
-<a href="rezenova">Резенова	Юлия	Романовна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>        <tr>
-            <td>
-<a href="skakleneva">Скакленева	Алина	Александровна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>        <tr>
-            <td>
-<a href="gurko">Гурко	Анастасия	Александровна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="danilochkin">Данилочкин	Роман	Андреевич
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="kalashnikova">Калашникова	Анастасия	Максимовна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="knyazev">Князев	Кирилл	Константинович
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="medved'ko">Медведько	Анастасия	Александровна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="ohotnikov">Охотников	Владислав	Александрович
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="rodimov">Родимов	Владимир	Сергеевич
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="rumyancev">Румянцев	Герман	Александрович
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="safonova">Сафонова	Анастасия	Алексеевна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-         <td>
-<a href="sur'yaninova">Сурьянинова	Алина	Андреевна
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td>
-<a href="zadyhin">Задыхин	Евгений	Николаевич
-</a>
-             </td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</body>
-</html>
+function startGame() {
+    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece.gravity = 0.05;
+    myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
