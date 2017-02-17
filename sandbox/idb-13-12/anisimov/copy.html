@@ -16,7 +16,7 @@ var myObstacles = [];
 var myScore;
 function startGame() {
     myGamePiece = new component(35, 35, "green", 10, 120);
-    myGamePiece.gravity = 0.2;
+    myGamePiece.gravity = 9.8;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
 }
@@ -123,7 +123,8 @@ function accelerate(n) {
 }
 </script>
 <br>
-<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ВВЕРХ</button>
-
+<button onmousedown="accelerate(-0.3)" onmouseup="accelerate(0.3)">ВВЕРХ</button>
+<br>
+<image src="uml.png">
 </body>
 </html>
