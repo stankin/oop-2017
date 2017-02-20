@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
+<iframe src="app1.html" height="300" width="800"></iframe>
 
 <canvas id="canvas" width="400" height="400"
 style="background-color:#333">
 </canvas>
+<br>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("#p3").toggle();
+    });
+	$("#p2").click(function(){
+        $("#p1").toggle();
+    });
+});
+</script>
+<p id="p1">Параграф 1</p>
+<p id="p2">Параграф 2</p>
+<p id="p3">Параграф 3</p>
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -13,22 +29,20 @@ var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
-
 function drawClock() {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
   drawTime(ctx, radius);
 }
-
 function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = 'green';
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(0.5, 'green');
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
@@ -38,7 +52,6 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = '#333';
   ctx.fill();
 }
-
 function drawNumbers(ctx, radius) {
   var ang;
   var num;
@@ -56,7 +69,6 @@ function drawNumbers(ctx, radius) {
     ctx.rotate(-ang);
   }
 }
-
 function drawTime(ctx, radius){
     var now = new Date();
     var hour = now.getHours();
@@ -75,7 +87,6 @@ function drawTime(ctx, radius){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02);
 }
-
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
     ctx.lineWidth = width;
