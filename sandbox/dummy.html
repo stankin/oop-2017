@@ -1,11 +1,31 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showHint(str) {
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+        	//alert(this.readyState+' '+this.status);
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        }
+        xmlhttp.open("GET", "dummy.php?q="+str, true);
+        xmlhttp.send();
+    }
+}
+</script>
+</head>
 <body>
 
-<form action="dummy.php" method="post">
-Поле 1: <input type="text" name="p1"><br>
-Поле 2: <input type="text" name="p2"><br>
-<input type="submit">
+<p><b>Введите данные в строку:</b></p>
+<form> 
+Строка: <input type="text" onkeyup="showHint(this.value)">
 </form>
-
+<p>Ответ:<br><span id="txtHint"></span></p>
 </body>
 </html>
