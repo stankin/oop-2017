@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("iframe").hide();
+    });
+    $("#show").click(function(){
+        $("iframe").show();
+    });
+});
+
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("p2").toggle();
+    });
+	 $("#p3").click(function(){
+        $("p1").toggle();
+    });
+  });
+</script>
+</head>
+<body>
+<p id=p1>Параграф 1</p>
+<p id=p2>Параграф 2</p>
+<p id=p3>Параграф 3, но это не точно</p>
+<button id="hide">Спрятать часы</button>
+<button id="show">Показать часы</button>
+<p></p>
+<iframe src="index.html" height="419" width="419"></iframe>
+</body>
+</body>
+</html>
