@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
 <body>
+<style>
+	.link{
+		font-size: 27px;
+	    background: skyblue;
+	    border-radius: 4px;
+	    padding: 5px 10px;
+	    display: inline-block;
+	    margin-bottom: 20px;
+	}
+</style>
 <h1>Работа с тегом input</h1>
-  <a href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/input_lab/index.html">Форматированный ввод с тегом input</a>
-<iframe src="index1.html" height="200" width="300"></iframe>
-<canvas id="canvas" width="400" height="400"
-style="background-color:#333">
-</canvas>
+<a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/input_lab/index.html">Форматированный ввод с тегом input</a>
+<div>
+	<canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+<p id="p1">Параграф1</p>
+<p id="p2">Параграф2</p>
+<p id="p3">Параграф3 </p>
+
+
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
