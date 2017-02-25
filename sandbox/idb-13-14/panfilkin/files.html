@@ -14,7 +14,7 @@ function showHint(str) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         }
-        xmlhttp.open("GET", "dummy.php?q="+str, true);
+        xmlhttp.open("GET", "server_side.php?q="+str, true);
         xmlhttp.send();
     }
 }
