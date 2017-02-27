@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Личная страница пользователя Печников Н. А.</title>
+</head>
+<body>
+Задачи: <br>
+	1) Wiki-страница: <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2"> "UML. Диаграмма компонентов" </a> <br> 
+	2) Описать элемент button с примером использования <br>
+Простая игра наподобие Flappy Bird <br>
+<iframe src="game.html" height="500" width="500"></iframe>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#1").click(function(){
+        $("#2").hide();
+    });
+    $("#2").click(function(){
+        $("#1").hide();
+    });
+	
+	$("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="1">Нажмите здесь, чтобы скрыть запись на английском языке.</p>
+<p id="2">If you click here, text in russian will disapear</p>
+
+<button id="show">Показать все</button>
+</body>
+</html>

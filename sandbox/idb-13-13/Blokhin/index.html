@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Личная страница пользователя Блохин М.С.</title>
+</head>
+<body>
+Задачи: <br>
+	1) Wiki-страница: <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8"> "UML. Диаграмма деятельности" </a> <br> 
+	2) Описать элемент html button с примером использования <br>
+Простая игра наподобие Flappy Bird <br>
+<iframe src="game.html" height="500" width="500"></iframe>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#1").click(function(){
+        $("#2").hide();
+    });
+    $("#2").click(function(){
+        $("#1").hide();
+    });
+	
+	$("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="1">Нажмите здесь, чтобы скрыть запись на английском языке.</p>
+<p id="2">If you click here, text in russian will disapear</p>
+
+<button id="show">Показать все</button>
+</body>
+</html>

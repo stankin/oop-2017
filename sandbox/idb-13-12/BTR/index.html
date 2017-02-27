@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();});
+	$("button").click(function(){
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);	
+    });
+});
+</script>
+</head>
+<body>
+<h1>Часики</h1>
+<p>Смотрите, какой я модный, какие у меня часы</p>
+<p>...где-то в мире сейчас полдень...</p>
+<button>NERF DIS</button>
+<img src="umlka.png">
+
+<iframe src="index1.html" height="800" width="600" style="border:none;"></iframe> 
+</body>
+</html>
