@@ -1,6 +1,6 @@
 app.controller('todo-list',function($scope,$http,$rootScope){
 
-	$http.get("/test/database.json")
+	$http.get("test/database.json")
 	.then(function(response){
 		console.log(response)
 		$scope.lists = response.data.lists; 
