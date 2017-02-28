@@ -1,0 +1,51 @@
+
+
+	<div id="create_div">
+	    <div ng-include="'/view/create_todo.html'"></div>
+	</div>
+	<div id="shadow_overlay"></div>
+	<div id= "main_content_container" class = "main_content_container">
+
+	<div class = "header">
+
+	  <div class = "elements">
+
+	      <h1 class ="title">Задачи</h1>
+
+	      <a id="add_new_todo" href="">
+	        <img src="/images/addTodoIcon.png" alt="+">
+	      </a>
+
+	    </div>
+	</div>
+
+	  <div class="container">
+	       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="list in lists">
+	          <div class="shadow_todos">
+	            <h2>{{list.title}}</h2>
+	            <hr>
+
+
+	                <div ng-repeat="todo in list.todos">
+	                  	<form>
+		                    <ul id="todo_line"><table><th>
+		                    <td id ="todo_check">
+		                    	<input id="{{todo.$$hashKey}}" type="checkbox" icheck ng-model="todo.is_completed"/>
+							</td>
+		                    <td id="todo_text">
+		                      	<label for="{{todo.$$hashKey}}" ng-style="todo.is_completed ? {'text-decoration': 'line-through'} : {'text-decoration': 'none'}" ng-model="todo.is_completed">{{todo.text}}</label>
+		                     </td>
+
+		                   </th></table></ul>
+
+	               		</form>
+					
+				    </div>
+
+	         </div>
+	       </div>
+
+	 </div>
+
+	</div>
+
