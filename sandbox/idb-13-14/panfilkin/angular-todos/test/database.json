@@ -1,0 +1,37 @@
+{
+	"lists":[
+		{
+			"id":1,
+			"title":"Test 1 title",
+			"todos":[
+				{
+					"id":1,
+					"is_completed":false,
+					"text":"test"
+				},
+				{
+					"id":2,
+					"is_completed":true,
+					"text":"test 2"
+				}
+			]
+		},
+		{
+			"id":2,
+			"title":"Test 2 title",
+			"todos":[
+				{
+					"id":3,
+					"is_completed":false,
+					"text":"test 3"
+				},
+				{
+					"id":4,
+					"is_completed":true,
+					"text":"test 4"
+				}
+			]
+		}
+	]
+		
+}

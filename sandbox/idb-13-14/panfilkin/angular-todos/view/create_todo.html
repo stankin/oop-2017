@@ -1,0 +1,38 @@
+<div class="add_todo_content">
+<div class="add_white_block">
+<h3>Новая задача</h3>
+
+<form>
+<div class="new_todo_fields">
+
+<p>  <select class="select_category" id="select_category" ng-model="list.title_selected">
+    <option ng-repeat="list in lists">{{list.title}}</option>
+  <option>Создать новый список</option>
+  </select>
+</p>
+
+<p>
+  <input id="project_title" class="project_title" type="text" name="project[title]" placeholder="Заголовок" value="Название списка" ng-if="list.title_selected=='Создать новый список'" ng-model="list.title"></input>
+</p>
+
+  <p>
+    <input id="project_text" type="text" name="project[text]" placeholder="Название задачи" value="Название задачи" ng-model="list.text"></input>
+  </p>
+
+
+</div>
+
+<a href="" class="hide_new_todo" id="hide_new_todo" ng-click="close_modal()">
+  <div class="hide_btn">
+  Отмена
+</div></a>
+
+<a id="submit_add_todo" class="add_todo_btn" href="" ng-click="add_task()">
+   <div class="add_todo">
+      OK
+   </div></a>
+
+
+</form>
+</div>
+</div>
