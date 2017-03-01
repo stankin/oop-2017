@@ -1,0 +1,89 @@
+@startuml
+hide circle
+' hide member
+
+common <|- table
+table *- tr : содержит
+
+
+
+tr "1" *- "0..*" td
+
+
+class common {
+onblur() 
+onchange()
+onclick() 
+ondblclick() 
+onfocus() 
+onkeydown() 
+onkeypress() 
+onkeyup() 
+onload() 
+onmousedown() 
+onmousemove() 
+onmouseout() 
+onmouseover() 
+onmouseup() 
+onreset() 
+onselect() 
+onsubmit() 
+onunload() 
+}
+
+class table {
+align 
+background 
+bgcolor 
+border  
+bordercolor 
+cellpadding
+cellspacing 
+cols 
+frame
+height 
+rules 
+summary 
+width 
+}
+
+class tr {
+align 
+bgcolor 
+bordercolor 
+char 
+charoff 
+valign 
+}
+
+class td {
+abbr 
+align 
+axis 
+background 
+bgcolor 
+bordercolor
+char 
+charoff 
+colspan 
+headers 
+height 
+nowrap 
+rowspan 
+scope 
+valign 
+width 
+}
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+

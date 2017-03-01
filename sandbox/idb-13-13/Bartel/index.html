@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("#p3").toggle();
+    });
+	$("#p2").click(function(){
+        $("#p1").toggle();
+    });
+});
+</script>
+</head>
+<body>
+<p id="p1"> Создать на Wiki страницу Диаграмма объектов</p>
+<p id="p2"> Тег Style - </p>
+<p id="p3"> Параграф 3</p>
+<p id="p4"> Параграф 4
+<a href="https://github.com/stankin/oop/wiki/UML.Object-diagram">UML</a>
+</p>
+<iframe src="clock.html" height="500" width="600"></iframe>
+</body>
+</html>
