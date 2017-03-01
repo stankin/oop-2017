@@ -27,14 +27,10 @@ function playerMove(e) {
 function draw() {
     game.draw(); // рисуем игровое поле
     // рисуем на поле счёт
-    context.fillStyle = "#777";
-    context.fillRect(0, game.height / 2, game.width, 3);
-    context.fillStyle = "#777";
-    context.fillRect(game.width / 2, 0, 3, game.height);
     context.font = 'bold 64px courier';
     context.textAlign = 'center';
     context.textBaseline = 'top';
-    context.fillStyle = '#abc';
+    context.fillStyle = '#cbc';
     context.fillText(player.scores+":"+player.lose, 80, 20);
     player.draw(); // правого игрока
     for (var i = 0; i < array.length; i ++)
@@ -47,9 +43,18 @@ function draw() {
     }
     if (!start) {
         // вывод статстики
-        context.fillStyle = "#ccc";
-        context.globalAlpha = 0.9;
-        context.fillRect(0, 0, game.width, game.height);
+        //context.fillStyle = "#c9c";
+        //context.globalAlpha = 0.9;
+       // context.fillRect(0, 0, game.width, game.height);
+        for (var i=0; i<13; i++)
+        {
+            for (var j=0; j<20; j++)
+            {
+                context.globalAlpha = 0.9;
+                context.fillStyle = 'rgb(' +Math.floor(220-23.5*i) + ',130,220)';
+                context.fillRect(j*25, i*25, 25,25);
+            }
+        }
         context.font = 'bold 16px courier';
         context.textBaseline = 'top';
         context.fillStyle = '#000';
@@ -106,7 +111,7 @@ function update() {
     if (count==50 && start) 
     { 
         count=0; 
-        array_v.push(new rect("#faa", Math.random() * (game.width-20), 0, 20, 20));
+        array_v.push(new rect("#f02", Math.random() * (game.width-20), 0, 10, 10));
 
     }
 }
@@ -127,7 +132,7 @@ function init() {
     game = new rect("#000", 0, 0, 480, 320);
     game.total = 0;
     // Ракетки-игроки
-    player = new rect("#fff", game.width/2 - 30, game.height - 15, 10, 10);
+    player = new rect("#a0a", game.width/2 - 30, game.height - 10, 10, 10);
     // количество очков
     player.scores = 0;
     player.lose = 0;
@@ -162,7 +167,7 @@ function startGame() {
     }
     else 
     {
-        array.push(new rect("#0fa", player.x, game.height, 10, 10));
+        array.push(new rect("#70f", player.x, game.height, 10, 10));
     }
 }
 
