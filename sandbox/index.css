@@ -17,4 +17,5 @@ body{
 }
 .group-table tr td, .group-table tr th{
 	border: 1px solid black;
+	padding: 3px 5px;
 }
