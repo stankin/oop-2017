@@ -1,8 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
 
-Stack VerticallyStack HorizontallyGoogle Drive
-Run »
-Result Size: 785 x 645
+<canvas id="canvas" width="400" height="400"
+style="background-color:#333">
+</canvas>
 
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
@@ -20,7 +38,7 @@ Result Size: 785 x 645
   ctx.fillStyle = '#333';
   ctx.fill();
 }
-​
+
 function drawNumbers(ctx, radius) {
   var ang;
   var num;
@@ -38,7 +56,7 @@ function drawNumbers(ctx, radius) {
     ctx.rotate(-ang);
   }
 }
-​
+
 function drawTime(ctx, radius){
     var now = new Date();
     var hour = now.getHours();
@@ -57,7 +75,7 @@ function drawTime(ctx, radius){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02);
 }
-​
+
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
     ctx.lineWidth = width;
@@ -69,8 +87,6 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 </script>
-​
+
 </body>
 </html>
-​
-
