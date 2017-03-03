@@ -8,13 +8,34 @@
 		{
 			background-color: #FFC556;
 		}
+		#1, #f2 {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#1 {
+    padding: 50px;
+    display: none;
+}
     </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#2").click(function(){
+        $("#1").slideToggle("slow");
+    });
+});
+</script>
 </head>
 <body>
-<div align="center"><h1>расскажу про тег img  и про диаграмму компонент</h1>
-<h1>А вот тут будет SPA</h1>
-<h1>пример использования iframe<h1>
-<iframe  src="http://thebloodarrow.ru/miris/" height="500" width="800"></iframe>
+<div align="center"><h1>Лабораторные работы по ПИС</h1>
+<p style="font-size:150%;" align="center"> Здесь я расскажу о теге img и о диаграмме компонент</p>
+<h1 id="2">в этом iframe потом будет SPA (скрыть/показать)<h1>
+<div id="1">
+<iframe  src="1.html" height="500" width="800"></iframe>
+</div>
 <div>
 </body>
 </html>
