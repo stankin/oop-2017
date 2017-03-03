@@ -1,3 +1,5 @@
+//Hello world!
+
 $("#idb-13-12").click(function(){
 	$.getJSON( "/stankin/oop/sandbox/idb-13-12/students.json", function( data ) {
 	console.log(data);
