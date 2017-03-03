@@ -1,27 +1,5 @@
 $("#idb-13-12").click(function(){
-	/*$.getJSON( "students.json", function( data ) {
-		console.log(data);
-	});*/
-	var data = [
-		{"name": "Анисимов А.В.", "m1": "", "m2": "", "href": "anisimov"},
-		{"name": "Байкова Е.А.", "m1": "", "m2": "", "href": "kbaykova"},
-		{"name": "Бобоходжиев Т.Р.", "m1": "", "m2": "", "href": "BTR"},
-		{"name": "Будникова Е.В.", "m1": "", "m2": "", "href": "KatyaB"},
-		{"name": "Володина К.", "m1": "", "m2": "", "href": "Volodina"},
-		{"name": "Гладких Д.", "m1": "", "m2": "", "href": ""},
-		{"name": "Горбунов С.Ю.", "m1": "", "m2": "", "href": "Gorbunov"},
-		{"name": "Григорьева Е.С.", "m1": "", "m2": "", "href": "Grigoryeva"},
-		{"name": "Карапетян Э.К.", "m1": "", "m2": "", "href": "eduard"},
-		{"name": "Кочев Д.С.", "m1": "", "m2": "", "href": "dmitry"},
-		{"name": "Кузьмин В.", "m1": "", "m2": "", "href": "KuzminVi"},
-		{"name": "Лаухтин Т.В.", "m1": "", "m2": "", "href": "Lauhtin"},
-		{"name": "Макалкина И.А.", "m1": "", "m2": "", "href": "makalkina"},
-		{"name": "Мартиросян Х.М.", "m1": "", "m2": "", "href": "Martirosyan"},
-		{"name": "Помазов С.В.", "m1": "", "m2": "", "href": "pomazov"},
-		{"name": "Рыбникова Е.", "m1": "", "m2": "", "href": "ribnikovaev"},
-		{"name": "Сычева А.А.", "m1": "", "m2": "", "href": "SychevaAA"},
-		{"name": "Яковлев Н. Ю.", "m1": "", "m2": "", "href": "yakovlev"}
-	]
+	$.getJSON( "/idb-13-12/students.json", function( data ) {
 	console.log(data);
 	if ($("#idb-13-12-table").length){
 		$("#idb-13-12-table").slideUp();
@@ -34,4 +12,5 @@ $("#idb-13-12").click(function(){
 		}
 		$("#idb-13-12-table").slideDown();
 	}
+	});
 });
