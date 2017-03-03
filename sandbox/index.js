@@ -1,5 +1,5 @@
 $("#idb-13-12").click(function(){
-	$.getJSON( "/idb-13-12/students.json", function( data ) {
+	$.getJSON( "/stankin/oop/sandbox/idb-13-12/students.json", function( data ) {
 	console.log(data);
 	if ($("#idb-13-12-table").length){
 		$("#idb-13-12-table").slideUp();
