@@ -10,3 +10,39 @@
 
 </body>	
 </html>
+
+<?php 
+// Проверяем, пусты ли переменные логина и id пользователя 
+if (empty($_SESSION['Login'])) 
+{ 
+?> 
+
+
+<!--Если пусты, то выводим форму входа.--> 
+<div style="border: 0px solid blue; 
+position:relative; top:100px; left:400px; height:200px; width:300px;"> 
+
+<form action="proverca.php" method="post"> 
+<label>Логин:</label><br/> 
+<input name="login" type="text" size="15" maxlength="15"><br/> 
+<label>Пароль:</label><br/> 
+<input name="password" type="password" size="15" maxlength="15"><br/><br/> 
+<input type="submit" class="btn" value="войти"><br/><br/> 
+</form> 
+Здравствуйте <font color="red">гость</font>! <br/> 
+Авторизуйтесь и пройдите по ссылке! 
+</div> 
+<?php 
+} 
+else //Иначе. 
+{ 
+$login = $_SESSION['Login']; 
+?>
+<form action="" method="post"> 
+	<input type="submit" name="exit" value="Выйти">
+</form>
+
+<?php
+echo "Вы вошли, как: ".$_SESSION['Login'];
+} 
+?>
