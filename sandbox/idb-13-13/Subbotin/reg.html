@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>Субботин</title>
+	</head>
+<body>
+	
+  <?php session_start(); ?>
+
+<?php  
+include ("motosalon.php");
+if (isset($_SESSION["Login"])){
+$log=$_SESSION["Login"];
+
+
+
+$result_user = mysql_query("SELECT * FROM registraciya WHERE Login = '$log'"); 
+
+
+while($row=mysql_fetch_array($result_user))
+{// выводим данные
+ echo '<div class="new">'.$row['registraсiya'].' 
+ 
+ | Логин: '.$row['Login'].' <br>
+
+ | Пароль: '.$row['Password'].' <br>
+
+ | Имя: '.$row['Name'].' <br>
+ 
+ 
+ <form action = "izmprofil.php" method = "post" id = "from_content" name = "kia" >
+      <input type = "hidden" value = "'.$row['Login'].'" name = "kodhids">
+     <br> <input type = "submit" class = "btn"  value = "Изменить" name = "izm">
+
+   </form>
+
+</div>'; 
+
+}// /while
+} else {echo "Вы не авторизированы";}
+
+?>
+			
+
+
+
+<form 	action="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/" method="post"> 
+<input type = "submit" class = "btn" value = "Назад" name = "back">
+</form>
+	
+</body>	
+</html>
