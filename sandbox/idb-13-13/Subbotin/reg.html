@@ -7,44 +7,74 @@
 	
   <?php session_start(); ?>
 
-<?php  
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="registraciya.php" method=POST>
+<?php echo "Логин(*):" ?> <dr><dt><input type="text" name = "Login"> </dt></dr><br>
+<?php echo "Пароль(*):" ?> <dr><dt><input type="text" name = "Password"> </dt></dr><br>
+<?php echo "Имя(*):" ?> <dr><dt><input type="text" name = "Name"> </dt></dr><br>
+
+<dr><dt><input type="submit" name = "btn_reg" value = "Зарегистрироваться"></dt></dr>
+
+</form>
+
+
+</body>
+</html>
+<?php 
+if (isset($_POST['btn_reg'])) {
+	
+	if (isset($_POST['Login'])) { 
+	$login = $_POST['Login']; 
+	if ($login == '') { 
+	unset($login); 
+	} 
+	} 
+	if (isset($_POST['Password'])) { 
+	$passin = $_POST['Password']; 
+	if ($passin == '') { 
+	unset($passin); 
+	} 
+	} 
+	 
+	if (isset($_POST['Name'])) { 
+	$namein=$_POST['Name']; 
+	if ($namein =='') { 
+	unset($namein); 
+	} 
+	}
+	
+
+if (empty($login) or empty($passin) or empty($namein)) ) { 
+	exit("Заполните все поля со звездочкой!");
+} 
+ 
+
+
 include ("motosalon.php");
-if (isset($_SESSION["Login"])){
-$log=$_SESSION["Login"];
+$result_login = mysql_query("SELECT Login FROM registraciya WHERE Login = '$login'");
+$reslog = mysql_fetch_assoc($result_login);
+
+if (!empty($reslog["Login"])) {
+     echo  " <br>Такой логин уже существует!";
+exit;
+}
 
 
-
-$result_user = mysql_query("SELECT * FROM registraciya WHERE Login = '$log'"); 
-
-
-while($row=mysql_fetch_array($result_user))
-{// выводим данные
- echo '<div class="new">'.$row['registraсiya'].' 
- 
- | Логин: '.$row['Login'].' <br>
-
- | Пароль: '.$row['Password'].' <br>
-
- | Имя: '.$row['Name'].' <br>
- 
- 
- <form action = "izmprofil.php" method = "post" id = "from_content" name = "kia" >
-      <input type = "hidden" value = "'.$row['Login'].'" name = "kodhids">
-     <br> <input type = "submit" class = "btn"  value = "Изменить" name = "izm">
-
-   </form>
-
-</div>'; 
-
-}// /while
-} else {echo "Вы не авторизированы";}
-
+$mot = mysql_query("INSERT INTO registraciya (Login, Password, Name) VALUES ('$login', '$passin', '$namein') ");
+		$_SESSION['Login'] = $login;
+echo '<script>window.location.href = "https://www.yandex.ru/";</script>';
+}
+}
 ?>
-			
-
-
-
-<form 	action="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/" method="post"> 
+<br><form action="index.php" method="post"> 
 <input type = "submit" class = "btn" value = "Назад" name = "back">
 </form>
 	
