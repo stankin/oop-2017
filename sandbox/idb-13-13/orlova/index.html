@@ -1,92 +1,86 @@
-<!DOCTYPE html>
-<html>
-<body>
+<h3>Спецификация</h3>
+HTML:	3.2	4.01	5.0	XHTML:	1.0	1.1
+<h3>Описание</h3>
+Тег button создает на веб-странице кнопки и по своему действию напоминает результат, получаемый с помощью тега input (с атрибутом type="button | reset | submit"). В отличие от этого тега, button предлагает расширенные возможности по созданию кнопок. Например, на подобной кнопке можно размещать любые элементы HTML, в том числе изображения. Используя стили можно определить вид кнопки путем изменения шрифта, цвета фона, размеров и других параметров.
 
-<canvas id="canvas" width="400" height="400"
-style="background-color:#333">
-</canvas>
+<p>Теоретически, тег button должен располагаться внутри формы, устанавливаемой элементом form. Тем не менее, браузеры не выводят сообщение об ошибке и корректно работают с тегом button, если он встречается самостоятельно. Однако, если необходимо результат нажатия на кнопку отправить на сервер, помещать button в контейнер form обязательно.</p>
+<h3>Синтаксис</h3>
+<code class="no-buttons html"><span class="tag">&lt;<span class="keyword">form</span>&gt;</span>
+  <span class="tag">&lt;<span class="keyword">button</span>&gt;</span>...<span class="tag">&lt;/<span class="keyword">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="keyword">form</span>&gt;</span></code>
 
-<script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90
-setInterval(drawClock, 1000);
+<h3>Атрибуты</h3>
+<dl class="param">
+    <dt><a href="http://htmlbook.ru/html/button/accesskey">accesskey</a></dt>
+    <dd>Доступ к элементам формы с помощью горячих клавиш. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/autofocus">autofocus</a></dt>
+    <dd>Устанавливает, что кнопка получает фокус после загрузки страницы.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/disabled">disabled</a></dt>
+    <dd>Блокирует доступ и изменение элемента. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/form">form</a></dt>
+    <dd>Связывает между собой форму и кнопку.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formaction">formaction</a></dt>
+    <dd>Задаёт адрес, на который пересылаются данные формы при нажатии на кнопку.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formenctype">formenctype</a></dt>
+    <dd>Способ кодирования данных формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formmethod">formmethod</a></dt>
+    <dd>Указывает метод пересылки данных формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formnovalidate">formnovalidate</a></dt>
+    <dd>Отменяет проверку формы на корректность.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formtarget">formtarget</a></dt>
+    <dd>Открывает результат отправки формы в новом окне или фрейме.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/name">name</a></dt>
+    <dd>Определяет уникальное имя кнопки. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/type">type</a></dt>
+    <dd>Тип кнопки — обычная, для отправки данных формы на сервер или для 
+      очистки формы. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/value">value</a></dt>
+    <dd>Значение кнопки, которое будет отправлено на сервер или прочитано с помощью скриптов.</dd>
+  </dl>
+<h3>Закрывающий тег</h3>
+<p> Обязателен.</p>
+Пример
+<style>
+<a href="#" id="button2" class="buttonText">Подписаться</a>
 
-function drawClock() {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
+buttonText {
+  font: 18px/1.5 Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+  
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
-function drawFace(ctx, radius) {
-  var grad;
-  ctx.beginPath();
-  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
-  ctx.fill();
-  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-  grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, 'white');
-  grad.addColorStop(1, '#333');
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = radius*0.1;
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  ctx.fillStyle = '#333';
-  ctx.fill();
+#button1 {
+  background: #6292c2;
+  border: 2px solid #eee
+  height: 28px;
+  width: 115px;
+  margin: 50px 0 0 50px;
+  padding: 0 0 0 7px;
+  overflow: hidden;
+  display: block;
 }
+/*Скругленные углы*/
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+/*Градиент*/
+background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 
-function drawNumbers(ctx, radius) {
-  var ang;
-  var num;
-  ctx.font = radius*0.15 + "px arial";
-  ctx.textBaseline="middle";
-  ctx.textAlign="center";
-  for(num = 1; num < 13; num++){
-    ang = num * Math.PI / 6;
-    ctx.rotate(ang);
-    ctx.translate(0, -radius*0.85);
-    ctx.rotate(-ang);
-    ctx.fillText(num.toString(), 0, 0);
-    ctx.rotate(ang);
-    ctx.translate(0, radius*0.85);
-    ctx.rotate(-ang);
-  }
+/*Переход*/
+-webkit-transition: All 0.5s ease;
+-moz-transition: All 0.5s ease;
+-o-transition: All 0.5s ease;
+-ms-transition: All 0.5s ease;
+transition: All 0.5s ease;
+
+#button1:hover {
+  width: 230px;
 }
-
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-    //hour
-    hour=hour%12;
-    hour=(hour*Math.PI/6)+
-    (minute*Math.PI/(6*60))+
-    (second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.5, radius*0.07);
-    //minute
-    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.8, radius*0.07);
-    // second
-    second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02);
-}
-
-function drawHand(ctx, pos, length, width) {
-    ctx.beginPath();
-    ctx.lineWidth = width;
-    ctx.lineCap = "round";
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
-    ctx.stroke();
-    ctx.rotate(-pos);
-}
-</script>
-
-</body>
-</html>
