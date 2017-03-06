@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>Субботин</title>
+		<link rel="stylesheet" type="text/css" href="style.css" >
+	</head>
+<body>
+	<h1 align="center"">Тег BUTTON</h1>
+	<h3 align="center"">Создание формы с кнопками</h3>
+	<h1>Задачи:</h2>
+<ol>
+ <li>Разработать форму с кнопкой, используя тег "button"</li>
+ <li> Опсать WIKI-страницу по <a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%964">лабораторной работе №4 </a>
+</li>
+</ol>
+<h3>Спецификация </h3>
+  <table class="standart">
+    <tr>
+      <td class="h">HTML:</td>
+      <td class="no">3.2</td>
+      <td class="yes">4.01</td>
+      <td class="yes">5.0</td>
+      <td class="xh">XHTML:</td>
+      <td class="yes">1.0</td>
+      <td class="yes">1.1</td>
+    </tr>
+  </table>
+  <h3>Описание</h3>
+  <p> Тег <span class="tag">&lt;button&gt;</span> создает на веб-странице кнопки 
+    и по своему действию напоминает результат, получаемый с помощью тега <span class="tag">&lt;input&gt;</span> (с атрибутом <span class="var">type=&quot;button | reset | submit&quot;</span>). В отличие от этого тега, <span class="tag">&lt;button&gt;</span> предлагает расширенные возможности по созданию кнопок. Например, на подобной 
+    кнопке можно размещать любые элементы HTML, в том числе изображения. Используя 
+    стили можно определить вид кнопки путем изменения шрифта, цвета фона, размеров 
+    и других параметров.</p>
+  <p> Теоретически, тег <span class="tag">&lt;button&gt;</span> должен располагаться 
+    внутри формы, устанавливаемой элементом <span class="tag">&lt;form&gt;</span>. 
+    Тем не менее, браузеры не выводят сообщение об ошибке и корректно работают с 
+    тегом <span class="tag">&lt;button&gt;</span>, если он встречается самостоятельно. Однако, 
+    если необходимо результат нажатия на кнопку отправить на сервер, помещать <span class="tag">&lt;button&gt;</span> в контейнер <span class="tag">&lt;form&gt;</span> обязательно.</p>
+  <h3>Синтаксис</h3>
+
+<pre><code class="no-buttons">&lt;form&gt;
+  &lt;button&gt;...&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+  <h3>Атрибуты</h3>
+  <dl class="param">
+    <dt><a href="http://htmlbook.ru/html/button/accesskey">accesskey</a></dt>
+    <dd>Доступ к элементам формы с помощью горячих клавиш. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/autofocus">autofocus</a></dt>
+    <dd>Устанавливает, что кнопка получает фокус после загрузки страницы.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/disabled">disabled</a></dt>
+    <dd>Блокирует доступ и изменение элемента. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/form">form</a></dt>
+    <dd>Связывает между собой форму и кнопку.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formaction">formaction</a></dt>
+    <dd>Задаёт адрес, на который пересылаются данные формы при нажатии на кнопку.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formenctype">formenctype</a></dt>
+    <dd>Способ кодирования данных формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formmethod">formmethod</a></dt>
+    <dd>Указывает метод пересылки данных формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formnovalidate">formnovalidate</a></dt>
+    <dd>Отменяет проверку формы на корректность.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/formtarget">formtarget</a></dt>
+    <dd>Открывает результат отправки формы в новом окне или фрейме.</dd>
+    <dt><a href="http://htmlbook.ru/html/button/name">name</a></dt>
+    <dd>Определяет уникальное имя кнопки. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/type">type</a></dt>
+    <dd>Тип кнопки &#8212; обычная, для отправки данных формы на сервер или для 
+      очистки формы. </dd>
+    <dt><a href="http://htmlbook.ru/html/button/value">value</a></dt>
+    <dd>Значение кнопки, которое будет отправлено на сервер или прочитано с помощью скриптов.</dd>
+  </dl>
+<p class="more">Также для этого тега доступны <a href="http://htmlbook.ru/html/attr/common">универсальные атрибуты</a> и <a href="http://htmlbook.ru/html/attr/event">события</a>.</p>
+
+  <h3>Закрывающий тег</h3>
+  <p> Обязателен.</p>
+<h2>Пример</h2>
+  
+
+<form name=mainForm>
+   <table width="100%" cellspacing="0" cellpadding="4">
+    <tr> 
+     <td align="right" width="100">Выше имя</td>
+     <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=name></td>
+    </tr>
+    <tr> 
+     <td align="right" width="110">Ваша фамилия</td>
+     <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=surname></td>
+    </tr>
+    <tr> 
+     <td align="right" valign="top">Ваш телефон</td>
+     <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=phone></td>
+    </tr>
+    <tr> 
+     <td></td>
+     <td><input type=button onclick="alert('Ваша информация не отправлена на сервер, потому что сервер неактивен!')" value="Отправить" name=send></td>
+    </tr>
+   </table>
+  </form>
+
+
+
+<script language="JavaScript"> 
+
+var f=document.mainForm; 
+function changeButtonStatus(){ 
+f.send.disabled=(f.name.value && f.surname.value && f.phone.value) ? false : true; 
+} 
+changeButtonStatus(); 
+
+
+</script>
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h2>SPA</h2>
+
+
+<canvas id="canvas" width="400" height="400"
+style="background-color:white">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, 'red');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, 'black');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = 'black';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+</body>
+</html>
