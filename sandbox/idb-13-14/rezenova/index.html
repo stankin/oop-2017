@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+ <head>
+  <meta charset="utf-8">
+  <title>details</title>
+	<link rel="stylesheet" href="app.css"/>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
     $("p").click(function(){
@@ -9,10 +12,62 @@ $(document).ready(function(){
     });
 });
 </script>
-</head>
-<body>
-<h1>Игра</h1>
-<p>У меня параграф</p>
-<iframe src="rezenova.html" height="800" width="600" style="border:none;"></iframe>
-</body>
+ </head> 
+ <body>
+<nav>
+  <ul class="topmenu">
+    <li><a href="" class="down">Главное меню</a>
+      <ul class="submenu">
+        <li><a href="javascript:;" onclick="go_to_first_page()">Показать игру</a></li>
+        <li><a href="javascript:;" onclick="go_to_second_page()">Показать часы</a></li>
+        <li><a href=""></a></li>
+        <li><a href="">Tags</a></li>
+      </ul>
+    </li>
+    <li><a href="" class="down">Портфолио</a>
+      <ul class="submenu">
+        <li><a href="">Category</a></li>
+        <li><a href="">Author</a></li>
+        <li><a href="">Archive</a></li>
+        <li><a href="">Tags</a></li>
+      </ul>
+    </li>
+    <li><a href="javascript:;" onclick="go_to_third_page()">Задание</a></li>
+	<li><a href="">Contact</a></li>
+  </ul>
+</nav>
+	<div id="page_1">
+	<h1>Игра</h1>
+	    <iframe src="rezenova.html" height="800" width="600" style="border:none;"></iframe>
+	</div>
+	<div id="page_2">
+	<h1>Часы</h1>
+		<iframe src="yulia.html" height="800" width="600" style="border:none;"></iframe> 
+	</div>
+	
+	<div id="page_3">
+		<p>Мое задание заключалось в том, чтобы создать выпадающее меню, которое раскрывалось при наведении, и параграфы.</p>
+	</div>
+	
+	<script>
+	function go_to_first_page(){
+		$("#page_1").show();
+		$("#page_2").hide();
+		$("#page_3").hide();
+	}
+	
+	function go_to_second_page(){
+		$("#page_1").hide();
+		$("#page_2").show();
+		$("#page_3").hide();
+	}
+	
+	function go_to_third_page(){
+		$("#page_1").hide();
+		$("#page_2").hide();
+		$("#page_3").show();
+	}
+		
+	</script>
+ </body> 
 </html>
