@@ -40,6 +40,26 @@ a {
     text-decoration: none;
 }
 
+.table {
+    display: table;
+    border-collapse: collapse;
+}
+
+.table-row {
+    display: table-row;
+    /*width: 100%;*/
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 4px 12px;
+    font-size: 14px;
+    /*border: 0;*/
+    height: 100%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
 .btn {
     display: inline-block;
     margin-bottom: 0;
@@ -62,6 +82,12 @@ a {
     user-select: none;
 }
 
+.btn-default {
+    color: #18262b;
+    background: linear-gradient(to bottom,#fff, #ebf0f5);
+    border: 1px solid #c3cacd;
+}
+
 .btn-success {
     /*padding: 10px;*/
     color: #fff;
@@ -73,6 +99,32 @@ a {
 .btn-success:hover {
     background: linear-gradient(to bottom,#17c18b, #00aa78);
     border: 1px solid #3ea678;
+}
+
+.btn-danger {
+    background-color: #fff;
+    color: #ca470d
+}
+
+.btn-danger a {
+    color: #ca470d
+}
+
+.btn-danger:hover {
+    color: #ca470d;
+    background: linear-gradient(to bottom,#fff, #f8efeb);
+    border: 1px solid #f1cdbd;
+}
+
+.btn-primary {
+    color: #0078b8;
+    padding-left: 0;
+    vertical-align: inherit;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to bottom,#fff, #dbedf7);
+    border: 1px solid #98cde9;
 }
 
 .background form {
@@ -320,28 +372,53 @@ header .logo span {
    /* projects */
 
 .projects {
-    display: table;
-    border-collapse: collapse;
-    margin-top: 10px;
-    margin-bottom: -10px;
+    /*padding-left: 20px;*/
+    /*width: 100%;*/
 }
+
+.project-title {
+    border: none;
+    font-weight: bold;
+}
+
+.project-item-title {
+    padding: 0 20px;
+}
+
+/*.project-item-title:first-child {*/
+    /*padding-left: 0;*/
+/*}*/
 
 .project {
-    display: table-row;
+    border-top: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
-    height: 60px;
-    margin: 10px 0 10px 0;
+    padding: 10px;
+    padding-left: 15px;
+    /*border-bottom: none;*/
+    /*width: 100%;*/
 }
 
-.project:last-child {
-    border-bottom: none;
+/*.project-table-cell {*/
+    /*display: table-cell;*/
+    /*padding: 4px 12px;*/
+    /*font-size: 14px;*/
+    /*!*border: 0;*!*/
+    /*height: 100%;*/
+/*}*/
+
+.project:first-child {
+    border-top: none;
 }
+
+/*.project-item:first-child {*/
+    /*padding-left: 0;*/
+    /*!*border-collapse: inherit;*!*/
+/*}*/
 
 .project-item {
-    display: table-cell;
-    padding: 16px 20px;
-    font-size: 14px;
-    border-collapse: inherit;
+    /*border-top: 1px solid #e8e8e8;*/
+    /*border-bottom: 1px solid #e8e8e8;*/
+    padding: 22px 20px;
 }
 
 .project-item:last-child {
@@ -363,6 +440,7 @@ header .logo span {
     border-top: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .channel-type:last-child {
@@ -398,51 +476,42 @@ header .logo span {
 }
 
 .channels {
-    padding-left: 35px;
-    display: table;
+    margin-left: 50px;
 }
 
 .channel {
     /*border-bottom: 1px solid #e8e8e8;*/
-    border-top: 1px solid #e8e8e8;
+    /*border-top: 1px solid #e8e8e8;*/
     padding: 10px;
     padding-left: 15px;
-    border-bottom: none;
-    display: table-row;
+    /*width: 100%;*/
+    /*border-bottom: none;*/
 }
 
-.channel-table-cell {
-    display: table-cell;
-    padding: 6px 12px;
-    font-size: 14px;
-    border: 0;
-    height: 100%;
-}
+/*.channel:last-child {*/
+    /*width: 100%;*/
+/*}*/
 
 .channel-title {
     border: none;
     font-weight: bold;
-    display: table-row;
 }
 
-.channel-title-name {
+.channel-item {
+
 }
 
-.channel-title-login {
+.channel-item:last-child {
+    width: 100%;
 }
 
-.channel-title-sync {
+.channel-item:first-child {
+    padding: 1px;
+    margin-left: -4px;
 }
 
-.channel:last-child {
-}
-
-.channel-name {
-    color: #0078b8;
-    padding-left: 0;
-}
-
-.channel-login {
+.channel-item:last-child {
+    /*width: 100%;*/
 }
 
 .future-channel {
@@ -452,6 +521,72 @@ header .logo span {
     margin-right: -10px;
     padding-right: 10px;
     color: #8f989c;
+    padding-bottom: 0;
+}
+
+   /* Настройки канала */
+.channel-settings-title {
+    display: inline-block;
+}
+
+.channel-settings-title h1 {
+    display: inherit;
+}
+
+#channel-more-setting {
+    display: inherit;
+    margin: 5px 0;
+}
+
+.channel-panel {
+    padding: 20px;
+}
+
+.channel-panel-body {
+    padding: 0px 20px;
+    background-color: #f1f2f3;
+}
+
+.channel-panel-column {
+    width: 25%;
+    display: inline-block;
+}
+
+.channel-settings {
+    overflow: hidden;
+    height: 0px;
+    /*border-bottom: 1px solid #000;*/
+    /*border-top: 1px solid #000;*/
+
+}
+
+.campaigns {
+    /*margin: 16px 20px;*/
+    /*padding: 16px 20px;*/
+    /*border-collapse: initial;*/
+}
+
+.campaign-title {
+    font-weight: bold;
+}
+
+.campaign {
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+    line-height: 18px;
+}
+
+.campaign div:last-child {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.center input {
+     width: 38px;
+     height: 18px;
 }
 
    /* футер */
@@ -530,4 +665,72 @@ header .logo span {
     display: table;
     content: "";
     clear: both;
+}
+
+#modal_form {
+	/*width: 300px;*/
+	/*height: 300px; !* Рaзмеры дoлжны быть фиксирoвaны *!*/
+	border-radius: 5px;
+	border: 3px #000 solid;
+	background: #fff;
+	position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+	left: 50%; /* пoлoвинa экрaнa слевa */
+	margin-top: -150px;
+	margin-left: -150px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+	z-index: 2007; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	padding: 20px 10px;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+#modal_form .modal-content {
+
+}
+
+#modal_form .modal-content h1 {
+    padding: 0px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+#modal_form .modal-content .submit-row {
+    text-align: right;
+}
+
+/* Кнoпкa зaкрыть для тех ктo в тaнке) */
+#modal_form #modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+
+#modal_close {
+    color: #8f989c;
+}
+
+#modal_close:hover {
+    color: #000000;
+}
+/* Пoдлoжкa */
+#overlay {
+	z-index:2006; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+	position:fixed; /* всегдa перекрывaет весь сaйт */
+	background-color:#000; /* чернaя */
+	opacity:0.8; /* нo немнoгo прoзрaчнa */
+	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+	filter:alpha(opacity=80);
+	width:100%;
+	height:100%; /* рaзмерoм вo весь экрaн */
+	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	left:0;
+	cursor:pointer;
+	display:none; /* в oбычнoм сoстoянии её нет) */
 }
