@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-YA MENAU STRANICY 27 02 17<br>
-	ZADANIE: 1) WIKI DLYA IFRAME UML CLASS 2) SPA+UML USECASE
-	
-	<iframe src="NEindex.html" height="800" width="600" style="border:none;"> TEST </iframe> <br>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+Задания (как я понял) <br>
+1) Вики-страница класса Iframe с диаграммой классов - <a href="https://github.com/AdolfAndTheFuckYous/oop/wiki/%D0%A2%D1%8D%D0%B3%D0%B8-HTML.-Iframe"> здесь </a><br>
+	сделал как мог, не нашел нигде никакой информации по наследованию тэгов в HTML, пример показывает что умею пользоваться.<br> 
+2) SPA - приложение, которое ищет введенное слово на загруженной странице + usecase - см ниже. Использует javascript и тэг iframe.<br>
 <script>
-$(document).ready(function(){
-    $("#1").click(function(){
-        $("#2").hide();
-		$("#1").hide();
-    });
-});
+ function go() {
+if($("#com").contents().text()search("a")!=-1){
+    alert("found");
+}
+}
 </script>
-<p id="1">НАЖМИ ЭТО ОПИСАНИЕ ЧТОБЫ второе ПРОПАЛО</p>
-<p id="2">Я ПРОПАДУ НЕЕТ</p>
-<body>
-<html>
+<iframe id="iframe2" src="NEindex.html" onLoad="iframeDidLoad();"></iframe><br>
+<input type="text" id="search"><br>
+<input type="button" value="Proxy this" onClick="go()" />
+</body>
+</html> 
