@@ -10,14 +10,22 @@
 	сделал как мог, не нашел нигде никакой информации по наследованию тэгов в HTML, пример показывает что умею пользоваться.<br> 
 2) SPA - приложение, которое ищет введенное слово на загруженной странице + usecase - см ниже. Использует javascript и тэг iframe.<br>
 <script>
- function go() {
-if($("#iframe2").contents().text()search("a")!=-1){
+ $("#lol").click(function(){
+  if($("#iframe2").contents().text()search("a")!=-1){
     alert("found");
-}
-}
+});
+
+
 </script>
 <iframe id="iframe2" src="NEindex.html" onLoad="iframeDidLoad();"></iframe><br>
 <input type="text" id="search"><br>
-<input type="button" value="Proxy this" onClick="go()" />
+<input type="button" id="lol" value="Search" onclick="$('#lol').click(function(){
+  if($('#iframe2').contents().text()search('a')!=-1){
+    alert('found');
+});">
+	$("#lol").click(function(){
+  if($("#iframe2").contents().text()search("a")!=-1){
+    alert("found");
+});
 </body>
 </html> 
