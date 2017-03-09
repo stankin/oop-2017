@@ -1,0 +1,96 @@
+body
+{
+background-color: #FFC556;
+}
+.img-center
+{
+display:block; 
+margin:0 auto;
+text-align: center;
+}
+.footer {
+  /* position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 2%;   /* Высота блока footer */
+   background: hsla(302.5,100%,71.6%,0.5);
+
+	position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    width: 100%; /* Ширина слоя */
+   
+}
+select
+{	margin-left:10%;}
+p
+{
+	margin-top:5%;
+	margin-bottom:2%;
+	margin-left:10%;
+	margin-right:10%;
+	text-align:justify;
+	font-family:"Times New Roman",Georgia,Serif;
+	color: black;
+	font-style:normal;
+	font-size: 18px;
+	text-indent:10%;
+	line-height: 200%
+}
+h1
+{text-align: center;}
+.button
+{
+	background: hsla(0,100%,40.2%,0.9);/*#CD0000; /* Цвет фона */
+	padding: 7px 30px; /* Поля вокруг текста */
+	font-size: 13px; /* Размер шрифта */ 
+	font-weight: bold; /* Насыщенность шрифта */
+	color: #FFFFFF; /* Цвет шрифта */
+	text-align: center; /* Надпись на кнопке по центру */
+	border: outset 5px #FF4500; /* Параметры рамки кнопки */ 
+	cursor: pointer; /* Изменение вида курсора при наведении*/
+		border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	/*margin-top:3%;*/
+	/*margin-left:25%;
+	margin-bottom:3%;*/
+	margin-left:15%;
+	margin-right: 15%;
+	margin-bottom:3%;
+	margin-top:3%;
+}
+
+h1 {
+	text-align: center;
+	margin-top:5%;
+	margin-bottom:5%;
+	}
+.div
+{
+	width: 600px;
+	position: relative;
+	left: 0px;
+	right: 0px;
+	margin: 10px auto 30px auto;
+	font: 20px Arial;
+	text-align: justify;
+	padding: 10px;
+	border: 2px solid #999;
+	border-radius: 10px;
+	background: rgba(71,80,80,0.3);
+}
+.header
+{
+	margin:auto;
+	    height: 70px;
+    border-bottom: 1px solid #000;
+    color: #000000;
+    margin-top: 0;
+}
+#imgR
+{
+width: 70%;
+text-align: center;	
+display: block;
+margin:0 auto;
+}

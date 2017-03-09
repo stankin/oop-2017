@@ -7,22 +7,40 @@ canvas {
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;
 }
+.button
+{
+	background: hsla(0,100%,40.2%,0.9);/*#CD0000; /* Цвет фона */
+	padding: 5px 20px; /* Поля вокруг текста */
+	font-size: 13px; /* Размер шрифта */ 
+	font-weight: bold; /* Насыщенность шрифта */
+	color: #FFFFFF; /* Цвет шрифта */
+	text-align: center; /* Надпись на кнопке по центру */
+	border: outset 5px #FF4500; /* Параметры рамки кнопки */ 
+	cursor: pointer; /* Изменение вида курсора при наведении*/
+		border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	/*margin-top:3%;*/
+	/*margin-left:25%;
+	margin-bottom:3%;*/
+	margin-left:15%;
+	margin-right: 15%;
+	margin-bottom:3%;
+	margin-top:3%;
+}
 </style>
 </head>
 <body onload="startGame()">
 <script>
-
 var myGamePiece;
 var myObstacles = [];
 var myScore;
-
 function startGame() {
-    myGamePiece = new component(30, 30, "magenta", 10, 120);
+    myGamePiece = new component(30, 30, "Tomato", 10, 120);
     myGamePiece.gravity = 0.05;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
 }
-
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -37,7 +55,6 @@ var myGameArea = {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
-
 function component(width, height, color, x, y, type) {
     this.type = type;
     this.score = 0;
@@ -89,7 +106,6 @@ function component(width, height, color, x, y, type) {
         return crash;
     }
 }
-
 function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
@@ -107,31 +123,30 @@ function updateGameArea() {
         minGap = 50;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(10, height, "green", x, 0));
-        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        myObstacles.push(new component(10, height, "DarkRed", x, 0));
+        myObstacles.push(new component(10, x - height - gap, "Maroon", x, height + gap));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -1;
         myObstacles[i].update();
     }
-    myScore.text="SCORE: " + myGameArea.frameNo;
+    myScore.text="Очки: " + myGameArea.frameNo;
     myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
 }
-
 function everyinterval(n) {
     if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
 }
-
 function accelerate(n) {
     myGamePiece.gravity = n;
 }
 </script>
 <br>
-<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
-<p>Use the ACCELERATE button to stay in the air</p>
-<p>How long can you stay alive?</p>
+<button class="button" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ВЖУХ!!</button>
+<button style=" font:14pt Arial, Helvetica, sans-serif;" class="button" onclick="window.location.reload();">&#134;</button>
+<p>Используй магию вжуха,чтобы держаться над землей.</p>
+<p>Давай, попробуй выжить!</p>
 </body>
 </html>

@@ -1,30 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Сычева А.А.</title>
-	 <style>
-    	body
-		{
-			background-color: #FFC556;
-		}
-    </style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script> 
-$(document).ready(function(){
-    $("#2").click(function(){
-        $("#1").slideToggle("slow");
-    });
-});
-</script>
-</head>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="jQuery-rotate.js"></script>
+	<title> Лабораторные работы по ПИС. Сычева А.А.</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="1.css">
+	<link rel="shortcut icon" href="icon1.ico" type="image/x-icon">
+</head> 
 <body>
-<div align="center"><h1>Лабораторные работы по ПИС</h1>
-<p style="font-size:150%;" align="center"> Здесь я расскажу о теге img и о диаграмме компонент</p>
-<h1 id="2">в этом iframe (скрыть/показать)<h1>
-<div id="1">
-<iframe  src="1.html" height="500" width="800"></iframe>
-</div>
-<div>
+<header class="header">
+		<h1>Отчет по лабораторным работам по дисциплине "ПИС".</h1></header>
+		<h2 align="right" style="margin-right: 10%; margin-bottom:5%;">Сычева А.А., ИДБ-13-12</h2>
+		<form action="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2" class="div">
+		<h2 align="center"> Wiki-страница</h2><hr>
+		<input class="button" type="submit" value="UML. Диаграмма компонентов">
+		</form>
+		<div class="div">
+		<h2 align="center">Тег &#60img&#62.</h2><hr>
+		<p style="margin-bottom:auto;">
+			Предназначен для отображения на веб-странице изображений в графическом формате GIF, JPEG или PNG. Адрес файла с картинкой задаётся через атрибут src.</p>
+		<p style="margin-top:auto;">В качестве примера была реализована возможность поворота изображения на 90 градусов.
+		</p>
+		<hr>
+		<img id="imgR" style="transform: rotate(0deg);" src="pic.jpg" align="center"/>
+		<input type="button" id="rB" class="button" value="&#8635;"/>
+		<input type="button" id="lB" class="button" value="&#8634;"/>
+		<input id="diagB" type="button" class="button" value="диаграмма классов"/>
+		<div style="display: none" id="diag">тут диаграмма</div>
+		</div>
+		<div class="div">
+		<h2 align="center">SPA.</h2><hr>
+		<p>Single Page Application – сокращенно SPA, в переводе на русский язык означает “Приложение одной страницы”. Другими словами SPA – это web-приложение, размещенное на одной web-странице, которая для обеспечения работы загружает весь необходимый код вместе с загрузкой самой страницы. 
+		</p>
+		<input id="spaB" type="button" class="button" value="пример SPA"/>
+		<iframe id="spaF" style="display: none" src="1.html" height="500" width="100%"></iframe>
+		</div>
+<footer class="footer">
+© 2017 ИДБ-13-12,Сычева А.А.
+</footer>
 </body>
 </html>
+<script>
+$("#diagB").click(function(){
+        if ($("#diag").is(":hidden")) {
+             $("#diag").show("slow");
+         } else {
+                 $("#diag").hide("slow");
+                }	
+})
+$("#spaB").click(function(){
+        if ($("#spaF").is(":hidden")) {
+             $("#spaF").show("slow");
+         } else {
+                 $("#spaF").hide("slow");
+                }	
+})
+
+$("#rB").click(function(){
+var degR;
+degR=document.getElementById ('imgR').style.transform;
+if (degR=="rotate(0deg)"){document.getElementById ('imgR').style.transform="rotate(90deg)";}
+if (degR=="rotate(90deg)"){document.getElementById ('imgR').style.transform="rotate(180deg)";}
+if (degR=="rotate(180deg)"){document.getElementById ('imgR').style.transform="rotate(270deg)";}
+if (degR=="rotate(270deg)"){document.getElementById ('imgR').style.transform="rotate(0deg)";}	
+})
+
+$("#lB").click(function(){
+var degR;
+degR=document.getElementById ('imgR').style.transform;
+if (degR=="rotate(0deg)"){document.getElementById ('imgR').style.transform="rotate(270deg)";}
+if (degR=="rotate(90deg)"){document.getElementById ('imgR').style.transform="rotate(0deg)";}
+if (degR=="rotate(180deg)"){document.getElementById ('imgR').style.transform="rotate(90deg)";}
+if (degR=="rotate(270deg)"){document.getElementById ('imgR').style.transform="rotate(180deg)";}
+degR=document.getElementById ('imgR').style.transform;
+})
+
+</script>
