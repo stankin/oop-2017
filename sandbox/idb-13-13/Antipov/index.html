@@ -5,22 +5,41 @@
 <script>
 $(document).ready(function(){
     $("#p1").click(function(){
-        $("#p3").toggle();
-    });
-	$("#p2").click(function(){
-        $("#p1").toggle();
+        $("#p4").toggle();
     });
 });
 </script>
 </head>
-<body>
-	<h1>Работа с тегом <b>"Параграф"(&lt;<p>&gt;)</b></h1>
-	
-	
-<p id="p1">Параграф 1</p>
-<p id="p2">Параграф 2</p>
-<p id="p3">Параграф 3</p>
-	<a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%966">Lab6</a>
-<iframe src="app.html" height="400" width="600"></iframe>
+<body style="background-color: #f4a460">
+	<h1 align="center">Работа с тегом <b>"Параграф"(p)</b> и создание wiki-страницы с описанием лабораторной работы №6</h1>
+	<div><h2 align="right" style="color: grey"><i>Автор: Антипов Алексей, ИДБ-13-13</i><br><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-13/Antipov">Исходники</a></h2></div>
+	<h2>Задача №1: изучить тег "параграф", составить пример с использованием этого тега, построить диаграмму классов</h4>
+	<h3>Ход работы</h5>
+	<div style="background-color: grey"><b>Описание</b><br>
+Определяет текстовый абзац. Тег "p" является блочным элементом, всегда начинается с новой строки, абзацы текста идущие друг за другом разделяются между собой отбивкой. Величиной отбивки можно управлять с помощью стилей. Если закрывающего тега нет, считается, что конец абзаца совпадает с началом следующего блочного элемента. <br>	
+Синтаксис:
+ &lt;p&gt;Текст &lt;/p&gt;<br><br></div>
+ <div style="background-color: yellow">
+ <p align="center" style="font-size: 30px; font-family: Tahoma; color: rgba(0,0,0,0.6); text-shadow: 2px 2px 3px rgba(255,255,255,0.1);">РАБОТА С ТЕГОМ</p>
+ <p align="center" style="text-shadow: -10px 10px 0px #00e6e6,
+                 -20px 20px 0px #01cccc,
+                 -30px 30px 0px #00bdbd;">РАБОТА С ТЕГОМ</p>
+  <p align="right">РАБОТА С ТЕГОМ</p></div>
+  Диаграмма классов для тега:<br>
+	<img src="UMLp.png"><br>
+	<h2>Задача №2: создать wiki-страницу лабораторной работы №6</h4>
+	<h3>Ход работы</h5>
+	<a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%966">Ссылка на wiki-страницу Лаб. работы №6</a>
+
+
+
+
+
+
+
+
+<h4>Будет другая SPA</h4>	
+<p id="p1">Показать/скрыть часы</p>
+<iframe src="app.html" height="400" width="400" id="p4"></iframe>
 </body>
 </html>
