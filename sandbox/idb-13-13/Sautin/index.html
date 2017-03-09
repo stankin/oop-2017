@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Лабораторная Саутин Д.С.</title>
+<link rel="stylesheet" href="style.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script> 
 $(document).ready(function(){
@@ -10,7 +11,15 @@ $(document).ready(function(){
     });
 });
 </script> 
-</head\>
+
+<script>
+    function dataSelect(f) {
+      n = f.tel.selectedIndex
+      if(n) alert("Выбран производитель: " + f.tel.options[n].value)
+    }
+  </script>
+ </head>
+
 <body bgcolor="#FFDEAD">
 <p id="p2"><iframe  src="app1.html" height="120" width="120"></iframe></p>
 <p id="p1"> Спрятать/Показать часы </p><br>
@@ -28,19 +37,26 @@ $(document).ready(function(){
 Элемент Select может содержать два и более элементов Option, определяющих доступные варианты выбора в раскрывающемся списке. Ширина списка будет определяться самым длинным текстом, указанным в теге Option.
 	</p>
 
+ <form action="index.html">
 	<h2><p align="center">
-	Реализация тега Select</h2>
+	Реализация тега Select, которая подтверждает выбор элемента</h2>
 
 <h3><i>Выберите марку телефона:</i>
 	<select name="tel">
-	<option value="apple">Apple
-	<option value="htc">HTC
-	<option value="samsung">Samsung
-	<option value="zte">ZTE
-	<option value="meizu">Meizu
-	</select><br><br></h3>
+	<option>Выберите марку
+	<option value="Apple">Apple
+	<option value="HTC">HTC
+	<option value="Samsung">Samsung
+	<option value="ZTE">ZTE
+	<option value="Meizu">Meizu
+	</select></h3>
+ <input type="button" class="boton1" style="margin-left: 313px" value="OK" onClick="dataSelect(this.form)">
+	</p><br><br>
+</form>
 
-	</p>
+<h2><p align="center">
+	UML-диаграмма<br><br>
+	<img src="uml.svg"></p></h2>
 
 </body>
 </html>
