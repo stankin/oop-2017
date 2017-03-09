@@ -8,6 +8,118 @@
     <link rel="stylesheet" media="all" href="css/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
     <script type="text/javascript" src="js/main.js"></script>
     <meta charset="UTF-8">
+    <script>
+        $(document).ready(function () {
+            Highcharts.dateFormats = {
+
+            };
+
+            Highcharts.setOptions({
+                lang: {
+                    months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                    shortMonths: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
+                    weekdays: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+                    shortWeekdays: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                }
+            })
+    // Build the chart
+            Highcharts.chart('container', {
+                credits: {
+                    enabled: false
+
+                },
+                exporting: {
+                    enabled: false
+                },
+                type: 'line',
+                legend:{
+                    layout: 'horizontal',
+                    align: 'right',
+                    verticalAlign: 'bottom',
+                    itemStyle: {
+                    }
+                },
+                title: {
+                    text: 'Solar Employment Growth by Sector, 2010-2016'
+                },
+                subtitle: {
+                    text: null
+                },
+                xAxis: {
+                    endOnTick: false,
+                    startOnTick: false,
+                    type: 'datetime',
+                    minRange: 24,
+                    tickInterval: 10 * 1000,
+                    max: Date.UTC(2017, 02, 10, 23, 59, 59),
+                    min: Date.UTC(2017, 01, 11, 00, 00, 00),
+                },
+                yAxis: {
+                    title: {
+                        text: 'Number of Employees'
+                    },
+                        minRange: 5,
+                },
+                legend: {
+                    layout: 'horizontal',
+                    align: 'left',
+                    verticalAlign: 'bottom'
+                },
+                tooltip: {
+                    shared: true,
+                    crosshairs: true
+                },
+                plotOptions: {
+                    series: {
+                        pointInterval:  10 * 1000,
+                        pointStart: Date.UTC(2017, 01, 11, 00, 00),
+                    },
+                    line: {
+                        marker: {
+                            enabled: false,
+                            states: {
+                                hover:{
+                                    enabled: false,
+                                }
+                            },
+                        },
+                        tooltip: {
+                            dateTimeLabelFormats: {
+                                millisecond:"%A, %b %e, %H:%M:%S.%L",
+                                second:"%A, %b %e, %H:%M:%S",
+                                minute:"%A, %b %e, %H:%M",
+                                hour:"%A, %b %e, %H:%M",
+                                day:"%A, %B %e",
+                                week:"Week from %A, %b %e, %Y",
+                                month:"%B %Y",
+                                year:"%Y"
+                            },
+                        },
+                    },
+                },
+                series: [
+                    
+                        {
+                            name: 'Мишки',
+                            data: [
+                                
+                                    [Date.UTC(2017, 02, 04, 00, 00, 00), 0],
+                                
+                                    [Date.UTC(2017, 02, 06, 00, 00, 00), 50],
+                                
+                                    [Date.UTC(2017, 02, 07, 00, 00, 00), 51],
+                                
+                                    [Date.UTC(2017, 02, 08, 00, 00, 00), 61],
+                                
+                                    [Date.UTC(2017, 02, 09, 00, 00, 00), 60],
+                                
+                            ]
+                        },
+                    
+                ]
+            });
+        });
+    </script>
 </head>
 <body>
 <header id="header">
@@ -26,6 +138,6 @@
         </div>
     </div>
 </header>
-<iframe src="http://dobster.ru/" height="800" width="600"></iframe> 
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div> 
 </body>
 </html>
