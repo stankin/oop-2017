@@ -1,88 +1,94 @@
 <html>
     <head>
-        <title>Выбор номера</title>
+        <title>Р’С‹Р±РѕСЂ РЅРѕРјРµСЂР°</title>
         <link rel="stylesheet" type="text/css" href="link1.css">
-        <script>
-        function val(){
-                 document.location.replace("Ex12.html");
-                 alert("Номер в отеле успешно забронирован");
-        }
-</script>
     </head>
     <body style="background-image: url(D:/k.jpg)">
-            <br><br><br>
-            <P>Выбор номера</P>
-            <font size=4 color="black">
+<canvas id="canvas" width="400" height="400"
+style="background-color:#333">
+</canvas>
 
- Выбор номера:
-      <select name="notebook"> 
-         <option value="single">Одноместный номер 
-         <option value="double">Двухместный номер 
-         <option value="lux">Люкс 
-         <option value="luxbal">Люкс с балконом 
-      </select> <br/> 
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
 
- Количество человек: <input type="text" name="people"> <br/> 
- Дата заселения:     <input type="text" name="arrive"> <br/>
- Дата отъезда:       <input type="text" name="depart"> <br/>
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
 
- Номер должен быть с:<br>
-          <input type="checkbox" name="t1" value="m1">С телевизором<br>
-          <input type="checkbox" name="t2" value="m2">С кондиционером<br>
-          <input type="checkbox" name="t3" value="m3">С балконом<br>
-          <input type="checkbox" name="t4" value="m4">С баром<br>
-          <input type="checkbox" name="t5" value="m5">Включить завтрак в счёт (+ 550 рублей)<br>
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
 
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
 
- <input type="button" name="rend" value="Забронировать" onClick="val()"> 
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
 
-<h2>Отсутствие сборов за бронирование и использование кредитной карты!
-Кредитная карта не требуется!</h2>
-</font>
-
-
-      <table width=70%  border=1 align=left cellspacing=0 cellpadding=4>      
-      <h5><tr>
-          <th>Тип номера</th><th>Максимальное число гостей</th><th>Цена номера/сутки</th><th>Параметры</th><th>Картинка</th>
-      </tr>
-
-      <tr>
-          <td>Двухместный номер с 1 кроватью или 2 отдельными кроватями. Потрясающий Wi-Fi (БЕСПЛАТНО) Собственная ванная комната Посмотреть этот номер
-Цены указаны за номер
-Включено: RUB AMOUNT НДС за все проживание</td><td>2</td><td>3050 руб.</td><td>Особые условия, платите при проживании
-Завтрак 550 руб</td><td><img src='i(1).jpg' width=250 height=250></td>
-      </tr>
- 
-      <tr>
-          <td>Люкс — Просторнее большинства других номеров — Коломна
-Кровати:  
-1 большая двуспальная кровать
- 34 м?  Потрясающий Wi-Fi (БЕСПЛАТНО) Собственная ванная комната Посмотреть этот номер
-Указаны цены за люкс
-Включено: RUB AMOUNT НДС за все проживание</td><td>2</td><td>6750 руб.</td><td>Особые условия, платите при проживании
-Завтрак 550 руб</td><td><img src='i(4).jpg' width=250 height=250></td>
-      </tr>
-
-      <tr>
-          <td>Люкс с балконом — Просторнее большинства других номеров — Коломна
-Кровати:  
-1 большая двуспальная кровать
- 34 м?  Потрясающий Wi-Fi (БЕСПЛАТНО) Собственная ванная комната Посмотреть этот номер
-Указаны цены за люкс
-Включено: RUB AMOUNT НДС за все проживание</td><td>2</td><td>7050 руб.</td><td>Особые условия, платите при проживании
-Завтрак 550 руб</td><td><img src='i(3).jpg' width=250 height=250></td>
-      </tr>
-
-      <tr>
-          <td>Одноместный номер
-Кровати:  1 односпальная кровать 
-Потрясающий Wi-Fi (БЕСПЛАТНО) Собственная ванная комната Посмотреть этот номер
-Цены указаны за номер
-Включено: RUB AMOUNT НДС за все проживание</td><td>1</td><td>3050 руб.</td><td>Особые условия, платите при проживании
-Завтрак 550 руб</td><td><img src='i(5).jpg' width=250 height=250></td>
-      </tr></h5></table>
-
-            <marquee scrollamount="6"><font color="black" size="5"><b><i>В случае уточнений в состав номера отеля обращайтесь по телефону в ресепшн: +7 (4966) 12-18-96</i></b></font></marquee>
-            <br><br><div class=menu><div><a href=Ex1.html>Вернуться назад</a></div></div><br><br>
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+        <br><br><br><br>        
+        <br><br>
     </body>
 </html>
