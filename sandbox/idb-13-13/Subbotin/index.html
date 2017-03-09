@@ -7,6 +7,9 @@
 <body>
 	<h1 align="center">Тег BUTTON</h1>
 	<h3 align="center">Создание формы с кнопкой, которая не горит, если не будут заполнены все поля</h3>
+	
+	<p align="right"> <i>Субботин Павел, ИДБ-13-13</i></p>
+	
 	<h2>Задачи:</h2>
 <ol>
  <li>Разработать форму с кнопкой, используя тег "button".</li>
@@ -108,6 +111,47 @@ f.send.disabled=(f.name.value && f.surname.value && f.phone.value) ? false : tru
 changeButtonStatus(); 
 </script>
 
+	<pre><code class="no-buttons">
+<table border="4" bgcolor="gray">
+<tr>
+<td><b>
+&lt;form name=mainForm&gt;
+   &lt;table width="100%" cellspacing="0" cellpadding="4"&gt;
+    &lt;tr&gt; 
+     &lt;td align="right" width="100"&gt;Выше имя&lt;/td&gt;
+     &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=name&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; 
+     &lt;td align="right" width="110"&gt;Ваша фамилия&lt;/td&gt;
+     &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=surname&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; 
+     &lt;td align="right" valign="top"&gt;Ваш телефон&lt;/td&gt;
+     &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=phone&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; 
+     &lt;td&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;input type=button onclick="alert('Ваша информация не отправлена на сервер, потому что сервер неактивен!')" value="Отправить" name=send&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/table&gt;
+  &lt;/form&gt;
+
+
+
+&lt;script language="JavaScript"&gt; 
+var f=document.mainForm; 
+function changeButtonStatus(){ 
+f.send.disabled=(f.name.value && f.surname.value && f.phone.value) ? false : true; 
+} 
+changeButtonStatus(); 
+&lt;/script&gt; 
+</b>
+</td>
+</tr>
+</table>
+
+</code></pre>
+	
 <div style="float:left"> 
 	<h3 align="center">UML-диаграмма</h3>    
 	<p><img src="uml.png" /> </p>
