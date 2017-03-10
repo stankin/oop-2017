@@ -1,0 +1,34 @@
+BODY {
+  background: #EEE;
+  padding: 30px;
+}
+DIV {
+  height: 200px;
+  background: crimson;
+  box-shadow: 0 -150px 70px -120px #B22222 inset,
+              0 -220px 70px -120px #CD5C5C inset,
+              0 -280px 70px -120px #A52A2A inset;
+  
+  border: 10px solid white;
+  animation: background 4s infinite alternate;
+}
+
+@keyframes background {
+  50% {
+    background: #B22222;
+    box-shadow: 0 -140px 70px -120px #800000 inset,
+                0 -210px 70px -120px #B22222 inset,
+                0 -280px 70px -120px #CD5C5C inset;
+  }
+}
+#text{
+font-size: 60px;
+ font-family: 'Amatic SC', cursive;
+  text-align: center;
+  text-transform: uppercase;
+text-shadow: 0 0 80px white,0 0 30px white,0 0 6px white;
+  color: #FFDAB9;
+ 
+
+
+}
