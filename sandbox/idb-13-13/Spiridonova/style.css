@@ -3,7 +3,7 @@ BODY {
   padding: 30px;
 }
 DIV {
-  height: 170px;
+  height: 200px;
   width: 1200px;
   margin-left: 100px;
   background: crimson;
@@ -30,6 +30,9 @@ font-family: 'PT Sans Narrow', sans-serif;;
  text-align: center;
 text-shadow: 0 0 80px white,0 0 30px white,0 0 6px white;
   color: #FFDAB9;
+}
+#text:hover{
+font-size: 60px;
 
 }
 #title{
