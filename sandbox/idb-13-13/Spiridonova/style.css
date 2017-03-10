@@ -3,13 +3,15 @@ BODY {
   padding: 30px;
 }
 DIV {
-  height: 200px;
+  height: 170px;
+  width: 1200px;
+  margin-left: 100px;
   background: crimson;
   box-shadow: 0 -150px 70px -120px #B22222 inset,
               0 -220px 70px -120px #CD5C5C inset,
               0 -280px 70px -120px #A52A2A inset;
+ 
   
-  border: 10px solid white;
   animation: background 4s infinite alternate;
 }
 
@@ -22,13 +24,26 @@ DIV {
   }
 }
 #text{
-font-size: 60px;
- font-family: 'Amatic SC', cursive;
-  text-align: center;
-  text-transform: uppercase;
+font-size: 50px;
+font-family: 'Amatic SC', cursive;
+font-family: 'PT Sans Narrow', sans-serif;;
+ text-align: center;
 text-shadow: 0 0 80px white,0 0 30px white,0 0 6px white;
   color: #FFDAB9;
- 
-
 
 }
+#title{
+  font-size: 40px;
+font-family: 'Amatic SC', cursive;
+font-family: 'PT Sans Narrow', sans-serif;
+color: #504C4C;
+}
+#p{
+  margin-left: 100px;
+  margin-right: 150px;
+    font-size: 20px;
+font-family: 'Amatic SC', cursive;
+font-family: 'PT Sans Narrow', sans-serif;
+color: #504C4C;
+}
+
