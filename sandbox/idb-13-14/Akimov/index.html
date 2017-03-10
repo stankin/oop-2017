@@ -1,94 +1,73 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Выбор номера</title>
-        <link rel="stylesheet" type="text/css" href="link1.css">
-
-<canvas id="canvas" width="400" height="400"
-style="background-color:#333">
-</canvas>
-
+<head>
+<style>
+	body{
+	color: #032359;
+	background: url(bg.jpg) no-repeat;
+	-moz-background-size: 100%; /* Firefox 3.6+ */
+	-webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+	-o-background-size: 100%; /* Opera 9.6+ */
+	background-size: 100%; /* Современные браузеры */
+	}
+	.p{
+	padding: 10px; /* Поля вокруг текста */
+	margin: auto; /* Выравниваем по центру */
+	}
+	::-moz-selection { /* Code for Firefox */
+	color: #7aacff;
+	background: #ffffff;
+	}
+	::selection {
+	color: #7aacff;
+	background: #ffffff;
+        }
+</style>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90
-setInterval(drawClock, 1000);
-
-function drawClock() {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
-}
-
-function drawFace(ctx, radius) {
-  var grad;
-  ctx.beginPath();
-  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
-  ctx.fill();
-  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-  grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, 'white');
-  grad.addColorStop(1, '#333');
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = radius*0.1;
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  ctx.fillStyle = '#333';
-  ctx.fill();
-}
-
-function drawNumbers(ctx, radius) {
-  var ang;
-  var num;
-  ctx.font = radius*0.15 + "px arial";
-  ctx.textBaseline="middle";
-  ctx.textAlign="center";
-  for(num = 1; num < 13; num++){
-    ang = num * Math.PI / 6;
-    ctx.rotate(ang);
-    ctx.translate(0, -radius*0.85);
-    ctx.rotate(-ang);
-    ctx.fillText(num.toString(), 0, 0);
-    ctx.rotate(ang);
-    ctx.translate(0, radius*0.85);
-    ctx.rotate(-ang);
-  }
-}
-
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-    //hour
-    hour=hour%12;
-    hour=(hour*Math.PI/6)+
-    (minute*Math.PI/(6*60))+
-    (second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.5, radius*0.07);
-    //minute
-    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.8, radius*0.07);
-    // second
-    second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02);
-}
-
-function drawHand(ctx, pos, length, width) {
-    ctx.beginPath();
-    ctx.lineWidth = width;
-    ctx.lineCap = "round";
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
-    ctx.stroke();
-    ctx.rotate(-pos);
-}
-        <br><br><br><br>        
-        <br><br>
-            </script>
-    </head>
+	$(document).ready(function(){
+	    $("h4").click(function(){
+		$(this).hide();
+	    });
+	});
+</script>
+<script type="text/javascript">
+	$( document ).ready(function() {
+	$.event.props.push('onTextSelect');
+	$(document).click(function(){
+	    var str=window.getSelection().anchorNode.data;
+	    var str=str.substring(window.getSelection().anchorOffset,window.getSelection().focusOffset);
+	    if(str)
+		$(window.getSelection().focusNode.parentNode).trigger({type:'onSelectStart',text:str});
+	});
+	$('p').on('onSelectStart',function(e){
+	    console.log($(this).attr('class'))
+	    $('p:last').text(e.text);
+	});
+	});
+</script>
+</head>
+<body>
+	<h1 align="center">ИДБ 13-14</h1>
+	<br>
+	<h2 align="center">Дирша Алеся Николаевна</h2>
+	<h3 align="center">Моя задача - изменить стиль выделяемого текса, добавить функцию вставки этого текста в другой параграф</h3>
+	<p style="font-size: 12px;">Выделите текст в параграфе</p>
+	<div><p class="p">Тег <i>p</i> определяет текстовый абзац. Тег является блочным элементом, всегда начинается с новой строки, абзацы текста идущие друг за другом разделяются<br> между собой отбивкой. Величиной отбивки можно управлять с помощью стилей. Если закрывающего тега нет, считается, что конец абзаца совпадает с<br> началом следующего блочного элемента.</p></div>
+	<p style="font-size: 12px;">Здесь отобразится выделенный текст</p>		
+	<p></p>
+	<h3 align="center">Диаграмма классов</h3>
+	<img style="display: block; margin: 0 auto;" src="diagram.png" alt="Здесь должна быть диаграмма классов">
+	<h3 align="center">
+		UML.Диаграмма состояний<br>
+	<a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B9
+	">Click it!</a>
+	</h3>
+	<h1 align="center">Пока что моё SPA</h1>
+	<h2>Файл</h2>
+	<h4>Hello!</h4>
+	<h4>World!</h4>
+	<h4>Yahoo!</h4>
+	<iframe src="alesya.html" height="800" width="600" style="border:none;"></iframe> 
+</body>
 </html>
