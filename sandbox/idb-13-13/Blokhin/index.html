@@ -1,18 +1,47 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Личная страница пользователя Блохин М.С.</title>
 </head>
 <body>
-Задачи: <br>
-	1) Wiki-страница: <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8"> "UML. Диаграмма деятельности" </a> <br> 
-	2) Описать элемент html button с примером использования <br>
-Простая игра наподобие Flappy Bird <br>
+<h1 style="text-align: center">Личная страница студента группы ИДБ-13-13 Блохина М.С.</h1>
+<p>Задачи: <br>
+	1) Создать Wiki-страницу на тему: <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8"> "UML. Диаграмма деятельности" </a> <br> 
+2) Описать элемент HTML &lt;button&gt; с примером использования </p>
+<p>&nbsp;</p>
+<h1>Тэг HTML button</h1>
+<p>Тег &lt;button&gt; создает на веб-странице кнопки и по своему действию напоминает результат, получаемый с помощью тега &lt;input&gt; (с атрибутом type=&quot;button | reset | submit&quot;). В отличие от этого тега, &lt;button&gt; предлагает расширенные возможности по созданию кнопок. Например, на подобной кнопке можно размещать любые элементы HTML, в том числе изображения. Используя стили можно определить вид кнопки путем изменения шрифта, цвета фона, размеров и других параметров.</p>
+<p>Теоретически, тег &lt;button&gt; должен располагаться внутри формы, устанавливаемой элементом &lt;form&gt;. Тем не менее, браузеры не выводят сообщение об ошибке и корректно работают с тегом &lt;button&gt;, если он встречается самостоятельно. Однако, если необходимо результат нажатия на кнопку отправить на сервер, помещать &lt;button&gt; в контейнер &lt;form&gt; обязательно.</p>
+<h1>Пример использования тега:</h1>
+
+<script>
+function change_color(obj)
+{
+	obj.value && (document.body.style.backgroundColor = obj.value);
+	obj.src && (document.body.style.backgroundImage = 'url('+obj.src+')');
+}
+</script>
+
+<form method="post" action="1.php" onsubmit="return false">
+Изменение цвета фона страницы: <br>
+    <button class="color" id="red" name="button" value="red" onclick='change_color(this)'>Красный</button>
+
+    <button class="color" id="orange" name="button" value="orange" onclick='change_color(this)'>Оранжевый</button>
+
+<button class="color" id="white" name="button" value="white" onclick='change_color(this)'>Белый</button>
+    
+</form></td>
+<p>&nbsp;</p>
+<p><br>
+</p>
+<h1>Простая игра типа Flappy Bird <br>
+</h1>
 <iframe src="game.html" height="500" width="500"></iframe>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
+<p>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
 $(document).ready(function(){
     $("#1").click(function(){
         $("#2").hide();
@@ -25,13 +54,14 @@ $(document).ready(function(){
         $("p").show();
     });
 });
-</script>
-</head>
-<body>
-
+  </script>
+  </head>
+  <body>
+</p>
+<p>&nbsp; </p>
 <p id="1">Нажмите здесь, чтобы скрыть запись на английском языке.</p>
 <p id="2">If you click here, text in russian will disapear</p>
 
-<button id="show">Показать все</button>
+<button id="show">Показать все надписи</button>
 </body>
 </html>
