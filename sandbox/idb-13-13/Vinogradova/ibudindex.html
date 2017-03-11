@@ -2,8 +2,7 @@
 <html>
 <body>
 
-<canvas id="canvas" width="400" height="400"
-style="background-color:#CadetBlue">
+<canvas id="canvas" width="400" height="400">
 </canvas>
 
 <script>
@@ -13,22 +12,20 @@ var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
-
 function drawClock() {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
   drawTime(ctx, radius);
 }
-
 function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'yellow';
+  ctx.fillStyle = '#f2cd9d';
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, 'red');
+  grad.addColorStop(0.5, '#eca84f');
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
@@ -38,7 +35,6 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = '#333';
   ctx.fill();
 }
-
 function drawNumbers(ctx, radius) {
   var ang;
   var num;
@@ -56,7 +52,6 @@ function drawNumbers(ctx, radius) {
     ctx.rotate(-ang);
   }
 }
-
 function drawTime(ctx, radius){
     var now = new Date();
     var hour = now.getHours();
@@ -75,7 +70,6 @@ function drawTime(ctx, radius){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02);
 }
-
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
     ctx.lineWidth = width;
