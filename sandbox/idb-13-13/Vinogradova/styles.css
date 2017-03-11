@@ -1,5 +1,7 @@
 body {
     background-image: url("249961-1920x1200.jpg")
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
