@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SPA</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			
+			<h3>SPA </h3>
+			<a href="https://github.com/stankin/oop/wiki/%D0%A2%D0%B5%D0%B3%D0%B8-HTML.-Style"><h3>wiki</h3></a>
+			<iframe  class = "center-block" src="clock.html" width="430" height="450"></iframe><br>
+	 
+			<div class="task">
+				Тег style. Изменение стилей блоков с помощью jquery. ##нажать на текст
+			</div>
+			<br>
+			<p class="test" >
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vitae debitis totam non nesciunt quis. Ipsa quo doloribus aliquam saepe excepturi facere, fugit, consequatur magnam officia dolore, exercitationem eius vero.
+			</p>
+			
+			
+
+			<a href="#" onclick="diplay_hide('#block_id');return false;">Пример работы</a>
+	 		<div class="main" id="block_id" onclick="change();">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur repudiandae commodi repellat minus inventore minima, dolore veniam voluptates enim asperiores. Unde cumque amet ratione, quia blanditiis illo at minima assumenda?<br>
+				<strong>Попробуйте нажать на этот блок</strong>
+			</div>
+
+			<img src="Untitled Diagram (1).png" class = "center-block" alt=""> <br><br>
+
+		</div>
+		
+		<div class="col-md-1"></div>
+
+	</div>
+<script>
+//hide show block
+	function diplay_hide (blockId){ 
+    if ($(blockId).css('display') == 'none'){ 
+        $(blockId).animate({height: 'show'}, 500);
+    }else{     
+        $(blockId).animate({height: 'hide'}, 500);
+    	$(".main").removeClass("green");}}
+
+//change color
+	$(".main").click(function () {
+	$(".main").addClass("green");});
+
+//mouseover mouseout block
+	$(document).ready(function(){
+	    $(".test").mouseover(function(){
+	        $(".test").css("background-color", "yellow");
+	    });
+	    $(".test").mouseout(function(){
+	        $(".test").css("background-color", "white");
+	    });
+	});
+
+	$(".task").click(function () {
+	$(".task").addClass("task2");});
+</script>
+</body>
+</html>

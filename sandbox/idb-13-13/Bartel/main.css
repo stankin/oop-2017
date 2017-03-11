@@ -1,0 +1,29 @@
+iframe{
+	border: 0px;
+}
+.main{
+	font-family: Arial;
+	font-size: 17px;
+	background: #f1f1f1;
+	display: none;
+}
+a{
+	color: #000;
+}
+a:hover{
+	color: #000;
+	text-decoration: none;
+}
+.green{
+	background: #ccc;
+}
+p{
+	font-size: 17px;
+}
+.task{
+	color: #000;
+	font-size: 20px;
+}
+.task2{
+	color: #1a0dab;
+}
