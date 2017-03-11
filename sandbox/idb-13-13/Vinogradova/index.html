@@ -3,6 +3,14 @@
 <head>
 <title>Виноградова М.Б. ИДБ-13-13</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+		<style>
+		
+			table thead td{
+				cursor: pointer;
+				background:grey;
+			}
+		</style>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/jquery-1.11.1.min.js"></script>
 <script>
@@ -38,28 +46,105 @@ $(document).ready(function(){
 <img src="classes.png">
 <a name="table"><h2>Функционал < table ></h2></a>
 
- <table border="1">
-   <caption>Модульный журнал за прошлый семестр</caption>
-   <tr>
-    <th>Предмет</th>
-    <th>М1</th>
-    <th>М2</th>
-    <th>Курсовая</th>
-	<th>Зачет</th>
-	<th>Экзамен</th>
-	</tr>
-   <tr><td>Администрирование в ИС</td><td align="center">45</td><td align="center">50</td><td align="center">х</td><td align="center">х</td><td align="center">45</td></tr>
-   <tr><td>Инф безопасность и защита информации</td><td align="center">50</td><td align="center">43</td><td align="center">х</td><td align="center">х</td><td align="center">41</td></tr>
-   <tr><td>Корпоративные ИС</td><td align="center">43</td><td align="center">40</td><td align="center">43</td><td align="center">х</td><td align="center">43</td></tr>
-   <tr><td>Мультимедиа технологии</td><td align="center">45</td><td align="center">47</td><td align="center">х</td><td align="center">х</td><td align="center">46</td></tr>
-   <tr><td>Надежность ис</td><td align="center">25</td><td align="center">40</td><td align="center">х</td><td align="center">35</td><td align="center">х</td></tr>
-   <tr><td>Проектирование ИС</td><td align="center">49</td><td align="center">46</td><td align="center">50</td><td align="center">х</td><td align="center">45</td></tr>
-   <tr><td>Проектный менеджмент ИС</td><td align="center">41</td><td>42</td><td align="center">х</td><td align="center">х</td><td align="center">45</td></tr>
-   <tr><td>Станд и серт инф-прогр ср-в</td><td align="center">39</td><td align="center">45</td><td align="center">х</td><td align="center">45</td><td align="center">х</td></tr>
-   <tr><td>Экология</td><td align="center">30</td><td align="center">35</td><td align="center">х</td><td align="center">30</td><td align="center">х</td></tr>
-   <tr><td>Рейтинг</td><td align="center">41</td><td align="center">х</td><td align="center">х</td><td align="center">х</td><td align="center">х</td></tr>
-   <tr><td>Накомпленный рейтинг</td><td align="center">36</td><td align="center">х</td><td align="center">х</td><td align="center">х</td><td align="center">х</td></tr>
-     </table>
+<table border="1">
+			<thead>
+				<tr>
+					<td id="predmet">Предмет</td>
+					<td id="m1">M1</td>
+					<td id="m2">M2</td>
+					<td id="kurs">Курсовая</td>
+					<td id="zachet">Зачет</td>
+					<td id="exam">Экзамен</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</body>
+	<script>
+		var data = 
+				[{predmet:"Администратирование в ИС",m1:45,m2:50,kurs:"x",zachet:"x", exam:"45"}, 
+				{predmet:"Инф безопасность и защита информации",m1:50,m2:43,kurs:"x",zachet:"x", exam:"41"}, 
+				{predmet:"Корпоративные ИС",m1:43,m2:40,kurs:"43",zachet:"x", exam:"43"}, 
+				{predmet:"Мультимедиа технологии",m1:45,m2:47,kurs:"x",zachet:"х", exam:"46"}, 
+				{predmet:"Надежность ис",m1:25,m2:40,kurs:"x",zachet:"35", exam:"х"}, 
+				{predmet:"Проектирование ИС",m1:49,m2:46,kurs:"50",zachet:"х", exam:"45"}, 
+				{predmet:"Проектный менеджмент ИС",m1:41,m2:42,kurs:"x",zachet:"х", exam:"35"}, 
+				{predmet:"Станд и серт инф-прогр ср-в",m1:39,m2:45,kurs:"x",zachet:"х", exam:"45"},
+				{predmet:"Экология",m1:30,m2:35,kurs:"x",zachet:"30", exam:"х"}];
+		//самовызывающая ф-я, она закрыта от общей видемости, в неё передаём объект жквери и объект, который рисуем.
+		(function(jQuery,data){
+		
+			var sort_direction = true;
+			var $ = jQuery;
+			
+			
+			//рисуем таблицу как есть
+			draw_table(data);
+			//тут и ежу понятно
+			$("table thead td").bind("click", function(){
+				sort_direction = !sort_direction;
+		
+				if(sort_direction){
+					for(var i=0;i<(data.length-1);i++)
+						var index = i+1;
+						compare_true(data[i] ,data[index] ,data , $(this).attr("id"));//передаём 2 значения для сравнения, массив и элемент на который тыкнули
+				}else{
+					for(var i=0;i<(data.length-1);i++)
+						var index = i+1;
+						compare_false(data[i] ,data[index] ,data , $(this).attr("id") );
+				}
+				//после сортировки перерисовываем таблицу
+				draw_table(data);
+			});
+			
+			function draw_table(data){
+				//удаляем старые данные и добавляем строки в таблицу
+				$("table>tbody").html("");
+				data.forEach(function(item){
+					$("table>tbody").append("<tr><td>"+item.predmet+"</td><td>"+item.m1+"</td><td>"+item.m2+"</td><td>"+item.kurs+"</td><td>"+item.zachet+"</td><td>"+item.exam+"</td></tr>");
+				});
+			}
+			// сюда мы пихаем 2 сравниваемых элемента, массив, и ключ по которому сортируем, массив по ссылке, так что он сразу редактируется.
+			function compare_true(a ,b ,data , key) {
+				data.sort(function(a, b){
+					var _a = a[key];
+					var _b = b[key];
+					if(typeof _a == "string"){
+						
+						_a=_a.toLowerCase(), _b=_b.toLowerCase();
+					}
+					
+					
+					if (_a < _b)
+						return -1;
+					if (_a > _b)
+						return 1;
+					return 0;
+				});
+			}
+			//обратная сортировка
+			function compare_false(a ,b ,data , key) {
+				data.sort(function(a, b){
+					var _a = a[key];
+					var _b = b[key];
+					if(typeof _a == "string"){
+						
+						_a=_a.toLowerCase(), _b=_b.toLowerCase();
+					}
+					
+					
+					if (_a > _b)
+						return -1;
+					if (_a < _b)
+						return 1;
+					return 0;
+				});
+			}
+		})(jQuery,data);
+		
+	</script>
 
 <a name="WIKI"><h2>Wiki-страница</h2></a>
 <p>Ознакомиться с моей вики-страницей вы можете ознакомиться по ссылке: <a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%967">< клик ></a> </p>
