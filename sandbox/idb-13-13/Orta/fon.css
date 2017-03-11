@@ -1,0 +1,56 @@
+body {
+    background-image: url("1111111.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	}
+
+h1 {
+    color: navy;
+    }
+
+div {
+	background-color: rgba(255, 245, 223, 0.3);
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    width: 30em;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	border-style: groove;
+    border-width: 3px;
+	border-radius: 25px;
+	color: #5a5959;
+	text-shadow: 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed;
+	font-size: 27px;
+	
+	
+	}
+
+h2 {
+    color: #f3f0ed;
+	text-shadow: 0 0 10px #606060;
+	font-size: 45px;
+    }
+
+ol {
+	text-align: left;
+	color: #5a5959;
+	text-shadow: 0 0 10px #f4f1ed;
+   }
+   
+  A {
+    color: #6991c8; /* Цвет ссылок */
+   }
+  A:visited {
+    color: #6991c8; /* Цвет посещенных ссылок */
+   }
+  A:active {
+    color: #8ad2f0; /* Цвет активных ссылок */
+   }
+   table {
+	   background-color: rgb(252, 243, 235);
+   }
