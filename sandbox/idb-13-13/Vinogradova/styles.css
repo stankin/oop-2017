@@ -1,1 +1,8 @@
-css is here
+body {
+    background-image: url("249961-1920x1200.jpg")
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
