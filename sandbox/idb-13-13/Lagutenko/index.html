@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>Лагутенко</title>
+		<link rel="stylesheet" type="text/css" href="style.css" >
+	</head>
+<body>
+	<h1 align="center">Тег FORM</h1>
+	<h3 align="center">Создание формы с кнопкой, на которую нельзя нажать, если не будут заполнены все поля</h3>
+	
+	<p align="right"> <i>Лагутенко Дмитрий, ИДБ-13-13</i></p>
+	
+	
+	
+	<h2>Задачи:</h2>
+<ol>
+	<li>Разработать форму с кнопкой, используя тег "button".</li>
+ 		<ul>
+     <li>В форме реализовать поля для ввода текста;</li>
+     <li>Кнопка не должна быть активна, пока не заполнены все поля формы.</li>
+     <li>Дополнить вывод введенных данных для проверки</li>
+    </ul>
+</ol>
+<h3>Спецификация </h3>
+  <table class="standart">
+    <tr>
+      <td class="h">HTML:</td>
+      <td class="no">3.2</td>
+      <td class="yes">4.01</td>
+      <td class="yes">5.0</td>
+      <td class="xh">XHTML:</td>
+      <td class="yes">1.0</td>
+      <td class="yes">1.1</td>
+    </tr>
+  </table>
+  <h3>Описание</h3>
+  <p> Тег <span class="tag">&lt;form&gt;</span> устанавливает форму на веб-странице. 
+    Форма предназначена для обмена данными между пользователем и сервером. Область 
+    применения форм не ограничена отправкой данных на сервер, с помощью клиентских 
+    скриптов можно получить доступ к любому элементу формы, изменять его и применять 
+  по своему усмотрению. </p>
+  <p>Документ может содержать любое количество форм, но одновременно на сервер может 
+    быть отправлена только одна форма. По этой причине данные форм должны быть независимы 
+    друг от друга.</p>
+  <p>Для отправки формы на сервер используется кнопка Submit, того же можно 
+    добиться, если нажать клавишу <span class="button">Enter</span> в пределах формы. Если кнопка Submit 
+    отсутствует в форме, клавиша <span class="button">Enter</span> имитирует ее использование.</p>
+  <p>Когда форма отправляется на сервер, управление данными передается программе, 
+    заданной атрибутом <span class="attribute">action</span> тега <span class="tag">&lt;form&gt;</span>. 
+    Предварительно браузер подготавливает информацию в виде пары &laquo;имя=значение&raquo;, 
+    где имя определяется атрибутом <span class="attribute">name</span> тега <span class="tag">&lt;input&gt;</span>, 
+    а значение введено пользователем или установлено в поле формы по умолчанию. 
+    Если для отправки данных используется метод <span class="value">GET</span>, 
+    то адресная строка может принимать следующий вид.</p>
+  <p class="example">http://www.htmlbook.ru/cgi-bin/handler.cgi?nick=%C2%E0%ED%FF+%D8%E0%EF%EE%F7%EA%E8%ED&amp;page=5</p>
+  <p>Параметры перечисляются после вопросительного знака, указанного после адреса 
+    CGI-программы и разделяются между собой символом амперсанда (&amp;). Нелатинские 
+    символы преобразуются в шестнадцатеричное представление (в форме %HH, где HH 
+    &#8212; шестнадцатеричный код для значения ASCII-символа), пробел заменяется 
+    на плюс (+).</p>
+  <p>Допускается внутрь контейнера <span class="tag">&lt;form&gt;</span> помещать другие теги, при этом сама форма никак не отображается на веб-странице, видны только ее элементы и результаты вложенных тегов.</p>
+  <h3>Синтаксис</h3>
+
+<pre><code class="no-buttons">&lt;form action=&quot;URL&quot;&gt;
+  ...
+&lt;/form&gt;</code></pre>
+  <h3>Атрибуты</h3>
+  <dl class="param">
+    <dt><a href="http://htmlbook.ru/html/form/accept-charset">accept-charset</a></dt><br>
+    <dd>Устанавливает кодировку, в которой сервер может принимать и обрабатывать данные.</dd>
+    <dt><a href="http://htmlbook.ru/html/form/action">action</a></dt>
+    <dd>Адрес программы или документа, который обрабатывает данные формы. </dd>
+    <dt><a href="http://htmlbook.ru/html/form/autocomplete">autocomplete</a></dt>
+    <dd>Включает автозаполнение полей формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/form/enctype">enctype</a></dt>
+    <dd>Способ кодирования данных формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/form/method">method</a></dt>
+    <dd>Метод протокола HTTP.</dd>
+    <dt><a href="http://htmlbook.ru/html/form/name">name</a></dt>
+    <dd>Имя формы.</dd>
+    <dt><a href="http://htmlbook.ru/html/form/novalidate">novalidate</a></dt>
+    <dd>Отменяет встроенную проверку данных формы на корректность ввода.</dd>
+    <dt><a href="http://htmlbook.ru/html/form/target">target</a></dt>
+    <dd>Имя окна или фрейма, куда обработчик будет загружать возвращаемый результат.</dd>
+  </dl>
+<p class="more">Также для этого тега доступны <a href="http://htmlbook.ru/html/attr/common">универсальные атрибуты</a> и <a href="http://htmlbook.ru/html/attr/event">события</a>.</p>
+
+  <h3>Закрывающий тег</h3>
+  <p> Обязателен.</p>
+<h2>Пример</h2>
+  
+
+<form name=mainForm>
+   <table width="100%" cellspacing="0" cellpadding="4">
+    <tr> 
+     <td align="right" width="100">Ваше имя</td>
+     <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=name></td>
+    </tr>
+    <tr> 
+     <td align="right" width="110">Ваша фамилия</td>
+     <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=surname></td>
+    </tr>
+    <tr> 
+     <td align="right" valign="top">Ваш телефон</td>
+     <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=phone></td>
+    </tr>
+	<tr>
+     <td align="right" valign="dop">Адрес места жительства</td>
+	 <td><input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=address></td>
+	</tr>
+     <td><input type=button onclick="alert('Ваша информация не отправлена на сервер, потому что сервера нет!')" value="Отправить" name=send></td>
+   </table>
+  </form>
+
+  
+<script language="JavaScript"> 
+var f=document.mainForm; 
+function changeButtonStatus(){ 
+f.send.disabled=(f.name.value && f.surname.value && f.phone.value && f.address.value) ? false : true; 
+} 
+changeButtonStatus(); 
+</script>
+
+	<h4>Код примера:</h4>
+	<pre><code class="no-buttons">
+<table border="4" bgcolor="dda0dd">
+<tr>
+<td><b>
+&lt;form name=mainForm&gt;
+   &lt;table width="100%" cellspacing="0" cellpadding="4"&gt;
+    &lt;tr&gt; 
+	&lt;td align="right" width="100"&gt;Ваше имя&lt;/td&gt;
+	 &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=name&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; 
+	&lt;td align="right" width="110"&gt;Ваша фамилия&lt;/td&gt;
+	 &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=surname&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; 
+	&lt;td align="right" valign="top"&gt;Ваш телефон&lt;/td&gt;
+	 &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=phone&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+	&lt;td align="right" valign="dop"&gt;Адрес места жительства&lt;/td&gt;
+	 &lt;td&gt;&lt;input type="text" onkeyup=changeButtonStatus() onchange=changeButtonStatus() name=address&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+     &lt;td&gt;&lt;input type=button onclick="alert('Ваша информация не отправлена на сервер, потому что сервера нет!')" value="Отправить" name=send&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/table&gt;
+  &lt;/form&gt;
+
+
+
+&lt;script language="JavaScript"&gt; 
+var f=document.mainForm; 
+function changeButtonStatus(){ 
+f.send.disabled=(f.name.value && f.surname.value && f.phone.value) ? false : true; 
+} 
+changeButtonStatus(); 
+&lt;/script&gt; 
+</b>
+</td>
+</tr>
+</table>
+
+</code></pre>
+	
+<div style="float:left"> 
+ <h3 align="center">UML-диаграмма</h3>    
+	<p><img src="uml.png" /> </p>
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h2>SPA</h2>
+
+
+<canvas id="canvas" width="400" height="400"
+style="background-color:white">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, 'red');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, 'black');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = 'black';
+  ctx.fill();
+}
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+</div>
+
+</body>
+</html>
