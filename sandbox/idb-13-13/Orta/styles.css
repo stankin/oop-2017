@@ -3,3 +3,39 @@ background-image: url("fonit.jpg");
 background-repeat: repeat-x; 
 background-color: #c3ced7; 
 } 
+
+#block1 {   
+
+width: 200px;   
+
+background: Yellow;  
+
+padding: 5px;  
+
+padding-right: 20px;   
+
+border: solid 1px Red;   
+
+float: left;  
+
+   }  
+
+   .block2 {   
+
+width: 200px;   
+
+background: White;   
+
+padding: 5px;   
+
+border: solid 2px green;   
+
+float: left;   
+
+position: relative;   
+
+top: 40px;   
+
+left: -70px;   
+
+}
