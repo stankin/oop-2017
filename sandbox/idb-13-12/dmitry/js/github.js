@@ -21,7 +21,7 @@ $(document).ready(function($) {
 
 
             $.each(json, function(i, val) {
-                var string = '<dt><i><a href = "https://github.com/' + val.commit.author.name + '" target="blank">' + val.commit.author.name + '</a></i> - ' + val.commit.author.email + '</dt>';
+                var string = '<dt><i><a href = "https://github.com/' + val.author.login + '" target="blank">' + val.commit.author.name + '</a></i> - ' + val.commit.author.email + '</dt>';
                 string += '<dd><a href = "https://github.com/stankin/oop/commit/' + val.sha + '" target = "blank">#' + (val.sha).substr(0, 7) + '</a> - ' + val.commit.message + ' (' + formatDate(new Date(val.commit.author.date)) + ') - <a class = "getc" data-tree="' + val.sha + '">получить файлы из коммита</a><span id="files' + val.sha + '"></span></dd>';
                 $(string).appendTo('#commits');
             });
