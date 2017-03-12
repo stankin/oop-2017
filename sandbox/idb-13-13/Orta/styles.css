@@ -1,4 +1,5 @@
-body {
- background-color: #000;
- background-image: url ("fonit.jpg");
+div {
+    background: url(my-image.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
