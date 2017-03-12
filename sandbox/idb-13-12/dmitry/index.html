@@ -38,19 +38,21 @@
 		}
 		
 		#me {
-			background-image: url("me.png");
-			width: 177px;
-			height: 57px;
-		}
+ 			background-image: url("me.png");
+ 			width: 177px;
+ 			height: 57px;
+ 		}
 	</style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-solarizedlight.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/github.js"></script>
   </head>
   <body>
   <header>
-      <h1>Проектирование ИС <div id="me"></span></h1>
+      <h1>Проектирование ИС</h1>
+	  <div id="me"></div>
       <p>Лабораторные работы</p>
   </header>
     <main>
@@ -93,8 +95,8 @@
 		}</code></pre>
 	   </section>
 	   <section>
-		 <h2><a id="spantag" href="#spantag" aria-hidden="true"></a>SPA</h2>
-		 <div> <iframe src = "http://v6p9d9t4.ssl.hwcdn.net/html/302781/descendv4/index.html" height="650" width="650"></iframe> </div>
+		 <h2><a id="spantag" href="#spantag" aria-hidden="true"></a>SPA - коммиты из учебного репозитория</h2>
+		  <dl id="commits"></dl>
 	   </section>
     </article>
     </main>
