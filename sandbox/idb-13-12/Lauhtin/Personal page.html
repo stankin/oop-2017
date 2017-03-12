@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("#p4").toggle();
+    });
+});
+</script>
+</head>
+<body style="background-color: #e0ffff">
+	<h1 align="center">Описание и пример использования тега p, а также создание wiki-страницы, описывающую лабораторную работу №5</h1>
+	<div><h2 align="right" style="color: blue"><i>Автор: Лаухтин Т.В., ИДБ-13-12</i><br><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-12/Lauhtin">Исходники</a></h2></div>
+	<h2>Задача №1: Описание тега p, пример использования и создание UML диаграммы</h4>
+	<h3 align="center">Ход работы</h5>
+	<div style="background-color: azure"><b>Описание</b><br>
+Тег p используется для разбивки текста на параграфы (мелкие подразделения текста внутри раздела). При этом между параграфами образуется промежуток.Он определяет текстовый параграф и является блочным элементом. При помощи этого тега практически можно написать сайт полностью. <br>	
+Синтаксис:
+ &lt;p&gt;Текст &lt;/p&gt;<br><br></div>
+ <div style="background-color: pink">
+ <p align="center" style="font-size: 30px; font-family: Tahoma; color: rgba(0,0,0,0.6); text-shadow: 2px 2px 3px rgba(255,255,255,0.1);">Пример использования тега</p>
+ <p align="center" style="text-shadow: -10px 10px 0px #006b3c,
+                 -40px 40px 0px #ff496c,
+                 -30px 30px 0px #ff8800;">Пример использования тега</p>
+  <p align="right">Пример использования тега</p>
+  <p align="left"><b>Пример использования тега</b></p></div>
+  Диаграмма классов для тега:<br>
+	<img src="UMLp.png"><br>
+	<h2>Задача №2: создать wiki-страницу лабораторной работы №5</h4>
+	<h3>Ход работы</h5>
+	<a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%965">Ссылка на wiki-страницу Лаб. работы №5</a>
+
+
+
+
+
+
+
+
+<h4>Будет другая SPA</h4>	
+<p id="p1">Показать/скрыть игру</p>
+<iframe src="index2.html" height="600" width="500" id="p4"></iframe>
+</body>
+</html>
