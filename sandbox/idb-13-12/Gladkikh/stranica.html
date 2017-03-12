@@ -1,0 +1,74 @@
+<html>
+<head>
+<script src="dojd.js" defer></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="jQuery-rotate.js"></script>
+	<title> Гладких Д.А.</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head> 
+<body BGCOLOR=DADADA>
+<header class="header">
+		<h1 align="center">Отчет по лабораторным работам </h1></header>
+		<h2 align="center" >Гладких Д.А., ИДБ-13-12</h2>
+		<form action="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%965" class="div">
+		<h2 align="center"> Wiki-страница</h2>
+		<input class="button" type="submit" value="Ссылка на Wiki">
+		</form>
+		<div class="div">
+		<h2 align="center">Тег &#60canvas&#62</h2>
+		<p style="margin-bottom:auto;">
+			Создает область, в которой при помощи JavaScript можно рисовать разные объекты, выводить изображения, трансформировать их и менять свойства.</p>
+			<p style="margin-top:auto;">При помощи тега &#60canvas&#62 можно создавать рисунки, анимацию, игры и др.
+		</p>
+		<p style="margin-top:auto;">В качетве примера работы тега &#60canvas&#62 создана анимация.
+		</p>
+		<canvas id=c ></canvas>
+<canvas id=bg ></canvas>
+<script>init()</script>
+		<br><br><br>
+		<input id="diagB" type="button" class="button" value="диаграмма классов"/>
+		<div style="display: none" id="diag">тут диаграмма</div>
+		</div>
+		<div class="div">
+		<h2 align="center">SPA.</h2><hr>
+		<p>Single Page Application – сокращенно SPA, в переводе на русский язык означает “Приложение одной страницы”. Другими словами SPA – это web-приложение, размещенное на одной web-странице, которая для обеспечения работы загружает весь необходимый код вместе с загрузкой самой страницы. 
+		</p>
+		<input id="spaB" type="button" class="button" value="пример SPA"/>
+		<iframe id="spaF" style="display: none" src="1.html" height="500" width="100%"></iframe>
+		</div>
+
+</body>
+</html>
+<script>
+$("#diagB").click(function(){
+        if ($("#diag").is(":hidden")) {
+             $("#diag").show("slow");
+         } else {
+                 $("#diag").hide("slow");
+                }	
+})
+$("#spaB").click(function(){
+        if ($("#spaF").is(":hidden")) {
+             $("#spaF").show("slow");
+         } else {
+                 $("#spaF").hide("slow");
+                }	
+})
+$("#rB").click(function(){
+var degR;
+degR=document.getElementById ('imgR').style.transform;
+if (degR=="rotate(0deg)"){document.getElementById ('imgR').style.transform="rotate(90deg)";}
+if (degR=="rotate(90deg)"){document.getElementById ('imgR').style.transform="rotate(180deg)";}
+if (degR=="rotate(180deg)"){document.getElementById ('imgR').style.transform="rotate(270deg)";}
+if (degR=="rotate(270deg)"){document.getElementById ('imgR').style.transform="rotate(0deg)";}	
+})
+$("#lB").click(function(){
+var degR;
+degR=document.getElementById ('imgR').style.transform;
+if (degR=="rotate(0deg)"){document.getElementById ('imgR').style.transform="rotate(270deg)";}
+if (degR=="rotate(90deg)"){document.getElementById ('imgR').style.transform="rotate(0deg)";}
+if (degR=="rotate(180deg)"){document.getElementById ('imgR').style.transform="rotate(90deg)";}
+if (degR=="rotate(270deg)"){document.getElementById ('imgR').style.transform="rotate(180deg)";}
+degR=document.getElementById ('imgR').style.transform;
+})
+</script>
