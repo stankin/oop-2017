@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
     <center>
-    <img src="hello.gif" alt="Здравствуйте!">
+    <img src="images/hello.gif" alt="Здравствуйте!">
     </center>
   <br>
   <br>
@@ -9,8 +10,36 @@
     <p><big>Работа с тегом "div" и создание wiki-страницы с описанием лабораторной работы №1</big></p>
   <br>
   <br>
-    
+    <center>
+    <p><big>UML для div: </big></p>
+    <br>
+    <br>
+   
+    <img src="images/div.png" alt="div">
+   </center>
+    <br>
+    <br>
+    <center>
+  <p><big>Моя вики страница</big></p>
+   <a href="https://github.com/stankin/oop/wiki/Лабораторная-работа-№1"><img src="images/wiki.png" width="90" height="90"></a>
+   </center>
   <br>
+  <br>
+
+
+<div class="block">
+ 
+<center>
+ 
+<p><img src="images/mum.png" width="90" height="90"></p>
+ 
+<b><p style="color: #ffffff; font-size: 20px;">Еше один пример использования тега "div"</p></b>
+ 
+</center>
+ 
+</div>
+
+    <br>
  <html>
 <center>
 <body>
@@ -27,13 +56,11 @@ var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
-
 function drawClock() {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
   drawTime(ctx, radius);
 }
-
 function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
@@ -52,7 +79,6 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = '#333';
   ctx.fill();
 }
-
 function drawNumbers(ctx, radius) {
   var ang;
   var num;
@@ -70,7 +96,6 @@ function drawNumbers(ctx, radius) {
     ctx.rotate(-ang);
   }
 }
-
 function drawTime(ctx, radius){
     var now = new Date();
     var hour = now.getHours();
@@ -89,7 +114,6 @@ function drawTime(ctx, radius){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02);
 }
-
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
     ctx.lineWidth = width;
@@ -100,8 +124,8 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
-</script>
 
+</script>
 </body>
- </center>
+</center>
 </html>
