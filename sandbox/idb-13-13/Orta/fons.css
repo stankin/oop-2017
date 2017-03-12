@@ -1,5 +1,4 @@
 body {
-    background-image: url(fonit.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-	}
+ background-color: #000;
+ background-image: url ("fonit.jpg");
+}
