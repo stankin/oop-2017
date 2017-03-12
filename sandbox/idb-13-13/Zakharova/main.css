@@ -1,0 +1,21 @@
+#main {
+	width: 100%;
+
+}
+ol{
+position: absolute;
+}
+.line{
+	width: 70%;
+	border-radius: 10px;
+	border: 1px solid black;
+	padding: 12px;
+}
+p{
+	text-align: left;
+}
+li.atr{
+	list-style-type: none; /* Убираем маркеры */
+	text-align: left;
+	line-height: 1.5;
+}
