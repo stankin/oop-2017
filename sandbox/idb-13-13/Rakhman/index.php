@@ -71,7 +71,7 @@
 			<div class="details">
             
 				<p class="m-head">_______</p>
-				<p class="s-head"><div id="results">вывод</div>Ален Рахман</p>
+				<p class="s-head">Ален Рахман</p>
                 <p class="s-head">ИДБ-13-13</p>
 			</div>
 			<div class="box intro">
@@ -79,6 +79,7 @@
                 <ul>
                 
     <li><a href="#input">Описать элемент html < input > с примером использования</a></li>
+			<div id="results">вывод</div>
     <li><a href="https://github.com/stankin/oop/wiki/Лабораторная-работа-№5">Создать WIKI для лабораторной работы №5</a></li>
    <li><a href="#navigation"> Single Page Application </a></li>
    
