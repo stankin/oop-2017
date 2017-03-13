@@ -7,12 +7,116 @@
   </style>
  </head>
 
+
+
+
 <body> 
 <h1> Задания: </h1>
 <h3> 1) Создать Wiki страничку со статьёй "UML. Диаграмма последовательности" </h3>
 <h2> Страничка Wiki: <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Диаграмма последовательности<a>
     </h2>
 	<br/>
+<h3> 2) Описание HTML тега &lt; div &gt; и пример использования. </h3>
+<h2> Описание</h2>
+<h3> Элемент &lt; div &gt; является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого. <br/> Как правило, вид блока управляется с помощью стилей. Чтобы не описывать каждый раз стиль внутри тега, можно выделить стиль во внешнюю таблицу стилей, <br/> а для тега добавить атрибут class или id с именем селектора.
+
+Как и при использовании других блочных элементов, содержимое тега <div> всегда начинается с новой строки. <br/> После него также добавляется перенос строки.
+<h2> Синтаксис</h2>
+<h3> &lt; div &gt;... &lt; /div &gt; </h3>
+<h2> Атрибуты</h2>
+<h3> align &ndash; 
+Задает выравнивание содержимого тега &lt;div&gt;. <br/>
+title &ndash; 
+Добавляет всплывающую подсказку к содержимому. <br/>
+Также для этого тега доступны универсальные атрибуты и события. </h3>
+<h2> Закрывающий тег</h2>
+<h3> Обязателен </h3>
+<h2> Пример использования</h2>
+<head>
+<style type="text/css">
+	.block {
+	padding: 0;
+	font-size: 14px;
+	}
+	.block .element{
+	border: solid 1px #C7CADD;
+	margin: 0px 3px 3px 0px;
+	padding: 0px 0px 0px 0px;
+	float: left;
+	height: 200px;
+	width: 150px;
+	}
+	.block .element:hover{
+	border: solid 1px #000;
+	margin: 0px 3px 3px 0px;
+	padding: 0;
+	float: left;
+	height: 200px;
+	width: 150px;
+	background: #FFFAE7;
+	}
+	.block .img{
+	text-decoration: none;
+	}
+	.block .img img{
+	margin: 5px 0px 0px 5px;
+	padding: 0;
+	width: 140px;
+	height: 130px;
+	}
+	.block .text{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	}
+</style> 
+</head>
+<body>
+<div class="block">
+	<div class="element">
+		<a href="">
+			<div class="img">
+				<img src="ttt.jpg">
+			</div>
+			<div class="text">Тюльпаны</div>
+		</a>
+	</div>
+	
+	<div class="element">
+		<a href="">
+			<div class="img">
+				<img src="lll.jpg">
+			</div>
+			<div class="text">Ландыши</div>
+		</a>
+	</div>
+</div>
+</body>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<script>
+var show;
+function hidetxt(type){
+ param=document.getElementById(type);
+ if(param.style.display == "none") {
+ if(show) show.style.display = "none";
+ param.style.display = "block";
+ show = param;
+ }else param.style.display = "none"
+}
+</script>
+
 <h3> 3) Одностраничное приложение </h3>
 <h2> SPA: </h2>
 <head>
