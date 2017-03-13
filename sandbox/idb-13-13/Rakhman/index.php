@@ -14,7 +14,7 @@
      	  var msg   = $('#form1').serialize();
             $.ajax({
               type: 'POST',
-              url: 'http://paul.1gb.ru/stankin/oop/sandbox/dummy.php',
+              url: 'dummy.php',
               data: msg,
               success: function(data) {
                 $('#results').html(data);
