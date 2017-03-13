@@ -1,15 +1,147 @@
-<h3>Спецификация</h3>
+<html>
+<head>
+<title> Orlova OLga IDB-13-13</title>
+
+<style>
+p,dl,code {
+font-family:Verdana, Geneva, sans-serif; 
+color: #0000;
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0%;
+}
+
+ .text {
+    text-align:  center;
+   }
+
+.buttonText {
+  font: 18px/1.5 Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.button2 {
+  background-color: #c7b39b;
+  border: 2px solid #eee;
+  height: 28px;
+  width: 140px;
+  margin: 50px 0 0 50px;
+  padding: 0 0 0 7px;
+  overflow: hidden;
+  display: block;
+  text-align:  center;
+color: white;
+text-decoration: none;
+/*Переход*/
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  -ms-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+  
+  /*Скругленные углы*/
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  /*Градиент*/
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.button2:hover {
+  background:lightblue;
+}
+
+
+
+#button1 {
+  background: #c7b39b;
+  border: 2px solid #eee;
+  height: 28px;
+  width: 140px;
+  margin: 50px 0 0 50px;
+  padding: 0 0 0 7px;
+  overflow: hidden;
+  display: block;
+  text-align:  center;
+  
+  /*Переход*/
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  -ms-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+  
+  /*Скругленные углы*/
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  /*Градиент*/
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+
+#button1:hover {
+  width: 230px;
+}
+
+
+ body {
+    background: #c7b39b url(https://ae01.alicdn.com/kf/HTB1TQs3OVXXXXcyXFXXq6xXFXXXJ/%D0%A2%D1%80%D0%BE%D0%BF%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%9F%D0%BB%D1%8F%D0%B6-%D0%9F%D0%B0%D0%BB%D1%8C%D0%BC%D1%8B-%D0%97%D0%B0%D0%BA%D0%B0%D1%82-%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9-%D0%9F%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6-%D0%9F%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6-%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82-%D0%A2%D0%BA%D0%B0%D0%BD%D0%B8-%D0%A8%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5-%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D1%8B-%D0%98-%D0%9F%D0%B5%D1%87%D0%B0%D1%82%D1%8C-%D0%B4%D0%BB%D1%8F-%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B3%D0%BE-%D0%94%D0%B5%D0%BA%D0%BE%D1%80%D0%B0.jpg); /* Цвет фона и путь к файлу */
+    color: #fff; /* Цвет текста */
+    background-size: 100%;
+   }
+</style>
+
+
+</head>
+
+<body>
+
+ <div class="text">
+<h1>ЛАБОРАТОРНАЯ РАБОТА ОРЛОВА ИДБ-13-13</h1></div>
+
+	<h1>Задачи:</h1>
+	<ol>
+		<li><a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%964-Лабораторная работа №4">Создать WIKI страничку для лабораторной работы №4</a></li>
+		<li><a href="#button">Описать HTML-тег &lt;button&gt; с примером использования </a></li>
+		<li><a href="#app">Создать одностраничное приложение </a></li>
+	</ol>
+<div class="text">
+
+	<a name="button"></a>
+<h1>Тег BUTTON</h1>
+<p>
+<h2>Спецификация</h2>
 HTML:	3.2	4.01	5.0	XHTML:	1.0	1.1
-<h3>Описание</h3>
-Тег button создает на веб-странице кнопки и по своему действию напоминает результат, получаемый с помощью тега input (с атрибутом type="button | reset | submit"). В отличие от этого тега, button предлагает расширенные возможности по созданию кнопок. Например, на подобной кнопке можно размещать любые элементы HTML, в том числе изображения. Используя стили можно определить вид кнопки путем изменения шрифта, цвета фона, размеров и других параметров.
+<h2>Описание</h2>
+<p>Тег button создает на веб-странице кнопки и по своему действию напоминает результат, получаемый с помощью тега input (с атрибутом type="button | reset | submit"). В отличие от этого тега, button предлагает расширенные возможности по созданию кнопок. Например, на подобной кнопке можно размещать любые элементы HTML, в том числе изображения. Используя стили можно определить вид кнопки путем изменения шрифта, цвета фона, размеров и других параметров.</p>
 
 <p>Теоретически, тег button должен располагаться внутри формы, устанавливаемой элементом form. Тем не менее, браузеры не выводят сообщение об ошибке и корректно работают с тегом button, если он встречается самостоятельно. Однако, если необходимо результат нажатия на кнопку отправить на сервер, помещать button в контейнер form обязательно.</p>
-<h3>Синтаксис</h3>
+<h2>Синтаксис</h2>
+<p>
 <code class="no-buttons html"><span class="tag">&lt;<span class="keyword">form</span>&gt;</span>
   <span class="tag">&lt;<span class="keyword">button</span>&gt;</span>...<span class="tag">&lt;/<span class="keyword">button</span>&gt;</span>
-<span class="tag">&lt;/<span class="keyword">form</span>&gt;</span></code>
+<span class="tag">&lt;/<span class="keyword">form</span>&gt;</span></code> </p>
 
-<h3>Атрибуты</h3>
+<h2>Атрибуты</h2>
+
 <dl class="param">
     <dt><a href="http://htmlbook.ru/html/button/accesskey">accesskey</a></dt>
     <dd>Доступ к элементам формы с помощью горячих клавиш. </dd>
@@ -36,51 +168,26 @@ HTML:	3.2	4.01	5.0	XHTML:	1.0	1.1
       очистки формы. </dd>
     <dt><a href="http://htmlbook.ru/html/button/value">value</a></dt>
     <dd>Значение кнопки, которое будет отправлено на сервер или прочитано с помощью скриптов.</dd>
+</p>
   </dl>
-<h3>Закрывающий тег</h3>
-<p> Обязателен.</p>
-Пример
-<style>
-<a href="#" id="button2" class="buttonText">Подписаться</a>
 
-buttonText {
-  font: 18px/1.5 Helvetica, Arial, sans-serif;
-  color: #fff;
-}
-  
-a {
-  color: #fff;
-  text-decoration: none;
-}
+<h2>Закрывающий тег</h2>
+<p> Обязателен.<br> <br> <br>
+Пример:</p>
 
-#button1 {
-  background: #6292c2;
-  border: 2px solid #eee
-  height: 28px;
-  width: 115px;
-  margin: 50px 0 0 50px;
-  padding: 0 0 0 7px;
-  overflow: hidden;
-  display: block;
-}
-/*Скругленные углы*/
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
-/*Градиент*/
-background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 
-/*Переход*/
--webkit-transition: All 0.5s ease;
--moz-transition: All 0.5s ease;
--o-transition: All 0.5s ease;
--ms-transition: All 0.5s ease;
-transition: All 0.5s ease;
 
-#button1:hover {
-  width: 230px;
-}
+<div class="container">
+
+<a href="#" id="button1" class="buttonText">Наведи курсор сюда</a>
+<br>
+
+
+   
+   <button class="button button2 buttonText ">и сюда</button2>
+   
+
+</div>
+</p>
+</body>
+</html>
