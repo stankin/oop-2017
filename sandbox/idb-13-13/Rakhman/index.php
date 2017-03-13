@@ -71,7 +71,7 @@
 			<div class="details">
             
 				<p class="m-head">_______</p>
-				<p class="s-head">Ален Рахман</p>
+				<p class="s-head"><div id="results">вывод</div>Ален Рахман</p>
                 <p class="s-head">ИДБ-13-13</p>
 			</div>
 			<div class="box intro">
