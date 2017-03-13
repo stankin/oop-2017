@@ -6,7 +6,26 @@
 	<meta name="viewport" content="width=device-width">
     <title>Тег <input> и Single Page Application</title>
     <link href="css/style.css" rel="stylesheet" media="all">
+	    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 
+    
+	    <script type="text/javascript" language="javascript">
+     	function call() {
+     	  var msg   = $('#form1').serialize();
+            $.ajax({
+              type: 'POST',
+              url: 'http://paul.1gb.ru/stankin/oop/sandbox/dummy.php',
+              data: msg,
+              success: function(data) {
+                $('#results').html(data);
+              },
+              error:  function(xhr, str){
+    	    alert('Возникла ошибка: ' + xhr.responseCode);
+              }
+            });
+     
+        }
+    </script>
 </head>
 
 <body class="welcome">
@@ -75,7 +94,7 @@
 				<div class="panel-bg-b-r"></div>
 			</div>
 			<div class="box meta">
-             <form method="POST">
+              <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="call()">
 					<div id="mc_embed_signup_scroll">
 						<div class="indicates-required">
 							<div class="mc-field-group">
