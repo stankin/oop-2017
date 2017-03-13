@@ -169,7 +169,7 @@ HTML:	3.2	4.01	5.0	XHTML:	1.0	1.1
       очистки формы. </dd>
     <dt><a href="http://htmlbook.ru/html/button/value">value</a></dt>
     <dd>Значение кнопки, которое будет отправлено на сервер или прочитано с помощью скриптов.</dd>
-</p>
+
   </dl>
 
 <h2>Закрывающий тег</h2>
@@ -190,30 +190,23 @@ HTML:	3.2	4.01	5.0	XHTML:	1.0	1.1
 <a href="#" id="button1" class="buttonText">Наведи курсор сюда</a>
 <br>
 
-<button class="button button2 buttonText ">и сюда</button2>
+<button class="button button2 buttonText ">и сюда</button>
    
 
 <h1>Простая игра Flappy Bird <br>
 </h1>
 <iframe src="game.html" height="500" width="500"></iframe>
 
-<p>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script>
-$(document).ready(function(){
-    $("#1").click(function(){
-        $("#2").hide();
-    });
-    $("#2").click(function(){
-        $("#1").hide();
-    });
-	
-	$("#show").click(function(){
-        $("p").show();
-    });
-});
-  </script>
 
-</p>
+ 
+<a name="app"></a>
+	<h1>Одностраничное приложение</h1>
+	<iframe  class = "center-block" src="game.html" width="500" height="350"></iframe><br>
+	<p></p>
+	<a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-13/Orlova">Исходники</a>
+	<a href ="https://github.com/stankin/oop/wiki"> Home Github </a>
+
+
+
 </body>
 </html>
