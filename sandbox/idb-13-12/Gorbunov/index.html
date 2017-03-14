@@ -1,88 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <body>
-  <canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas>
-  <script>
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    var radius = canvas.height / 2;
-    ctx.translate(radius, radius);
-    radius = radius * 0.90
-    setInterval(drawClock, 1000);
-
-    function drawClock() {
-      drawFace(ctx, radius);
-      drawNumbers(ctx, radius);
-      drawTime(ctx, radius);
-    }
-
-    function drawFace(ctx, radius) {
-      var grad;
-      ctx.beginPath();
-      ctx.arc(0, 0, radius, 0, 2*Math.PI);
-      ctx.fillStyle = 'white';
-      ctx.fill();
-      grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-      grad.addColorStop(0, '#333');
-      grad.addColorStop(0.5, 'white');
-      grad.addColorStop(1, '#333');
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = radius*0.1;
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-      ctx.fillStyle = '#333';
-      ctx.fill();
-    }
-
-    function drawNumbers(ctx, radius) {
-      var ang;
-      var num;
-      ctx.font = radius*0.15 + "px arial";
-      ctx.textBaseline="middle";
-      ctx.textAlign="center";
-      for(num = 1; num < 13; num++){
-        ang = num * Math.PI / 6;
-        ctx.rotate(ang);
-        ctx.translate(0, -radius*0.85);
-        ctx.rotate(-ang);
-        ctx.fillText(num.toString(), 0, 0);
-        ctx.rotate(ang);
-        ctx.translate(0, radius*0.85);
-        ctx.rotate(-ang);
-      }
-    }
-
-    function drawTime(ctx, radius){
-        var now = new Date();
-        var hour = now.getHours();
-        var minute = now.getMinutes();
-        var second = now.getSeconds();
-        //hour
-        hour=hour%12;
-        hour=(hour*Math.PI/6)+
-        (minute*Math.PI/(6*60))+
-        (second*Math.PI/(360*60));
-        drawHand(ctx, hour, radius*0.5, radius*0.07);
-        //minute
-        minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-        drawHand(ctx, minute, radius*0.8, radius*0.07);
-        // second
-        second=(second*Math.PI/30);
-        drawHand(ctx, second, radius*0.9, radius*0.02);
-    }
-
-    function drawHand(ctx, pos, length, width) {
-        ctx.beginPath();
-        ctx.lineWidth = width;
-        ctx.lineCap = "round";
-        ctx.moveTo(0,0);
-        ctx.rotate(pos);
-        ctx.lineTo(0, -length);
-        ctx.stroke();
-        ctx.rotate(-pos);
-    }
-  </script>
-  <a href="/stankin/oop/sandbox/idb-13-12/">ИДБ-13-12</a>
-  </body>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="index.js" defer></script>
+</head>
+<body class="container">
+	<div class="page-header">
+		<h1>Горбунов С.Ю.<br><small>ИДБ-13-12</small></h1>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Тег &lt;div&gt;</h3>
+		</div>
+		<div class="panel-body">
+			<p><strong>&lt;div&gt;</strong> изначально предназначен для выделения фрагмента документа с целью изменения вида содержимого с помощью стилей. В настоящее время это ключевой тег, использующийся для HTML-разметки. Это блочный элемент, которым делят станицу на разделы и группируют блоки других элементов.</p>
+			<p>Для наглядности кнопка внизу покажет границы всех div на странице.</p>
+			<button type="button" class="btn btn-primary btn-lg center-block" id="div-btn">Показать/скрыть границы</button>
+			<p>Диаграмма классов:</p>
+			<button type="button" class="btn btn-primary btn-lg center-block" id="diag-btn">Показать/скрыть диаграмму классов</button>
+			<img src="diag.png" class="center-block diag" id="diag" style="display: none;">
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Страница в wiki</h3>
+		</div>
+		<div class="panel-body">
+			<p>Краткий экскурс в лабораторную работу №1</p>
+			<div class="text-center"><a role="button" class="btn btn-primary btn-lg" href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%961" target="_blank">Лабораторная работа №1</a></div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Single page application</h3>
+		</div>
+		<div class="panel-body">
+			<p><strong>SPA (Single Page Application)</strong> - приложение, содержащее весь рабочий код на одной странице. Ниже приведено SPA в виде Javascript-часов. Всегда мечтал о часах с 24-часовым циферблатом.</p>
+			<button type="button" class="btn btn-primary btn-lg center-block" id="spa-btn">Показать/скрыть SPA</button>
+			<iframe class="center-block" src="spa.html" id="spa" style="display: none;"></iframe>
+		</div>
+	</div>
+</body>
 </html>

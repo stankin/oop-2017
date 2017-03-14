@@ -1,0 +1,22 @@
+#spa{
+	height: 400px;
+	width: 400px;
+	border: none;
+	display: block;
+}
+.d1{
+	border: 3px blue dashed !important;
+}
+.d2{
+	border: 3px green dashed !important;
+}
+.d3{
+	border: 3px red dashed !important;
+}
+.d4{
+	border: 3px yellow dashed !important;
+}
+.diag{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
