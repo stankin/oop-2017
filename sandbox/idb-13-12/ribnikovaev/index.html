@@ -3,6 +3,7 @@
 <head>
 
   <style>
+
    body { background-image: url(fon3.jpg); }
   </style>
  </head>
@@ -11,17 +12,56 @@
 
 
 <body> 
+
 <h1> Задания: </h1>
 <h3> 1) Создать Wiki страничку со статьёй "UML. Диаграмма последовательности" </h3>
+<h3> 2) Описание HTML тега &lt; div &gt; и пример использования. Диаграмма классов </h3>
+<h3> 3) Одностраничное приложение </h3>
+<br/>
+
+<hr>
+
+ 
+
+<head>
+
+  <style>
+
+   .text {
+    text-align:  center;
+   }
+  </style>
+ </head>
+ <body>
+  <div class="text">
+
+     <p>
 <h2> Страничка Wiki: <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Диаграмма последовательности<a>
     </h2>
 	<br/>
-<h3> 2) Описание HTML тега &lt; div &gt; и пример использования. </h3>
-<h2> Описание</h2>
+
+</p>
+
+<script>
+ function collapsElement(id) {
+ if ( document.getElementById(id).style.display != "none" ) {
+ document.getElementById(id).style.display = 'none';
+ }
+ else {
+ document.getElementById(id).style.display = '';
+ }
+ }
+ </script>
+
+<div><a href="javascript:collapsElement('identifikator')" title="" rel="nofollow">
+<h2> Описание тега  &lt; div &gt; </h2> </a>
+<div id="identifikator" style="display: none">
+<p>
+
 <h3> Элемент &lt; div &gt; является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого. <br/> Как правило, вид блока управляется с помощью стилей. Чтобы не описывать каждый раз стиль внутри тега, можно выделить стиль во внешнюю таблицу стилей, <br/> а для тега добавить атрибут class или id с именем селектора.
 
 Как и при использовании других блочных элементов, содержимое тега <div> всегда начинается с новой строки. <br/> После него также добавляется перенос строки.
-<h2> Синтаксис</h2>
+ <h2> Синтаксис</h2>
 <h3> &lt; div &gt;... &lt; /div &gt; </h3>
 <h2> Атрибуты</h2>
 <h3> align &ndash; 
@@ -31,6 +71,17 @@ title &ndash;
 Также для этого тега доступны универсальные атрибуты и события. </h3>
 <h2> Закрывающий тег</h2>
 <h3> Обязателен </h3>
+
+</p>
+</div>
+</div>
+
+
+
+  </div>
+ </body>
+
+
 <h2> Пример использования</h2>
 <head>
 <style type="text/css">
@@ -107,7 +158,9 @@ title &ndash;
 <h2> Диаграмма классов </h2>
 <img src="diag.png">
 
-<h3> 3) Одностраничное приложение </h3>
+
+
+
 <h2> SPA: </h2>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
