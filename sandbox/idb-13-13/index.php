@@ -44,6 +44,7 @@ LIMIT 0 , 30");
 	{
 	echo '<tr>
             <td>
+	   <img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'">
 <a href="',$row['link'],'">',$row['name'],'</a> 
 		</td>		
             <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
