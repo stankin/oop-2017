@@ -14,7 +14,7 @@ foreach($parm as $k=>$v) {
 	$id=substr($k, 2, 2);
 	if (!empty($value))
 	{
-		$sqlstring="UPDATE idb1313 SET ",$param,"=",$value," where id=",$id;
+		$sqlstring="UPDATE idb1313 SET ",$param,"=",$value," where id=",$id,"";
 		$sql= mysql_query($sqlstring);
 	echo "UPDATE idb1313 SET ",$param," = ",$value," where id = ",$id," <br>";
 	echo('<b>'.$k.'</b> = '.trim(stripslashes(htmlspecialchars($v))).'<br><br>');
