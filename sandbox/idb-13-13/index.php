@@ -31,6 +31,7 @@
         <tr>
             <th>ФИО</th><th>М1</th><th>М2</th>
         </tr>
+	    <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="updateinfo()">
 	<?php include('connect.php'); ?>
 <?php	
  
@@ -38,22 +39,25 @@ $sql = mysql_query("SELECT *
 FROM  `idb1313` 
 ORDER BY  `name` ASC 
 LIMIT 0 , 30");
+	    
 	while($row = mysql_fetch_array($sql) )
 	{
 	echo '<tr>
             <td>
 <a href="',$row['link'],'">',$row['name'],'</a> 
 		</td>					
-                  <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="updateinfo()">
+                  
 		  <input type="hidden" name="id" value="',$row['id'],'">
-            <td><input name="M1" type="text" value="',$row['M1'],'"></td>
-            <td><input name="M2" type="text" value="',$row['M2'],'"></td>
-	    <td><button class="button">Отправить</button></td>
-	    </form>
+            <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
+            <td><input name="M2',$row['id'],'" type="text" value="',$row['M2'],'"></td>
+
+	    
         </tr>';
 	}
 ?>
+		    
+		    </form>
     </table>
-		
+			    <td><button class="button">Отправить</button></td>
 </body>
 </html>
