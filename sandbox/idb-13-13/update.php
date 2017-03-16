@@ -1,4 +1,6 @@
 <?php
+
+include('connect.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$parm = $_POST;
 	echo('Метод POST ('.count($parm).'):<br>');
@@ -18,7 +20,6 @@ foreach($parm as $k=>$v) {
 	}
 	
 }
-include('connect.php');
 //$_POST['id']=
 //$sql= mysql_query("UPDATE idb1313 SET M1 = '', M2 = '' where id = "");
 	//echo "UPDATE idb1313 SET M1 = '".$_POST['M1',$_POST['id']]."', M2 = '".$_POST['M2',$_POST['id']]."' where id = ".$_POST['id']."";
