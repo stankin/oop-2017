@@ -15,7 +15,11 @@ $sql = "SELECT *
 FROM  `idb1313` 
 ORDER BY  `name` ASC 
 LIMIT 0 , 30";
-
+$result = mysql_query($sql) || die(mysql_error()); 
+$sql = "SELECT * 
+FROM  `idb1313` 
+ORDER BY  `name` ASC 
+LIMIT 0 , 30";
 	while($row = mysql_fetch_array($sql) )
 	{
 	echo '<tr>
