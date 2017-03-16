@@ -26,7 +26,7 @@
 	
 </head>
 	<body>
-		<div id="results"></div>
+		
     <table border="1px">
         <tr>
             <th>ФИО</th><th>М1</th><th>М2</th>
@@ -58,7 +58,7 @@ LIMIT 0 , 30");
 			    <td><input name="pass" type="password"></td>
 			    <td><button class="button">Отправить</button></td>     
         </tr>
-		 
+	<tr><td><div id="results"></div></td> </tr>	 
 	</form>	   
     </table>
 			   
