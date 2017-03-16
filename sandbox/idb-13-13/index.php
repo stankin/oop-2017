@@ -44,10 +44,9 @@ LIMIT 0 , 30");
             <td>
 <a href="',$row['link'],'">',$row['name'],'</a> 
 		</td>					
-                 
-<form id="form1" method="POST" action="javascript:void(null);" onsubmit="updateinfo()">				
-            <td><input id="M1" type="text" value="',$row['M1'],'"></td>
-            <td><input id="M2" type="text" value="',$row['M2'],'"></td>
+                  <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="updateinfo()">			
+            <td><input name="M1" type="text" value="',$row['M1'],'"></td>
+            <td><input name="M2" type="text" value="',$row['M2'],'"></td>
 	    <td><button class="button">Отправить</button></td>
 	    </form>
         </tr>';
