@@ -973,18 +973,18 @@ button:active {
     }
 }
 .w-speaker {
-    background: #0166FF;
-    color: #FFF
+    background: #FFF;
+    color: #0166FF
 }
 @media only screen and (min-width: 50em) {
     .w-speaker {
-        flex: 0 0 40%
+        flex: 0 0 46%
     }
 }
 @media only screen and (min-width: 60em) {
     .w-speaker {
         margin-left: 0;
-        margin-right: 40px
+        margin-right: 5px
     }
 }
 .w-heydon {
