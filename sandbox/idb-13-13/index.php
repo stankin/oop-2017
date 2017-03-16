@@ -44,7 +44,7 @@ LIMIT 0 , 30");
 <a href="',$row['link'],'">',$row['name'],'</a> 
 		</td>					
                  
-<form  method="POST" action="javascript:void(null);" onsubmit="updateinfo()">				
+<form id="form1"  method="POST" action="javascript:void(null);" onsubmit="updateinfo()">				
             <td><input id="M1" type="text" value=',$row['M1'],'></td>
             <td><input id="M2" type="text" value=',$row['M2'],'></td>
 	    <td><button class="button">Отправить</button></td>
