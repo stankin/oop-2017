@@ -17,7 +17,7 @@
             }
         </style>
 
-    <body>
+    
         <div id="phaser-example"></div>
 
         <script type="text/javascript">
@@ -248,5 +248,3 @@ function render() {
         </script>
 
     
-
-</body></html>

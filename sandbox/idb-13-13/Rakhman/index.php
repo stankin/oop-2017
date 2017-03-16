@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+  <?php include('connect.php'); ?>
 <html lang="ru">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -6,8 +7,9 @@
 	<meta name="viewport" content="width=device-width">
     <title>Тег <input> и Single Page Application</title>
     <link href="css/style.css" rel="stylesheet" media="all">
-	    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 
+    
     
 	    <script type="text/javascript" language="javascript">
      	function call() {
@@ -25,7 +27,30 @@
             });
      
         }
+		
+	
     </script>
+     <script type="text/javascript" language="javascript">
+	function jsoncall(){
+var user = '{ "name": "Ален", "age": 21, "group": "ИДБ-13-13"}';
+user = JSON.parse(user);
+$('#json').html(user.age);
+}
+  </script>
+  
+  <script type="text/javascript" language="javascript">
+function xmlcall(){		
+$.ajax({
+        type: "POST", 
+        url: "data.xml", 
+        dataType: "xml", 
+        success: function(data) {
+          var myage=$(data).find('student').find('group').html();
+			$('#xml').html(myage);
+        }
+    });
+}
+  </script>
 </head>
 
 <body class="welcome">
@@ -33,6 +58,7 @@
 	<a href="#navigation" class="navcontrol menu"><span class="visuallyhidden">Skip to navigation</span>
 		<span class="box-lined-r box">
 			Single Page Application
+            
 			<span class="panel-r"></span>
 			<span class="panel-b-r"></span>
 		</span>
@@ -76,14 +102,13 @@
 			</div>
 			<div class="box intro">
 				<h1>
-                <ul>
+               
                 
-    <li><a href="#input">Описать элемент html < input > с примером использования</a></li>
-			<div id="results">вывод</div>
-    <li><a href="https://github.com/stankin/oop/wiki/Лабораторная-работа-№5">Создать WIKI для лабораторной работы №5</a></li>
-   <li><a href="#navigation"> Single Page Application </a></li>
+    <a href="#input">Описать элемент html < input > с примером использования</a><br>
+    <a href="https://github.com/stankin/oop/wiki/Лабораторная-работа-№5">Создать WIKI для лабораторной работы №5</a><br>
+    <a href="#navigation"> Single Page Application </a><br>
    
-    </ul>
+   
 </h1>
               
 				<div class="panel-r"></div>
@@ -95,7 +120,9 @@
 				<div class="panel-bg-b-r"></div>
 			</div>
 			<div class="box meta">
-              <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="call()">
+        
+            <div id="results"></div>
+             <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="call()">
 					<div id="mc_embed_signup_scroll">
 						<div class="indicates-required">
 							<div class="mc-field-group">
@@ -143,8 +170,76 @@
 				<div class="panel-l"></div>
 				<div class="panel-b-l"></div>
 			</div>
+<h2 class="speaker-head">Используем JSON и XML</h2>
 
+	<div class="w-speakers">
+				<div class="box w-speaker w-vitaly">
+					<h3>					
+                    <div id="json"></div>
+<form method="POST" action="javascript:void(null);" onsubmit="jsoncall()">				
+<button class="button">Показать возвраст</button>	
+</form></h3>
+                   	<h2>JSON, Javascirpt, HTML:</h2>
+					<code>
+                    	<pre class="javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> jsoncall<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+<span style="color: #000066; font-weight: bold;">var</span> user <span style="color: #339933;">=</span> <span style="color: #3366CC;">'{
+&quot;name&quot;: &quot;Ален&quot;,
+&quot;age&quot;: 22,
+&quot;group&quot;: &quot;ИДБ-13-13&quot;
+}'</span><span style="color: #339933;">;</span>
+user <span style="color: #339933;">=</span> JSON.<span style="color: #660066;">parse</span><span style="color: #009900;">&#40;</span>user<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#json'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">html</span><span style="color: #009900;">&#40;</span>user.<span style="color: #660066;">age</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre>
+<pre class="html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">div</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;json&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">div</span>&gt;</span>
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">form</span> <span style="color: #000066;">method</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;POST&quot;</span></span>
+<span style="color: #009900;"><span style="color: #000066;">action</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;javascript:void(null);&quot;</span></span>
+<span style="color: #009900;"><span style="color: #000066;">onsubmit</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;jsoncall()&quot;</span>&gt;</span>				
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">button</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;button&quot;</span>&gt;</span>
+Показать возвраст<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">button</span>&gt;</span>	
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">form</span>&gt;</span></pre>
 
+                    </code>
+					<div class="panel-r"></div>
+					<div class="panel-b-r"></div>
+				</div>
+				<div class="box w-speaker w-dietrich">
+										<h3>					<div id="xml"></div>
+                  <form method="POST"
+action="javascript:void(null);" 
+onsubmit="xmlcall()">				
+<button class="button">
+Показать группу</button>	
+</form>
+</h3>
+                   	<h2><a href="data.xml">XML</a>, Javascirpt, HTML:</h2>
+					<code>
+<pre class="javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> xmlcall<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>		
+$.<span style="color: #660066;">ajax</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>
+type<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;POST&quot;</span><span style="color: #339933;">,</span> 
+url<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;data.xml&quot;</span><span style="color: #339933;">,</span> 
+dataType<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;xml&quot;</span><span style="color: #339933;">,</span> 
+success<span style="color: #339933;">:</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>data<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<span style="color: #000066; font-weight: bold;">var</span> myage<span style="color: #339933;">=</span>$<span style="color: #009900;">&#40;</span>data<span style="color: #009900;">&#41;</span>.
+<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'student'</span><span style="color: #009900;">&#41;</span>.
+<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'group'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">html</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#xml'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">html</span><span style="color: #009900;">&#40;</span>myage<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre>
+<pre class="html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">div</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;xml&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">div</span>&gt;</span>
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">form</span> <span style="color: #000066;">method</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;POST&quot;</span></span>
+<span style="color: #009900;"><span style="color: #000066;">action</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;javascript:void(null);&quot;</span> </span>
+<span style="color: #009900;"><span style="color: #000066;">onsubmit</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;xmlcall()&quot;</span>&gt;</span>				
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">button</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;button&quot;</span>&gt;</span>
+Показать группу<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">button</span>&gt;</span>	
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">form</span>&gt;</span></pre>
+
+                    </code>
+					<div class="panel-r"></div>
+					<div class="panel-b-r"></div>
+				</div>
+				
+		</div>
 
 
 
