@@ -55,9 +55,9 @@ LIMIT 0 , 30");
         </tr>';
 	}
 ?>
-		    
-		    </form>
+		 <td><button class="button">Отправить</button></td>     
+	</form>	   
     </table>
-			    <td><button class="button">Отправить</button></td>
+			   
 </body>
 </html>
