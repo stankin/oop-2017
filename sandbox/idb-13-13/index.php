@@ -53,7 +53,12 @@ LIMIT 0 , 30");
         </tr>';
 	}
 ?>
-		 <td><button class="button">Отправить</button></td>     
+		    <tr>
+			    <td>Пароль:</td>
+			    <td><input name="pass" type="password"></td>
+			    <td><button class="button">Отправить</button></td>     
+        </tr>
+		 
 	</form>	   
     </table>
 			   
