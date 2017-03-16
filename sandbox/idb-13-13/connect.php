@@ -4,6 +4,7 @@ $dbname = "gb_oop";
 $dbuser = "gb_oop";
 $dbpasswd = "b4b92bz6nmz";
 $dbcnx = @mysql_connect($dblocation,$dbuser,$dbpasswd);
+echo 123;
 if (!$dbcnx) 
 {
   echo( "<P>В настоящий момент сервер базы данных недоступен, поэтому 
