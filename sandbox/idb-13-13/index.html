@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <title>СПИСОК ГРУППЫ ИДБ-13-13</title>
 </head>
-<body>
+	<body>
     <table border="1px">
+        <tr>
+            <th>ФИО</th><th>М1</th><th>М2</th>
+        </tr>
+	<?php include('connect.php'); ?>
+	$sql = "SELECT * 
+FROM  `idb1313` 
+ORDER BY  `name` ASC 
+LIMIT 0 , 30";
+	while($row = mysql_fetch_array($sql))
+	{
+	echo '<tr>
+            <td>
+<a href="',$row['link'],'">',$row['name'],'</a> 
+		</td>
+            <td>',$row['M1'],'</td>
+            <td>',$row['M2'],'</td>
+        </tr>';
+	}
+    </table>
+		
+		
+		<table border="1px">
         <tr>
             <th>ФИО</th><th>М1</th><th>М2</th>
         </tr>
