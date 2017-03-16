@@ -45,9 +45,7 @@ LIMIT 0 , 30");
 	echo '<tr>
             <td>
 <a href="',$row['link'],'">',$row['name'],'</a> 
-		</td>					
-                  
-		  <input type="hidden" name="id" value="',$row['id'],'">
+		</td>		
             <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
             <td><input name="M2',$row['id'],'" type="text" value="',$row['M2'],'"></td>
 
