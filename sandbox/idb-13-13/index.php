@@ -10,10 +10,12 @@
             <th>ФИО</th><th>М1</th><th>М2</th>
         </tr>
 	<?php include('connect.php'); ?>
-<?php	$sql = "SELECT * 
+<?php	
+$sql = "SELECT * 
 FROM  `idb1313` 
 ORDER BY  `name` ASC 
 LIMIT 0 , 30";
+
 	while($row = mysql_fetch_array($sql))
 	{
 	echo '<tr>
