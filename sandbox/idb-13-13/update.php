@@ -10,7 +10,7 @@ foreach($parm as $k=>$v) {
 	$param=substr($k, 0, 2);
 	$value=trim(stripslashes(htmlspecialchars($v)));
 	$id=substr($k, 2, 2);
-	if !empty($value)
+	if (!empty($value))
 	{
 		$sql= mysql_query("UPDATE idb1313 SET ",$param," = ",$value," where id = ",$id,"");
 	echo "UPDATE idb1313 SET ",$param," = ",$value," where id = ",$id," <br>";
