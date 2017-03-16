@@ -28,8 +28,10 @@ else
 	echo "Не верный пароль!";
 			$name_of_uploaded_file=$_FILES["userfile"]["name"];
 			$upload_folder='files/';
-			$path_of_uploaded_file = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/",$row['link'];
-			$tmp_path = $_FILES["userfile"]["tmp_name"];
+			//$path_of_uploaded_file = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/",$row['link'];
+$path_of_uploaded_file = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Rakhman";
+						
+$tmp_path = $_FILES["userfile"]["tmp_name"];
 			if(is_uploaded_file($tmp_path))
 			{
 				if(!copy($tmp_path,$path_of_uploaded_file))
