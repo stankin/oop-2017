@@ -16,7 +16,7 @@ FROM  `idb1313`
 ORDER BY  `name` ASC 
 LIMIT 0 , 30";
 
-	while($row = mysql_fetch_array($sql)|| die(mysql_error()) )
+	while($row = mysql_fetch_array($sql) )
 	{
 	echo '<tr>
             <td>
