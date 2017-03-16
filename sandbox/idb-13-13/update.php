@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$parm = $_GET;
 	echo('Метод GET ('.count($parm).'):<br>');
 }
-if($_POST['pass']="findme";
+if($_POST['pass']=="findme")
    {
 foreach($parm as $k=>$v) {
 	$param=substr($k, 0, 2);
@@ -22,5 +22,6 @@ foreach($parm as $k=>$v) {
 	
 }
    }
-
+else
+	echo "Не верный пароль!";
 ?>
