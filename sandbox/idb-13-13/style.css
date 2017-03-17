@@ -1,12 +1,12 @@
-    body {
+  body {
   background: #ccc;
   font: 87.5%/1.5em 'Lato', sans-serif;
   margin: 0;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  border: 1px solid black; /* Рамка вокруг таблицы */
+    border-bottom: none; /* Убираем линию снизу */
 }
 
 td {
@@ -14,7 +14,7 @@ td {
 }
 
 .container {
-  width: 700px;
+width: 700px;
         margin: 0 auto -230px;
     margin-top: 0px;
     margin-right: auto;
@@ -100,7 +100,7 @@ td {
 .ring-right:after {
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.3), 0 -1px 1px rgba(0, 0, 0, 0.2);
+  
   content: "";
   display: inline-block;
   margin: 8px;
