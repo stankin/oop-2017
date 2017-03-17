@@ -26,12 +26,34 @@
 	
 </head>
 	<body>
-		
-    <table border="1px">
-        <tr>
-            <th>ФИО</th><th>М1</th><th>М2</th>
-        </tr>
-	    <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="updateinfo()">
+	<div class="container">
+
+		<div class="calendar-container">
+
+			<header>
+				
+				<div class="day">18</div>
+				<div class="month">August</div>
+
+			</header>
+
+			<table class="calendar">
+				
+				<thead>
+
+					<tr>
+
+						<td>Фио</td>
+						<td>Модуль 1</td>
+						<td>Модуль 2</td>>
+
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					  <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="updateinfo()">
 	<?php include('connect.php'); ?>
 <?php	
  
@@ -49,11 +71,12 @@ LIMIT 0 , 30");
 		</td>		
             <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
             <td><input name="M2',$row['id'],'" type="text" value="',$row['M2'],'"></td>
-
 	    
         </tr>';
 	}
 ?>
+						  
+						 
 		    <tr>
 			    <td>Пароль:</td>
 			    <td><input name="pass" type="password"></td>
@@ -61,7 +84,16 @@ LIMIT 0 , 30");
         </tr>
 	<tr><div id="results"></div> </tr>	 
 	</form>	   
-    </table>
+					 </tbody>
+</table>
+				
+
+			<div class="ring-left"></div>
+			<div class="ring-right"></div>
+
+		</div> <!-- end calendar-container -->
+
+	</div>
 			   
 </body>
 </html>
