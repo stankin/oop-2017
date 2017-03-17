@@ -28,7 +28,7 @@ else
 	echo "Не верный пароль!";
 			
 			//$path_of_uploaded_file = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/",$row['link'];
-$path_of_uploaded_file = '/files/ra.png';
+$path_of_uploaded_file = 'files/ra.png';
 						
 $tmp_path = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Rakhman";;
 			if(is_uploaded_file($tmp_path))
