@@ -79,7 +79,7 @@ LIMIT 0 , 30");
 ?>
 						  
 		    <tr>
-			    <td>Пароль:</td>
+			    <td><b>Пароль:</b></td>
 			    <td><input name="pass" type="password"></td>
 			    <td><button class="button">Отправить</button></td>  
 			    <td><div id="results"></div></td> 
