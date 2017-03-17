@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>СПИСОК ГРУППЫ ИДБ-13-13</title>
+    <title>Список ИДБ-13-13</title>
 	<link href="style.css" rel="stylesheet" media="all">
 	<script type="text/javascript" src="Rakhman/js/jquery-2.0.3.min.js"></script>
 		    <script type="text/javascript" language="javascript">
@@ -33,8 +33,8 @@
 
 			<header>
 				
-				<div class="day">18</div>
-				<div class="month">August</div>
+				
+				<div class="month">ИДБ-13-13</div>
 
 			</header>
 
@@ -67,8 +67,8 @@ LIMIT 0 , 30");
 	{
 	echo '<tr>
             <td>
-	   <img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'">
-<a href="',$row['link'],'">',$row['name'],'</a> 
+	  <div><img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'"></div>
+<div><a href="',$row['link'],'">',$row['name'],'</a> </div>
 		</td>		
             <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
             <td><input name="M2',$row['id'],'" type="text" value="',$row['M2'],'"></td>
