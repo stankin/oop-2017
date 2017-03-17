@@ -4,11 +4,17 @@
   font: 87.5%/1.5em 'Lato', sans-serif;
   margin: 0;
 }
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
 
 table {
 
 }
-
+tr.border_bottom td {
+  border-bottom:1pt solid black;
+}
 td {
   padding: 0;
 }
