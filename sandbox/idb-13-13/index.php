@@ -64,8 +64,8 @@ LIMIT 0 , 30");
 	{
 	echo '<tr class="border_bottom">
             <td>
-	  <div><img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'"></div>
-<div><a href="',$row['link'],'">',$row['name'],'</a> </div>
+	  <a href="',$row['link'],'"><div><img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'"></div>
+<div>',$row['name'],' </div></a>
 		</td>		
             <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
             <td><input name="M2',$row['id'],'" type="text" value="',$row['M2'],'"></td>
