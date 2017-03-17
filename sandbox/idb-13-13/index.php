@@ -83,8 +83,12 @@ LIMIT 0 , 30");
 			    <td><input name="pass" type="password"></td>
 			    <td><button class="button">Отправить</button></td>     
         </tr>
-	<tr><div id="results"></div> </tr>	 
-	</form>	   
+						  </form>	  
+	<tr>
+		<td></td>
+			    <td></td>
+			    <td> <div id="results"></div></td>     </tr>	 
+	 
 					 </tbody>
 </table>
 				
