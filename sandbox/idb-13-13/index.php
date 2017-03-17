@@ -26,16 +26,19 @@
     </script>
 	
 </head>
-<body><div class="container">
+	
+<body>
+	<form action="http://paul.1gb.ru/stankin/oop/refresh.php">
+  <input value="Обновить песочницу с github" type="submit">
+</form>
+	<div class="container">
 
 		<div class="calendar-container">
 
 			<header>
 				
 				<div class="day">ИДБ</div>
-				<div class="month">13-13<br><form action="http://paul.1gb.ru/stankin/oop/refresh.php">
-  <input value="Обновить песочницу с github" type="submit">
-</form></div>
+				<div class="month">13-13</div>
 
 			</header>
             <table class="calendar">
