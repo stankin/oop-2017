@@ -26,12 +26,11 @@ if(md5($_POST['pass'])=="865b02aab501e77c8ca524c9bc1cf5c4")
 }
 else
 	echo "Не верный пароль!";
-			$name_of_uploaded_file=$_FILES["userfile"]["name"];
-			$upload_folder='files/';
+			
 			//$path_of_uploaded_file = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/",$row['link'];
-$path_of_uploaded_file = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Rakhman";
+$path_of_uploaded_file = '/files/ra.png';
 						
-$tmp_path = $_FILES["userfile"]["tmp_name"];
+$tmp_path = "http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Rakhman";;
 			if(is_uploaded_file($tmp_path))
 			{
 				if(!copy($tmp_path,$path_of_uploaded_file))
