@@ -73,7 +73,7 @@ width: 900px;
 
 .calendar tbody tr:hover {
   background: #FFF0F0;
-  color: #cacaca;
+  color: #000000;
 }
 
 .current-day {
