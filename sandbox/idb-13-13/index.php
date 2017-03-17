@@ -34,7 +34,7 @@
 				
 				<div class="day">ИДБ</div>
 				<div class="month">13-13</div>
-				<div> <form action="refresh.php">
+				<div> <form action="http://paul.1gb.ru/stankin/oop/refresh.php">
   <input value="Обновить песочницу с github" type="submit">
 </form></div>
 
