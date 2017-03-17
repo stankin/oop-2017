@@ -2,8 +2,8 @@
 <html>
 <body>
 
-<canvas id="canvas" width="600" height="600"
-style="background-color:#005555">
+<canvas id="canvas" width="200" height="200"
+style="background-color:#4B00AD">
 </canvas>
 
 <script>
@@ -25,9 +25,9 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = 'white';
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-  grad.addColorStop(0, '#009999');
+  grad.addColorStop(0, '#4B00AD');
   grad.addColorStop(0.5, 'white');
-  grad.addColorStop(1, '#009999');
+  grad.addColorStop(1, '#4B20CD');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
   ctx.stroke();
