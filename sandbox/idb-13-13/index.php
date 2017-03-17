@@ -26,33 +26,30 @@
     </script>
 	
 </head>
-	<body>
-	<div class="container">
+<body><div class="container">
 
 		<div class="calendar-container">
 
 			<header>
 				
-				
-				<div class="month">ИДБ-13-13</div>
+				<div class="day">18</div>
+				<div class="month">August</div>
 
 			</header>
-
-			<table class="calendar">
+            <table class="calendar">
 				
 				<thead>
 
 					<tr>
-
-						<td>Фио</td>
-						<td>Модуль 1</td>
-						<td>Модуль 2</td>>
+						<td width="500">Фио</td>
+						<td width="200">Модуль 1</td>
+						<td width="200">Модуль 2</td>
 
 					</tr>
 
 				</thead>
 
-				<tbody>
+	<tbody>
 
 					  <form method="POST" id="form1" action="javascript:void(null);"  onsubmit="updateinfo()">
 	<?php include('connect.php'); ?>
@@ -77,28 +74,23 @@ LIMIT 0 , 30");
 	}
 ?>
 						  
-						 
 		    <tr>
 			    <td>Пароль:</td>
 			    <td><input name="pass" type="password"></td>
 			    <td><button class="button">Отправить</button></td>     
         </tr>
-						  </form>	  
-	<tr>
-		<td></td>
-			    <td></td>
-			    <td> <div id="results"></div></td>     </tr>	 
-	 
+	 </form>	
+		   <tr><td>1</td><td>2</td><td><div id="results"></div></td> </tr>	 
 					 </tbody>
-</table>
-				
+	   
+</table>	    
+		
 
 			<div class="ring-left"></div>
 			<div class="ring-right"></div>
 
-		</div> <!-- end calendar-container -->
+		</div> 
 
 	</div>
-			   
 </body>
 </html>
