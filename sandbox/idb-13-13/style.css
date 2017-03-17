@@ -14,11 +14,12 @@ td {
 }
 
 .container {
-  left: 50%;
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  width: 700px;
+        margin: 0 auto -230px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: -230px;
+    margin-left: auto;
 }
 
 .calendar-container {
