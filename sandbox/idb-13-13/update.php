@@ -21,11 +21,11 @@ if(md5($_POST['pass'])=="865b02aab501e77c8ca524c9bc1cf5c4")
 		}
 
 	}
-	echo('Информация сохранена!');
+	echo('<b>Информация сохранена!</b>');
 	//http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/
 }
 else
-	echo "Не верный пароль!";
+	echo "<b>Не верный пароль!</b>";
 			
 		
 ?>
