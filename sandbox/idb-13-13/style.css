@@ -1,12 +1,12 @@
-  body {
+
+    body {
   background: #ccc;
   font: 87.5%/1.5em 'Lato', sans-serif;
   margin: 0;
 }
 
 table {
-  border: 1px solid black; /* Рамка вокруг таблицы */
-    border-bottom: none; /* Убираем линию снизу */
+
 }
 
 td {
@@ -14,7 +14,7 @@ td {
 }
 
 .container {
-width: 700px;
+width: 900px;
         margin: 0 auto -230px;
     margin-top: 0px;
     margin-right: auto;
@@ -24,7 +24,7 @@ width: 700px;
 
 .calendar-container {
   position: relative;
-  width: 700px;
+  width: 900px;
 }
 
 .calendar-container header {
@@ -57,7 +57,7 @@ width: 700px;
 
 .calendar thead {
   color: #e66b6b;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@ width: 700px;
   text-align: center;
 }
 
-.calendar tbody td:hover {
+.calendar tbody tr:hover {
   background: #cacaca;
   color: #fff;
 }
@@ -94,16 +94,26 @@ width: 700px;
   right: 2em;
 }
 
-.ring-left:before,
-.ring-left:after,
-.ring-right:before,
-.ring-right:after {
-  background: #fff;
-  border-radius: 4px;
-  
-  content: "";
-  display: inline-block;
-  margin: 8px;
-  height: 32px;
-  width: 8px;
+.ring-left::before, .ring-left::after, .ring-right::before, .ring-right::after {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.3), 0 -1px 1px rgba(0, 0, 0, 0.2);
+    content: "";
+    display: inline-block;
+    margin: 8px;
+    height: 32px;
+    width: 8px;
+}
+
+
+
+.ring-left, .ring-right {
+    position: absolute;
+    top: 230px;
+}
+    .ring-right {
+    right: 2em;
+}
+.ring-left {
+    left: 2em;
 }
