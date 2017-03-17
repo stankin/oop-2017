@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>СПИСОК ГРУППЫ ИДБ-13-13</title>
+	<link href="style.css" rel="stylesheet" media="all">
 	<script type="text/javascript" src="Rakhman/js/jquery-2.0.3.min.js"></script>
 		    <script type="text/javascript" language="javascript">
      	function updateinfo() {
