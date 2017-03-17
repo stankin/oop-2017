@@ -33,8 +33,7 @@
 			<header>
 				
 				<div class="day">ИДБ</div>
-				<div class="month">13-13</div>
-				<div> <form action="http://paul.1gb.ru/stankin/oop/refresh.php">
+				<div class="month">13-13<br><form action="http://paul.1gb.ru/stankin/oop/refresh.php">
   <input value="Обновить песочницу с github" type="submit">
 </form></div>
 
