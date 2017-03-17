@@ -34,6 +34,9 @@
 				
 				<div class="day">ИДБ</div>
 				<div class="month">13-13</div>
+				<div> <form action="refresh.php">
+  <input value="Обновить песочницу с github" type="submit">
+</form></div>
 
 			</header>
             <table class="calendar">
