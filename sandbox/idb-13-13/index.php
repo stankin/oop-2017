@@ -41,7 +41,8 @@
 				<thead>
 
 					<tr>
-						<td width="500">Фио</td>
+						<td width="300">Скриншот</td>
+						<td width="200">Студент</td>
 						<td width="200">Модуль 1</td>
 						<td width="200">Модуль 2</td>
 
@@ -64,9 +65,12 @@ LIMIT 0 , 30");
 	{
 	echo '<tr class="border_bottom">
             <td>
-	  <a href="',$row['link'],'"><div><img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'"></div>
-<div>',$row['name'],' </div></a>
-		</td>		
+	  <a href="',$row['link'],'"><img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'">
+</a>
+		</td>	
+		  <td>
+	  <a href="',$row['link'],'">',$row['name'],'</a>
+		</td>	
             <td><input name="M1',$row['id'],'" type="text" value="',$row['M1'],'"></td>
             <td><input name="M2',$row['id'],'" type="text" value="',$row['M2'],'"></td>
 	    
