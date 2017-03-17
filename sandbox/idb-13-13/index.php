@@ -62,7 +62,7 @@ LIMIT 0 , 30");
 	    
 	while($row = mysql_fetch_array($sql) )
 	{
-	echo '<tr>
+	echo '<tr class="border_bottom">
             <td>
 	  <div><img src="http://api.screenshotmachine.com/?key=76a292&url=http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/'.$row['link'].'"></div>
 <div><a href="',$row['link'],'">',$row['name'],'</a> </div>
