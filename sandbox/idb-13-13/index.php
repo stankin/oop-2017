@@ -80,7 +80,7 @@ LIMIT 0 , 30");
 			    <td><button class="button">Отправить</button></td>     
         </tr>
 	 </form>	
-		   <tr><td>1</td><td>2</td><td><div id="results"></div></td> </tr>	 
+		   <tr><td></td><td></td><td><div id="results"></div></td> </tr>	 
 					 </tbody>
 	   
 </table>	    
