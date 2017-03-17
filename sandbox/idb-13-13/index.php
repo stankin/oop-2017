@@ -32,8 +32,8 @@
 
 			<header>
 				
-				<div class="day">18</div>
-				<div class="month">August</div>
+				<div class="day">ИДБ</div>
+				<div class="month">13-13</div>
 
 			</header>
             <table class="calendar">
