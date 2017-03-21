@@ -17,6 +17,7 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore;
+var squareColor;
 function startGame() {
     myGamePiece = new component(30, 30, "red", 10, 120);
     myGamePiece.gravity = 0.05;
@@ -127,6 +128,9 @@ function accelerate(n) {
 </script>
 <br>
 <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+    <input type="radio" name="browser" value="ie"> Internet Explorer<Br>
+   <input type="radio" name="browser" value="opera"> Opera<Br>
+   <input type="radio" name="browser" value="firefox"> Firefox<Br>
 <p>Use the ACCELERATE button to stay in the air</p>
 <p>How long can you stay alive?</p>
     <h1 align="center">Данилочкин Роман Андреевич</h1>
@@ -144,5 +148,12 @@ function accelerate(n) {
                Ниже приведен фрагмент кода, в котором реализуются различные способы использования ссылок:
      </p>
        <p>  <img src="code.png"></p><br>
+    <p>
+        Список требований, предъявляемых к SPA:<br>
+        1)Возможность изменения цвета квадрата<br>
+        2)Возможность изменения цвета фона<br>
+        3)Возможность изменения цвета препядствий<br>
+        4)Возможность изменения скорости движения квадрата<br>
+        </p>
     </body>
      </html>
