@@ -11,10 +11,10 @@ canvas {
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
 </head>
-<body onload="StartThisGame().startGame()">
+<body onload="startGame()">
 
 <script>
-    function StartThisGame(){
+    
 var myGamePiece;
 var myObstacles = [];
 var myScore;
@@ -125,10 +125,11 @@ function everyinterval(n) {
 }
 function accelerate(n) {
     myGamePiece.gravity = n;
-}}
+}
 function resetGame()
     {
-        StartThisGame().startGame()
+        startGame()
+        updateGameArea()
         
     }
 </script>
