@@ -13,7 +13,7 @@ canvas {
 </head>
 <body onload="startGame()">
 
-<script>
+    <script>
     
 var myGamePiece;
 var myObstacles = [];
@@ -126,14 +126,16 @@ function everyinterval(n) {
 function accelerate(n) {
     myGamePiece.gravity = n;
 }
-function resetGame()
-    {
-        myGameArea.clear();
-        myGameArea.start();
-       
-        updateGameArea()
-        
-    }
+function resetGame() {
+myGameArea.stop();
+myGameArea.clear();
+myGameArea = {};
+myGamePiece = {};
+myObstacles = [];
+myscore = {};
+startGame()
+}
+
 </script>
 <br>
 <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
