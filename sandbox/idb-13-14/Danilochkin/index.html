@@ -11,9 +11,10 @@ canvas {
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
 </head>
-<body onload="startGame()">
+<body onload="StartThisGame()">
 
 <script>
+    function StartThisGame(){
 var myGamePiece;
 var myObstacles = [];
 var myScore;
@@ -124,11 +125,16 @@ function everyinterval(n) {
 }
 function accelerate(n) {
     myGamePiece.gravity = n;
-}
+}}
+function resetGame()
+    {
+        StartThisGame()
+        
+    }
 </script>
 <br>
 <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
-    <button onclick="startGame()">RESET</button>
+    <button onclick="resetGame()">RESET</button>
     <input type="radio" name="browser" value="ie"> Internet Explorer<Br>
    <input type="radio" name="browser" value="opera"> Opera<Br>
    <input type="radio" name="browser" value="firefox"> Firefox<Br>
