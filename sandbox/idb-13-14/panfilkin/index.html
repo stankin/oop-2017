@@ -249,7 +249,7 @@ $.ajax({
         </div>
     </div>
     <div class="row">
-        <iframe class="col s12" src="http://mmo-rpg.herokuapp.com/" style="height:100%"></iframe>
+        <!-- <iframe class="col s12" src="http://mmo-rpg.herokuapp.com/" style="height:100%"></iframe> -->
     </div>
 
     
@@ -260,15 +260,30 @@ $.ajax({
     <script src="js/game.js"></script>
 
 <script>
+var tasks = [
+  {
+    id:1,
+    title:"Доделать лабораторную работу"
+  },
+  {
+    id:2,
+    title:"Купить молоко"
+  }
+]
 function getJsonTask(id){
-  $.getJSON('tasks.json').then(function(response){
-    tasks = response.tasks
-    var res = tasks.find(function(i){
+  var res = tasks.find(function(i){
       return i.id = id
-    })
-    $(".result").html(res.title)
-  });
+  })
+  $(".result").html(res.title)
 }
+
+// $.getJSON('tasks.json').then(function(response){
+//     var tasks = response.tasks
+//     var res = tasks.find(function(i){
+//       return i.id = id
+//     })
+//     $(".result").html(res.title)
+//   });
 
 function getXMLTask(id){
   $.ajax({
