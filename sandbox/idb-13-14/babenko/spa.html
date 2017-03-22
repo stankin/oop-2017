@@ -14,7 +14,11 @@ canvas {
 var myGamePiece;
 function startGame() {
     $.get("settings.json", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
+        var s = '';
+        for (var i = 0; i < data.length; i++) {
+			s = s + '<br>color:' + data[i].color + ' angle:' + data[i].angle;
+		}
+        alert("Data: " + s + "\nStatus: " + status);
     });
     myGamePiece = new component(70, 70, "#8aff8a", 230, 130);
     myGameArea.start();
