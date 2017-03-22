@@ -20,9 +20,10 @@ function startGame() {
 	var i = 0;
 	color = data[i].color;
 	angle = data[i].angle;
+	alert('color:'+color+' angle:'+angle);
+	myGamePiece = new component(70, 70, color, 230, 130);
+    	myGameArea.start();
     });
-    myGamePiece = new component(70, 70, color, 230, 130);
-    myGameArea.start();
 }
 var myGameArea = {
     canvas : document.createElement("canvas"),
