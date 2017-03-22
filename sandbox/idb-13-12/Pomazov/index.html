@@ -2,13 +2,7 @@
 <head>
 <meta charset="utf-8">
   <title>Отчет по лабораторным работам по дисциплине "ПИС" </title>
-<script>
-  $(document).ready(function(){
-    $("li").click(function(){
-        $(this).hide();
-    });
-});
-  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 <body bgcolor="90EE90" align=center>
   <hr>
@@ -22,7 +16,9 @@
     <li>Создать SPA </li>
   </ol>
   <input type="button" id="but" value="SPA" align=center>
-<iframe id="fram" style="display: none" src="clock.html" height="800" width="600"></iframe>
+  <div style="display: none" id="fram">
+<iframe src="clock.html" height="800" width="600"></iframe>
+    </div>
   <hr>
   <a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-12/Pomazov">Мой репозиторий</a>
   <footer> Помазов С.В, ИДБ-13-12 </footer>
@@ -35,4 +31,5 @@ $("#but").click(function(){
          } else {
                  $("#fram").hide("slow");
                 }	
+});
 </script>
