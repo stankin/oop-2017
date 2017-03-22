@@ -17,10 +17,10 @@ var angle = 8;
 function startGame() {
     $.get("settings.json", function(data, status){
 //        for (var i = 0; i < data.length; i++) {
-	var i = 0;
+	var i = 0; // принудительно берем 1-ю строку
 	color = data[i].color;
 	angle = data[i].angle;
-	alert('color:'+color+' angle:'+angle);
+//	alert('color:'+color+' angle:'+angle);
 	myGamePiece = new component(70, 70, color, 230, 130);
     	myGameArea.start();
     });
