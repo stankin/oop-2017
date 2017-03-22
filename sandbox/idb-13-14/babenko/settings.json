@@ -1,4 +1,5 @@
 [
 {"user":"babenko",  "color":"#ff0000",  "angle":"3"},
-{"user":"other",    "color":"#ff0000",  "angle":"4"}
+{"user":"other",    "color":"#fd0000",  "angle":"4"},
+{"user":"another",  "color":"#ff0000",  "angle":"2"}
 ]
