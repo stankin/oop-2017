@@ -7,9 +7,14 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
         <!-- Compiled and minified CSS -->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
       <!-- Compiled and minified JavaScript -->
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
 <body>
@@ -19,7 +24,6 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="https://github.com/stankin/oop/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B9-%22Pull-request%22">Страница wiki</a></li>
             <li><a href="https://github.com/Adrinalin4ik">Мой гит</a></li>
-              <li><a href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-14/panfilkin/files.html">Лаб 5</a></li>
             <li><a href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-14/panfilkin/angular-todos/#!/">Лаб 6</a></li>
           </ul>
         </div>
@@ -28,17 +32,205 @@
           <div class="description col s12">
             <div class="card-panel teal lighten-2 center  ">
               <div class="white-text">
+                Задание. Описать элемент div с примером использования.<br>
                 Диаграмма классов для тэга div
               </div>
-              <img src="http://images.vfl.ru/ii/1488524414/2c930ace/16309410.png" style="width:50%; margin:0 auto;"/>
+              <br>
+              <img src="giagram.png" style="width:60%; margin:0 auto;"/>
+              <br>
+              <br>
+               <div class="white-text">
+                  С элементом div можно делать абсолютно разные вещи, например:
+                  <br>
+                  <br>
+                   <div class="chip">
+                      <img src="http://materializecss.com/images/yuna.jpg" alt="Contact Person">
+                      Jane Doe
+                    </div>
+                    <div class="chip">
+                      Tag
+                      <i class="close material-icons">close</i>
+                    </div>
+               </div>
+                  <br>
+                  <a class="btn" onclick="Materialize.toast('Я тоже div', 4000)">Нажми на меня</a>
             </div>
         </div>
+        <div class="description col s12">
+            <div class="card-panel teal lighten-2  ">
+                <span class="white-text">Код:</span>
+                <br>
+                <br>
+               <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"> <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;chip&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;img</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;http://materializecss.com/images/yuna.jpg&quot;</span> <span style="color: #0000CC">alt=</span><span style="background-color: #fff0f0">&quot;Contact Person&quot;</span><span style="color: #007700">&gt;</span>
+  Jane Doe
+<span style="color: #007700">&lt;/div&gt;</span>
+<span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;chip&quot;</span><span style="color: #007700">&gt;</span>
+  Tag
+  <span style="color: #007700">&lt;i</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;close material-icons&quot;</span><span style="color: #007700">&gt;</span>close<span style="color: #007700">&lt;/i&gt;</span>
+<span style="color: #007700">&lt;/div&gt;</span>
+</pre></div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="description col s12">
+            <div class="card-panel teal lighten-2 center  ">
+              <span class="white-text">
+                JSON и XML 
+              </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="description col s6">
+            <div class="card-panel teal lighten-2  ">
+              <span class="white-text">
+                Мы имеет следующий JSON:<br>
+              {<br>
+                &nbsp;tasks:[<br>
+                &nbsp;&nbsp;&nbsp;{<br>
+                  &nbsp;&nbsp;&nbsp;id:1,<br>
+                  &nbsp;&nbsp;&nbsp;title:"Доделать лабораторную работу"<br>
+                &nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;{<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;id:2,<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;title:"Купить молоко"<br>
+               &nbsp;&nbsp;&nbsp; },<br>
+               &nbsp; ]<br>
+              } 
+              </span>
+            </div>
+        </div>
+        <div class="description col s6">
+            <div class="card-panel teal lighten-2  ">
+              <a href="javascript:;" class="waves-effect waves-light btn teal lighten-1" onclick="getJsonTask(2)">Получить заголовок задания с id 2</a>
+              <br>
+              <br>
+              <br>
+              <div class="result_desc">Результат: <span class="result white-text"></span></div> 
+            </div>
+        </div>
+        <div class="description col s12">
+            <div class="card-panel teal lighten-2  ">
+                <span class="white-text">Код:</span>
+                <br>
+                <br>
+                <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;description col s6&quot;</span><span style="color: #007700">&gt;</span>
+    <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;card-panel teal lighten-2  &quot;</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;a</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;javascript:;&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;waves-effect waves-light btn&quot;</span> <span style="color: #0000CC">onclick=</span><span style="background-color: #fff0f0">&quot;getJsonTask(2)&quot;</span><span style="color: #007700">&gt;</span>Получить заголовок задания с id 2<span style="color: #007700">&lt;/a&gt;</span>
+      <span style="color: #007700">&lt;br&gt;</span>
+      <span style="color: #007700">&lt;br&gt;</span>
+      <span style="color: #007700">&lt;br&gt;</span>
+      <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;result_desc&quot;</span><span style="color: #007700">&gt;</span>Результат: <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;result white-text&quot;</span><span style="color: #007700">&gt;&lt;/span&gt;&lt;/div&gt;</span> 
+    <span style="color: #007700">&lt;/div&gt;</span>
+<span style="color: #007700">&lt;/div&gt;</span>
+<span style="color: #007700">&lt;script&gt;</span>
+<span style="color: #008800; font-weight: bold">function</span> getJsonTask(id){
+  $.getJSON(<span style="background-color: #fff0f0">&#39;tasks.json&#39;</span>).then(<span style="color: #008800; font-weight: bold">function</span>(response){
+    tasks <span style="color: #333333">=</span> response.tasks
+    <span style="color: #008800; font-weight: bold">var</span> res <span style="color: #333333">=</span> tasks.find(<span style="color: #008800; font-weight: bold">function</span>(i){
+      <span style="color: #008800; font-weight: bold">return</span> i.id <span style="color: #333333">=</span> id
+    })
+    $(<span style="background-color: #fff0f0">&quot;.result&quot;</span>).html(res.title)
+  });
+}
+<span style="color: #007700">&lt;/script&gt;</span>
+</pre></div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="description col s6">
+            <div class="card-panel teal lighten-2  ">
+              <span class="white-text">
+                Мы имеет следующий XML:<br>
+                &lt;tasks&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task id="1"&gt; Доделать лабораторную работу&lt;/task&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task id="2"&gt; Купить молоко&lt;/task&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task id="3"&gt; Починить машину&lt;/task&gt;<br>
+                &lt;/tasks&gt;<br>
+              </span>
+            </div>
+        </div>
+        <div class="description col s6">
+            <div class="card-panel teal lighten-2  ">
+              <a href="javascript:;" class="waves-effect waves-light btn teal lighten-1" onclick="getXMLTask(3)">Получить заголовок задания с id 3</a>
+              <br>
+              <br>
+              <br>
+              <div class="result_desc">Результат: <span class="result-xml white-text"></span></div> 
+            </div>
+        </div>
+        <div class="description col s12">
+            <div class="card-panel teal lighten-2  ">
+                <span class="white-text">Код:</span>
+                <br>
+                <br>
+                <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;description col s6&quot;</span><span style="color: #007700">&gt;</span>
+ <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;card-panel teal lighten-2  &quot;</span><span style="color: #007700">&gt;</span>
+    <span style="color: #007700">&lt;a</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;javascript:;&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;waves-effect waves-light btn&quot;</span> <span style="color: #0000CC">onclick=</span><span style="background-color: #fff0f0">&quot;getXMLTask(3)&quot;</span><span style="color: #007700">&gt;</span>Получить заголовок задания с id 2<span style="color: #007700">&lt;/a&gt;</span>
+    <span style="color: #007700">&lt;br&gt;</span>
+    <span style="color: #007700">&lt;br&gt;</span>
+    <span style="color: #007700">&lt;br&gt;</span>
+    <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;result_desc&quot;</span><span style="color: #007700">&gt;</span>Результат: <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;result-xml white-text&quot;</span><span style="color: #007700">&gt;&lt;/span&gt;&lt;/div&gt;</span> 
+  <span style="color: #007700">&lt;/div&gt;</span>
+<span style="color: #007700">&lt;/div&gt;</span>
+
+<span style="color: #007700">&lt;script&gt;</span>
+<span style="color: #008800; font-weight: bold">function</span> getXMLTask(id){
+$.ajax({
+    type<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;get&quot;</span>, 
+    url<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;tasks.xml&quot;</span>, 
+    dataType<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;xml&quot;</span>, 
+    success<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span>(data) {
+      $(<span style="background-color: #fff0f0">&#39;.result-xml&#39;</span>).html($(data).find(<span style="background-color: #fff0f0">&#39;#&#39;</span><span style="color: #333333">+</span>id).text());
+    }
+});
+}
+<span style="color: #007700">&lt;/script&gt;</span>
+</pre></div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="description col s12">
+            <div class="card-panel teal lighten-2 center  ">
+              <span class="white-text">
+                Пример взаимодействия frontend и backend 
+                <a href="http://task5todo.herokuapp.com" class="waves-effect waves-light red-text" onclick="getXMLTask(3)">Ссылка на SPA</a>
+              </span>
+            </div>
+        </div>
+    </div>
+    <div class="row teal" height="50">
+      <div class="description col s12 " ></div>
+    </div>
+    <div class="row teal" height="50">
+      <div class="description col s12 " ></div>
+    </div>
+    <div class="row teal" height="50">
+      <div class="description col s12 " ></div>
+    </div>
+    <div class="row teal" height="50">
+      <div class="description col s12 " ></div>
     </div>
     <div class="row">
         <div class="description col s12">
             <div class="card-panel teal lighten-2 center  ">
               <span class="white-text">
-                Inline >>>>> Демонстрация работы простой браузерной игры.
+                Другие примеры
               </span>
             </div>
         </div>
@@ -51,7 +243,7 @@
         <div class="description col s12">
             <div class="card-panel teal lighten-2 center  ">
               <span class="white-text">
-                Фрейм >>>> Надеюсь мультеплеерной online игры для демонстрации навыков будет достаточно. При необходимости код есть на моем гит.
+                Набросок мультиплеерной online игры
               </span>
             </div>
         </div>
@@ -60,9 +252,34 @@
         <iframe class="col s12" src="http://mmo-rpg.herokuapp.com/" style="height:100%"></iframe>
     </div>
 
+    
+
 
     <script src="js/phaser.js"></script>
     <script src="js/phaser-plugin-isometric.min.js"></script>
     <script src="js/game.js"></script>
 
+<script>
+function getJsonTask(id){
+  $.getJSON('tasks.json').then(function(response){
+    tasks = response.tasks
+    var res = tasks.find(function(i){
+      return i.id = id
+    })
+    $(".result").html(res.title)
+  });
+}
+
+function getXMLTask(id){
+  $.ajax({
+      type: "get", 
+      url: "tasks.xml", 
+      dataType: "xml", 
+      success: function(data) {
+        $('.result-xml').html($(data).find('#'+id).text());
+      }
+  });
+}
+
+</script>
 </body></html>
