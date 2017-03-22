@@ -12,6 +12,9 @@ canvas {
 <script>
 var myGamePiece;
 function startGame() {
+    $.get("settings.json", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
     myGamePiece = new component(70, 70, "#8aff8a", 230, 130);
     myGameArea.start();
 }
