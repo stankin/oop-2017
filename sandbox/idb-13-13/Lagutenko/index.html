@@ -180,6 +180,30 @@ changeButtonStatus();
 <p>Использование UML не ограничивается моделированием программного обеспечения. Его также используют для моделирования бизнес-процессов системного проектирования и отображения организационных структур.
 UML позволяет также разработчикам программного обеспечения достигнуть соглашения в графических обозначениях для представления общих понятий (таких как класс, компонент, обобщение (generalization), объединение (aggregation) и поведение, и больше сконцентрироваться на проектировании и архитектуре.</p>
   
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	
+  <script type='text/javascript'> 
+    $(document).ready(function() { 
+      $("A#trigger").toggle(function() { 
+        // Отображаем скрытый блок 
+        $("DIV#box").fadeIn(); // fadeIn - плавное появление
+        return false; // не производить переход по ссылке
+      },  
+      function() { 
+        // Скрываем блок 
+        $("DIV#box").fadeOut(); // fadeOut - плавное исчезновение 
+        return false; // не производить переход по ссылке
+      }); // end of toggle() 
+    }); // end of ready() 
+  </script> 
+	
+<body> 
+
+  <a href='#' id='trigger'>Открыть/скрыть информацию</a> <!-- Всё происходит при нажатии на ссылку -->
+  <div id='box' style='display: none;padding:10px;background-color:#f1f1f1;margin:10px;width:210px;'>Содержимое скрытого блока</div> 
+
+</body> 
+	
 <h3>В UML предусмотрены следующие диаграммы:</h3>
 
 <ol>
