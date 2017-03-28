@@ -1,1 +1,1 @@
-Рабочая версия находится по адресу https://sanyanych.ru/proekt/
+Рабочая версия находится по адресу http://sanyanych.ru/proekt/
