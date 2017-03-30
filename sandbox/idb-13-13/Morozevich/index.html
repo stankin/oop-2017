@@ -73,7 +73,10 @@ $(document).ready(function(){
 <p id="p2">Параграф 2</p>
 <p id="p3">Параграф 3<br></p>
 <p id="p4">Параграф 4<br></p>
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+<div ng-hide="myCheck">
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -150,6 +153,7 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 </script>
+</div>
 
 </body>
 </html>
