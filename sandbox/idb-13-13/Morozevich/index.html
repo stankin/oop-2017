@@ -10,12 +10,12 @@
 <style>
 div {
   transition: all linear 0.5s;
-  background-color: lightblue;
+  /*background-color: lightblue;
   height: 100px;
   width: 100%;
   position: relative;
   top: 0;
-  left: 0;
+  left: 0;*/
 }
 
 .ng-hide {
@@ -83,23 +83,6 @@ style="background-color:#333">
 </canvas>
 <br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#p1").click(function(){
-        $("#p3").toggle();
-    });
-	$("#p2").click(function(){
-        $("#p1").toggle();
-    });
-});
-</script>
-<p id="p1">Параграф 1</p>
-<p id="p2">Параграф 2</p>
-<p id="p3">Параграф 3<br></p>
-<p id="p4">Параграф 4<br></p>
-
-
-
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
