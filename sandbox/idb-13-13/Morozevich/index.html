@@ -7,7 +7,9 @@
 	<meta charset="utf-8">
 	<title>Личная страница: Морозевич В.С.</title>
 </head>
-<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<body ng-app="ngAnimate">
 <h1 style="text-align: center">Личная страница студента группы ИДБ-13-13 Морозевич В.С.</h1>
 	<h1><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-13/Morozevich">Исходники</a></h1>
 	<h1>Задачи:</h1>
@@ -73,8 +75,7 @@ $(document).ready(function(){
 <p id="p2">Параграф 2</p>
 <p id="p3">Параграф 3<br></p>
 <p id="p4">Параграф 4<br></p>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
 <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
 <div ng-hide="myCheck">
 <script>
