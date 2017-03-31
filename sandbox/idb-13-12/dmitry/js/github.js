@@ -1,7 +1,7 @@
+	var auth = "";
 $(document).ready(function($) {
 	var cid = "";
 	var cs = "";
-	var auth = "";
 	var favs = [];
 	var astatus = false;
 	
