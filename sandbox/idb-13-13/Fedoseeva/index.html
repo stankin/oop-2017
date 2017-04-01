@@ -115,6 +115,23 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
+	
+	
+	<a href="javascript:;" onclick="getXML('#title')">Получить заголовок</a>
+<div class="result_desc">Результат: <span class="result-xml"></span></div> 
+
+<script>
+function getXML(selector){
+$.ajax({
+type: "get", 
+url: "test.xml", 
+dataType: "xml", 
+success: function(data) {
+$('.result-xml').html($(data).find(selector).text());
+}
+});
+}
+</script>
 </script>
 
 </body>
