@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
 <html>
 <head>
 <script type='text/javascript'>
 function start(){  
    xhttp=new XMLHttpRequest();
-   xhttp.open('GET','bb.json',true);
+   xhttp.open('GET','bookbase.json',true);
    xhttp.send();
    xhttp.onreadystatechange=function(){
       if (xhttp.readyState==4){
@@ -31,5 +37,7 @@ function start(){
 <p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
 <hr />
 </div>
+</body>
+</html>
 </body>
 </html>
