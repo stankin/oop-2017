@@ -3,13 +3,13 @@
 <script type='text/javascript'>
 function start(){  
    xhttp=new XMLHttpRequest();
-   xhttp.open('GET','bookbase.json',true);
+   xhttp.open('GET','bb.json',true);
    xhttp.send();
    xhttp.onreadystatechange=function(){
       if (xhttp.readyState==4){
-         //Принятое содержимое json файла должно быть вначале обработано функцией eval 
+         //ГЏГ°ГЁГ­ГїГІГ®ГҐ Г±Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГҐ json ГґГ Г©Г«Г  Г¤Г®Г«Г¦Г­Г® ГЎГ»ГІГј ГўГ­Г Г·Г Г«ГҐ Г®ГЎГ°Г ГЎГ®ГІГ Г­Г® ГґГіГ­ГЄГ¶ГЁГҐГ© eval 
          var json=eval( '('+xhttp.responseText+')' );
-         //Далее мы можем спокойно использовать данные
+         //Г„Г Г«ГҐГҐ Г¬Г» Г¬Г®Г¦ГҐГ¬ Г±ГЇГ®ГЄГ®Г©Г­Г® ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ ГІГј Г¤Г Г­Г­Г»ГҐ
          document.getElementById('wrap').style.display='block';
          document.getElementById('res1').innerHTML=json.bookbase[1].title;
          document.getElementById('res2').innerHTML=json.bookbase[1].author;
@@ -21,14 +21,14 @@ function start(){
 </script>
 </head>
 <body>
-<input type='button' value='Запросить содержимое' onclick='start()'/>
+<input type='button' value='Г‡Г ГЇГ°Г®Г±ГЁГІГј Г±Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГҐ' onclick='start()'/>
 <br /><br />
 <div id='wrap' style='display:none;'>
 <hr />
-<p>Название книги: <b><span id='res1'></span></b></p>
-<p>Автор: <b><span id='res2'></span></b></p>
-<p>Цена: <b><span id='res3'></span> руб.</b></p>
-<p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
+<p>ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ­ГЁГЈГЁ: <b><span id='res1'></span></b></p>
+<p>ГЂГўГІГ®Г°: <b><span id='res2'></span></b></p>
+<p>Г–ГҐГ­Г : <b><span id='res3'></span> Г°ГіГЎ.</b></p>
+<p>ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г­Г  Г±ГЄГ«Г Г¤ГҐ: <b><span id='res4'></span> ГёГІ.</b></p>
 <hr />
 </div>
 </body>
