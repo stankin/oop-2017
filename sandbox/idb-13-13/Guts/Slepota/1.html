@@ -58,40 +58,9 @@ JavaScript полагаются на CSS, поэтому, добавляя та�
 Задание: Создать приложение для вывода информации о книге из базы данных.
 	По нажатию на кнопку "Вывести информацию" пользователь получит инофрмацию
 	о названии книги, авторе, цене и кол-ве на складе <br>
-<head>
-<script type='text/javascript'>
-function start(){  
-   xhttp=new XMLHttpRequest();
-   xhttp.open('GET','bb.json',true);
-   xhttp.send();
-   xhttp.onreadystatechange=function(){
-      if (xhttp.readyState==4){
-         //Принятое содержимое json файла должно быть вначале обработано функцией eval 
-         var json=eval( '('+xhttp.responseText+')' );
-         //Далее мы можем спокойно использовать данные
-         document.getElementById('wrap').style.display='block';
-         document.getElementById('res1').innerHTML=json.bookbase[1].title;
-         document.getElementById('res2').innerHTML=json.bookbase[1].author;
-         document.getElementById('res3').innerHTML=json.bookbase[1].cost;
-         document.getElementById('res4').innerHTML=json.bookbase[1].quantity;
-      }
-   }
-}
-</script>
-</head>
-<body>
-<input type='button' value='Вывести информацию' onclick='start()'/>
-<br /><br />
-<div id='wrap' style='display:none;'>
-<hr />
-<p>Название книги: <b><span id='res1'></span></b></p>
-<p>Автор: <b><span id='res2'></span></b></p>
-<p>Цена: <b><span id='res3'></span> руб.</b></p>
-<p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
-<hr />
-</div>
-</body>
-
+<h1>Поиск по базе данных.<br> </h1>
+<iframe src="search.html" height="55" width="170"></iframe>
+<br>
 
 </body>
 </html>
