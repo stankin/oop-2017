@@ -7,9 +7,9 @@ function start(){
    xhttp.send();
    xhttp.onreadystatechange=function(){
       if (xhttp.readyState==4){
-         //Ïðèíÿòîå ñîäåðæèìîå json ôàéëà äîëæíî áûòü âíà÷àëå îáðàáîòàíî ôóíêöèåé eval 
+         //Принятое содержимое json файла должно быть вначале обработано функцией eval 
          var json=eval( '('+xhttp.responseText+')' );
-         //Äàëåå ìû ìîæåì ñïîêîéíî èñïîëüçîâàòü äàííûå
+         //Далее мы можем спокойно использовать данные
          document.getElementById('wrap').style.display='block';
          document.getElementById('res1').innerHTML=json.bookbase[1].title;
          document.getElementById('res2').innerHTML=json.bookbase[1].author;
@@ -21,14 +21,14 @@ function start(){
 </script>
 </head>
 <body>
-<input type='button' value='Çàïðîñèòü ñîäåðæèìîå' onclick='start()'/>
+<input type='button' value='Запросить содержимое' onclick='start()'/>
 <br /><br />
 <div id='wrap' style='display:none;'>
 <hr />
-<p>Íàçâàíèå êíèãè: <b><span id='res1'></span></b></p>
-<p>Àâòîð: <b><span id='res2'></span></b></p>
-<p>Öåíà: <b><span id='res3'></span> ðóá.</b></p>
-<p>Êîëè÷åñòâî íà ñêëàäå: <b><span id='res4'></span> øò.</b></p>
+<p>Название книги: <b><span id='res1'></span></b></p>
+<p>Автор: <b><span id='res2'></span></b></p>
+<p>Цена: <b><span id='res3'></span> руб.</b></p>
+<p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
 <hr />
 </div>
 </body>
