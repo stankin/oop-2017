@@ -19,7 +19,7 @@ $(document).ready(function(){
  <h1>Визуализируемый тег Style.<br> </h1>
  Задание : сделать версию для "цветовой слепоты". 
 <br>
-<a href = "http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Guts/Slepota/1.html"><button>Версия для Цветовой слепоты</button> </a>
+<a href = "http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Guts/search.html"><button>Версия для Цветовой слепоты</button> </a>
 <br>
 <h1>
 <p id="p1">Описание тега Style. </p>
@@ -39,7 +39,7 @@ JavaScript полагаются на CSS, поэтому, добавляя та�
 
  <h1>Синтаксис тега </h1>
 <pre><code class="no-buttons">&lt;head&gt;
-  &lt;style&gt;..описание стилей..&lt;/style&gt;
+  &lt;style&gt;..описание стилей..&lt;/stule&gt;
 &lt;/head&gt;</code></pre>
 
  </p>
@@ -57,13 +57,80 @@ JavaScript полагаются на CSS, поэтому, добавляя та�
 	<img src="uml.png"></p></h1>
 <br>
 	<h1>Новое SPA по поиску в базе данных.<br> </h1>
-Задание: создать приложение для вывода информации о книге из базы данных.
-По нажатию на кнопку "Вывести информацию" пользователь получит инофрмацию
-о названии книги, авторе, цене и кол-ве на складе <br>
-	
+Задание: создать приложение поиска по фамилии или имени в базе данных всех студентов университета.
+	Результат выдачи будет содержать имя студента, фамилию студента, курс студента его возраст.
+	Также можно вывести полный список студентов университета. <br>
+
 <h1>Поиск по базе данных.<br> </h1>
 <iframe src="search.html" height="550" width="170"></iframe>
 <br>
+
+<!DOCTYPE html>
+<html>
+<style>
+div {
+  transition: all linear 0.5s;
+  background-color: white;
+  height: 100px;
+}
+
+.ng-hide {
+  height: 0;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+<body ng-app="myApp">
+
+<h1>Поиск по базе данных: <input type="checkbox" ng-model="myCheck"></h1>
+
+<div ng-hide="myCheck">
+
+<head>
+<script type='text/javascript'>
+function start(){  
+   xhttp=new XMLHttpRequest();
+   xhttp.open('GET','bb.json',true);
+   xhttp.send();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4){
+         //Принятое содержимое json файла должно быть вначале обработано функцией eval 
+         var json=eval( '('+xhttp.responseText+')' );
+         //Далее мы можем спокойно использовать данные
+         document.getElementById('wrap').style.display='block';
+         document.getElementById('res1').innerHTML=json.bookbase[1].title;
+         document.getElementById('res2').innerHTML=json.bookbase[1].author;
+         document.getElementById('res3').innerHTML=json.bookbase[1].cost;
+         document.getElementById('res4').innerHTML=json.bookbase[1].quantity;
+      }
+   }
+}
+</script>
+</head>
+<body>
+<input type='button' value='Запросить содержимое' onclick='start()'/>
+<br /><br />
+<div id='wrap' style='display:none;'>
+<hr />
+<p>Название книги: <b><span id='res1'></span></b></p>
+<p>Автор: <b><span id='res2'></span></b></p>
+<p>Цена: <b><span id='res3'></span> руб.</b></p>
+<p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
+<hr />
+</div>
+</body>
+
+</div>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
