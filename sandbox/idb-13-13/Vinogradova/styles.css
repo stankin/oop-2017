@@ -11,17 +11,16 @@ h1 {
 div {
 	background-color: rgba(255, 245, 223, 0.3);
 	margin-left: auto;
-    margin-right: auto;
+   	 margin-right: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-    width: 30em;
-	text-align: center;
+    	width: 30em;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	padding-left: 50px;
 	padding-right: 50px;
 	border-style: groove;
-    border-width: 3px;
+   	 border-width: 3px;
 	border-radius: 25px;
 	color: #5a5959;
 	text-shadow: 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed;
