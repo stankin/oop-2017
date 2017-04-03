@@ -25,9 +25,11 @@ div {
 	color: #5a5959;
 	text-shadow: 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed;
 	font-size: 27px;
-	
-	
 	}
+
+#vk_auth {background-color: none;
+	border-style: none;
+}
 
 h2 {
     color: #f3f0ed;
