@@ -8,7 +8,7 @@ h1 {
     color: navy;
     }
 
-div {
+div.cont {
 	background-color: rgba(255, 245, 223, 0.3);
 	margin-left: auto;
    	 margin-right: auto;
