@@ -1,0 +1,473 @@
+/* PDD-TEST GLOBAL STYLES */
+
+#pdd-test {
+    width: 550px;
+    line-height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Sans-Serif;
+    color: #555;
+    background-color: #FFF;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#pdd-test td {
+    border-radius: 3px;
+}
+
+#pdd-test p {
+    text-indent: 0;
+    text-align: left;
+}
+
+#pdd-test .pdd-tpl {
+    border: solid 1px #BBB;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 7px;
+    margin-top: -1px;
+}
+
+#pdd-test .pdd-sbmt {
+    outline: none;
+    background-color: #EEE;
+    border-radius: 14px;
+    border: solid 1px #D2D2D2;
+    border-bottom-color: #B4B4B4;
+    border-top-color: #E4E4E4;
+    color: #555;
+    cursor: pointer;
+    margin: 0.5em 0;
+
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background: -moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: -webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: -o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: -ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9', GradientType=0);
+    background-color: #F9F9F9;
+    border-radius: 14px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    font-size: 15px;
+    padding: 4px 16px;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+#pdd-test .pdd-sbmt:not(.pdd-disabled):hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background: -moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: -webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: -o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: -ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9', GradientType=0);
+    background-color: #E9E9E9;
+}
+
+#pdd-test .pdd-sbmt:not(.pdd-disabled):active {
+    border-color: #999;
+    position: relative;
+    top: 1px;
+}
+
+#pdd-test .pdd-sbmt.pdd-disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* TABS */
+#pdd-tabs {
+    list-style: none;
+    margin: 0 15px;
+    padding: 0;
+    overflow: auto;
+}
+
+#pdd-tabs li {
+    float: left;
+    margin: 0 3px 0px 0;
+    padding: 5px 7px;
+    border: 1px solid #BBB;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(234, 234, 234, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea', GradientType=0);
+    border-radius: 5px 5px 0 0;
+}
+
+#pdd-tabs li:not(.pdd-active) {
+    cursor: pointer;
+}
+
+#pdd-tabs li.pdd-active {
+    border-bottom-color: #FFF;
+    background: #FFF;
+    filter: none;
+}
+
+/* LOADING TPL */
+#pdd-loading .pdd-loading-inner {
+    margin: 100px 248px;
+    width: 32px;
+    height: 32px;
+    background: url(loading.gif) no-repeat;
+    overflow: hidden;
+    text-indent: -100px;
+}
+
+/* CATEGORIES TPL */
+#pdd-categories {
+
+}
+
+#pdd-categories .pdd-category {
+    cursor: pointer;
+    margin: 5px 0;
+    border: 1px #CCC solid;
+    border-radius: 7px;
+    background-color: #FAFAFA;
+    padding: 5px;
+}
+
+#pdd-categories .pdd-category:hover {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.5);
+    background-color: #FFF;
+    color: #333;
+}
+
+#pdd-categories table.pdd-category-bilets {
+    border-collapse: separate;
+    border-spacing: 5px;
+    display: none;
+    margin: 5px auto;
+}
+
+#pdd-categories .pdd-category-header {
+    margin-left: 15px;
+}
+
+#pdd-categories .pdd-category-header th {
+    white-space: nowrap;
+    vertical-align: top;
+    font-weight: normal;
+    padding: 3px 0;
+}
+
+#pdd-categories .pdd-category-header td {
+    padding: 3px 0 3px 10px;
+}
+
+/* NUMBERS TPL */
+#pdd-bilets {
+    width: 100%;
+}
+
+#pdd-bilets td,
+#pdd-categories .pdd-category-bilets td {
+    width: 62px;
+    height: 20px;
+    border: solid 1px #CCC;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px;
+    background: rgb(244, 244, 244);
+    background: -moz-linear-gradient(left, rgba(244, 244, 244, 1) 1%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%, rgba(244, 244, 244, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+    background: -webkit-linear-gradient(left, rgba(244, 244, 244, 1) 1%, rgba(255, 255, 255, 1) 100%);
+    background: -o-linear-gradient(left, rgba(244, 244, 244, 1) 1%, rgba(255, 255, 255, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(244, 244, 244, 1) 1%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(244, 244, 244, 1) 1%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ffffff', GradientType=1);
+}
+
+#pdd-bilets td:hover,
+#pdd-categories .pdd-category-bilets td:hover {
+    background-color: #FFF;
+    border-color: #999;
+}
+
+.pdd-bilet-passed {
+    color: green;
+}
+
+.pdd-bilet-failed {
+    color: red;
+}
+
+/* BILET TPL */
+#pdd-test #pdd-bilet {
+    padding-bottom: 0;
+}
+
+#pdd-res-line {
+    margin: auto;
+}
+
+#pdd-res-line {
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 0;
+    width: 520px;
+    height: 22px;
+}
+
+#pdd-res-line li {
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+    margin: 0 3px;
+    padding: 0px;
+    background: url(ls.png) no-repeat 0 0;
+}
+
+#pdd-res-line .pdd-success-qst {
+    background-position: 0 -20px;
+}
+
+#pdd-res-line .pdd-fail-qst {
+    background-position: 0 -40px;
+}
+
+#pdd-bilet-info {
+    margin: 10px auto;
+    width: 95%;
+}
+
+#pdd-bilet-info #pdd-bilet-number {
+    width: 33%;
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
+}
+
+#pdd-bilet-info #pdd-bilet-qst-header {
+    width: 33%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#pdd-bilet-info #pdd-bilet-time-wrapper {
+    width: 33%;
+    text-align: right;
+}
+
+#pdd-bilet-info #pdd-bilet-time {
+    font-size: 12px;
+    border: dotted 1px #999;
+    color: #999;
+    padding: 1px 3px;
+    cursor: pointer;
+    width: 35px;
+}
+
+#pdd-bilet-info #pdd-bilet-time:active {
+    background-color: #777;
+    color: #FFF;
+}
+
+#pdd-bilet img {
+    margin: 5px auto;
+    display: block;
+}
+
+#pdd-bilet #pdd-bilet-qst {
+    font-weight: bold;
+    margin: 15px 0 15px 8px;
+}
+
+#pdd-bilet input {
+    vertical-align: middle;
+    margin: 0 7px;
+    outline: none;
+}
+
+#pdd-bilet input:hover {
+
+}
+
+#pdd-bilet label {
+    display: block;
+    margin: 10px 0;
+    line-height: 125%;
+    font-weight: normal;
+}
+
+#pdd-bilet label span {
+
+}
+
+#pdd-bilet label:hover {
+    color: #000;
+}
+
+#pdd-bilet .pdd-sbmt {
+    margin: 10px;
+}
+
+#pdd-bilet-toggle-comment {
+    text-align: right;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#pdd-bilet-comment {
+    display: none;
+    border: solid 1px #999;
+    margin: 5px 0;
+    padding: 4px;
+    background-color: #F3F3F3;
+    font-size: 85%;
+}
+
+#pdd-show-comment:hover {
+    color: #000;
+}
+
+#pdd-bilet-close {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 90px;
+    background-color: #F5F5F5;
+    border: solid 1px #CCC;
+    border-bottom-width: 0;
+    cursor: pointer;
+    padding: 0 3px;
+    border-radius: 5px 5px 0 0;
+    font-size: 85%;
+}
+
+#pdd-bilet-close:hover {
+    text-decoration: none;
+    color: #333;
+    border-color: #999;
+    background-color: #FFF;
+}
+
+.pdd-right-ans span {
+    color: green;
+}
+
+.pdd-fail-ans span {
+    color: red;
+}
+
+/* RESULT TPL */
+#pdd-result {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#pdd-result table {
+    margin: 10px auto;
+}
+
+#pdd-result table caption {
+    font-weight: bold;
+    padding: 9px;
+}
+
+#pdd-result td {
+    padding: 5px 3px;
+    text-align: left;
+}
+
+#pdd-result.pdd-res-success table {
+    color: #394;
+}
+
+#pdd-result.pdd-res-fail table {
+    color: #F45;
+}
+
+#pdd-result .pdd-result-success {
+    text-align: center;
+    color: green;
+}
+
+#pdd-result .pdd-result-fail {
+    text-align: center;
+    color: red;
+}
+
+/* EXAMINE TPL */
+#pdd-examine {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#pdd-examine p {
+    line-height: 150%;
+    margin: 20px;
+    text-align: center;
+}
+
+/* STATISTICS BLOCK */
+#pdd-statistics {
+    margin: 1em 0;
+}
+
+#pdd-statistics table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#pdd-statistics td {
+    padding: 3px;
+}
+
+#pdd-statistics caption {
+    font-weight: bold;
+    text-align: left;
+    margin: 3px 0;
+}
+
+#pdd-statistics .pdd-statistics-passed {
+    color: green;
+}
+
+#pdd-statistics .pdd-statistics-failed {
+    color: red;
+}
+
+#pdd-statistics .pdd-statistics-remain {
+    color: gray;
+}
+
+#pdd-statistics .pdd-statistics-average td {
+    border-top: 1px solid black;
+}
+
+#pdd-statistics-passed,
+#pdd-statistics-failed,
+#pdd-statistics-remain,
+#pdd-statistics-average {
+    text-align: right;
+}
+
+/* PDD TEST VERSION */
+#pdd-test-version {
+    margin: 1px auto;
+    color: gray;
+    text-align: center;
+    font-size: 80%;
+}
