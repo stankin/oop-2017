@@ -29,9 +29,7 @@ h1 {
 
 #vk_auth {
 	background-color: none;
-	border-style: groove;
-   	border-width: 10px;
-	border-radius: 50px;
+	border-style: none;
 	}
 
 h2 {
