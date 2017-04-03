@@ -8,7 +8,7 @@ h1 {
     color: navy;
     }
 
-div.cont {
+#cont {
 	background-color: rgba(255, 245, 223, 0.3);
 	margin-left: auto;
    	 margin-right: auto;
@@ -27,13 +27,12 @@ div.cont {
 	font-size: 27px;
 	}
 
-div.vk_auth {
+#vk_auth {
 	background-color: none;
 	border-style: groove;
    	border-width: 10px;
 	border-radius: 50px;
-	
-}
+	}
 
 h2 {
     color: #f3f0ed;
