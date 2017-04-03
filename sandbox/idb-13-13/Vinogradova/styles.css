@@ -20,7 +20,7 @@ div.cont {
 	padding-left: 50px;
 	padding-right: 50px;
 	border-style: groove;
-   	 border-width: 3px;
+   	border-width: 3px;
 	border-radius: 25px;
 	color: #5a5959;
 	text-shadow: 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed, 0 0 20px #f4f1ed;
@@ -29,7 +29,10 @@ div.cont {
 
 div.vk_auth {
 	background-color: none;
-	border-style: none;
+	border-style: groove;
+   	border-width: 10px;
+	border-radius: 50px;
+	
 }
 
 h2 {
