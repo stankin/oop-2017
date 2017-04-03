@@ -27,7 +27,8 @@ div {
 	font-size: 27px;
 	}
 
-#vk_auth {background-color: none;
+div.vk_auth {
+	background-color: none;
 	border-style: none;
 }
 
