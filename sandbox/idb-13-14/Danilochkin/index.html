@@ -135,7 +135,15 @@ myObstacles = [];
 myscore = {};
 startGame()
 }
-
+function getJsonTask(id){
+  $.getJSON('Colors.json').then(function(response){
+    Colors = response.Colors
+    var res = Colors.find(function(i){
+      return i.id = id
+    })
+    $(".result").html(res.title)
+  });
+}
 </script>
 <br>
 <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
