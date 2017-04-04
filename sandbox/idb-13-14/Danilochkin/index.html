@@ -30,7 +30,7 @@ canvas {
 }
 	';
 var cart = JSON.parse ( jsonString );
-
+cart.Colors[2].title
 var myGamePiece;
 var myObstacles = [];
 var myScore;
@@ -141,15 +141,6 @@ function everyinterval(n) {
 }
 function accelerate(n) {
     myGamePiece.gravity = n;
-}
-function resetGame() {
-
-myGameArea.clear();
-myGameArea = {};
-myGamePiece = {};
-myObstacles = [];
-myscore = {};
-startGame()
 }
 
 </script>
