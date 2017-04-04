@@ -11,9 +11,12 @@ canvas {
 </head>
 <body onload="startGame()">
 <script>
-
-  
-    
+var myJSON = '{ "name":"John", "age":31, "city":"New York" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
+    document.getElementById("demo1").innerHTML = myObj.age;
+  <p id="demo"></p>
+    <p id="demo1"></p>
 var myGamePiece;
 var myObstacles = [];
 var myScore;
