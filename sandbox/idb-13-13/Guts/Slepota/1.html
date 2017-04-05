@@ -32,7 +32,6 @@ $(document).ready(function(){
 
 
 
-
 <br>
 <h1>
 <p id="p1">Описание тега Style. </p>
@@ -126,11 +125,13 @@ div {
 
 <body ng-app="myApp">
 
-<h1>Поиск по базе данных: </h1>
 
+<h1>Поиск по базе данных: </h1>
+<input type="checkbox" ng-model="myCheck"> Нажмите, чтобы скрыть/развернуть функцию поиска 
 <div ng-hide="myCheck">
 
 <head>
+
 <script type='text/javascript'>
 function start(){  
    xhttp=new XMLHttpRequest();
@@ -146,13 +147,19 @@ function start(){
          document.getElementById('res2').innerHTML=json.bookbase[1].author;
          document.getElementById('res3').innerHTML=json.bookbase[1].cost;
          document.getElementById('res4').innerHTML=json.bookbase[1].quantity;
+
       }
    }
 }
+
 </script>
 </head>
 <body>
+
+
+<br>
 <input type='button' value='Вывести информацию' onclick='start()'/>
+
 <br /><br />
 <div id='wrap' style='display:none;'>
 <hr />
@@ -161,6 +168,7 @@ function start(){
 <p>Цена: <b><span id='res3'></span> руб.</b></p>
 <p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
 <hr />
+
 </div>
 </body>
 
@@ -168,12 +176,15 @@ function start(){
 
 <script>
 var app = angular.module('myApp', ['ngAnimate']);
+
+
+
+
 </script>
 
 </body>
 </html>
 
 </body>
-	<br><br>
-<input type="checkbox" ng-model="myCheck"> Нажмите, чтобы скрыть/развернуть функцию поиска 
+
 </html>
