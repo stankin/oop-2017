@@ -173,9 +173,9 @@ changeButtonStatus();
 	<br>
 	<h2>Требования к SPA</h2>
 <ol>
-<!--	<li>Создать форму авторизации.</li>
+	<li>Создать форму авторизации.</li>
  		
-     <ul><li>Если выполнен вход пользователя, то появляется доступ к тесту(обмен данными через JSON).</li></ul> -->
+     <ul><li>Если выполнен вход пользователя, то появляется доступ к тесту.</li></ul>
      <li>Разработать тест.</li>
 	<ul>
 	<li>SPA должна содержать 3 варианта прохождения теста (3 раздела).</li>
@@ -186,7 +186,24 @@ changeButtonStatus();
 	<li>Вывод статистики по тесту.</li>	
 	<ul><li>SPA должна предоставлять возможность скрыть/показать статистику (Это делается с использованием Angular).</li></ul>
 </ol>
+	
+<form method="post" action="" class="login">
+    <p>
+      <label for="login">Логин:</label>
+      <input type="text" name="login" id="login" placeholder="Логин">
+    </p>
 
+    <p>
+      <label for="password">Пароль:</label>
+      <input type="password" name="password" id="password" placeholder="Пароль">
+    </p>
+
+    <p class="login-submit">
+      <button type="submit" class="login-button">Вход</button>
+    </p>
+
+  
+  </form>
 	<iframe src="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/testpdd/index.html" height="500" width="575"></iframe>
 	
 <style type="text/css">
