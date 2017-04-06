@@ -174,7 +174,7 @@
     <OPTION value="#fff9e2">Бежевый</option>
     <OPTION value="#deff7c">Салатовый</option>
 	<OPTION value="#d6fffc">Голубой</option>
-  </SELECT> Цвет рамки часов: <SELECT onchange="BackGrBorder=this.value;">
+  </SELECT> |  Цвет рамки часов: <SELECT onchange="BackGrBorder=this.value;">
     <OPTION value="#eca84f">Стандартный</option>
     <OPTION value="#d1c8a5">Бежевый</option>
     <OPTION value="#8ba344">Салатовый</option>
@@ -189,7 +189,7 @@
 <script>
 					    
 var BackGr = '#f2cd9d';
-var BackGrBorder='#eca84f';
+var BackGrBorder = '#eca84f';
 					    
 					    
 var canvas = document.getElementById("canvas");
@@ -211,7 +211,7 @@ function drawFace(ctx, radius) {
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, 'BackGrBorder');
+  grad.addColorStop(0.5, BackGrBorder);
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
