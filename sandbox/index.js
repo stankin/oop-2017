@@ -1,5 +1,5 @@
 $("#idb-13-12").click(function(){
-	$.get({url: "students.json", cache: "false", dataType: "json", success: function( data ) {
+	$.get({url: "idb-13-12/students.json", cache: "false", dataType: "json", success: function( data ) {
 		if ($("#idb-13-12-table").length){
 			$("#idb-13-12-table").slideUp();
 			$("#idb-13-12-table").remove();
