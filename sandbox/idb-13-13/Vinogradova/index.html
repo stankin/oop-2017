@@ -153,7 +153,7 @@
 		<br>
 		<li>Возможность настройки предоставляется только аутентифицированным пользователям</li>
 		<br>
-		<li>Здесь еще парочка требований, но я их еще не придумала</li></ul>
+		<li>Цвет выбирается из предложенных в выпадающем списке</li></ul>
 <center>	
 	
 
@@ -187,7 +187,7 @@
 </canvas>
 
 <script>
-					    
+				    
 var BackGr = '#f2cd9d';
 var BackGrBorder = '#eca84f';
 					    
@@ -211,7 +211,7 @@ function drawFace(ctx, radius) {
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, BackGrBorder);
+  grad.addColorStop(0.5, "BackGrBorder");
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
