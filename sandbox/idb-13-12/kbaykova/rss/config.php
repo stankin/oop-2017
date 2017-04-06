@@ -4,11 +4,11 @@ include "libs/godb.php";
 include "libs/vk.php";
 
 $dbconfig = array(
-    'host'     => '127.0.0.1',
-    'username' => 'root',
-    'passwd'   => '',
-    'dbname'   => 'github',
-    /*'debug'    => true,*/
+    'host'     => 'mysql96.1gb.ru',
+    'username' => 'gb_oop',
+    'passwd'   => 'b4b92bz6nmz',
+    'dbname'   => 'gb_oop',
+    'debug'    => false,
     'charset'  => 'utf8'
 );
 
