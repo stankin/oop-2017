@@ -146,8 +146,7 @@
 <a name="SPA"><h2>SPA</h2></a></center>
 	<h3>Требования к SPA</h3>
 <ul><li>Пользователь должен иметь возможность настраивать:</li>
-		<ul><li>Общий фон приложения</li>
-			<li>Фон циферблата</li>
+		<ul>	<li>Фон циферблата</li>
 			<li>Цвет рамки часов</li></ul><br>			
 		<li>Авторизация и аутентификация пользователя должна происходить через VK oauth API</li>
 		<br>
@@ -166,11 +165,12 @@ VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
 	
 	<script> 
 	VK.Auth.getLoginStatus(function(response) {
-  if (response.session) {
- document.getElementById(selector).style.display = "visible"
-  } else {
-document.getElementById(selector).style.display = "hidden"
-  }});
+if (response.session) {
+if (response.status="connected") {
+document.getElementById(selector).style.display = "visible" }
+else { 
+document.getElementById(selector).style.display = "hidden" }
+}
 	</script> 
 
 	
