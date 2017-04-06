@@ -158,28 +158,35 @@
 	
 
 	<p>
-		<div id="vk_auth"></div>
+	<div id="vk_auth"></div>
 	<script type="text/javascript">
-VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
- alert('user '+data['uid']+' authorized');
-} });
-</script> 
+	VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
+	 alert('user '+data['uid']+' authorized');
+	} });
+	</script> 
 
+	     </p>
 	
+	<p>
 	  
-    <SELECT id="TimeBackground" ">
+    <SELECT onchange="BackGr=+this.value;">
     <OPTION value="#f2cd9d">Стандартный</option>
     <OPTION value="#fff9e2">Бежевый</option>
     <OPTION value="#deff7c">Голубой</option>
 	<OPTION value="#d6fffc">Зеленый</option>
-  </SELECT>	</p>
+  </SELECT>
+ </p>
+			  
 	
 	
-
-			       <canvas id="canvas" width="400" height="400">
+<canvas id="canvas" width="400" height="400">
 </canvas>
 
 <script>
+					    
+var BackGr = '#f2cd9d';
+					    
+					    
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
@@ -195,7 +202,7 @@ function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = '#f2cd9d';
+  ctx.fillStyle = BackGr;
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
