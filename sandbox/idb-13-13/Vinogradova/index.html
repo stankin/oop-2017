@@ -164,7 +164,7 @@ VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
  alert('user '+data['uid']+' authorized');
 } });
 </script>
-	
+	<script>
 	VK.Auth.getLoginStatus(function(response) { 
   if (response.session) { 
 	<OPTION value="#f2cd9d">Стандартный</option>
@@ -172,7 +172,7 @@ VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
     <OPTION value="#deff7c">Голубой</option>
 	<OPTION value="#d6fffc">Зеленый</option>
 	</SELECT>
-
+</script>
 	</p>
 	
 	
