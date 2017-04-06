@@ -169,12 +169,17 @@
 	
 	<p>
 	  
-    Цвет фона циферблата: <SELECT onchange="BackGr=this.value;">
+    Цвет фона циферблата: <SELECT name="Фон" onchange="BackGr=this.value;">
     <OPTION value="#f2cd9d">Стандартный</option>
     <OPTION value="#fff9e2">Бежевый</option>
     <OPTION value="#deff7c">Салатовый</option>
 	<OPTION value="#d6fffc">Голубой</option>
-  </SELECT> |  Цвет рамки часов: 
+  </SELECT> |  Цвет рамки часов: <SELECT name="Контур" onchange="BackGr=this.value;">
+    <OPTION value="#eca84f">Стандартный</option>
+    <OPTION value="#d3c2ad">Бежевый</option>
+    <OPTION value="#8fa845">Салатовый</option>
+	<OPTION value="#7eafac">Голубой</option>
+  </SELECT>
  </p>
 			  
 	
@@ -207,7 +212,7 @@ function drawFace(ctx, radius) {
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, "BackGrBorder");
+  grad.addColorStop(0.5, BackGrBorder);
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
