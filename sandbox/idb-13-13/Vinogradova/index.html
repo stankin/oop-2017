@@ -167,11 +167,14 @@
 	<script> 
 	VK.Auth.getLoginStatus(function(response) {
   if (response.session) {
-        $("#selector").show();
-    });
+    	  $(document).ready(function(){
+            $("iframe").show();
+    };
+	  
   } else {
-        $("#selector").hide();
-    });
+ 	$(document).ready(function(){
+         $("iframe").hide();
+   };
   }
 });
 	</script> 
