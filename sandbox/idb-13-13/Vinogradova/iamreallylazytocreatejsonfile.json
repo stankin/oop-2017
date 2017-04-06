@@ -1,6 +1,6 @@
   [
-{"name":"Стандартный",    "color":"#eca84f"},
-{"name":"Бежевый",  "color":#d3c2ad"},
-{"name":"Салатовый",  "color":"#8fa845"}
-{"name":"Голубой",  "color":"#7eafac"}
+{"user":"user", "name":"ЦветФона",    "color":"#eca84f"},
+{"user":"user", "name":"ЦветФона",  "color":"#d3c2ad"},
+{"user":"user", "name":"ЦветФона",  "color":"#8fa845"}
+{"user":"user", "name":"ЦветФона",  "color":"#7eafac"}
 ]
