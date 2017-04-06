@@ -1,11 +1,12 @@
 body{
 	font-family: 'Philosopher', sans-serif;
 }
-.table-toggler{
+.toggler{
 	cursor: pointer;
 	user-select: none;
 	font-size: 20px;
 	text-decoration: underline;
+	color: black;
 	margin: 10px 0px;
 	display: inline-block;
 }
@@ -17,5 +18,4 @@ body{
 }
 .group-table tr td, .group-table tr th{
 	border: 1px solid black;
-	padding: 3px 5px;
 }
