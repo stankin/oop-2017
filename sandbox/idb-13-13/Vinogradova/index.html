@@ -164,11 +164,23 @@
 	 alert('user '+data['uid']+' authorized');
 	} });
 	</script> 
+	
+	VK.Auth.getLoginStatus(function(response) {
+  if (response.session) {
+        $("#selector").show();
+    });
+  } else {
+        $("#selector").hide();
+    });
+  }
+});
+
+	
 
 	     </p>
 	
 	<p>
-	  
+<div id="selectors">	  
     Цвет фона циферблата: <SELECT name="Фон" onchange="BackGr=this.value;">
     <OPTION value="#f2cd9d">Стандартный</option>
     <OPTION value="#fff9e2">Бежевый</option>
@@ -180,6 +192,7 @@
     <OPTION value="#8fa845">Салатовый</option>
 	<OPTION value="#7eafac">Голубой</option>
   </SELECT>
+	</div>
  </p>
 			  
 	
