@@ -156,19 +156,14 @@
 		<li>Цвет выбирается из предложенных в выпадающем списке</li></ul>
 <center>	
 	
-<script>
-	$(document).ready(function(){
-         $("#selector").hide();
-	</script>
 	<p>
 	<div id="vk_auth"></div>
-	<script type="text/javascript">
-	VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
-	 alert('user '+data['uid']+' authorized');
+<script type="text/javascript">
+VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
+ alert('user '+data['uid']+' authorized');
+} });
+</script>
 	
-    };
-	} });
-	</script> 
 	<script> 
 	VK.Auth.getLoginStatus(function(response) {
   if (response.session) {
