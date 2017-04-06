@@ -168,12 +168,12 @@
 	VK.Auth.getLoginStatus(function(response) {
   if (response.session) {
     	  $(document).ready(function(){
-            $("iframe").show();
+            $("#selector").show();
     };
 	  
   } else {
  	$(document).ready(function(){
-         $("iframe").hide();
+         $("#selector").hide();
    };
   }
 });
