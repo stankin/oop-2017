@@ -163,15 +163,14 @@ VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
 } });
 </script>
 	
-	<script> 
-	VK.Auth.getLoginStatus(function(response) {
-if (response.session) {
-if (response.status="connected") {
-document.getElementById(selector).style.display = "visible" }
-else { 
-document.getElementById(selector).style.display = "hidden" }
-}
-	</script> 
+<script> 
+VK.Auth.getLoginStatus(function(response) { 
+if (response.session) { 
+document.getElementById(selectors).style.display = "visible" 
+} else { 
+document.getElementById(selectors).style.display = "hidden" 
+}}); 
+</script>
 
 	
 
