@@ -16,6 +16,10 @@
 <script src="/jquery-1.11.1.min.js"></script>
 	
 	<script type="text/javascript" src="//vk.com/js/api/openapi.js?143"></script>
+<script type="text/javascript">
+  VK.init({apiId: 5963037});
+</script>
+
 </head>
 <body>
 <a name="top"></a>
@@ -152,28 +156,27 @@
 		<li>Цвет выбирается из предложенных в выпадающем списке</li></ul>
 <center>	
 	
-
+<script>
+	$(document).ready(function(){
+         $("#selector").hide();
+	</script>
 	<p>
-	<script type="text/javascript">
-  VK.init({apiId: 5963037});
-function authInfo(response) {
-  if (response.session) {
-    alert('user: '+response.session.mid);
-  } else {
-    alert('not auth');
-  }
-}
-VK.Auth.getLoginStatus(authInfo);
-VK.UI.button('login_button');
-		
-</script>
 	<div id="vk_auth"></div>
 	<script type="text/javascript">
 	VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
 	 alert('user '+data['uid']+' authorized');
-	 });
+	
+    };
+	} });
 	</script> 
-
+	<script> 
+	VK.Auth.getLoginStatus(function(response) {
+  if (response.session) {
+ document.getElementById(selector).style.display = "visible"
+  } else {
+document.getElementById(selector).style.display = "hidden"
+  }});
+	</script> 
 
 	
 
@@ -289,3 +292,4 @@ function drawHand(ctx, pos, length, width) {
 </div>
 </body>
 </html>
+
