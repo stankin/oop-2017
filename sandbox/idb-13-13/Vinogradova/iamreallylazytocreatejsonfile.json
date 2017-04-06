@@ -1,6 +1,6 @@
   [
-{"user":"user", "name":"ЦветФона",    "color":"#eca84f"},
-{"user":"user", "name":"ЦветФона",  "color":"#d3c2ad"},
-{"user":"user", "name":"ЦветФона",  "color":"#8fa845"}
-{"user":"user", "name":"ЦветФона",  "color":"#7eafac"}
+{"user":"user", "Фон":"#f2cd9d",    "Контур":"#eca84f"},
+{"user":"user", "Фон":"#fff9e2",  "Контур":"#d3c2ad"},
+{"user":"user", "Фон":"#deff7c",  "Контур":"#8fa845"}
+{"user":"user", "Фон":"#d6fffc",  "Контур":"#7eafac"}
 ]
