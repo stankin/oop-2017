@@ -32,6 +32,11 @@ h1 {
 	border-style: none;
 	}
 
+#selector {
+	background-color: none;
+	border-style: none;
+	}
+
 h2 {
     color: #f3f0ed;
 	text-shadow: 0 0 10px #606060;
