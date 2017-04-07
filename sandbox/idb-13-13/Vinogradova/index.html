@@ -278,8 +278,13 @@ $("select[name='Контур']").val(BackGrBorder );
 drawClock(); 
 
 },
-error:function(err){
-console.log(err);
+error:function(err){ 
+var obj = JSON.Parse(err.responseText); 
+BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
+BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
+$("select[name='Фон']").val(BackGr ); 
+$("select[name='Контур']").val(BackGrBorder ); 
+drawClock(); 
 } 
 });
 	
