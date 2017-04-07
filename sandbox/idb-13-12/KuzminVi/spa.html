@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="updateClock()">
 
 <script>
   function changeSize(){
-    var pass = document.GetElementById("pass");
+    var pass = document.getElementById("pass");
     var auth = 0;
     $.get("pass.json", function(data, status){
       if (pass != data.pass)
@@ -18,8 +18,8 @@
     });
     if (auth == 1)
     {
-    var newsize = document.GetElementById("size");
-    var c = document.GetElementById("canvas");
+    var newsize = document.getElementById("size");
+    var c = document.getElementById("canvas");
     c.width=newsize.value;
     c.height=newsize.value;
     updateClock();
