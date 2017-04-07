@@ -15,14 +15,16 @@ function changeSize(){
       }
     });
   }
-
+var ctx; 
+var radius; 
+var canvas;
 function updateClock()
  {
- var window.canvas = document.getElementById("canvas"); var window.ctx; var window.radius;
-window.ctx = canvas.getContext("2d");
-window.radius = canvas.height / 2;
-window.ctx.translate(window.radius, window.radius);
-window.radius = window.radius * 0.90; 
+canvas = document.getElementById("canvas");
+ctx = canvas.getContext("2d");
+radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90; 
 setInterval( drawClock(), 1000);
 drawClock();
  }
