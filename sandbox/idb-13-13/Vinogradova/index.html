@@ -286,7 +286,7 @@ function drawHand(ctx, pos, length, width) {
 		
 $.ajax({ 
 url: 'http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', 
-	method:"GET", 
+	 type:"GET", 
 success: function(data){ 
 var obj = JSON.Parse(data); 
 BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
