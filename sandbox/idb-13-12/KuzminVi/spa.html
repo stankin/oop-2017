@@ -5,7 +5,6 @@
 <script>
   function changeSize(){
     var passtext = document.getElementById("pass").value;
-    var auth = 0;
     $.get("pass.json", function(data, status){
       if (passtext != data.pass)
       {
@@ -13,17 +12,13 @@
       }
       else
       {
-        auth = 1;
-      }
-    });
-    if (auth == 1)
-    {
-    var newsize = document.getElementById("size");
+        var newsize = document.getElementById("size");
     var c = document.getElementById("canvas");
     c.width=newsize.value;
     c.height=newsize.value;
     updateClock();
-    }
+      }
+    });
   }
 </script>
 <canvas id="canvas" width="400" height="400"
