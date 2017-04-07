@@ -4,10 +4,10 @@
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>
   function changeSize(){
-    var pass = document.getElementById("pass");
+    var passtext = document.getElementById("pass").value;
     var auth = 0;
     $.get("pass.json", function(data, status){
-      if (pass != data.pass)
+      if (passtext != data.pass)
       {
         alert('Неправильный пароль');
       }
