@@ -2,17 +2,36 @@
 <html>
 <body>
 
-<canvas id="canvas" width="400" height="200"
+<script>
+  function changeSize(){
+    
+    var newsize = document.GetElementById("size");
+    var c = document.GetElementById("canvas");
+    c.width=newsize.value;
+    c.heigth=newsize.value;
+    updateClock();
+  }
+</script>
+<canvas id="canvas" width="400" height="400"
 style="background-color:#333">
 </canvas>
+<input type="text" id="size"></input>
+<input type="text" id="pass"></input> 
+<button onclick="changeSize()">
 
 <script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
+ var canvas = document.getElementById("canvas");
+ var ctx;
+ var radius;
+function updateClock()
+ {
+ctx = canvas.getContext("2d");
+radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
+drawClock();
+ }
 function drawClock() {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
