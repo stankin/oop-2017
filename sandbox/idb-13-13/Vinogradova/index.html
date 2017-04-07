@@ -284,7 +284,20 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 		
-	$.ajax({ url: 'https://github.com/stankin/oop/blob/master/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', success: function(data){ var obj = JSON.Parse(data); BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ;BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"];$("select[name='Фон']").val(BackGr );$("select[name='Контур']").val(BackGrBorder );}); } });	
+$.ajax({ 
+url: 'https://github.com/stankin/oop/blob/master/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', 
+success: function(data){ 
+var obj = JSON.Parse(data); 
+BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
+BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
+$("select[name='Фон']").val(BackGr ); 
+$("select[name='Контур']").val(BackGrBorder ); 
+drawClock(); 
+
+} 
+});
+	
+	
 </script>
 			       
 			       
