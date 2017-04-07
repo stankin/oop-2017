@@ -18,10 +18,10 @@ function changeSize(){
 
 function updateClock()
  {
- window.canvas = document.getElementById("canvas"); var ctx; var radius;
+ var window.canvas = document.getElementById("canvas"); var window.ctx; var window.radius;
 window.ctx = canvas.getContext("2d");
 window.radius = canvas.height / 2;
-ctx.translate(window.radius, window.radius);
+window.ctx.translate(window.radius, window.radius);
 window.radius = window.radius * 0.90; 
 setInterval( drawClock(), 1000);
 drawClock();
