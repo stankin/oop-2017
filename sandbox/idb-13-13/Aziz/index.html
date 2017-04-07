@@ -1,22 +1,77 @@
-<! DOCTYPE HTML>
-< HTML >
-< Голова >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="This example illustrates the use of the padding, border and margin properties">
+		<meta name="keywords" content="padding, border, СЃР°С…Р°СЂ, margin">
+		<link rel="stylesheet" href="style.css">
+		<title>Properties</title>
+</head>
 
-< Сценарий  SRC = " http://code.jquery.com/jquery-latest.min.js "  Тип = " текст / JavaScript " > </ скрипт >
-< Скрипт >
-$ ( Документ ). готовы ( функция () {
-    $ ( " Р " ). нажмите ( функция () {
-        $ ( Это ). скрыть ();
-    });
-});
-</ Скрипт >
-</ Голова >
-< Тело >
-< Р > Создать определенный по размеру блок </ р >
-< Р > Определить отступы, границы, заполнение (набивка) </ р >
-< Р > При помощи Js изменять параметры "отступы" и визуальная составляющей при наведении / увод курсора с элементом (блок) </ р >
-< Р > Диаграмма класса </ р >
-< Р > По Wiki yfhbcjdfkb UseCase </ P >
-< IFrame  SRC = " clock.html "  высота = " 800 "  ширина = " 600 "  стиль = " границы: нет; " > </ IFrame >
-</ Тело >
-</ HTML 
+<body>
+
+    <div id="myDiv">РќР° РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РїРѕРєР°Р·Р°РЅ РїСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ Р°С‚СЂРёР±СѓС‚РѕРІ: padding, border, margin</div>
+	
+	<script src="js/js-border.js"></script>
+
+	<br>
+	<input id="paddingInput" type="text" value="0" size="2" /> 
+    <button onclick="ChangePadding ();">РР·РјРµРЅРёС‚СЊ "padding"</button>
+		<script src="js/js-padding.js"></script>
+	        
+
+	<br>
+    <input id="marginInput" type="text" value="0" size="2"/> 
+    <button onclick="ChangeMargin ();">РР·РјРµРЅРёС‚СЊ "margin"</button>
+		<script src="js/js-margin.js"></script>
+
+
+	<div>
+		<span>РўРѕР»С‰РёРЅР° РіСЂР°РЅРёС†С‹:</span>
+		    <select onchange="ChangeBorder ();" size="1">
+		        <option selected="selected" />3px
+		        <option />6px
+		        <option />12px
+		        <option />24px
+		        <option />32px
+		    </select>
+    </div>
+
+	<div>
+		<span>РўРёРї РіСЂР°РЅРёС†С‹:</span>
+		    <select onchange="ChangeBorder ();" size="1">
+		        <option />none
+		        <option />dashed
+		        <option />double
+		        <option />groove
+		        <option />inset
+		        <option />dotted
+		        <option />outset
+		        <option />ridge
+		        <option selected="selected" />solid
+		        <option />window-inset
+		    </select>
+	</div>
+
+	<div>
+		<span>Р¦РІРµС‚ РіСЂР°РЅРёС†С‹:</span>
+		    <select onchange="ChangeBorder ();" size="1">
+		        <option selected="selected" />blue
+		        <option />red
+		        <option />cyan
+		        <option />white
+		        <option />green
+		        <option />yellow
+		        <option />purple
+		        <option />black
+	   		</select>
+	</div>
+	<div>
+		<p><b>РћРїРёСЃР°РЅРёРµ Р·Р°РґР°С‡Рё:</b> РСЃРїРѕР»СЊР·СѓСЏ Javascript, РїРѕРєР°Р·Р°С‚СЊ РЅР°РіР»СЏРґРЅРѕ СЂР°Р±РѕС‚Сѓ Р°С‚СЂРёР±СѓС‚РѕРІ "padding", "border", "margin".</p>
+	</div>
+	<div>
+		<p><b>Р”РёР°РіСЂР°РјРјР° РєР»Р°СЃСЃРѕРІ:</b></p>
+		<img src="image/UML-Static Structure diagram.PNG" alt="UML-Static Structure diagram">
+	</div>
+</body>
+</html>
