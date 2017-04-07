@@ -270,7 +270,7 @@ $.ajax({
 url: 'http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', 
 method:"GET", 
 success: function(data){ 
-var obj = JSON.Parse(data); 
+var obj = $.parseJSON(data); 
 BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
 BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
 $("select[name='Фон']").val(BackGr ); 
@@ -279,7 +279,7 @@ drawClock();
 
 },
 error:function(err){ 
-var obj = JSON.Parse(err.responseText); 
+var obj = $.parseJSON(err.responseText);
 BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
 BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
 $("select[name='Фон']").val(BackGr ); 
