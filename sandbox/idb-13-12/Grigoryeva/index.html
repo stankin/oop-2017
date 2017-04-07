@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+</head>
+<body bgcolor="#F8F8F8"  link="#228B22">
+<font color="#4B00AD"><h1 align=center>Лабораторная работа Григорьевой А. (ИДБ-13-12)</h1></font>
+<hr>
+<font color="#4B00AD"><h2>Мои задачи:</h2></font>
+<ol>
+<a href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-12/Grigoryeva/"><li>Создать личную страницу на Github</li></a>
+<a href="https://github.com/stankin/oop/wiki/%D0%A2%D1%8D%D0%B3%D0%B8-HTML.-Table"><li>Создать Wiki-страницу о  тэге html &#60;table&#62;</li></a>
+<li>Создать SPA</li>
+</ol>
+<hr>
+<font color="#4B00AD"><h3 align=center>HTML.Table</h3></font>
+<p>Элемент <b>&#60;table&#62;</b> служит контейнером для элементов, определяющих содержимое таблицы. Любая таблица состоит из строк и ячеек, которые задаются с помощью тегов &#60;tr&#62; и &#60;td&#62;. Внутри &#60;table&#62; допустимо использовать следующие элементы: &#60;caption&#62;, &#60;col&#62;, &#60;colgroup&#62;, &#60;tbody&#62;, &#60;td&#62;, &#60;tfoot&#62;, &#60;th&#62;, &#60;thead&#62; и &#60;tr&#62;.</p>
+<font color="#228B22" size="4"><b><p>Синтаксис:</p></b></font>
+<img src="синтаксис.png">
+<br>
+<font color="#228B22" size="4"><b><p>Атрибуты:</p></b></font>
+<font color="#008B8B">
+<dl>
+<b><dt>align</dt></b>
+<dd>Определяет выравнивание таблицы.</dd>
+<b><dt>background</dt></b>
+<dd>Задает фоновый рисунок в таблице.</dd>
+<b><dt>bgcolor</dt></b>
+<dd>Цвет фона таблицы.</dd>
+<b><dt>border</dt></b>
+<dd>Толщина рамки в пикселах.</dd>
+<b><dt>bordercolor</dt></b>
+<dd>Цвет рамки.</dd>
+<b><dt>cellpadding</dt></b>
+<dd>Отступ от рамки до содержимого ячейки.</dd>
+<b><dt>cellspacing</dt></b>
+<dd>Расстояние между ячейками.</dd>
+<b><dt>cols</dt></b>
+<dd>Число колонок в таблице.</dd>
+<b><dt>frame</dt></b>
+<dd>Сообщает браузеру, как отображать границы вокруг таблицы.</dd>
+<b><dt>height</dt></b>
+<dd>Высота таблицы.</dd>
+<b><dt>rules</dt></b>
+<dd>Сообщает браузеру, где отображать границы между ячейками.</dd>
+<b><dt>summary</dt></b>
+<dd>Краткое описание таблицы.</dd>
+<b><dt>width</dt></b>
+<dd>Ширина таблицы.</dd>
+</dl>
+</font>
+<font color="#4B00AD"><h3 align=center>Пример использования:</h3></font>
+
+
+<table border="4" cellspacing="8" bordercolor="lightblue">
+   <caption>Таблица умножения от 1 до 4</caption>
+   <tr>
+    <th>&nbsp;</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+   </tr>
+   <tr><td><b>1</b></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+   <tr><td><b>2</b></td><td>2</td><td>4</td><td>6</td><td>8</td></tr>
+   <tr><td><b>3</b></td><td>3</td><td>6</td><td>9</td><td>12</td></tr>
+   <tr><td><b>4</b></td><td>4</td><td>8</td><td>12</td><td>16</td></tr>
+</table>
+<hr>
+
+
+
+<font color="#4B00AD"><h3 align=center>SPA "Часы"</h3></font>
+<iframe src="index2.html" height="800" width="600" style="border:none;"></iframe> 
+</body>
+</html>
