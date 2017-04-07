@@ -29,9 +29,9 @@ setInterval( drawClock(), 1000);
 drawClock();
  }
 function drawClock() {
-  drawFace(window.ctx, window.radius);
-  drawNumbers(window.ctx, window.radius);
-  drawTime(window.ctx, window.radius);
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
 }
 function drawFace(ctx, radius) {
   var grad;
