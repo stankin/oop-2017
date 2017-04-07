@@ -18,18 +18,18 @@ function changeSize(){
 
 function updateClock()
  {
- var canvas = document.getElementById("canvas"); var ctx; var radius;
-ctx = canvas.getContext("2d");
-radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90; 
-setInterval( drawClock(), 1000,ctx,radius );
-drawClock(ctx,radius);
+ window.canvas = document.getElementById("canvas"); var ctx; var radius;
+window.ctx = canvas.getContext("2d");
+window.radius = canvas.height / 2;
+ctx.translate(window.radius, window.radius);
+window.radius = window.radius * 0.90; 
+setInterval( drawClock(), 1000);
+drawClock();
  }
-function drawClock(ctx,radius) {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
+function drawClock() {
+  drawFace(window.ctx, window.radius);
+  drawNumbers(window.ctx, window.radius);
+  drawTime(window.ctx, window.radius);
 }
 function drawFace(ctx, radius) {
   var grad;
