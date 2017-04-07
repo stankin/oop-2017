@@ -266,19 +266,13 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 		
-$.ajax({ 
-url: 'http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', 
-	 type:"GET", 
-	dataType: 'json',
-success: function(data){ 
+$.getJSON( "ajax/test.json", function( data ) { 
 var obj = JSON.Parse(data); 
 BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
 BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
 $("select[name='Фон']").val(BackGr ); 
 $("select[name='Контур']").val(BackGrBorder ); 
 drawClock(); 
-
-} 
 });
 	
 	
