@@ -22,7 +22,7 @@ function updateClock()
 ctx = canvas.getContext("2d");
 radius = canvas.height / 2;
 ctx.translate(radius, radius);
-radius = radius * 0.90
+radius = radius * 0.90;
 setInterval(drawClock, 1000);
 drawClock(ctx,radius);
  }
