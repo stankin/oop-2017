@@ -4,12 +4,26 @@
 
 <script>
   function changeSize(){
-    
+    var pass = document.GetElementById("pass");
+    var auth = 0;
+    $.get("pass.json", function(data, status){
+      if (pass != data.pass)
+      {
+        alert('Неправильный пароль');
+      }
+      else
+      {
+        auth = 1;
+      }
+    });
+    if (auth == 1)
+    {
     var newsize = document.GetElementById("size");
     var c = document.GetElementById("canvas");
     c.width=newsize.value;
-    c.heigth=newsize.value;
+    c.height=newsize.value;
     updateClock();
+    }
   }
 </script>
 <canvas id="canvas" width="400" height="400"
