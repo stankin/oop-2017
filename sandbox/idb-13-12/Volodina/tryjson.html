@@ -1,12 +1,12 @@
-<html>
+п»ї<html>
 <head>
 <script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 	$(document).ready (function(){
-		$("select[name='country']").bind("change", fuunction(){
+		$("select[name='country']").bind("change", function(){
 			$("select[name='city']").empty();
-			$.get("countryCheck.php",{country:$("select[name='country']").val()},
-			function (data){
+			$.get("countryCheck.php",{country:$
+			("select[name='country']").val()}, function (data){
 				data = JSON.parse(data);
 				for (var id in data) {
 					$("select[name='city']").append($("<option value='" +
@@ -18,13 +18,13 @@
 </script>
 </head>
 <body>
-	<label>Укажите страну:</label>
+	<label>РЈРєР°Р¶РёС‚Рµ СЃС‚СЂР°РЅСѓ:</label>
 	<select name="country">
 		<option value="0" selected="selected"></option>
-		<option value="1">Америка</option>
-		<option value="2">Франция</option>
+		<option value="1">РђРјРµСЂРёРєР°</option>
+		<option value="2">Р¤СЂР°РЅС†РёСЏ</option>
 	</select>
-	<label>City:</label>
+	<label>Р“РѕСЂРѕРґР°: </label>
 	<select name="city">
 		<option value="0"><option>
 	</select>
