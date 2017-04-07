@@ -1,0 +1,87 @@
+<! DOCTYPE HTML>
+< HTML >
+< Тело >
+
+< Холст  ID = " холст "  ширина = " 400 "  высота = " 400 "
+стиль = " цвет фона: # 333 " >
+</ Холст >
+
+< Скрипт >
+вар холст =  документ . getElementById ( " холст " );
+вар CTX =  холст . getContext ( " 2d " );
+вар радиус =  холст . высота  /  2 ;
+CTX . переводить (радиус, радиус);
+радиус = радиус *  0,90
+setInterval (drawClock, 1000 );
+Функция  drawClock () {
+  drawFace (CTX, радиус);
+  drawNumbers (CTX, радиус);
+  drawTime (CTX, радиус);
+}
+Функция  drawFace ( CTX , радиус ) {
+  вар град;
+  CTX . beginPath ();
+  CTX . дуги ( 0 , 0 , радиус, 0 , 2 * Math . PI );
+  CTX . FillStyle  =  ' белый ' ;
+  CTX . заполнения ();
+  град =  CTX . createRadialGradient ( 0 , 0 , радиус * 0,95 , 0 , 0 , радиус * 1,05 );
+  град . addColorStop ( 0 , ' # 333 ' );
+  град . addColorStop ( 0,5 , ' белый ' );
+  град . addColorStop ( 1 , ' # 333 ' );
+  CTX . StrokeStyle  = град;
+  CTX . LineWidth  = радиус * 0,1 ;
+  CTX . инсульт ();
+  CTX . beginPath ();
+  CTX . дуги ( 0 , 0 , радиус * 0,1 , 0 , 2 * Math . PI );
+  CTX . FillStyle  =  ' # 333 ' ;
+  CTX . заполнения ();
+}
+Функция  drawNumbers ( CTX , радиус ) {
+  вар анг;
+  вар Num;
+  CTX . Шрифт  = радиус * 0,15  +  " ПВ Arial " ;
+  CTX . TextBaseline = " средний " ;
+  CTX . TextAlign = " центр " ;
+  для (число =  1 ; Num <  13 ; Num ++ ) {
+    анг = Num *  Math . ПИ  /  6 ;
+    CTX . повернуть (Ang);
+    CTX . переводить ( 0 , - радиус * 0,85 );
+    CTX . повернуть ( - Ang);
+    CTX . fillText ( Num . ToString (), 0 , 0 );
+    CTX . повернуть (Ang);
+    CTX . переводить ( 0 , радиус * 0,85 );
+    CTX . повернуть ( - Ang);
+  }
+}
+Функция  drawTime ( CTX , радиус ) {
+    вар Теперь =  новый  Дата ();
+    вар час = в  настоящее время . getHours ();
+    вар минут = в  настоящее время . getMinutes ();
+    вар второй =  Теперь . getSeconds ();
+    // час
+    час = час % 12 ;
+    час = (час * Math . PI / 6 ) +
+    (минута * Math . PI / ( 6 * 60 )) +
+    (второй * Math . PI / ( 360 * 60 ));
+    drawHand (CTX, час, радиус * 0,5 , радиус * 0,07 );
+    // минут
+    минута = (минута * Math . PI / 30 ) + (второй * Math . PI / ( 30 * 60 ));
+    drawHand (CTX, минута, радиус * 0,8 , радиус * 0,07 );
+    // второй
+    второй = (второй * Math . PI / 30 );
+    drawHand (CTX, во- вторых, радиус * 0,9 , радиус * 0,02 );
+}
+Функция  drawHand ( CTX , позы , длина , ширина ) {
+    CTX . beginPath ();
+    CTX . LineWidth  = ширина;
+    CTX . lineCap  =  " круглая " ;
+    CTX . MoveTo ( 0 , 0 );
+    CTX . повернуть (позы);
+    CTX . LineTo ( 0 , - длина);
+    CTX . инсульт ();
+    CTX . повернуть ( - поз);
+}
+</ Скрипт >
+
+</ Тело >
+</ HTML >
