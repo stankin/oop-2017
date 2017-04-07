@@ -270,22 +270,15 @@ $.ajax({
 url: 'http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', 
 method:"GET", 
 success: function(data){ 
-var obj = $.parseJSON(data); 
+var obj = data; 
 BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
 BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
 $("select[name='Фон']").val(BackGr ); 
 $("select[name='Контур']").val(BackGrBorder ); 
 drawClock(); 
 
-},
-error:function(err){ 
-var obj = $.parseJSON(err.responseText);
-BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
-BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
-$("select[name='Фон']").val(BackGr ); 
-$("select[name='Контур']").val(BackGrBorder ); 
-drawClock(); 
-} 
+}
+	
 });
 	
 	
