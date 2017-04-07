@@ -1,6 +1,6 @@
 <?php
 	if($_GET["country"] == 1) echo json_encode(array("1" => 
-	"Âàøèíãòîí", "2" => "Ñèýòë"));
-	else if ($_GET["country"] == 2) echo json_encode(array("3" => 
-	"Ïàðèæ", "4" => "Ìàðñåëü"));
+	"Ð’Ð°ÑˆÐ¸Ð½Ð³Ñ‚Ð¾Ð½", "2" => "Ð¡Ð¸ÑÑ‚Ð»"));
+	 if ($_GET["country"] == 2) echo json_encode(array("3" => 
+	"ÐŸÐ°Ñ€Ð¸Ð¶", "4" => "ÐœÐ°Ñ€ÑÐµÐ»ÑŒ"));
 ?>
