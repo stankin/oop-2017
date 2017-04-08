@@ -2,22 +2,22 @@
 telbase:
 [
 {
-marka:"iPhone ",
+title:"iPhone ",
 model:"5S",
 cost:30 000,
 },
 {
-marka:"HTC ",
+title:"HTC ",
 model:"One A9",
 cost:15 200,
 },
 {
-marka:"Samsung ",
+title:"Samsung ",
 model:"Galaxy S7",
 cost:25 500,
 },
 {
-marka:"Huawei ",
+title:"Huawei ",
 model:"Honor 8",
 cost:20 000,
 }
