@@ -33,28 +33,26 @@ $(document).ready(function(){
       </ul>
     </li>
     <li><a href="javascript:;" onclick="go_to_third_page()">Задание</a></li>
-	<li><a href="">Contact</a></li>
+    <li><a href="javascript:;" onclick="go_to_fourth_page()">Диаграмма классов</a></li>
   </ul>
 </nav>
 	<div id="page_1">
-	     <h1 style="text-align: center;">Диаграмма</h1>
-	     <img src="http://savepic.net/9156335.png" border="0" width="600px" style="margin: 0 auto;display: block;"/>
-		<p align="center">
+	     <h1 style="text-align: center;">Игра</h1>
+	     <iframe src="rezenova.html" height="800" width="600" style="border:none;margin: 0 auto;display: block;"></iframe>
+	<p align="center">
       <font size="5" color=#ff6a5d face="Arial">Требования:</font>
 	</p>	
-		<nav>
+	<nav>
 		<ul>
 	<font size="5" color=#ff6a5d face="Arial">
  	 <li>Изменить цвет фона на желтый</li>
  	 <li>Увеличить размер куба</li>
  	 <li>Изменить направление вращения куба</li>
 	 <li>Поместить узор на куб</li>
-		</font>
+	</font>
 		</ul>
  	   </nav>
-	     <h1 style="text-align: center;">Игра</h1>
-	     <iframe src="rezenova.html" height="800" width="600" style="border:none;margin: 0 auto;display: block;"></iframe>
-	</div>
+	 </div>
 	<div id="page_2">
 	<h1>Часы</h1>
 		<iframe src="yulia.html" height="800" width="600" style="border:none;"></iframe> 
@@ -105,30 +103,46 @@ $(document).ready(function(){
               </p>
 
 	</div>
-	
+	<div id="page_4">
+	<h1 style="text-align: center;">Диаграмма классов</h1>
+	     <img src="http://savepic.net/9156335.png" border="0" width="600px" style="margin: 0 auto;display: block;"/>
+		 <p align="center">
+      <font size="5" color=#ff6a5d face="Arial">Диаграмма классов для тега параграф </font>
+	</p>
+	</div>
+	 
 	<script>
 	$("#page_1").show();
 	$("#page_2").hide();
 	$("#page_3").hide();
+	$("#page_4").hide();
 		
 	function go_to_first_page(){
 		$("#page_1").show();
 		$("#page_2").hide();
 		$("#page_3").hide();
+		$("#page_4").hide();
 	}
 	
 	function go_to_second_page(){
 		$("#page_1").hide();
 		$("#page_2").show();
 		$("#page_3").hide();
+		$("#page_4").hide();
 	}
 	
 	function go_to_third_page(){
 		$("#page_1").hide();
 		$("#page_2").hide();
 		$("#page_3").show();
+		$("#page_4").hide();
 	}
-		
+		function go_to_fourth_page(){
+		$("#page_1").hide();
+		$("#page_2").hide();
+		$("#page_3").hide();
+		$("#page_4").show();
+	}
 	</script>
  </body> 
 </html>
