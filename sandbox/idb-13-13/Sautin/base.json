@@ -1,10 +1,10 @@
 {
-bookbase:
+telbase:
 [
 {
-title:"Гарри Поттер и философский камень ",
-model:"Джоан Ролинг",
-cost:500,
+title:"iPhone ",
+model:"5S",
+cost:"30 000",
 quantity:15
 },
 {
