@@ -13,7 +13,7 @@ canvas {
 <script>
 var myGamePiece;
 function startGame() {
-    myGamePiece = new component(80, 80, "#e6855f", 300, 250);
+    myGamePiece = new component(80, 80, "##ff5648", 250, 150);
     myGameArea.start();
 }
 var myGameArea = {
@@ -51,7 +51,7 @@ function component(width, height, color, x, y) {
 }
 function updateGameArea() {
     myGameArea.clear();
-    myGamePiece.angle += 1 * Math.PI / 180;    
+    myGamePiece.angle += -1 * Math.PI / 180;    
     myGamePiece.update();
 }
 </script>
