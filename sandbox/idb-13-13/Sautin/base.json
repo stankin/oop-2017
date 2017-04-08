@@ -9,7 +9,7 @@ quantity:15
 },
 {
 title:"Дракула ",
-author:"Брэм Стокер",
+model:"Брэм Стокер",
 cost:430,
 quantity:5
 },
