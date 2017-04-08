@@ -99,11 +99,11 @@ function start(){
          document.getElementById('res3').innerHTML=json.bookbase[1].cost;
          document.getElementById('res4').innerHTML=json.bookbase[1].quantity;
 	      
-	 document.getElementById('wrap').style.display='block';
-         document.getElementById('res1').innerHTML=json.bookbase[2].title;
-         document.getElementById('res2').innerHTML=json.bookbase[2].author;
-         document.getElementById('res3').innerHTML=json.bookbase[2].cost;
-         document.getElementById('res4').innerHTML=json.bookbase[2].quantity;
+	 document.getElementById('wrap1').style.display='block';
+         document.getElementById('res5').innerHTML=json.bookbase[2].title;
+         document.getElementById('res6').innerHTML=json.bookbase[2].author;
+         document.getElementById('res7').innerHTML=json.bookbase[2].cost;
+         document.getElementById('res8').innerHTML=json.bookbase[2].quantity;
       }
    }
 }
@@ -122,9 +122,18 @@ function start(){
 <p>Автор: <b><span id='res2'></span></b></p>
 <p>Цена: <b><span id='res3'></span> руб.</b></p>
 <p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
-<hr />
+<hr /><br>
 
 </div>
+<div id='wrap' style='display:none;'>
+<hr />
+<p>Название книги: <b><span id='res5'></span></b></p>
+<p>Автор: <b><span id='res6'></span></b></p>
+<p>Цена: <b><span id='res7'></span> руб.</b></p>
+<p>Количество на складе: <b><span id='res8'></span> шт.</b></p>
+<hr />
+
+</div>	
 </body>
 
 </div>
