@@ -2,24 +2,28 @@
 bookbase:
 [
 {
-title:"iPhone ",
-model:"5S",
-cost:30 000
+title:"Гарри Поттер и философский камень ",
+author:"Джоан Ролинг",
+cost:500,
+quantity:15
 },
 {
-title:"HTC ",
-model:"One A9",
-cost:15 200
+title:"Дракула ",
+author:"Брэм Стокер",
+cost:430,
+quantity:5
 },
 {
-title:"Samsung ",
-model:"Galaxy S7",
-cost:25 500
+title:"Преступление и наказание",
+author:"Федор Достоевский",
+cost:400,
+quantity:10
 },
 {
-title:"Huawei ",
-model:"Honor 8",
-cost:20 000
+title:"Страх и отвращение в Лас-Вегасе ",
+author:"Хантер Томпсон",
+cost:340,
+quantity:12,
 }
 ]
 }
