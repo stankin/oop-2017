@@ -94,7 +94,7 @@ function start(){
          var json=eval( '('+xhttp.responseText+')' );
          
          document.getElementById('wrap').style.display='block';
-         document.getElementById('res1').innerHTML=json.telbase[0].marka;
+         document.getElementById('res1').innerHTML=json.telbase[0].title;
          document.getElementById('res2').innerHTML=json.telbase[0].model;
          document.getElementById('res3').innerHTML=json.telbase[0].cost;
 	      
