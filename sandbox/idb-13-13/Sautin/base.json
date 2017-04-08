@@ -14,15 +14,15 @@ cost:"15 000",
 quantity:5
 },
 {
-title:"Преступление и наказание",
-model:"Федор Достоевский",
-cost:400,
+title:"Samsung",
+model:"Galaxy",
+cost:"25 500",
 quantity:10
 },
 {
-title:"Страх и отвращение в Лас-Вегасе ",
-model:"Хантер Томпсон",
-cost:340,
+title:"Huawei ",
+model:"Honor 8",
+cost:"20 500",
 quantity:12,
 }
 ]
