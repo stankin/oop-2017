@@ -18,34 +18,22 @@
 <a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/input_lab/index.html">Форматированный ввод с тегом input</a><br>
 
 <a class="link" href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%965">Описание лабораторной работы №5</a><br>
-<a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/indexjump.html">SPA (DoodleJump - пример для себя)</a>
+<a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/indexjump.html">SPA (DoodleJump - пример для себя)</a><br>
 <a class="link" href="https://github.com/stankin/oop/blob/master/sandbox/idb-13-13/Fedoseeva/SPA/index.php">SPA CHAT</a><div>
+	<p>Требования к SPA: создание чата
+		<ul>
+		<li>Перед входом в чат пользователю предлагается ввести свое имя, которое в дальнейшем используется для идентификации его сообщений</li>
+    <li>Использовать javascript библиотеку JQuery для создания ajax запросов и анимации</li>
+    <li>Реализовать сохранение сообщений в базе данных MySQL</li>
+    <li>Реализовать сохранение аккаунтов пользователей в базе данных MySQL</li>
+    <li>Сверстать чат на основе макета https://www.invisionapp.com/chat#</li>
+   <li>Реализация серверной части на PHP</li>
+	</ul>
+
 	<canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas>
 </div>
 
-<a href="javascript:;" onclick="getXML('#title')">Получить заголовок</a>
-<div class="result_desc">Результат: <span class="result-xml"></span></div> 
 
-<script>
-function getXML(selector){
-$.ajax({
-type: "get", 
-url: "test.xml", 
-dataType: "xml", 
-success: function(data) {
-$('.result-xml').html($(data).find(selector).text());
-}
-});
-}
-</script>
-	
-<script>
-$(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-});
-</script>
 <p id="p1">Параграф1</p>
 <p id="p2">Параграф2</p>
 <p id="p3">Параграф3 </p>
