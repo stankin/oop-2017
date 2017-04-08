@@ -26,6 +26,18 @@ p
 	text-indent:10%;
 	line-height: 200%
 }
+ul{
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:10%;
+	margin-right:10%;
+	text-align:left;
+	font-family:"Times New Roman",Georgia,Serif;
+	color: black;
+	font-style:normal;
+	font-size: 18px;
+	line-height: 150%
+}
 h1
 {text-align: center;}
 .button
