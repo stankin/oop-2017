@@ -86,7 +86,7 @@ div {
 <script type='text/javascript'>
 function start(){  
    xhttp=new XMLHttpRequest();
-   xhttp.open('GET','bb.json',true);
+   xhttp.open('GET','base.json',true);
    xhttp.send();
    xhttp.onreadystatechange=function(){
       if (xhttp.readyState==4){
@@ -98,6 +98,12 @@ function start(){
          document.getElementById('res2').innerHTML=json.bookbase[1].author;
          document.getElementById('res3').innerHTML=json.bookbase[1].cost;
          document.getElementById('res4').innerHTML=json.bookbase[1].quantity;
+	      
+	 document.getElementById('wrap').style.display='block';
+         document.getElementById('res1').innerHTML=json.bookbase[2].title;
+         document.getElementById('res2').innerHTML=json.bookbase[2].author;
+         document.getElementById('res3').innerHTML=json.bookbase[2].cost;
+         document.getElementById('res4').innerHTML=json.bookbase[2].quantity;
       }
    }
 }
