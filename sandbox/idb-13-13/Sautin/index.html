@@ -77,8 +77,25 @@ div {
 <body ng-app="myApp">
 
 
-<h1>Поиск по базе данных: </h1>
-<input type="checkbox" ng-model="myCheck"> Нажмите, чтобы скрыть/развернуть кнопку вывода информации 
+<h1>Требования к SPA </h1><br>
+	
+<form method="post" action="" class="login">
+    <p>
+      <label for="login">Логин:</label>
+      <input type="text" name="login" id="login">
+    </p>
+
+    <p>
+      <label for="password">Пароль:</label>
+      <input type="password" name="password" id="password">
+    </p>
+
+    <p class="login-submit">
+      <button type="submit" class="boton1">Войти</button>
+    </p>
+</form><br>
+	
+<input type="checkbox" ng-model="myCheck"> Скрыть вывод информации о телефонах 
 <div ng-hide="myCheck">
 
 <head>
@@ -128,7 +145,7 @@ function start(){
 
 
 <br>
-<input type='button' value='Вывести информацию' onclick='start()'/>
+<input type='button' class="boton1" value='Показать весь список товаров' onclick='start()'/>
 
 <br /><br />
 <div id='wrap' style='display:none;'>
