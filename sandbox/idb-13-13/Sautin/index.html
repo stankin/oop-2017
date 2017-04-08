@@ -94,16 +94,29 @@ function start(){
          var json=eval( '('+xhttp.responseText+')' );
          
          document.getElementById('wrap').style.display='block';
-         document.getElementById('res1').innerHTML=json.telbase[1].title;
-         document.getElementById('res2').innerHTML=json.telbase[1].model;
-         document.getElementById('res3').innerHTML=json.telbase[1].cost;
-         document.getElementById('res4').innerHTML=json.telbase[1].quantity;
+         document.getElementById('res1').innerHTML=json.telbase[0].title;
+         document.getElementById('res2').innerHTML=json.telbase[0].model;
+         document.getElementById('res3').innerHTML=json.telbase[0].cost;
+         document.getElementById('res4').innerHTML=json.telbase[0].quantity;
 	      
 	 document.getElementById('wrap1').style.display='block';
-         document.getElementById('res5').innerHTML=json.telbase[2].title;
-         document.getElementById('res6').innerHTML=json.telbase[2].model;
-         document.getElementById('res7').innerHTML=json.telbase[2].cost;
-         document.getElementById('res8').innerHTML=json.telbase[2].quantity;
+         document.getElementById('res5').innerHTML=json.telbase[1].title;
+         document.getElementById('res6').innerHTML=json.telbase[1].model;
+         document.getElementById('res7').innerHTML=json.telbase[1].cost;
+         document.getElementById('res8').innerHTML=json.telbase[1].quantity;
+	      
+	 document.getElementById('wrap2').style.display='block';
+         document.getElementById('res9').innerHTML=json.telbase[2].title;
+         document.getElementById('res10').innerHTML=json.telbase[2].model;
+         document.getElementById('res11').innerHTML=json.telbase[2].cost;
+         document.getElementById('res12').innerHTML=json.telbase[2].quantity;
+	      
+	      
+	 document.getElementById('wrap3').style.display='block';
+         document.getElementById('res13').innerHTML=json.telbase[3].title;
+         document.getElementById('res14').innerHTML=json.telbase[3].model;
+         document.getElementById('res15').innerHTML=json.telbase[3].cost;
+         document.getElementById('res16').innerHTML=json.telbase[3].quantity;
              
 	      
       }
@@ -123,7 +136,7 @@ function start(){
 <p>Марка телефона: <b><span id='res1'></span></b></p>
 <p>Модель: <b><span id='res2'></span></b></p>
 <p>Цена: <b><span id='res3'></span> руб.</b></p>
-<p>Количество на складе: <b><span id='res4'></span> шт.</b></p>	
+<p>В наличие: <b><span id='res4'></span> шт.</b></p>	
 <hr />
 
 </div><br><br><br><br><br><br><br><br>
@@ -132,10 +145,29 @@ function start(){
 <p>Марка телефона: <b><span id='res5'></span></b></p>
 <p>Модель: <b><span id='res6'></span></b></p>
 <p>Цена: <b><span id='res7'></span> руб.</b></p>
-<p>Количество на складе: <b><span id='res8'></span> шт.</b></p>	
+<p>В наличие: <b><span id='res8'></span> шт.</b></p>	
 <hr />
 
+</div><br><br><br><br><br><br><br><br>
+	
+<div id='wrap2' style='display:none;'>
+<hr />
+<p>Марка телефона: <b><span id='res9'></span></b></p>
+<p>Модель: <b><span id='res10'></span></b></p>
+<p>Цена: <b><span id='res11'></span> руб.</b></p>
+<p>В наличие: <b><span id='res12'></span> шт.</b></p>	
+<hr />
+</div><br><br><br><br><br><br><br><br>	
+	
+<div id='wrap3' style='display:none;'>
+<hr />
+<p>Марка телефона: <b><span id='res13'></span></b></p>
+<p>Модель: <b><span id='res14'></span></b></p>
+<p>Цена: <b><span id='res15'></span> руб.</b></p>
+<p>В наличие: <b><span id='res16'></span> шт.</b></p>	
+<hr />
 </div>
+	
 </body>
 
 </div>
