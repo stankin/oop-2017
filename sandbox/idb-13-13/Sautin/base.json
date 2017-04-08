@@ -3,25 +3,25 @@ bookbase:
 [
 {
 title:"Гарри Поттер и философский камень ",
-author:"Джоан Ролинг",
+model:"Джоан Ролинг",
 cost:500,
 quantity:15
 },
 {
-title:"Дракула ",
-model:"Брэм Стокер",
-cost:430,
+title:"HTC ",
+model:"One A9",
+cost:"15 000",
 quantity:5
 },
 {
 title:"Преступление и наказание",
-author:"Федор Достоевский",
+model:"Федор Достоевский",
 cost:400,
 quantity:10
 },
 {
 title:"Страх и отвращение в Лас-Вегасе ",
-author:"Хантер Томпсон",
+model:"Хантер Томпсон",
 cost:340,
 quantity:12,
 }
