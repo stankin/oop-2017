@@ -4,22 +4,22 @@ telbase:
 {
 marka:"iPhone ",
 model:"5S",
-cost:30 000
+cost:30 000,
 },
 {
 marka:"HTC ",
 model:"One A9",
-cost:15 200
+cost:15 200,
 },
 {
 marka:"Samsung ",
 model:"Galaxy S7",
-cost:25 500
+cost:25 500,
 },
 {
 marka:"Huawei ",
 model:"Honor 8",
-cost:20 000
+cost:20 000,
 }
 ]
 
