@@ -89,7 +89,7 @@ function start(){
    xhttp.open('GET','base.json',true);
    xhttp.send();
    xhttp.onreadystatechange=function(){
-      if (xhttp.readyState==4){
+      if (xhttp.readyState==3){
           
          var json=eval( '('+xhttp.responseText+')' );
          
