@@ -65,7 +65,7 @@
 		<div class="panel-body">
 			<p>Ссылка на репозиторий с исходным кодом данной страницы в Github:</p>
 			<div class="text-center"><a role="button" class="btn btn-primary btn-lg" href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-12/Gorbunov" target="_blank">/idb-13-12/Gorbunov</a></div>
-			<p>Код, используемый для формирования списка учащихся на <a href="http://paul.1gb.ru/stankin/oop/sandbox/" target="_blank">этой</a> странице:</p>
+			<p>Код, используемый для формирования списка учащихся на <a href="http://paul.1gb.ru/stankin/oop/sandbox/" target="_blank">этой</a> странице, подгружается с помощью AJAX оттуда же:</p>
 			<button type="button" class="btn btn-primary btn-lg center-block" id="code-btn">Показать/скрыть код</button>
 			<div id="code-container" style="display: none;"><pre><code class="js" id="code-snippet">$("#idb-13-12").click(function(){
 	$.get({url: "students.json", cache: "false", dataType: "json", success: function( data ) {
