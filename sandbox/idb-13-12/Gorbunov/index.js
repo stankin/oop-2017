@@ -32,7 +32,7 @@ $("#diag-btn").click(function(){
 	$("#diag").slideToggle();
 });
 $("#code-btn").click(function(){
-	$.get({url: "/github/index.js", cache: "false", dataType: "text", success: function( data ) {
+	$.get({url: "/stankin/oop/sandbox/index.js", cache: "false", dataType: "text", success: function( data ) {
 		var safedata = data.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 		$("#code-snippet").html(safedata);
 		$("#code-container").slideToggle();
