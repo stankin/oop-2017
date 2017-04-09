@@ -20,7 +20,7 @@ $(document).ready(function(){
       <ul class="submenu">
         <li><a href="javascript:;" onclick="go_to_first_page()">Показать игру</a></li>
         <li><a href="javascript:;" onclick="go_to_second_page()">Показать часы</a></li>
-        <li><a href=""></a></li>
+        <li><a href="javascript:;" onclick="go_to_fifth_page()">UML-диаграмма</a></li>
         <li><a href="">Tags</a></li>
       </ul>
     </li>
@@ -40,39 +40,43 @@ $(document).ready(function(){
 		<p align="center">
       <font size="5" color=#ff6a5d face="Arial">Требования:</font>
 	</p>		
-		<dl>
+		<dl margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: 30%;>
 		  <dt>
 			  <font size="4" color=#ff6a5d face="Arial"> Требования к функциям приложения:</font>
 			</dt>
 		        <dd>
-			    <font size="4" color=#ff6a5d face="Arial">Изменить цвет фона на желтый</font>
+			    <font size="4" color=#333 face="Arial">Изменить цвет фона на желтый</font>
 			</dd>
 			<dd>
-			    <font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font>
+			    <font size="4" color=#333 face="Arial">Увеличить размер куба</font>
 			</dd>
 			<dd>
-			    <font size="4" color=#ff6a5d face="Arial">Изменить положение куба</font>
+			    <font size="4" color=#333 face="Arial">Изменить положение куба</font>
 			</dd>
 			<dd>
-			    <font size="4" color=#ff6a5d face="Arial">Изменить направление вращения куба</font>
+			    <font size="4" color=#333 face="Arial">Изменить направление вращения куба</font>
 			</dd>
 			<dd>
-			    <font size="4" color=#ff6a5d face="Arial">Поместить узор на куб</font>
+			    <font size="4" color=#333 face="Arial">Поместить узор на куб</font>
 			</dd>
 		  <dt>
 			  <font size="4" color=#ff6a5d face="Arial">Формат обмена данными с сервером, требуемые библиотеки:</font>
 			</dt>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">HTML</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">CSS</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">JS</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">JQUERY</font></dd>
+			<dd><font size="4" color=#333 face="Arial">ANGULAR</font></dd>
+			<dd><font size="4" color=#333 face="Arial">JSON</font></dd>
+			<dd><font size="4" color=#333 face="Arial">XML</font></dd>
+			<dd><font size="4" color=#333 face="Arial">HTTPS</font></dd>
 			 <dt>
 			  <font size="4" color=#ff6a5d face="Arial">Способ идентификации:</font>
 			</dt>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
-		    <dd><font size="4" color=#ff6a5d face="Arial">Увеличить размер куба</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">Аутентификация по паролю (HTTP authentication)</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">Гость может просматривать страницу</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">Авторизованный пользователь может оставлять комментарии</font></dd>
+		    <dd><font size="4" color=#333 face="Arial">Авторизованный пользователь может изменять цветовое решение приложения</font></dd>
 		</dl>
 	
 		<h1 style="color:#333; text-align: center;">Игра</h1>
@@ -82,7 +86,7 @@ $(document).ready(function(){
 	 </div>
 	<div id="page_2">
 	<h1 style="color:#333; text-align: center;">Часы</h1>
-		<iframe src="yulia.html" height="800" width="600" style="border:none;margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: 30%;display: block;"></iframe> 
+		<iframe src="yulia.html" height="800" width="600" style="border:none;margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: 40%;display: block;"></iframe> 
 	</div>
 	
 	<div id="page_3">
@@ -137,18 +141,25 @@ $(document).ready(function(){
       <font size="5" color=#ff6a5d face="Arial">Диаграмма классов для тега параграф </font>
 	</p>
 	</div>
+	
+	<div id="page_5">
+	 <a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B9"> Посмотреть UML-диаграмму можно по ссылке </a> 
+		<iframe src="yulia.html" height="800" width="600" style="border:none;margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: 40%;display: block;"></iframe> 
+	</div>
 	 
 	<script>
 	$("#page_1").show();
 	$("#page_2").hide();
 	$("#page_3").hide();
 	$("#page_4").hide();
+	$("#page_5").hide();
 		
 	function go_to_first_page(){
 		$("#page_1").show();
 		$("#page_2").hide();
 		$("#page_3").hide();
 		$("#page_4").hide();
+		$("#page_5").hide();
 	}
 	
 	function go_to_second_page(){
@@ -156,6 +167,7 @@ $(document).ready(function(){
 		$("#page_2").show();
 		$("#page_3").hide();
 		$("#page_4").hide();
+		$("#page_5").hide();
 	}
 	
 	function go_to_third_page(){
@@ -163,12 +175,21 @@ $(document).ready(function(){
 		$("#page_2").hide();
 		$("#page_3").show();
 		$("#page_4").hide();
+		$("#page_5").hide();
 	}
-		function go_to_fourth_page(){
+	function go_to_fourth_page(){
 		$("#page_1").hide();
 		$("#page_2").hide();
 		$("#page_3").hide();
 		$("#page_4").show();
+		$("#page_5").hide();
+	}
+	function go_to_fifth_page(){
+		$("#page_1").hide();
+		$("#page_2").hide();
+		$("#page_3").hide();
+		$("#page_4").hide();
+		$("#page_5").show();
 	}
 	</script>
  </body> 
