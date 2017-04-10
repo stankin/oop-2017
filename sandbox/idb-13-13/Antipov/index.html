@@ -107,22 +107,22 @@ $(document).ready(function(){
 	Предусмотрена возможность изменять все данные абонентов, удалять эти данные, а также вностить абонентов в спам-лист.</p>
 	
 	<div class=contactListApp ng-app=ddd ng-controller="addressController">
-	<div class="toggleItem bg-info" ng-click="toggleAddForm();" title="Toggle it">Insert New Contact</div>
+	<div class="toggleItem bg-info" ng-click="toggleAddForm();" title="Toggle it">Добавить нового абонента</div>
 	<div class="addItem"><div class="addItemInner">
-		<span class="w12">Name:</span>
-		<input class="form-control w24 input-sm fname" ng-model="fname" size="24" placeholder="Enter Contact Name here" ng-required /><br/>
-		<input class="form-control w96 input-sm surname" ng-model="surname" size="24" placeholder="Contact Surname (optional)" ng-optional /><br/>
-		<span class="w12">Phone number:</span>
+		<span class="w12">Имя:</span>
+		<input class="form-control w24 input-sm fname" ng-model="fname" size="24" placeholder="Введите имя" ng-required /><br/>
+		<input class="form-control w96 input-sm surname" ng-model="surname" size="24" placeholder="Фамилия, Отчество" ng-optional /><br/>
+		<span class="w12">Телефон:</span>
 		<input class="form-control w24 input-sm phone" ng-model="phone" size="24" placeholder="(DDD)DDD-DDDD" ng-required /><br/>
-		<span class="w12">Group:</span>&nbsp;
+		<span class="w12">Группа:</span>&nbsp;
 		<select class="form-control w8 input-sm group" ng-model="group">
 			<option ng-repeat="group in groups" value="{{group}}" ng-optional>{{group}}</option>
 		</select>
-		<button ng-click="newContact()" class="btn-xs btn-primary">Insert New Contact</button>
+		<button ng-click="newContact()" class="btn-xs btn-primary">Добавить</button>
 	</div></div>
 	<div class="tasks" ng-show="list.length - (list | filter:{group:'spam'}).length">
-		<div class="bg-info"><strong>List &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>
-			<span class=filter>Filter: <input class="form-control w8 input-sm" size="8" placeholder="substring" ng-model="filter" /></span></div>
+		<div class="bg-info"><strong>Телефонная книга &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>
+			<span class=filter>Поиск: <input class="form-control w8 input-sm" size="8" placeholder="substring" ng-model="filter" /></span></div>
 		<ul class=contactList>
 			<li ng-repeat="listItem in list | filter:filter" data-group={{listItem.group}}>
 				<div ng-controller="addressEditController">
@@ -146,12 +146,12 @@ $(document).ready(function(){
 				
 			</li>
 		</ul>
-		Total true contacts: {{list.length - (list | filter:{group:'spam'}).length}}
+		Количество контактов: {{list.length - (list | filter:{group:'spam'}).length}}
 	</div>
 	
 	<div class="tasks" ng-s2how="(list | filter:{group:'spam'}).length">
-		<div class="bg-info"><strong>Spam list</strong>
-			<span class=filter>Filter: <input class="form-control w8 input-sm" size="8" placeholder="substring" ng-model="filterSpam" /></span></div>
+		<div class="bg-info"><strong>Спам-лист</strong>
+			<span class=filter>Поиск: <input class="form-control w8 input-sm" size="8" placeholder="substring" ng-model="filterSpam" /></span></div>
 		<ul class=contactList>
 			<li ng-repeat="listItem in list | filter:{group:'spam'} | filter:filterSpam">
 				<span class="listItem spam"><b>{{listItem.fname}} {{listItem.surname}}</b> {{listItem.phone}}</span>
@@ -159,10 +159,10 @@ $(document).ready(function(){
 				<button class="btn-xs btn-warning" ng-click="notSpam(listItem);">Not spam</button>
 			</li>
 		</ul>
-		Total spam contacts: {{(list | filter:{group:'spam'}).length}}
+		Количество контактов: {{(list | filter:{group:'spam'}).length}}
 	</div>
 		
-		<div class="bg-info">Debug:</div>
+		<div class="bg-info">Контейнер Json базы:</div>
 	<pre>
 list = {{list | json : object}}
 	</pre>
@@ -174,22 +174,22 @@ function addressController($scope){
 	$scope.version = angular.version.full;
 
 	$scope.list =[{
-		fname: "Peter"
-		,surname: "Gray"
-		,group:'work'
+		fname: "Alex"
+		,surname: "Antipov"
+		,group:'friends'
 	},{
-		fname: "Michael"
-		,surname: "Edison"
+		fname: "Denis"
+		,surname: "Sautin"
 		,phone:'+1(945)754-2391'
-		,group:'home'
+		,group:'friends'
 	},{
-		fname: "Gilbert"
-		,surname: "Brown"
+		fname: "Kot"
+		,surname: "Kotov"
 		,group:'shops'
 	},{
-		fname: "Manfred"
-		,surname: "Richdown"
-		,group:'friends'
+		fname: "Enot"
+		,surname: "Superhero"
+		,group:'work'
 	},{
 		fname: 'Elsa'
 		,group:'spam'
