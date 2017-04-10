@@ -51,3 +51,6 @@ blockquote{
 	position: fixed;
 	float: left;
 }
+iframe{
+	overflow-y: none;
+}
