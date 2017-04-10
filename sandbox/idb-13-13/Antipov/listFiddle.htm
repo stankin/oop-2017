@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<title>Address Book with Angular1.2/Bootstrap3</title>
+	<meta http-equiv="x-ua-compatible" content="IE=9">
+	<link href="bootstrap311.css" rel="stylesheet">
+	<script type="text/javascript" src="angular1210.js"></script>
+</head><body>
+<style>
+	body{margin: 12px;}
+	blockquote small:before{content:""}
+	.bg-danger{background-color: #F2DEDE;}
+	.task{margin:6px 12px 6px 3em}
+	.listItem.spam{text-decoration: line-through; color: gray;}
+	.tasks,	.stats{margin: 10px;}
+	.w8,.w12,.w24,.w96{display: inline-block;}
+	.w8{width: 80px;}
+	.w12{width: 120px;}
+	.w24{width: 240px; margin: 3px;}
+	.w96{width: 97%; margin: 3px;}
+	.toggleItem,
+	.addressItem{padding: 6px 9px; cursor: pointer;}
+	.addressItem:hover{background-color: #eee;}
+	.addItem{display: none; position: relative;}
+		.addItemInner{
+			position: absolute;
+			bottom: 16px;
+			left: 150px;
+			width: 390px;
+			margin: 4px auto 0;
+			padding: 2px 0 6px 11px;
+			border: 1px solid #aaa;
+				border-radius: 4px;
+				box-shadow: 2px 2px 4px 1px #aaa;
+			background-color: #fceef5;
+		}
+	.contactListApp select option{background-color: #fceef5;}
+	.contactListApp select option[value=work]{background-color: #B5C7F5;}
+	.contactListApp select option[value=home]{background-color: #89DFD0;}
+	.contactListApp select option[value=friends]{background-color: #95e88A;}
+	.contactListApp select option[value=shops]{background-color: #dfe480;}
+	.contactListApp select option[value=spam]{background-color: #f4bb88;}
+	.contactListApp .btn-link{color: #787C44}
+	.tasks li[data-group="spam"]{display: none}
+	.bg-info{padding-left: 4px;}
+	.btn-del{background-color: #f5e5e5;}
+	.btn-del:hover{background-color: #d5a5a0;}
+	.filter{padding-left:6em;}
+	.contactList{line-height: 2.7em;}
+	.testArea{
+		margin: 2px 0;
+		padding: 12px 4px;
+		border: 1px solid #e2e2e2;
+			border-radius: 4px;
+		background-color: #f5f5f5;}
+	dl.tests { width: 660px; margin-bottom: 4px;}
+	.tests dt{display: inline-block; width: 330px; padding-left: 6px; background-color: #ddd;}
+		.tests.bg-danger dt{display: inline-block; width: 330px; background-color: #F2DEDE;}
+	.tests dd{display: inline-block; width: 330px;}
+</style>
+<div class="bg-info">
+	<div style=float:right;padding-right:4px><i>Created: 2014-03-10 by <a href=http://spmbt.github.io/spmbt/>spmbt</a></i></div>
+	<strong>Task</strong>: <u>Implement Address Book</u>.</div>
+<blockquote><small><div class=task>
+
+	<div class="text-info"><strong>Technology stack</strong>: <span class="text-danger"><abbr title="Google MVC Library" class="initialism">AngularJS</abbr>, code should be
+		covered
+		by unit tests</span> as much as possible along with <abbr title="End-to-End Test" class="initialism"><a href=http://www.techopedia.com/definition/7035/end-to-end-test>e2e</a> tests</abbr>.</div>
+	<div class="text-info"><strong>Nice to have feature</strong>: Dynamic support of both English
+		and Russian (or any other) languages in UI with
+		ability	toswitch languages.</div>
+	<div class="text-info"><strong>Non functional requirements</strong>: Client Side only, persistence
+		can be done into variable or to Html Local Storage.</div>
+	<div class="text-danger"><strong>HTML layout</strong>: Use <a href=http://getbootstrap.com/css/>Bootstrap v3</a></div>
+
+	<div class="text-info"><strong>Application Flow</strong>:
+	"List" -  of existed contacts (contact has at least 4 fields:
+		<ul class="text-warning"><li><em><u>name</u></em>: mandatory,</li>
+			<li><em><u>surname</u></em>: optional,</li>
+			<li><em><u>phone number</u></em>: mandatory,</li>
+			<li><em><u>group</u></em>: optional)</li></ul>
+		supports search, and group by group field. Link to "Insert New Contact".
+		Link to "Edit Existed Contact".
+	</div>
+	<div class="text-info">"<span class="text-warning">Insert New Contact</span>" - adding to the list of existed.
+		Preferable implementation is sexy popup.</div>
+	<div class="text-info">"<span class="text-warning">Edit Existed Contact</span>" - edit one from the list.
+		Preferable implementation is sexy popup or inline editor.</div>
+	</div>
+</div><footer>Some dream team</footer></small></blockquote>
+<hr>
+<div class=contactListApp ng-app=ddd ng-controller="addressController">
+	<div class="toggleItem bg-info" ng-click="toggleAddForm();" title="Toggle it">Insert New Contact</div>
+	<div class="addItem"><div class="addItemInner">
+		<span class="w12">Name:</span>
+		<input class="form-control w24 input-sm fname" ng-model="fname" size="24" placeholder="Enter Contact Name here" ng-required /><br/>
+		<input class="form-control w96 input-sm surname" ng-model="surname" size="24" placeholder="Contact Surname (optional)" ng-optional /><br/>
+		<span class="w12">Phone number:</span>
+		<input class="form-control w24 input-sm phone" ng-model="phone" size="24" placeholder="(DDD)DDD-DDDD" ng-required /><br/>
+		<span class="w12">Group:</span>&nbsp;
+		<select class="form-control w8 input-sm group" ng-model="group">
+			<option ng-repeat="group in groups" value="{{group}}" ng-optional>{{group}}</option>
+		</select>
+		<button ng-click="newContact()" class="btn-xs btn-primary">Insert New Contact</button>
+	</div></div>
+	<div class="tasks" ng-show="list.length - (list | filter:{group:'spam'}).length">
+		<div class="bg-info"><strong>List &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>
+			<span class=filter>Filter: <input class="form-control w8 input-sm" size="8" placeholder="substring" ng-model="filter" /></span></div>
+		<ul class=contactList>
+			<li ng-repeat="listItem in list | filter:filter" data-group={{listItem.group}}>
+				<div ng-controller="addressEditController">
+					<span class=addressItem ng-hide="editorEnabled" ng-click="enableEditor()" title=Change>
+						<b>{{listItem.fname}} {{listItem.surname}}</b> {{listItem.phone}} ({{listItem.group}})
+					</span>
+					<span ng-show="editorEnabled">
+						<input class="form-control w12 input-sm" size="30" placeholder="Enter Contact Name here" ng-model="fname" ng-required />
+						<input class="form-control w8 input-sm" size="26" placeholder="Contact Surname (optional)" ng-model="surname" ng-optional />
+						<input class="form-control w12 input-sm" size="26" placeholder="phone" ng-model="phone" ng-required />
+						<select class="form-control w8 input-sm" ng-model="group" ng-init="work">
+							<option ng-repeat="group in groups" value="{{group}}">{{group}}</option>
+						</select>
+						
+						<button class="btn-xs btn-primary" ng-click="save()">Ok</button>
+						<button class="btn-xs btn-default" ng-click="disableEditor()">Cancel</button>
+					</span>
+					<button class="btn-xs btn-default btn-del" ng-click="removeContact(listItem)">Delete</button>
+					<button class="btn-xs btn-link" ng-click="toSpa()">To spam</button>
+				</div>
+				
+			</li>
+		</ul>
+		Total true contacts: {{list.length - (list | filter:{group:'spam'}).length}}
+	</div>
+	
+	<div class="tasks" ng-s2how="(list | filter:{group:'spam'}).length">
+		<div class="bg-info"><strong>Spam list</strong>
+			<span class=filter>Filter: <input class="form-control w8 input-sm" size="8" placeholder="substring" ng-model="filterSpam" /></span></div>
+		<ul class=contactList>
+			<li ng-repeat="listItem in list | filter:{group:'spam'} | filter:filterSpam">
+				<span class="listItem spam"><b>{{listItem.fname}} {{listItem.surname}}</b> {{listItem.phone}}</span>
+				<button class="btn-xs btn-default btn-del" ng-click="removeContact(listItem)">Delete</button>
+				<button class="btn-xs btn-warning" ng-click="notSpam(listItem);">Not spam</button>
+			</li>
+		</ul>
+		Total spam contacts: {{(list | filter:{group:'spam'}).length}}
+	</div>
+	<div class="bg-info">Statistics:</div>
+	<div class="stats">
+		<div>All: {{list.length}}</div>
+		<div>Not spam: {{list.length - (list | filter:{group:'spam'}).length}}</div>
+		<div>Spam: {{(list | filter:{group:'spam'}).length}}</div>
+	</div>
+	
+	<hr />
+
+	<div class="bg-info">Test: <span class=filter><button class="btn-xs btn-default" ng-click="test01()">Run</button></span> <span class=filter><i>(press "Run" for test some units)</i></span></div>
+	<div class=testArea>
+		<i>Angular ver. {{version}}</i>
+	</div>
+	<div class="bg-info">Debug:</div>
+	<pre>
+list = {{list | json : object}}
+	</pre>
+</div>
+<script>
+var ddd2 = angular.module("ddd", []);
+function addressController($scope){
+	$scope.groups =',work,home,friends,shops,spam'.split(',');
+	$scope.version = angular.version.full;
+
+	$scope.list =[{
+		fname: "Peter"
+		,surname: "Gray"
+		,group:'work'
+	},{
+		fname: "Michael"
+		,surname: "Edison"
+		,phone:'+1(945)754-2391'
+		,group:'home'
+	},{
+		fname: "Gilbert"
+		,surname: "Brown"
+		,group:'shops'
+	},{
+		fname: "Manfred"
+		,surname: "Richdown"
+		,group:'friends'
+	},{
+		fname: 'Elsa'
+		,group:'spam'
+	},{
+		fname: 'Nikita'
+		,phone:'235-7856'
+		,group:'spam'}];
+
+	$scope.newContact = function(){ //add new record in database
+		var addItem = document.querySelector('.addItem');
+		if(!addItem.querySelector('.fname').value || !addItem.querySelector('.phone').value){
+			if(!$scope.fname) addItem.querySelector('.fname').classList.add('bg-danger');
+			if(!$scope.phone) addItem.querySelector('.phone').classList.add('bg-danger');
+			return false;
+		}
+		addItem.querySelector('.fname').classList.remove('bg-danger');
+		addItem.querySelector('.phone').classList.remove('bg-danger');
+		$scope.list.push({
+			fname: addItem.querySelector('.fname').value,
+			surname: addItem.querySelector('.surname').value,
+			phone: addItem.querySelector('.phone').value,
+			group: addItem.querySelector('.group').options[addItem.querySelector('.group').selectedIndex].value
+		});
+		addItem.querySelector('.fname').value ='';
+		addItem.querySelector('.surname').value ='';
+		addItem.querySelector('.phone').value ='';
+		addItem.querySelector('.group').selectedIndex =0;
+		addItem.style.display ='none';
+
+	};
+	$scope.removeContact = function(item){
+		for(var i in $scope.list) if($scope.list[i] === item)
+			$scope.list.splice(i, 1);
+	};
+	$scope.notSpam = function(listItem){
+		listItem.group = listItem.groupSaved;
+		delete listItem.groupSaved;
+	};
+	$scope.toggleAddForm = function(){
+		var addItem = document.querySelector('.addItem');
+		addItem.style.display = addItem.style.display =='block' ?'none':'block';
+	};
+	$scope.test01 = function(){ //unit tests
+		var testArea = document.querySelector('.testArea')
+			,er =0; //error var
+		if(!(window.sc && sc.list) && !$scope.list){
+			window.sc ={}; //$scope for test
+			addressController(sc);
+		}else{
+			if(!window.sc) //$scope for test before init
+				window.sc ={};
+			sc.list = $scope.list;
+		}
+		testArea.innerHTML ='<dl class=tests><dt>Angular version</dt><dd>&nbsp; '+ angular.version.full +'</dd></dl>';
+//1)
+		er =0;
+		for(var i in sc.list)
+			if(sc.list[i].fname === undefined)
+				er =1;
+		testArea.innerHTML += '<dl class=tests><dt>fname validation</dt><dd class=bg-'+(!er?'success':'danger')
+			+'> ...'+(!er?'SUCCESS':'ERROR') +'</dd></dl>';
+//2)
+		er =1;
+		var addItem = document.querySelector('.addItem');
+		addItem.querySelector('.fname').value ='tstFirstName';
+		addItem.querySelector('.surname').value ='tstSurname';
+		addItem.querySelector('.phone').value ='tst+1(010)234-5678';
+		addItem.querySelector('.group').selectedIndex =1;
+		$scope.newContact();
+		for(var i in $scope.list)
+			if($scope.list[i].fname ==='tstFirstName'&& $scope.list[i].surname ==='tstSurname'
+					&& $scope.list[i].phone ==='tst+1(010)234-5678'&& ($scope.list[i].group ===''||$scope.list[i].group ==='work') ){
+				er =0;
+				$scope.list.splice(i,1);
+				break;
+			}
+		testArea.innerHTML += '<dl class=tests><dt>Add new contact</dt><dd class=bg-'+(!er?'success':'danger')
+			+'> ...'+(!er?'SUCCESS':'ERROR') +'</dd></dl>';
+//3)
+		er =0;
+		for(var i in sc.list)
+			if(sc.list[i].phone === undefined)
+				er =1;
+		testArea.innerHTML += '<dl class="tests bg-'+(!er?'success':'danger')
+			+'"><dt>Inner phones validation</dt><dd> ...'+ (!er?'SUCCESS':'ERROR') +'</dd></dl>';
+	};
+};
+function addressEditController($scope){ //edit record in database
+	$scope.editorEnabled = false;
+
+	$scope.enableEditor = function(){
+		$scope.editorEnabled = true;
+		this.fname = this.listItem.fname;
+		this.surname = this.listItem.surname;
+		this.phone = this.listItem.phone;
+		this.group = this.listItem.group;
+	};
+	$scope.disableEditor = function(){
+		$scope.editorEnabled = false;
+	};
+	$scope.save = function(){
+		if(this.fname =='')
+			return false;
+		this.listItem.fname = this.fname;
+		this.listItem.surname = this.surname;
+		this.listItem.phone = this.phone;
+		this.listItem.group = this.group;
+		$scope.disableEditor();
+	};
+	$scope.toSpa = function(){
+		$scope.listItem.groupSaved = $scope.listItem.group;
+		$scope.listItem.group ='spam';
+	};
+};
+</script>
+
+</body></html>
