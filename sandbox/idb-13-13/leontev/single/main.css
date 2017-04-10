@@ -1,0 +1,71 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	overflow-y: hidden;
+}
+.container{
+	position: relative;	
+}
+.room{
+	width: 900px; 
+	height: 900px;
+	margin-left: 70px;
+}
+.withLigh1{
+	width: 50px;
+	height: 50px;
+	margin-left: -450px;
+	margin-top: -350px;
+}
+.withLigh2{
+	width: 50px;
+	height: 50px;
+	margin-top: 290px;
+	margin-left: 50px;
+}
+#sensor-value{
+	z-index: 1;
+	margin-left: 1000px;
+	margin-top: -700px;
+}
+.controller1{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	margin-left: 380px;
+	margin-top: 237px;
+}
+.controller2{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	margin-top: 700px;
+	margin-left: 775px;
+}
+button{
+	position: absolute;
+	background: #fff;
+	border: 0px;
+	outline:none;
+}
+.play{
+	margin-left: 500px;
+	margin-top: 50px;
+}
+.stop{
+	margin-left: 600px;
+	margin-top: 50px;
+}
+#container{
+	margin-left: 84.5%;
+	position: absolute;
+	width: 200px; 
+	height: 500px; 
+	/*background: #f1f1f1; */
+	overflow-y: scroll;
+
+}
+.ready{
+	position: absolute;
+	margin-left: 200px;
+}
