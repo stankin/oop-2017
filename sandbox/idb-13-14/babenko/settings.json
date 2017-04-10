@@ -1,8 +1,8 @@
 {
   idb:
   [
-{"user":"guest",    "color":"#fd0000",  "angle":"4"},
-{"user":"babenko",  "color":"#ff00dd",  "angle":"13"},
-{"user":"another",  "color":"#ff0000",  "angle":"2"}
+{user:"guest",    color:"#fd0000",  angle:"4"},
+{user:"babenko",  color:"#ff00dd",  angle:"13"},
+{user:"another",  color:"#ff0000",  angle:"2"}
 ]
 }
