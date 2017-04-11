@@ -156,56 +156,9 @@
        
     </ul>
 	 
-    <form action="/action_page.php">
- Пользователь:<br>
-  <input type="text" id='user' name="firstname" value="babenko">
-  <br>
- 
-    </form>
 
-      <div>
-<script type='text/javascript'> 
-function start(){ 
-xhttp=new XMLHttpRequest(); 
-xhttp.open('GET','settings.json',true); 
-xhttp.send(); 
-xhttp.onreadystatechange=function(){ 
-if (xhttp.readyState==3){ 
-var json=eval( '('+xhttp.responseText+')' ); 
-document.getElementById('wrap').style.display='block'; 
-document.getElementById('res1').innerHTML=json.idb[0].user; 
-document.getElementById('res2').innerHTML=json.idb[0].color; 
-document.getElementById('res3').innerHTML=json.idb[0].angle; 
-for (var i=0; i<json.idb.length; i++) {
-//alert(i + ' ' + document.getElementById('user').value + ' ' + json.idb[i].user);
-  if (document.getElementById('user').value==json.idb[i].user) {
-document.getElementById('res1').innerHTML=json.idb[i].user; 
-document.getElementById('res2').innerHTML=json.idb[i].color; 
-document.getElementById('res3').innerHTML=json.idb[i].angle; 
-} }
 
-} 
-} 
-} 
-</script>
-
-<body> 
-
-<br> 
-<input type='button' value='Вывести информацию' onclick='start()'/> 
-
-<br /><br /> 
-<div id='wrap' style='display:none;'> 
-<hr /> 
-<p>Пользователь: <b><span id='res1'></span></b></p> 
-<p>Цвет: <b><span id='res2'></span></b></p> 
-<p>Угол: <b><span id='res3'></span></b></p> 
-
-<hr /> 
-
-</div> 
-</body>
-</div>
+      
      
 <p align="center">
            <iframe src="spa.html" height="800" width="600" style="border:none;"></iframe> 
