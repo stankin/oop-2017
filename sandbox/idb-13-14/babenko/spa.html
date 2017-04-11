@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <style>
@@ -8,23 +10,44 @@ canvas {
     background-color: #afdafc;
 }
 </style>
-</head>
-<body onload="startGame()">
 <script>
+
 var myGamePiece;
 var color = "#8aff8a";
 var angle = 8;
+var user = 'guest';
+
 function startGame() {
-    $.get("settings.json", function(data, status){
-//        for (var i = 0; i < data.length; i++) {
-	var i = 0; // принудительно берем 1-ю строку
-	color = data[i].color;
-	angle = data[i].angle;
-//	alert('color:'+color+' angle:'+angle);
-	myGamePiece = new component(70, 70, color, 230, 130);
-    	myGameArea.start();
-    });
+//	var e = document.body.childNodes[0];
+//	document.body.removeChild(e);
+	$.ajax({
+url: 'settings.json',
+success: function(data) { 
+	color = data.idb[0].color;
+	angle = data.idb[0].angle;
+	user  = data.idb[0].user;
+for (var i=0; i<data.idb.length; i++) {
+  if (document.getElementById('user').value==data.idb[i].user) {
+	color = data.idb[i].color;
+	angle = data.idb[i].angle;
+	user  = data.idb[i].user;
+  }
 }
+document.getElementById('wrap').style.display='block'; 
+document.getElementById('res1').innerHTML=user; 
+document.getElementById('res2').innerHTML=color; 
+document.getElementById('res3').innerHTML=angle; 
+			},
+error: function(jqxhr, status, errorMsg) {
+	alert("Статус: " + status + " Ошибка: " + errorMsg);
+			},
+complete:  function(jqxhr, status) {
+	myGamePiece = new component(70, 70, color, 230, 130);
+	myGameArea.start();
+	}
+  });
+}
+
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -64,7 +87,21 @@ function updateGameArea() {
     myGamePiece.update();
 }
 </script>
-
-
+</head>
+<body>
+<form action="/action_page.php">
+Пользователь:<br>
+<input type="text" id='user' name="firstname" value="guest"><br>
+</form>
+<div><br> 
+<input type='button' value='Вывести информацию' onclick='startGame()'/> 
+<br /><br /> 
+<div id='wrap' style='display:none;'> 
+<hr /> 
+<p>Пользователь: <b><span id='res1'>???</span></b></p> 
+<p>Цвет: <b><span id='res2'>???</span></b></p> 
+<p>Угол: <b><span id='res3'>???</span></b></p> 
+<hr /> 
+</div> 
 </body>
 </html>
