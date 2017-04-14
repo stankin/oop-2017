@@ -46,6 +46,13 @@
 	    $('p:last').text(e.text);
 	});
 	});
+	</script>
+<script>
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("#p4").toggle();
+    });
+});
 </script>
 </head>
 <body style="background-color: brown">
@@ -83,12 +90,25 @@
 	<h1 align="center">Диаграмма классов</h1>
 	<img height="40%" width="40%" style="display: block; margin: 0 auto;" src="1e4bc2dc1.png" alt="Здесь должна быть диаграмма развертывания 1">
 	<br><br><h1 align="center">
+	<div style="background-color: green"><h2 align="left" style="color: black">Задача №2: создать wiki-страницу UML. Диаграмма развертывания</h2></div>
+
 		UML.Диаграммы развертывания<br><br></h1>
 	<h3 align="center"><a href="https://github.com/stankin/oop/wiki/UML.-Диаграмма-развертывания">Нажми здесь!</a></h3><br><br>
 	<img height="40%" width="40%" style="display: block; margin: 0 auto;" src="5144ad98.png" alt="Здесь должна быть диаграмма развертывания 2"><br><br>
 
+	<div style="background-color: green"><h1 align="left" style="color: black">Требования к SPA</h1></div>
+	<ol>
+	<li>Создать имитационную форму авторизации.</li>
+ 		
+     <ul><li>Форма содержит логин и пароль пользователей, при вводе которых открывается доступ к товарам.</li></ul>
+     <li>SPA позволит:</li>
+	<ul>
+	<ul><li>Получить пользователю необходимую и достоверную информацию о имеющихся товарах (марка, модель, цена, кол-во товара в наличии).</li>
+    	<li>Хранить все необходимые данные о таварах в базе JSON.</li>
+	<li>Предоставит возможность скрыть/показать вывод информации о товарах (при помощи Angular).</li>
+	</ul></ul>
+</ol>
 	
-        <div style="background-color: green"><h2 align="left" style="color: black">Задача №2: создать wiki-страницу UML. Диаграмма развертывания</h2></div>
 	<br>Ход работы:<br>		
 
 	<h1 align="center">Пока что моё SPA</h1>
@@ -96,6 +116,7 @@
 	<h4>Hello!</h4>
 	<h4>World!</h4>
 	<h4>Yahoo!</h4>
+	<button id="p1">Показать/спрятать часы</button>
 	<iframe src="Akimov.html" height="800" width="600" style="border:none;"></iframe> 
 </body>
 </html>
