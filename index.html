@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 </head>
 <body>
-  <h2>Домашняя страница лабораторных работ</h2><br>
+  <h2>Домашняя страница лабораторных работ ИДБ-13 (весна 2017)</h2><br>
   <a href="sandbox/">Перейти в песочницу</a>
   <br><br>
 <form action="refresh.php">
   <input type="submit" value="Обновить песочницу с github">
 </form> 
-<br><br>
-Расписание:<br>
-<iframe src="schedule.htm" height="1500" width="600" style="border:none;"></iframe> 
+<p onclick="var e=document.getElementById('schedule'); e.style.display = (e.style.display == 'none') ? '' : 'none'">Показать/скрыть расписание</p>
+<iframe id="schedule" src="schedule.htm" height="1500" width="600" style="border:none;"></iframe> 
 </body>
 </html>	
