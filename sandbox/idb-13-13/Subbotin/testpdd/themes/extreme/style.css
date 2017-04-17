@@ -1,0 +1,417 @@
+/* PDD-TEST GLOBAL STYLES */
+#pdd-test {
+    width: 550px;
+    line-height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Arial, Sans-Serif;
+    color: #FFF;
+    text-shadow: 1px 1px 0px #000;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#pdd-test .pdd-sbmt {
+    border: 3px double #a0a0a0;
+    background-color: #bababa;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#bababa), to(#575757));
+    background-image: -webkit-linear-gradient(top, #bababa, #575757);
+    background-image: -moz-linear-gradient(top, #bababa, #575757);
+    background-image: -ms-linear-gradient(top, #bababa, #575757);
+    background-image: -o-linear-gradient(top, #bababa, #575757);
+    background-image: linear-gradient(to bottom, #bababa, #575757);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#bababa, endColorstr=#575757);
+    color: #FFF;
+    text-shadow: 1px 1px 0 #000;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0.5em 0;
+    outline: none;
+}
+
+#pdd-test .pdd-sbmt:not(.pdd-disabled):hover {
+    background-color: #d3d3d3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#707070));
+    background-image: -webkit-linear-gradient(top, #d3d3d3, #707070);
+    background-image: -moz-linear-gradient(top, #d3d3d3, #707070);
+    background-image: -ms-linear-gradient(top, #d3d3d3, #707070);
+    background-image: -o-linear-gradient(top, #d3d3d3, #707070);
+    background-image: linear-gradient(to bottom, #d3d3d3, #707070);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#d3d3d3, endColorstr=#707070);
+}
+
+#pdd-test .pdd-sbmt:not(.pdd-disabled):active {
+    background-color: #333;
+}
+
+#pdd-test .pdd-sbmt.pdd-disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+#pdd-test .pdd-bilet-passed {
+    color: #9F9;
+}
+
+#pdd-test .pdd-bilet-failed {
+    color: #F99;
+}
+
+#pdd-test td {
+    border-radius: 3px;
+}
+
+#pdd-test p {
+    text-indent: 0;
+    text-align: left;
+}
+
+#pdd-test .pdd-tpl {
+    border: double 3px #FFF;
+    padding: 10px;
+    border-radius: 9px;
+    background: url(bg.jpg) 0 -5px;
+}
+
+/* TABS */
+#pdd-tabs {
+    list-style: none;
+    margin: 0 15px;
+    padding: 0;
+    overflow: auto;
+}
+
+#pdd-tabs li {
+    float: left;
+    margin: 0 5px 3px 0;
+    padding: 5px 7px;
+    background: url(bg.jpg) 0 -30px;
+    border: double 3px #FFF;
+    border-radius: 9px;
+}
+
+#pdd-tabs li:not(.pdd-active) {
+    cursor: pointer;
+}
+
+#pdd-tabs li.pdd-active {
+    background: #777
+}
+
+/* LOADING TPL */
+#pdd-loading .pdd-loading-inner {
+    margin: 100px 153px;
+    width: 212px;
+    height: 13px;
+    background: url(loading.gif) no-repeat;
+    overflow: hidden;
+    text-indent: -100px;
+    border: 3px double #FFF;
+    border-radius: 5px;
+}
+
+/* CATEGORIES TPL */
+#pdd-categories .pdd-category {
+    cursor: pointer;
+    margin: 5px 0;
+    border: 1px #CCC solid;
+    border-radius: 7px;
+    background-color: rgba(100, 100, 100, 0.5);
+    padding: 5px;
+}
+
+#pdd-categories .pdd-category:hover {
+    background-color: transparent;
+}
+
+#pdd-categories table.pdd-category-bilets {
+    border-collapse: separate;
+    border-spacing: 5px;
+    display: none;
+    margin: 5px auto;
+}
+
+#pdd-categories .pdd-category-header {
+    margin-left: 15px;
+}
+
+#pdd-categories .pdd-category-header th {
+    white-space: nowrap;
+    vertical-align: top;
+    font-weight: normal;
+    padding: 3px 0;
+}
+
+#pdd-categories .pdd-category-header td {
+    padding: 3px 0 3px 10px;
+}
+
+/* NUMBERS TPL */
+#pdd-bilets {
+    width: 100%;
+}
+
+#pdd-bilets td,
+.pdd-category-bilets td {
+    width: 62px;
+    height: 20px;
+    border: solid 1px #CCC;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px;
+
+}
+
+#pdd-bilets td:hover,
+.pdd-category-bilets td:hover {
+    background-color: #333;
+}
+
+/* BILET TPL */
+#pdd-test #pdd-bilet {
+    padding-bottom: 0;
+    font-family: sans-serif;
+}
+
+#pdd-res-line {
+    margin: auto;
+}
+
+#pdd-res-line {
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 0;
+    width: 520px;
+    height: 22px;
+}
+
+#pdd-res-line li {
+    width: 18px;
+    height: 18px;
+    display: block;
+    float: left;
+    margin: 0 3px;
+    padding: 0px;
+    border-radius: 5px;
+    border: solid 1px #FFF;
+}
+
+#pdd-res-line .pdd-success-qst {
+    background-color: green;
+}
+
+#pdd-res-line .pdd-fail-qst {
+    background-color: red;
+}
+
+#pdd-bilet-info {
+    margin: 10px auto;
+    width: 95%;
+}
+
+#pdd-bilet-info #pdd-bilet-number {
+    width: 33%;
+    font-size: 14px;
+    font-style: italic;
+}
+
+#pdd-bilet-info #pdd-bilet-qst-header {
+    width: 33%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#pdd-bilet-info #pdd-bilet-time-wrapper {
+    width: 33%;
+    text-align: right;
+}
+
+#pdd-bilet-info #pdd-bilet-time {
+    font-size: 12px;
+    border: solid 1px #FFF;
+    box-shadow: 1px 1px 0 0 #000;
+    border-radius: 3px;
+    padding: 1px 3px;
+    cursor: pointer;
+    width: 35px;
+}
+
+#pdd-bilet-info #pdd-bilet-time:active {
+    background-color: #000;
+    color: #FFF;
+}
+
+#pdd-bilet img {
+    margin: 5px auto;
+    display: block;
+    border: double 3px #FFF;
+}
+
+#pdd-bilet img[src$="empty.png"] {
+    border-width: 0;
+}
+
+#pdd-bilet #pdd-bilet-qst {
+    font-weight: bold;
+    margin: 15px 0 15px 8px;
+}
+
+#pdd-bilet input {
+    vertical-align: middle;
+    margin: 0 7px;
+    outline: none;
+}
+
+#pdd-bilet label {
+    display: block;
+    margin: 10px 0;
+    line-height: 125%;
+    font-weight: normal;
+}
+
+#pdd-bilet .pdd-sbmt {
+    margin: 10px;
+}
+
+#pdd-bilet-toggle-comment {
+    text-align: right;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#pdd-bilet-comment {
+    display: none;
+    border: solid 1px #FFF;
+    margin: 5px 0;
+    padding: 4px;
+    font-size: 85%;
+    box-shadow: 1px 1px 0 0 #000;
+}
+
+#pdd-show-comment:hover {
+    color: #000;
+}
+
+#pdd-bilet-close {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 90px;
+    border: solid 1px #CCC;
+    border-bottom-width: 0;
+    cursor: pointer;
+    padding: 0 3px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 1px 0 0 #000;
+    font-size: 85%;
+}
+
+.pdd-right-ans span {
+    color: #9F9;
+    text-shadow: 1px 1px 0px #CFC;
+}
+
+.pdd-fail-ans span {
+    text-decoration: line-through;
+}
+
+/* RESULT TPL */
+#pdd-result {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#pdd-result table {
+    margin: 10px auto;
+}
+
+#pdd-result table caption {
+    font-weight: bold;
+    padding: 9px;
+}
+
+#pdd-result td {
+    padding: 5px 3px;
+    text-align: left;
+}
+
+#pdd-result.pdd-res-success table {
+    color: #9F9;
+}
+
+#pdd-result.pdd-res-fail table {
+    color: #F99;
+}
+#pdd-result .pdd-result-success {
+    text-align: center;
+}
+
+#pdd-result .pdd-result-fail {
+    text-align: center;
+}
+
+/* EXAMINE TPL */
+#pdd-examine {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#pdd-examine p {
+    line-height: 150%;
+    margin: 20px;
+    text-align: center;
+}
+
+/* STATISTICS BLOCK */
+#pdd-statistics {
+    margin: 1em 0;
+}
+
+#pdd-statistics table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#pdd-statistics td {
+    padding: 3px;
+
+}
+
+#pdd-statistics caption {
+    font-weight: bold;
+    text-align: left;
+    margin: 3px 0;
+}
+
+#pdd-statistics .pdd-statistics-passed {
+    color: green;
+}
+
+#pdd-statistics .pdd-statistics-failed {
+    color: red;
+}
+
+#pdd-statistics .pdd-statistics-remain {
+    color: gray;
+}
+
+#pdd-statistics .pdd-statistics-average td {
+    border-top: 1px solid black;
+}
+
+/* PDD TEST VERSION */
+#pdd-test-version {
+    margin: 1px auto;
+    color: #000;
+    text-align: center;
+    font-size: 80%;
+    text-shadow: none;
+}

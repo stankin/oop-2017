@@ -20,7 +20,7 @@ $(document).ready(function(){
       <ul class="submenu">
         <li><a href="javascript:;" onclick="go_to_first_page()">Показать игру</a></li>
         <li><a href="javascript:;" onclick="go_to_second_page()">Показать часы</a></li>
-        <li><a href=""></a></li>
+        <li><a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B9">UML-диаграмма</a></li>
         <li><a href="">Tags</a></li>
       </ul>
     </li>
@@ -32,90 +32,154 @@ $(document).ready(function(){
         <li><a href="">Tags</a></li>
       </ul>
     </li>
-    <li><a href="javascript:;" onclick="go_to_third_page()">Задание</a></li>
-	<li><a href="">Contact</a></li>
+    <li><a href="javascript:;" onclick="go_to_third_page()">Зомби</a></li>
+    <li><a href="javascript:;" onclick="go_to_fourth_page()">Диаграмма классов</a></li>
   </ul>
 </nav>
 	<div id="page_1">
-	     <h1 style="text-align: center;">Диаграмма</h1>
-	     <img src="http://s4.uploads.ru/jdmS1.png" border="0" width="600px" style="margin: 0 auto;display: block;"/>
-	     <h1 style="text-align: center;">Игра</h1>
-	     <iframe src="rezenova.html" height="800" width="600" style="border:none;margin: 0 auto;display: block;"></iframe>
-	</div>
+		<p align="center">
+      <font size="5" color=#ff6a5d face="Arial">Требования:</font>
+	</p>		
+		<dl>
+		  <dt>
+			  <font size="4" color=#ff6a5d face="Arial"> Требования к функциям приложения:</font>
+			</dt>
+		        <dd>
+			    <font size="3" color=#ff6a5d face="Arial">Изменить цвет фона на желтый</font>
+			</dd>
+			<dd>
+			    <font size="3" color=#ff6a5d face="Arial">Увеличить размер куба</font>
+			</dd>
+			<dd>
+			    <font size="3" color=#ff6a5d face="Arial">Изменить положение куба</font>
+			</dd>
+			<dd>
+			    <font size="3" color=#ff6a5d face="Arial">Изменить направление вращения куба</font>
+			</dd>
+			<dd>
+			    <font size="3" color=#ff6a5d face="Arial">Поместить узор на куб</font>
+			</dd>
+		  <dt>
+			  <font size="4" color=#ff6a5d face="Arial">Формат обмена данными с сервером, требуемые библиотеки:</font>
+			</dt>
+		    <dd><font size="3" color=#ff6a5d face="Arial">HTML</font></dd>
+		    <dd><font size="3" color=#ff6a5d face="Arial">CSS</font></dd>
+		    <dd><font size="3" color=#ff6a5d face="Arial">JS</font></dd>
+		    <dd><font size="3" color=#ff6a5d face="Arial">JQUERY</font></dd>
+			<dd><font size="3" color=#ff6a5d face="Arial">ANGULAR</font></dd>
+			<dd><font size="3" color=#ff6a5d face="Arial">JSON</font></dd>
+			<dd><font size="3" color=#ff6a5d face="Arial">XML</font></dd>
+			<dd><font size="3" color=#ff6a5d face="Arial">HTTPS</font></dd>
+			 <dt>
+			  <font size="4" color=#ff6a5d face="Arial">Способ идентификации:</font>
+			</dt>
+		    <dd><font size="3" color=#ff6a5d face="Arial">Аутентификация по паролю (HTTP authentication)</font></dd>
+		    <dd><font size="3" color=#ff6a5d face="Arial">Гость может просматривать страницу</font></dd>
+		    <dd><font size="3" color=#ff6a5d face="Arial">Авторизованный пользователь может оставлять комментарии</font></dd>
+		    <dd><font size="3" color=#ff6a5d face="Arial">Авторизованный пользователь может изменять цветовое решение приложения</font></dd>
+		</dl>
+	
+		<h1 style="color:#333; text-align: center;">Игра</h1>
+	
+	     <iframe src="rezenova.html" height="800" width="600" style="border:none;margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: 30%;display: block;"></iframe>
+
+	 </div>
 	<div id="page_2">
-	<h1>Часы</h1>
-		<iframe src="yulia.html" height="800" width="600" style="border:none;"></iframe> 
+	<h1 style="color:#ff6a5d; text-align: center;">Часы</h1>
+		<iframe src="yulia.html" height="800" width="600" style="border:none;margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: 35%;display: block;"></iframe> 
 	</div>
 	
 	<div id="page_3">
-		<p>
-      <font size="5" color=#ff6a5d face="Arial">Мое задание заключалось в том, чтобы организовать выпадающее меню, которое раскрывалось бы при наведении, а так же создать параграфы.</font>
-    </p>
     <p align="right">
       <font size="3" color=#003559 face="Arial" >Парочка интересных фактов о зомби. Использован материал с сайта: http://www.popmech.ru </font>
     </p>
     <p align="center">
-      <font size="16" color=#333 face="Lucida Sans Unicode;" > Зомби-апокалипсис с серьезным лицом: зачем ученым живые мертвецы</font>
+      <font size="16" color=#ff6a5d face="Lucida Sans Unicode;" > Зомби-апокалипсис с серьезным лицом: зачем ученым живые мертвецы</font>
     </p>
-    <p>
+    <p align="center">
       <font size="5" color=#333 face="Lucida Sans Unicode;">Если зомби-апокалипсис когда-нибудь настанет, то он будет быстрым и жестоким. Спустя 100 дней после того, как зараженные начнут истреблять население Земли, в живых останется лишь 273 человека. Именно такой прогноз вынесли студенты Университета Лестера, а результаты их исследования опубликованы в школьном журнале Journal of Physics Special Topics.</font>
     </p>
-    <p>
+    <p align="center">
       <font size="5" color=#333 face="Lucida Sans Unicode;">Надо сказать, что на сегодняшний день существует множество исследований на тему «реальности» зомби, причем речь зачастую идет о животных, чей разум находится под контролем паразитов. Некоторые ученые принимаются исследовать эту несерьезную, на первый взгляд, тему, чтобы улучшить свое понимание динамики распространения инфекционных болезней, изучить нейробиологические особенности организма человека, а также оптимизировать стратегию в случае наступления реального кризиса. Замените термин «зомби-апокалипсис» словами «массовая эпидемия» — и все сразу становится на порядок серьезнее.</font>
     </p>
-    <p>
-      <font size="6" color=#333 face="Lucida Sans Unicode;">Зомби-математика…</font>
+    <p align="center">
+      <font size="6" color=#ff6a5d face="Lucida Sans Unicode;">Зомби-математика…</font>
     </p>
-    <p>
+    <p align="center">
       <font size="5" color=#333 face="Lucida Sans Unicode;">При использовании математики как средства для возможных прогнозов поведения выживших в пост-апокалиптическом мире, следует обратить внимание на базовые вещи: сколько зомби могут атаковать изначально? Какова вероятность заражения? Как быстро и какими средствами можно уничтожить зомби? Как быстро люди адаптируются к новым условиям и смогут противодействовать угрозе? Что произойдет, если лекарство будет найдено?</font>
     </p>
-    <p>
+    <p align="center">
       <font size="5" color=#333 face="Lucida Sans Unicode;">Эпидемиологи регулярно задают эти и десятки аналогичных вопросов во время моделирования реальных вспышек эпидемий. «Все те вспышки гриппа или болезней скота, которые мы наблюдаем ежегодно, на наш взгляд имеют много общего с зомби-угрозой, будь она реальна», говорит Тара С. Смит, эпидемиолог из Огайо. Она считает, что зомби-вирус можно анализировать как любое другое гипотетическое вирусное заболевание, с разумными поправками на обстоятельства. Однако в случае вымышленного вируса нет никаких ограничений: можно предположить, что он передается воздушно-капельным путем или через укусы кровососущих паразитов, можно принять инкубационный период за 30 дней или 5 минут — а значит, можно проработать любую стратегию и вычислить меры, которые будут универсальными вне зависимости от обстоятельств.</font>
     </p>
-      <p>
+      <p align="center">
         <font size="5" color=#333 face="Lucida Sans Unicode;">Некоторые ученые так и делают. В 2009 году математик Роберт Дж. Смит? (да, знак вопроса — это часть его имени, мы не шутим) из Университета Оттавы и его ученики продемонстрировали, что люди должны быстро сплотиться против «живых мертвецов» и действовать оперативно, чтобы успешно противостоять угрозе. В результате обычный школьный проект вырос до уровня серьезной книги о моделировании инфекционных заболеваний. Смит? Даже написал книгу, которая называется «Mathematical Modelling of Zombies».</font>
       </p>
-        <p>
+        <p align="center">
           <font size="5" color=#333 face="Lucida Sans Unicode;">Еще один пример: команда из Корнельского университета смоделировала условия зомби-вспышки в континентальной части США, после чего предложила наилучшие области, в которых можно скрыться в случае угрозы. Эпидемия быстро прошла по городам, и уже за первую неделю в зомби превратилась большая часть населения. Однако, даже 4 месяца спустя, по расчетам ученых Монтана и Невада остаются свободны от угрозы. «Зомби создают замечательную модель, которая позволяет проиллюстрировать современные эпидемиологические тенденции и методы», пишут исследователи, чья зомби-модель является подобием модели SIR, которая в настоящее время и используется для прогнозирования эпидемий.</font>
         </p>
-          <p>
-            <font size="6" color=#333 face="Lucida Sans Unicode;">…и другие науки</font>
+          <p align="center">
+            <font size="6" color=#ff6a5d face="Lucida Sans Unicode;">…и другие науки</font>
           </p>
-            <p>
+            <p align="center">
               <font size="5" color=#333 face="Lucida Sans Unicode;">Эпидемиологи и студенты — далеко не единственные люди, которым могут быть полезны зомби. Ученые отмечают, что на примере душераздирающих зомби-драм и боевиков можно очень просто и наглядно продемонстрировать даже несведущему населению основные принципы распространения реальной инфекции и способов защиты от нее. Да, быть может навыки отстрела мертвецов вам и не пригодятся, а вот умение выживать во время кризиса, избегать источников заражения и выполнять профилактические меры может и в самом деле пригодиться.</font>
             </p>
-            <p>
+            <p align="center">
               <font size="5" color=#333 face="Lucida Sans Unicode;">Зомби, разумеется, также вдохновили специалистов, занимающихся исследованиями работы мозга. На их примере неврологи рассмотрели симптоматику, к примеру вихляющуюся походку, заторможенность и нездоровый аппетит, которые присущи многим реальным пациентам.</font>
             </p>
-              <p>
+              <p align="center">
                 <font size="5" color=#333 face="Lucida Sans Unicode;">Стоит отметить, что, несмотря на всю фантастичность потенциального зомби-апокалипсиса, не стоит относиться к нему совсем уж несерьезно. Даже в XXI веке «победивших технологий» мир столкнулся с масштабной эпидемией лихорадки Эбола, унесшей жизни сотен людей, а стало быть природа или деятельность самого человека в будущем могут вызвать появление многих необычных инфекций — и совершенно не исключено, что они станут серьезным испытанием для всего человечества.</font>
               </p>
 
 	</div>
+	<div id="page_4">
+		<p align="center">
+      <font size="5" color=#ff6a5d face="Arial">Мое задание заключалось в том, чтобы организовать выпадающее меню, которое раскрывалось бы при наведении, и создать параграфы.</font>
+    </p>
+	<h1  style="color:#333; text-align: center;">Диаграмма классов</h1>
+	     <img src="http://savepic.net/9156335.png" border="0" width="600px" style="margin: 0 auto;display: block;"/>
+		 <p align="center">
+      <font size="5" color=#ff6a5d face="Arial">Диаграмма классов для тега параграф </font>
+	</p>
+	</div>
 	
+	 
 	<script>
 	$("#page_1").show();
 	$("#page_2").hide();
 	$("#page_3").hide();
+	$("#page_4").hide();
+	
 		
 	function go_to_first_page(){
 		$("#page_1").show();
 		$("#page_2").hide();
 		$("#page_3").hide();
+		$("#page_4").hide();
+		
 	}
 	
 	function go_to_second_page(){
 		$("#page_1").hide();
 		$("#page_2").show();
 		$("#page_3").hide();
+		$("#page_4").hide();
+	
 	}
 	
 	function go_to_third_page(){
 		$("#page_1").hide();
 		$("#page_2").hide();
 		$("#page_3").show();
-	}
+		$("#page_4").hide();
 		
+	}
+	function go_to_fourth_page(){
+		$("#page_1").hide();
+		$("#page_2").hide();
+		$("#page_3").hide();
+		$("#page_4").show();
+		
+	}
 	</script>
  </body> 
 </html>

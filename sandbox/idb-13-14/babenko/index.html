@@ -4,20 +4,37 @@
 <head>
 
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script>
-$(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-});
-</script>
+
 </head>
 <body>
 <p  align="center">ИДБ-13-14</p><br>
 <p  align="center">Бабенко Е.В.</p><br>
+<p align="right"> <i>Бабенко Евгения</i></p>
+	<form align="right" action="https://github.com/stankin/oop/tree/master/sandbox/idb-13-14/babenko">
+    <button type="submit">Посмотреть исходники</button>
+</form>
+  <p align="center"> <b>
+  <h2>Задачи:</h2>
+			<ol><li>Создать личную страницу на Github</li>
+				<li>Личная страница должна быть разработана при помощи HTML, JavaScript и CSS</li>
+			<li>Создать при помощи тега table таблицу в виде кирпичной стены</li>
+			<li>Создать диаграмму классов тега table</li>
+			<li>Создать wiki-страницу с диаграммой прецедентов по <a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%965"> лабораторной работе №5 </a></li>	
+			<li>Создать SPA</li>
+			<li>Разработать сервис, демонстрирующий пользовательские настройки графического приложения</li>
+				<ul>
+					<li>Авторизация и аутентификация пользователя должна происходить через VK API</li>
+					<li>Пользователи, не выполнившие аутентификацию, по умолчанию становятся guest</li>
+					<li>Просмотр личных настроек конкретного пользовател не возможен, без его авторизации и аутентификации</li>
+					<li>После авторизации пользователь должен иметь возможность выбрать предпочтительные характеристики для приложения (с сохранением настроек)</li>
+					<li>Вывод характеристик пользователя осуществляется при нажатии на кнопку "Вывести информацию"</li>
+					<li>База данных MySQL должна храниться на удаленном сервере</li>
+					<li>Формат обмена данными - JSON</li>
+					<li>При разработке использовать JQuery, AJAX</li>
+				</ul>
+			</ol>
+  </b></p><br>
 
-  
-<p align="center"> <b> <i> Моя задача - создание кирпичной стены с помощью тега table </i></b></p><br>
 <table border="1"   bgcolor="#884535" align ="center" heignt="100%" width="70%">
 <tr>
 
@@ -119,7 +136,8 @@ $(document).ready(function(){
 </table>
     <p align="center">
        Часть кода, созданной таблицы<br>
-    <img  src="Часть кода.jpg" width=475> <br>
+<img  src="Часть кода.jpg" width=475>
+	    <br>
         Тег &#60tr&#62  служит контейнером для создания строки таблицы. Каждая ячейка в пределах такой строки может задаваться с помощью тега &#60td&#62 <br>
         Атрибут height устанавливает высоту блочных или заменяемых элементов. Высота не включает толщину границ вокруг элемента, значение отступов и полей.<br>
         Атрибут colspan устанавливает число ячеек, которые должны быть объединены по горизонтали. Этот атрибут имеет смысл для таблиц, состоящих из нескольких строк.<br>
@@ -127,17 +145,16 @@ $(document).ready(function(){
     </p>
     <p align="center">
         Диаграмма классов<br>
-    <img  src="d_class.svg" width=475> <br>
+    <img  src="111.svg" width=475> <br>
     </p>
-    <p align="center">
-        UML представлена в лабораторной работе №5<br>
-       
-   <a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%965"> Можно просмотреть по ссылке </a> 
-       </p>
-     <p align="center">
-         Пока что мое SPA <br></p>
-    <p align="center">
-           <iframe src="bab.html" height="800" width="600" style="border:none;"></iframe> 
-         </p> 
+  
+      <p align="center">
+        SPA
+        <br></p>
+
+<p align="center">
+           <iframe src="spa.html" height="800" width="600" style="border:none;"></iframe> 
+         </p>
+   
 </body>
 </html>

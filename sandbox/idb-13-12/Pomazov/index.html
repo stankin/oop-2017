@@ -1,92 +1,42 @@
-<!DOCTYPE html>
 <html>
-<body>
+<head>
+<meta charset="utf-8">
+  <title>Отчет по лабораторным работам по дисциплине "ПИС" </title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body bgcolor="90EE90" align=center>
+  <hr>
+  <h1>Отчет по лабораторным работам </h1>
+<h2>Задачи для выполнения лабораторных работ:</h2>
 
-<canvas id="canvas" width="400" height="400"
-style="background-color:#333">
-</canvas>
-
-<script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 1
-setInterval(drawClock, 1);
-
-function drawClock() {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
-}
-
-function drawFace(ctx, radius) {
-  var grad;
-  ctx.beginPath();
-  ctx.arc(0, 0, radius, 0, 1*Math.PI);
-  ctx.fillStyle = 'green';
-  ctx.fill();
-  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-  grad.addColorStop(0, 'red');
-  grad.addColorStop(0.5, 'pink');
-  grad.addColorStop(1, '#333');
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = radius*0.1;
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  ctx.fillStyle = '#333';
-  ctx.fill();
-}
-
-function drawNumbers(ctx, radius) {
-  var ang;
-  var num;
-  ctx.font = radius*0.15 + "px arial";
-  ctx.textBaseline="middle";
-  ctx.textAlign="center";
-  for(num = 1; num < 13; num++){
-    ang = num * Math.PI / 6;
-    ctx.rotate(ang);
-    ctx.translate(0, -radius*0.85);
-    ctx.rotate(-ang);
-    ctx.fillText(num.toString(), 0, 0);
-    ctx.rotate(ang);
-    ctx.translate(0, radius*1);
-    ctx.rotate(-ang);
-  }
-}
-
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-    //hour
-    hour=hour%12;
-    hour=(hour*Math.PI/1)+
-    (minute*Math.PI/(6*60))+
-    (second*Math.PI/(1*60));
-    drawHand(ctx, hour, radius*0.1, radius*0.01);
-    //minute
-    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.8, radius*0.07);
-    // second
-    second=(-second*Math.PI/11);
-    drawHand(ctx, second, radius*0.9, radius*0.02);
-}
-
-function drawHand(ctx, pos, length, width) {
-    ctx.beginPath();
-    ctx.lineWidth = width;
-    ctx.lineCap = "round";
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
-    ctx.stroke();
-    ctx.rotate(-pos);
-}
-</script>
-
+<ol align=left>
+  <li>Создать личную страницу с использованием html, js, jquary</li>
+  <li>Создать страницу wiki описывающую <a href="https://github.com/stankin/oop/wiki/%D0%A2%D1%8D%D0%B3%D0%B8-HTML.-iframe">HTML тэг iframe</a>, содержащую UML диаграмму для данного тэга и примеры</li>
+  <li>Создать диаграмму прецедентов на <a href ="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%963"> wiki странице Лабораторной работы №3 </a> </li>
+  <li>Добавить SPA "Простая игра" на личную страницу</li>
+ </ol>
+  <h2> Требования к приложению "Простая игра": </h2>
+  <ol align=left>
+    <li> Сервер должен хранить данные о пользователях и рекордах </li>
+    <li> Пользователь должен совершать управление бегунком путем нажатия на кнопку на экране</li>
+    <li> Приложение должно иметь функцию сброса для перезагрузки приложения </li>
+    <li> Включать возможность игры после авторизации через ВК </li>
+  </ol>
+  <input type="button" id="but" value="SPA" align=center>
+  <div style="display: none" id="fram">
+<iframe src="clock.html" width="600" height="450"></iframe>
+    </div>
+  <hr>
+  <a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-12/Pomazov">Мой репозиторий</a>
+  <footer> Помазов С.В, ИДБ-13-12 </footer>
 </body>
 </html>
+<script>
+$("#but").click(function(){
+        if ($("#fram").is(":hidden")) {
+             $("#fram").show("slow");
+         } else {
+                 $("#fram").hide("slow");
+                }	
+});
+</script>

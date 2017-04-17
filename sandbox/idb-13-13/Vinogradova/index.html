@@ -4,7 +4,7 @@
 <title>Виноградова М.Б. ИДБ-13-13</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/assets/js/jquery-1.11.1.min.js"></script>
 		<style>
 		
 			table thead td{
@@ -12,36 +12,22 @@
 				background:grey;
 			}
 		</style>	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="/jquery-1.11.1.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $("iframe").hide();
-    });
-    $("#show").click(function(){
-        $("iframe").show();
-    });
-});
-$(document).ready(function(){
-    $("#p1").click(function(){
-        $("#p2").toggle();
-    });
-	 $("#p3").click(function(){
-        $("#p2").toggle();
-    });
-  });
-</script>
+
+
+
 </head>
 <body>
 <a name="top"></a>
-<div>
+<div id="cont">
+<center>
 <img src="http://vkclub.su/_data/stickers/luna/sticker_vk_luna_000.png" width="250" height="250">
 <h2> Список заданий:</h2>
 <ol>
 <li><a href="#table">Описать элемент html < table > c примером использования</a></li>
 <li><a href="#WIKI">Создать WIKI для лабораторной работы №7</a></li>
-<li><a href="#SPA">Single Page Application</a></li></ol>
+<li><a href="#SPA">Разработать SPA "Часы"</a></li></ol>
+	
+		
 
 <h2>Uml для < table ></h2>
 <img src="classess.png">
@@ -152,18 +138,183 @@ $(document).ready(function(){
 <a name="WIKI"><h2>Wiki-страница</h2></a>
 <p>Ознакомиться с моей вики-страницей вы можете по ссылке: <a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%967">< клик ></a> </p>
 
-<a name="SPA"><h2>SPA</h2></a>
-<h3>Или игра со скриптами</h3>
-<p id="p1">Параграф 1</p>
-<p id="p2">Параграф 2</p>
-<p id="p3">Параграф 3, но это не точно</p>
-<button id="hide">Спрятать часы</button>
-<button id="show">Показать часы</button>
-<p></p>
-<iframe src="ibudindex.html" height="420" width="420"></iframe>
+<a name="SPA"><h2>SPA</h2></a></center>
+	<h3>Требования к SPA</h3>
+<ul><li>Пользователь должен иметь возможность настраивать:</li>
+		<ul>	<li>Фон циферблата</li>
+			<li>Цвет рамки часов</li></ul><br>			
+		<li>Авторизация и аутентификация пользователя должна происходить через VK oauth API</li>
+		<br>
+		<li>Возможность настройки предоставляется только аутентифицированным пользователям</li>
+		<br>
+		<li>Цвет выбирается из предложенных в выпадающем списке</li>
+		<br>
+		<li>Настройки цветов должны сохраняться в БД</li><br>
+	<li>Для информационного обмена с сервером должен использоваться формат json</li>
+	</ul>
+<center>	
+	
+	<p>
+	<div id="vk_auth"></div>
+
+
+	
+
+	     </p>
+	
+	<p>
+<div id="selectors">	  
+    Цвет фона циферблата: <SELECT name="Фон" onchange="BackGr=this.value;">
+    <OPTION value="#f2cd9d">Стандартный</option>
+    <OPTION value="#fff9e2">Бежевый</option>
+    <OPTION value="#deff7c">Салатовый</option>
+	<OPTION value="#d6fffc">Голубой</option>
+  </SELECT> |  Цвет рамки часов: <SELECT name="Контур" onchange="BackGrBorder=this.value;">
+    <OPTION value="#eca84f">Стандартный</option>
+    <OPTION value="#d3c2ad">Бежевый</option>
+    <OPTION value="#8fa845">Салатовый</option>
+	<OPTION value="#7eafac">Голубой</option>
+  </SELECT>
+	</div>
+ </p>
+	
+	
+			  
+	
+	
+<canvas id="canvas" width="400" height="400">
+</canvas>
+
+<script>
+				    
+var BackGr = '#f2cd9d';
+var BackGrBorder = '#eca84f';
+					    
+					    
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = BackGr;
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, BackGrBorder);
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+		
+$.ajax({ 
+url: 'http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/iamreallylazytocreatejsonfile.json', 
+method:"GET", 
+success: function(data){ 
+var obj = data; 
+BackGr = obj.logbox[obj.logbox.length-1]["Фон"] ; 
+BackGrBorder = obj.logbox[obj.logbox.length-1]["Контур"]; 
+$("select[name='Фон']").val(BackGr ); 
+$("select[name='Контур']").val(BackGrBorder ); 
+drawClock(); 
+
+}
+	
+});
+	
+	
+	
+</script>
+			       
+			       
 	
 	<p><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-13/Vinogradova">Исходники на GitHub</a></p>
- <p><a href="#top">Наверх</a></p>
+ <p><a href="#top">Наверх</a></p></center>
 </div>
+	
+	
+		<script src="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Vinogradova/assets/js/jquery-1.11.1.min.js"></script>
+	
+	<script type="text/javascript" src="//vk.com/js/api/openapi.js?143"></script>
+<script type="text/javascript">
+  VK.init({apiId: 5963037});
+</script>
+	
+	<script type="text/javascript">
+VK.Widgets.Auth("vk_auth", {onAuth: function(data) {
+ alert('user '+data['uid']+' authorized');
+} });
+</script>
+	
+<script> 
+VK.Auth.getLoginStatus(function(response) { 
+if (response.session) { 
+document.getElementById('selectors').style.display = 'block';
+} else { 
+document.getElementById('selectors').style.display = 'none';
+}}); 
+</script>
+	
+	
 </body>
 </html>
+

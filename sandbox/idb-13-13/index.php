@@ -28,7 +28,7 @@
 </head>
 	
 <body>
-	<form action="http://paul.1gb.ru/stankin/oop/refresh.php">
+	<form target="_blank"  action="http://paul.1gb.ru/stankin/oop/refresh.php">
   <input value="Обновить песочницу с github" type="submit">
 </form>
 	<div class="container">

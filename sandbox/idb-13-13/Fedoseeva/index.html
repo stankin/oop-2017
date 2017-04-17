@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
 <body>
@@ -14,19 +15,30 @@
 	    margin-bottom: 20px;
 	}
 </style>
-<h1>Работа с тегом input</h1>
-<a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/input_lab/index.html">Форматированный ввод с тегом input</a>
-<div>
+<h1>Выполненные задания (Федосеева А.С., ИДБ-13-13):</h1>
+<a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/input_lab/index.html">Форматированный ввод с тегом input</a><br>
+
+<a class="link" href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%965">Описание лабораторной работы №5</a><br>
+<a class="link" href="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Fedoseeva/indexjump.html">SPA (DoodleJump - пример для себя)</a><br>
+<a class="link" href="https://github.com/stankin/oop/blob/master/sandbox/idb-13-13/Fedoseeva/SPA/index.php">SPA CHAT</a><div>
+	<p>Требования к SPA: создание чата
+		<ul>
+		<li>Перед входом в чат пользователю предлагается ввести свое имя, которое в дальнейшем используется для идентификации его сообщений</li>
+    <li>Использовать javascript библиотеку JQuery для создания ajax запросов и анимации</li>
+    <li>Реализовать сохранение сообщений в базе данных MySQL</li>
+    <li>Реализовать сохранение аккаунтов пользователей в базе данных MySQL</li>
+    <li>Сверстать чат на основе макета https://www.invisionapp.com/chat#</li>
+   <li>Реализация серверной части на PHP</li>
+	</ul>
+	<img src="https://github.com/stankin/oop/blob/master/sandbox/idb-13-13/Fedoseeva/SPA/img/CHAT.png?raw=true"/>
+	<img src="https://github.com/stankin/oop/blob/master/sandbox/idb-13-13/Fedoseeva/SPA/img/CHAT1.png?raw=true"/>
+	
+
+	<br>
 	<canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas>
 </div>
 
-<script>
-$(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-});
-</script>
+
 <p id="p1">Параграф1</p>
 <p id="p2">Параграф2</p>
 <p id="p3">Параграф3 </p>
@@ -112,6 +124,9 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
+	
+	
+
 </script>
 
 </body>

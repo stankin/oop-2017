@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<title>Личная страница</title>
+	<meta charset="utf-8">
+	<title>Горбунов</title>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="default.css">
+	<script src="highlight.pack.js" defer></script>
 	<script src="index.js" defer></script>
 </head>
 <body class="container">
 	<div class="page-header">
 		<h1>Горбунов С.Ю.<br><small>ИДБ-13-12</small></h1>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Описание</h3>
+		</div>
+		<div class="panel-body">
+			<p>В процессе выполнения лабораторных работ были разработаны:</p>
+			<ul>
+				<li><a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%961" target="_blank">Wiki-страница</a> с описанием одного из этапов проведения лабораторных работ</li>
+				<li><a href="http://paul.1gb.ru/stankin/oop/sandbox/" target="_blank">Список</a> учащихся группы ИДБ-13-12 с использованием jQuery, AJAX и хранением данных  формате JSON</li>
+				<li>Эта страница, содержащая следующие элементы:
+					<ul>
+						<li>Данное описание</li>
+						<li>Информацию о теге &lt;div&gt;</li>
+						<li>Ссылку на описание лабораторной работы в Wiki</li>
+						<li>Ссылку на репозиторий и фрагмент кода</li>
+						<li>Встроенное SPA</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -34,6 +57,32 @@
 		<div class="panel-body">
 			<p>Краткий экскурс в лабораторную работу №1</p>
 			<div class="text-center"><a role="button" class="btn btn-primary btn-lg" href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%961" target="_blank">Лабораторная работа №1</a></div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Страница в github</h3>
+		</div>
+		<div class="panel-body">
+			<p>Ссылка на репозиторий с исходным кодом данной страницы в Github:</p>
+			<div class="text-center"><a role="button" class="btn btn-primary btn-lg" href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-12/Gorbunov" target="_blank">/idb-13-12/Gorbunov</a></div>
+			<p>Код, используемый для формирования списка учащихся на <a href="http://paul.1gb.ru/stankin/oop/sandbox/" target="_blank">этой</a> странице, подгружается с помощью AJAX оттуда же:</p>
+			<button type="button" class="btn btn-primary btn-lg center-block" id="code-btn">Показать/скрыть код</button>
+			<div id="code-container" style="display: none;"><pre><code class="js" id="code-snippet">$("#idb-13-12").click(function(){
+	$.get({url: "students.json", cache: "false", dataType: "json", success: function( data ) {
+		if ($("#idb-13-12-table").length){
+			$("#idb-13-12-table").slideUp();
+			$("#idb-13-12-table").remove();
+		}
+		else{
+			$("#group-13-12").append("&lt;table class=\"group-table\" id=\"idb-13-12-table\" style=\"display: none\"&gt;&lt;tr&gt;&lt;th&gt;Имя&lt;/th&gt;&lt;th&gt;М1&lt;/th&gt;&lt;th&gt;М2&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;");
+			$.each(data, function(index, student){
+				$("#idb-13-12-table").append("&lt;tr&gt;&lt;td&gt;&lt;a href=\""+student.href+"\"&gt;"+student.name+"&lt;/a&gt;&lt;/td&gt;&lt;td&gt;"+student.m1+"&lt;/td&gt;&lt;td&gt;"+student.m2+"&lt;/td&gt;&lt;/tr&gt;");
+			});
+			$("#idb-13-12-table").slideDown();
+		}
+	}});
+});</code></pre></div>
 		</div>
 	</div>
 	<div class="panel panel-default">

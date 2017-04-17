@@ -1,0 +1,409 @@
+<!-- TABS -->
+<script type="text/template" id="pdd-tabs-template">
+    <ul id="pdd-tabs">
+        <li id="pdd-examine-link">Экзамен</li>
+        <li id="pdd-numbers-link">Билеты по номерам</li>
+        <li id="pdd-categories-link">Билеты по темам</li>
+    </ul>
+</script>
+<!-- /TABS -->
+
+<!-- NUMBERS -->
+<script type="text/template" id="pdd-numbers-template">
+    <div id="pdd-numbers" class="pdd-tpl">
+        <table id="pdd-bilets">
+            <% for (var n = 1; n <= 10; n++) { %>
+            <tr>
+                <% for (var m = 0; m <= 30; m += 10) { %>
+                <td>Билет <%= m + n %></td>
+                <% } %>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</script>
+<!-- /NUMBERS -->
+
+<!-- CATEGORIES -->
+<script type="text/template" id="pdd-categories-template">
+    <div id="pdd-categories" class="pdd-tpl">
+
+        <div id="pdd-category-1" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Разделы 1 и 2</th>
+                    <td>Общие положения и общие обязанности водителей</td>
+                </tr>
+                <tr>
+                    <th>Разделы 4 и 5</th>
+                    <td>Обязанности пешеходов и пассажиров</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-2" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Приложение 1</th>
+                    <td>Дорожные знаки</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                    <td>Билет 3</td>
+                </tr>
+                <tr>
+                    <td>Билет 4</td>
+                    <td>Билет 5</td>
+                    <td>Билет 6</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-3" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Приложение 2</th>
+                    <td>Дорожная разметка</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-4" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 3</th>
+                    <td>Применение специальных сигналов</td>
+                </tr>
+                <tr>
+                    <th>Раздел 6</th>
+                    <td>Cигналы светофора и регулировщика</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-5" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 7</th>
+                    <td>Применение аварийной сигнализации и знака аварийной остановки</td>
+                </tr>
+                <tr>
+                    <th>Раздел 8</th>
+                    <td>Начало движения и маневрирование</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets" class="pdd-category">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                    <td>Билет 3</td>
+                </tr>
+                <tr>
+                    <td>Билет 4</td>
+                    <td>Билет 5</td>
+                    <td>Билет 6</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-6" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 9</th>
+                    <td>Расположение транспортных средств на проезжей части</td>
+                </tr>
+                <tr>
+                    <th>Раздел 10</th>
+                    <td>Скорость движения</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-7" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 11</th>
+                    <td>Обгон, встречный разъезд</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-8" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 12</th>
+                    <td>Остановка и стоянка</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-9" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 13</th>
+                    <td>Проезд перекрёстков</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                    <td>Билет 3</td>
+                </tr>
+                <tr>
+                    <td>Билет 4</td>
+                    <td>Билет 5</td>
+                    <td>Билет 6</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-10" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 14</th>
+                    <td>Пешеходные переходы и остановки маршрутных транспортных средств</td>
+                </tr>
+                <tr>
+                    <th>Раздел 15</th>
+                    <td>Движение через железнодорожные пути</td>
+                </tr>
+                <tr>
+                    <th>Раздел 16</th>
+                    <td>Движение по автомагистралям</td>
+                </tr>
+                <tr>
+                    <th>Раздел 17</th>
+                    <td>Движение в жилых зонах</td>
+                </tr>
+                <tr>
+                    <th>Раздел 18</th>
+                    <td>Приоритет движения маршрутных транспортных средств</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets" class="pdd-category">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-11" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <th>Раздел 19</th>
+                    <td>Пользование внешними световыми приборами и звуковыми сигналами</td>
+                </tr>
+                <tr>
+                    <th>Раздел 20</th>
+                    <td>Буксировка механических транспортных средств</td>
+                </tr>
+                <tr>
+                    <th>Раздел 21</th>
+                    <td>Учебная езда</td>
+                </tr>
+                <tr>
+                    <th>Раздел 22</th>
+                    <td>Перевозка людей</td>
+                </tr>
+                <tr>
+                    <th>Раздел 23</th>
+                    <td>Перевозка грузов</td>
+                </tr>
+                <tr>
+                    <th>Раздел 24</th>
+                    <td>Дополнительные требования к движению велосипедов, мопедов, гужевых повозок,а также прогону
+                        животных
+                    </td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pdd-category-12" class="pdd-category">
+            <table class="pdd-category-header">
+                <tr>
+                    <td>Основные положения по допуску транспортных средств к эксплуатациии обязанности должносных лиц по
+                        обеспечению безопасности дорожного движения
+                    </td>
+                </tr>
+                <tr>
+                    <td>Основы безопасности дорожного движения</td>
+                </tr>
+                <tr>
+                    <td>Оказание первой медицинской помощи</td>
+                </tr>
+                <tr>
+                    <td>Ответственность водителя</td>
+                </tr>
+            </table>
+            <table class="pdd-category-bilets">
+                <tr>
+                    <td>Билет 1</td>
+                    <td>Билет 2</td>
+                    <td>Билет 3</td>
+                </tr>
+                <tr>
+                    <td>Билет 4</td>
+                    <td>Билет 5</td>
+                    <td>Билет 6</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</script>
+<!--/CATEGORIES -->
+
+<!-- EXAMINE -->
+<script type="text/template" id="pdd-examine-template">
+    <div id="pdd-examine" class="pdd-tpl">
+        <p>
+            На экзамен даётся 20 минут.<br/>
+            Внимательно читайте каждый вопрос и все варианты ответов.<br/>
+            Не торопитесь. Удачи!
+        </p>
+        <button class="pdd-sbmt">Поехали!</button>
+    </div>
+</script>
+<!--/EXAMINE -->
+
+<!-- QUESTION -->
+<script type="text/template" id="pdd-bilet-template">
+    <div id="pdd-bilet" class="pdd-tpl">
+        <% var activeQuestion = bilet.activeQuestion; %>
+        <ul id="pdd-res-line">
+            <% _.each(bilet.get('questions'), function(question, index) { %>
+            <% if (question.result !== undefined) { %>
+            <li class="pdd-answered-qst pdd-<%= question.result ? 'success': 'fail'%>-qst"></li>
+            <% } else { %>
+            <li></li>
+            <% } %>
+            <% }); %>
+        </ul>
+        <table id="pdd-bilet-info">
+            <tr>
+                <td id="pdd-bilet-number">Билет <%= activeQuestion.bn %></td>
+                <td id="pdd-bilet-qst-header">Вопрос <%= bilet.questionIndex + 1 %></td>
+                <td id="pdd-bilet-time-wrapper"><span id="pdd-bilet-time"><%= timer %></span></td>
+            </tr>
+        </table>
+        <img id="pdd-bilet-qst-img" src="<%= activeQuestion.imgSrc %>" alt="Картинка к билету"/>
+
+        <div id="pdd-bilet-qst"><%= activeQuestion.qst %></div>
+        <form method="post" id="pdd-bilet-form">
+            <% _.each(activeQuestion.answers, function(answer, index) { %>
+            <label id="pdd-bilet-ans-<%= index %>">
+                <input type="radio" name="ans" value="<%= index %>"/><span><%= answer %></span>
+            </label>
+            <% }); %>
+            <button class="pdd-sbmt pdd-disabled">Дальше</button>
+        </form>
+        <div id="pdd-bilet-toggle-comment"><span>Подсказка</span></div>
+        <div id="pdd-bilet-comment"><%= activeQuestion.comment %></div>
+        <span id="pdd-bilet-close">-закончить-</span>
+    </div>
+</script>
+<!--/QUESTION -->
+
+<!-- RESULT -->
+<script type="text/template" id="pdd-result-template">
+    <div id="pdd-result" class="pdd-tpl">
+        <table>
+            <caption>Ваш результат:</caption>
+            <tr>
+                <td>Правильных&nbsp;ответов:</td>
+                <td><span id="pdd-solved"><%= bilet.result %></span>&nbsp;из&nbsp;20&nbsp;(<span id="pdd-bilet-status"><%= 5 * bilet.result %></span>&nbsp;%)
+                </td>
+            </tr>
+            <tr>
+                <td>В том числе с подсказками:</td>
+                <td id="pdd-total-prompting"><%= bilet.prompt %></td>
+            </tr>
+            <tr>
+                <td>Общее&nbsp;время:</td>
+                <td id="pdd-total-time"><%= timer.getTotal() %></td>
+            </tr>
+            <tr>
+                <% if (bilet.result >= 18 && !timer.expire) { %>
+                <td colspan="2" class="pdd-result-success">Билет сдан!</td>
+                <% } else { %>
+                <td colspan="2" class="pdd-result-fail">Билет не сдан!</td>
+                <% } %>
+            </tr>
+        </table>
+        <button class="pdd-sbmt" id="pdd-bilet-proceed">Продолжить</button>
+    </div>
+</script>
+<!--/RESULT -->
+
+<!-- STATISTICS -->
+<script type="text/template" id="pdd-statistics-template">
+    <div id="pdd-statistics-inner">
+        <table>
+            <caption>Статистика:</caption>
+            <tr class="pdd-statistics-passed">
+                <td>Сдано:</td>
+                <td id="pdd-statistics-passed"><%= summary.passed %></td>
+            </tr>
+            <tr class="pdd-statistics-failed">
+                <td>Провалено:</td>
+                <td id="pdd-statistics-failed"><%= summary.failed %></td>
+            </tr>
+            <tr class="pdd-statistics-remain">
+                <td>Не выполнено:</td>
+                <td id="pdd-statistics-remain"><%= summary.remain %></td>
+            </tr>
+            <tr class="pdd-statistics-average">
+                <td>Средний бал:</td>
+                <td id="pdd-statistics-average"><%= summary.average %></td>
+            </tr>
+        </table>
+    </div>
+</script>
+<!--/STATISTICS -->

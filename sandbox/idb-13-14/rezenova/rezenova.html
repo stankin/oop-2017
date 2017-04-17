@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
 canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
+    border:1px solid #ffdf00;
+    background-color: #fff54a;
 }
 </style>
 </head>
@@ -13,7 +13,7 @@ canvas {
 <script>
 var myGamePiece;
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 80, 75);
+    myGamePiece = new component(80, 80, "#ff5648", 250, 150);
     myGameArea.start();
 }
 var myGameArea = {
@@ -51,12 +51,12 @@ function component(width, height, color, x, y) {
 }
 function updateGameArea() {
     myGameArea.clear();
-    myGamePiece.angle += 1 * Math.PI / 180;    
+    myGamePiece.angle += -1 * Math.PI / 180;    
     myGamePiece.update();
 }
 </script>
 <p>
-    <font size="5" color=#ff6a5d face="Lucida Sans Unicode;"> Каждый раз при повороте красного квадрата на один игровая зона будет обновляться(50 раз в секунду)</font>
+    <font size="3" color=#333 face="Arial;"> Каждый раз при повороте красного квадрата на один игровая зона будет обновляться(50 раз в секунду)</font>
 </p>
 
 </body>

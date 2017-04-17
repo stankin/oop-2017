@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<meta charset="UTF-8">
 <head>
   <link href="style.css" rel="stylesheet">
 <title> Лабораторная Гуц М. А. </title>
@@ -18,46 +19,172 @@ $(document).ready(function(){
 
 <h1>Визуализируемый тег Style.<br> </h1>
  Задание : сделать версию для "цветовой слепоты".<br>
- <a href = "http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Guts/index.html"><button>Стандартная версия</button> </a> <br>
+ <a href = "http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Guts/index.html"><button>Стандартная версия</button> </a> 
 
+<h1>Требования:<br> </h1>
+1. Личная страница должна содержать визуализируемый тег, его описание и синтаксис.<br>
+2. Личная страница должна содердать ссылку на Wiki-страницу с диаграммой деятельности.<br>
+3. Личная страница должна содержать SPA типа "Часы".<br>
+4. Личная страница должна содержать UML Class Diagram тега "Style".<br>
+5. Личная страница должна содержать иммитацию авторизации пользователей форму, которая содержит через логин и пароль.<br>
+ Окно регистрации не требуется, так как пользователи получают логины и пароли у своего системного администратора.<br>
+6. Личная страница должна содержать SPA, которое позволит:<br>
+	<ul><li> Получать информацию по средстав использования файла формата JSON;</ul></li>
+	<ul><li> Необходимо использование ангуляра, который позволяет скрыть или развернуть возможность поиска;</ul></li>
+	<ul><li> При нажатии на кнопку "Получить информацию" пользователь должен видеть информацию о названии книги, авторе,<br>
+ цене и кол-ве книг на складе.</ul></li>
+
+
+
+
+<br>
 <h1>
 <p id="p1">Описание тега Style. </p>
 </h1>
-	<p id="p2">HTML тег style используется для внедрения CSS 
-кода непосредственно в HTML-документ,таким образом формируя
-внутреннюю таблицу стилей. Так как внутри тега содержится 
-информация предназначенная только для браузеров, а не для
-пользователей, он должен быть расположен внутри тега <head>. 
+	<p id="p2">HTML тег style используется для внедрения CSS кода непосредственно в HTML-документ,таким образом <br>
+формируя внутреннюю таблицу стилей. Так как внутри тега содержится информация предназначенная только для браузеров, <br>
+а не для пользователей, он должен быть расположен внутри тега head. <br>
+Тег style обычно размещают прямо перед закрывающим тегом head. Если на странице используется код JavaScript, его <br>
+обычно добавляют после таблиц стилей. Часто программы JavaScript полагаются на CSS, поэтому, добавляя таблицы <br>
+стилей первыми, вы гарантируете, что код JavaScript будет располагать всей необходимой информацией.
 
-Тег style обычно размещают прямо перед закрывающим тегом
-head. Если на странице используется код JavaScript, его 
-обычно добавляют после таблиц стилей. Часто программы
-JavaScript полагаются на CSS, поэтому, добавляя таблицы 
-стилей первыми, вы гарантируете, что код JavaScript 
-будет располагать всей необходимой информацией.
 
  <h1>Синтаксис тега </h1>
 <pre><code class="no-buttons">&lt;head&gt;
-  &lt;style&gt;..описание стилей..&lt;/stule&gt;
+  &lt;style&gt;..описание стилей..&lt;/style&gt;
 &lt;/head&gt;</code></pre>
 
  </p>
 
  <h1>Статья Wiki.<br> </h1>
 Задание : сделать статью на Wiki о диаграмме деятельности с параллелизмом. <br>
-<a href = "https://github.com/stankin/oop/wiki/UML.%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8"> Диаграмма деятельности </a> <br>
+<a href = "https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8"> Диаграмма деятельности </a> <br>
 <h1>SPA.<br> </h1>
 <iframe src="maxim.html" height="220" width="220"></iframe>
-<br>
-	
+
+
+
 <h1><p>
 	UML Class Diagram.<br><br>
 	<img src="uml.png"></p></h1>
 <br>
 	<h1>Новое SPA по поиску в базе данных.<br> </h1>
-Задание: создать приложение поиска по фамилии или имени в базе данных всех студентов университета.
-	Результат выдачи будет содержать имя студента, фамилию студента, курс студента его возраст.
-	Также можно вывести полный список студентов университета.
+
+
+
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	      
+        <span class="right">
+            
+            </a>
+        </span>
+    <div class="clr"></div>
+    </div>
+<!--/ vladmaxi top bar -->
+
+  <form method="post" action="" class="login">
+    <p>
+      <label for="login">Логин:</label>
+      <input type="text" name="login" id="login" value="name@example.com">
+    </p>
+
+    <p>
+      <label for="password">Пароль:</label>
+      <input type="password" name="password" id="password" value="4815162342">
+    </p>
+
+    <p class="login-submit">
+      <button type="submit" class="login-button">Войти</button>
+    </p>
+
+  
+  </form>
+
+
+
+<!DOCTYPE html>
+<html>
+<style>
+div {
+  transition: all linear 0s;
+  background-color: white;
+  height: 0px;
+}
+.ng-hide {
+  height: 0;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+<body ng-app="myApp">
+
+
+<h1>Поиск по базе данных: </h1>
+<input type="checkbox" ng-model="myCheck"> Нажмите, чтобы скрыть/развернуть кнопку вывода информации 
+<div ng-hide="myCheck">
+
+<head>
+
+<script type='text/javascript'>
+function start(){  
+   xhttp=new XMLHttpRequest();
+   xhttp.open('GET','bb.json',true);
+   xhttp.send();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4){
+          
+         var json=eval( '('+xhttp.responseText+')' );
+         
+         document.getElementById('wrap').style.display='block';
+         document.getElementById('res1').innerHTML=json.bookbase[1].title;
+         document.getElementById('res2').innerHTML=json.bookbase[1].author;
+         document.getElementById('res3').innerHTML=json.bookbase[1].cost;
+         document.getElementById('res4').innerHTML=json.bookbase[1].quantity;
+
+      }
+   }
+}
+
+</script>
+</head>
+<body>
+
+
+<br>
+<input type='button' value='Вывести информацию' onclick='start()'/>
+
+<br /><br />
+<div id='wrap' style='display:none;'>
+<hr />
+<p>Название книги: <b><span id='res1'></span></b></p>
+<p>Автор: <b><span id='res2'></span></b></p>
+<p>Цена: <b><span id='res3'></span> руб.</b></p>
+<p>Количество на складе: <b><span id='res4'></span> шт.</b></p>
+<hr />
+
+</div>
+</body>
+
+</div>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+
+
+
+
+</script>
 
 </body>
+</html>
+
+</body>
+
 </html>

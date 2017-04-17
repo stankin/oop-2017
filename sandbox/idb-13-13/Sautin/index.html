@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<meta charset="UTF-8">
 <head>
 <title>Лабораторная Саутин Д.С.</title>
 <link rel="stylesheet" href="style.css" type="text/css">
@@ -56,7 +57,155 @@ $(document).ready(function(){
 
 <h2><p align="center">
 	UML-диаграмма<br><br>
-	<img src="uml.svg"></p></h2>
+	<img src="uml.svg"></p></h2><br>
+	
+	<!DOCTYPE html>
+<html>
+<style>
+div {
+  transition: all linear 0s;
+  background-color: white;
+  height: 0px;
+}
+.ng-hide {
+  height: 0;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+<body ng-app="myApp">
+
+
+<h2>Требования к SPA </h2>
+	<ol>
+	<li>Создать имитационную форму авторизации.</li>
+ 		
+     <ul><li>Форма содержит логин и пароль пользователей, при вводе которых открывается доступ к товарам.</li></ul>
+     <li>SPA позволит:</li>
+	<ul>
+	<ul><li>Получить пользователю необходимую и достоверную информацию о имеющихся товарах (марка, модель, цена, кол-во товара в наличии).</li>
+    	<li>Хранить все необходимые данные о таварах в базе JSON.</li>
+	<li>Предоставит возможность скрыть/показать вывод информации о товарах (при помощи Angular).</li>
+	</ul></ul>
+</ol>
+	
+<form method="post" action="" class="login">
+    <p>
+      <label for="login">Логин:</label>
+      <input type="text" style="width: 157px;" name="login" id="login">
+    </p>
+
+    <p>
+      <label for="password">Пароль:</label>
+      <input type="password" style="width: 150px;" name="password" id="password">
+    </p>
+
+    <p class="login-submit">
+      <button type="submit" class="boton1" style="margin-left: 165px;">Войти</button><br><br>
+    </p>
+</form><br>
+	
+<input type="checkbox" ng-model="myCheck"> Скрыть вывод информации о телефонах 
+<div ng-hide="myCheck">
+
+<head>
+
+<script type='text/javascript'>
+function start(){  
+   xhttp=new XMLHttpRequest();
+   xhttp.open('GET','base.json',true);
+   xhttp.send();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4){
+          
+         var json=eval( '('+xhttp.responseText+')' );
+         
+         document.getElementById('wrap').style.display='block';
+         document.getElementById('res1').innerHTML=json.telbase[0].title;
+         document.getElementById('res2').innerHTML=json.telbase[0].model;
+         document.getElementById('res3').innerHTML=json.telbase[0].cost;
+         document.getElementById('res4').innerHTML=json.telbase[0].quantity;
+	      
+	 document.getElementById('wrap1').style.display='block';
+         document.getElementById('res5').innerHTML=json.telbase[1].title;
+         document.getElementById('res6').innerHTML=json.telbase[1].model;
+         document.getElementById('res7').innerHTML=json.telbase[1].cost;
+         document.getElementById('res8').innerHTML=json.telbase[1].quantity;
+	      
+	 document.getElementById('wrap2').style.display='block';
+         document.getElementById('res9').innerHTML=json.telbase[2].title;
+         document.getElementById('res10').innerHTML=json.telbase[2].model;
+         document.getElementById('res11').innerHTML=json.telbase[2].cost;
+         document.getElementById('res12').innerHTML=json.telbase[2].quantity;
+	      
+	      
+	 document.getElementById('wrap3').style.display='block';
+         document.getElementById('res13').innerHTML=json.telbase[3].title;
+         document.getElementById('res14').innerHTML=json.telbase[3].model;
+         document.getElementById('res15').innerHTML=json.telbase[3].cost;
+         document.getElementById('res16').innerHTML=json.telbase[3].quantity;
+             
+	      
+      }
+   }
+}
+</script>
+</head>
+<body>
+
+
+<br>
+<input type='button' class="boton1" style="width: 220px; margin-left: 0px;" value='Показать весь список товаров' onclick='start()'/>
+
+<br /><br />
+<div id='wrap' style='display:none;'>
+<hr />
+<p>Марка телефона: <b><span id='res1'></span></b></p>
+<p>Модель: <b><span id='res2'></span></b></p>
+<p>Цена: <b><span id='res3'></span> руб.</b></p>
+<p>В наличии: <b><span id='res4'></span> шт.</b></p>	
+<hr />
+
+</div><br><br><br><br><br><br><br><br>
+<div id='wrap1' style='display:none;'>
+<hr />
+<p>Марка телефона: <b><span id='res5'></span></b></p>
+<p>Модель: <b><span id='res6'></span></b></p>
+<p>Цена: <b><span id='res7'></span> руб.</b></p>
+<p>В наличии: <b><span id='res8'></span> шт.</b></p>	
+<hr />
+
+</div><br><br><br><br><br><br><br><br>
+	
+<div id='wrap2' style='display:none;'>
+<hr />
+<p>Марка телефона: <b><span id='res9'></span></b></p>
+<p>Модель: <b><span id='res10'></span></b></p>
+<p>Цена: <b><span id='res11'></span> руб.</b></p>
+<p>В наличии: <b><span id='res12'></span> шт.</b></p>	
+<hr />
+</div><br><br><br><br><br><br><br><br>	
+	
+<div id='wrap3' style='display:none;'>
+<hr />
+<p>Марка телефона: <b><span id='res13'></span></b></p>
+<p>Модель: <b><span id='res14'></span></b></p>
+<p>Цена: <b><span id='res15'></span> руб.</b></p>
+<p>В наличии: <b><span id='res16'></span> шт.</b></p>	
+<hr />
+</div>
+	
+</body>
+
+</div>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+</script>
+
+</body>
+</html>
 
 </body>
 </html>

@@ -1,7 +1,119 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head> <title>Карапетян Э.К.</title> 
+<meta  charset="UTF-8"> 
+<style>
+body {background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);}
+body {font-family: 'Open Sans', sans-serif;}
 
+.rounded {
+counter-reset: li; 
+list-style: none; 
+font: 16px "Trebuchet MS", "Lucida Sans";
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.rounded a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #DAD2CA;
+color: #444;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(360deg);}
+.rounded a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #8FD4C1;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
+
+img { 
+width: 700px; 
+height: 400px;
+border: 1px solid; 
+} 
+
+#toTop {
+width:100px;
+height:30px;
+border:1px solid #ccc;
+background:#f7f7f7;
+text-align:center;
+padding:5px;
+position:fixed;
+bottom:10px; 
+right:10px;
+cursor:pointer;
+display:none;
+color:#333;
+font-family:verdana;
+font-size:20px;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Главная страница Карапетяна Э.К.</h1>
+<h2>Задачи:</h2>
+<ol class="rounded">
+  <li><a href="#one">Зарегистрироваться в Github</a></li>
+  <li><a href="https://github.com/eduardkarapetyan1997/eduard/wiki/%D0%A2%D0%B5%D0%B3--span" target="_blank">Создать wiki страницу про тег span</a></li>
+  <li><a href="#three">UML диаграмма тега span</a></li>
+  <li><a href="#four">Создать SPA</a></li>
+</ol>
+<br>
+<h2><a name="one">Задача №1</a></h2>
+<p>Результатом регистрации на сайте Github является мой аккаунт, с которым можно ознакомиться  <a href="https://github.com/eduardkarapetyan1997">перейдя по ссылке</a>.</p>
+<br>
+<h2>Задача №2</h2>
+<p>Выполненная страница wiki про тег span</p>
+<strong>Описание</strong>
+<br>
+<p >Тег span предназначен для определения строчных элементов документа. В отличие от блочных элементов, таких как table, p или div, с помощью тега span можно выделить часть информации внутри других тегов и установить для нее свой стиль. Например, внутри абзаца (тега p) можно изменить цвет и размер первой буквы, если добавить начальный и конечный тег span и определить для него стиль текста. Чтобы не описывать каждый раз стиль внутри тега, можно выделить стиль во внешнюю таблицу стилей, а для тега добавить атрибут class или id с именем селектора.
+</p>
+<strong>Атрибуты</strong>
+<p>Для этого тега доступны <strong>универсальные атрибуты</strong> и <strong>события.</strong></p>
+<ul>
+<li><em>accesskey</em> Позволяет получить доступ к элементу с помощью заданного сочетания клавиш.</li>
+<li><em>class</em> Определяет имя класса, которое позволяет связать тег со стилевым оформлением.</li>
+<li><em>contenteditable</em> Сообщает, что элемент доступен для редактирования пользователем.</li>
+<li><em>contextmenu</em> Устанавливает контекстное меню для элемента.</li>
+<li><em>dir</em> Задает направление и отображение текста — слева направо или справа налево.</li>
+<li><em>hidden</em> Скрывает содержимое элемента от просмотра.</li>
+<li><em>id</em> Указывает имя стилевого идентификатора.</li>
+<li><em>lang</em> Браузер использует значение параметра для правильного отображения некоторых национальных символов.</li>
+<li><em>spellcheck</em> Указывает браузеру проверять или нет правописание и грамматику в тексте.</li>
+<li><em>style</em> Применяется для определения стиля элемента с помощью правил CSS.</li>
+<li><em>tabindex</em> Устанавливает порядок получения фокуса при переходе между элементами с помощью клавиши Tab.</li>
+<li><em>title</em> Описывает содержимое элемента в виде всплывающей подсказки.</li>
+<li><em>xml:lang</em> Этот атрибут по своему действию похож на lang, но применяется только в XHTML-документах и указывает язык всего текста или его фрагмента.</li>
+</ul>
+<strong>Закрывающий тег</strong>
+
+<p>Обязателен.</p>
+
+<h2><a name="three">Задача №3</a></h2>
+<p>UML диаграмма тега span</p>
+
+<img src="1.png"> 
+<h2><a name="four">Задача №4</a></h2>
 <canvas id="canvas" width="400" height="400"
 style="background-color:#333">
 </canvas>
@@ -13,13 +125,11 @@ var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
-
 function drawClock() {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
   drawTime(ctx, radius);
 }
-
 function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
@@ -38,7 +148,6 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = '#333';
   ctx.fill();
 }
-
 function drawNumbers(ctx, radius) {
   var ang;
   var num;
@@ -56,7 +165,6 @@ function drawNumbers(ctx, radius) {
     ctx.rotate(-ang);
   }
 }
-
 function drawTime(ctx, radius){
     var now = new Date();
     var hour = now.getHours();
@@ -75,7 +183,6 @@ function drawTime(ctx, radius){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02);
 }
-
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
     ctx.lineWidth = width;
@@ -87,6 +194,23 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 </script>
+<script type="text/javascript">
+ 
+$(function() { 
+$(window).scroll(function() { 
+if($(this).scrollTop() != 0) { 
+$('#toTop').fadeIn(); 
+} else { 
+$('#toTop').fadeOut();
+ }
+ });
+ $('#toTop').click(function() {
+ $('body,html').animate({scrollTop:0},800);
+ });
+ });
+ 
+</script>
+
+<div id = "toTop" > Наверх </div>
 
 </body>
-</html>

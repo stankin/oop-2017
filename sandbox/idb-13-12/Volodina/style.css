@@ -1,0 +1,32 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background-image: url(fon2.jpg);
+	background-attachment:fixed;
+
+}
+p
+{
+	color: #000000;
+}
+h1
+{
+	padding: 5px;
+	color: #000000;
+}
+h3
+{
+	color: #000000;
+}
+#wrapper
+{
+	width:860px;
+    margin:0 auto;
+	margin-top: 5%;
+	color: #555555;
+	background: #FFFFFF;
+	border-radius: 10px;
+	opacity: 0.9;
+
+}

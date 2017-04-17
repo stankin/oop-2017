@@ -1,0 +1,29 @@
+{
+telbase:
+[
+{
+title:"iPhone ",
+model:"5S",
+cost:"30 000",
+quantity:15
+},
+{
+title:"HTC ",
+model:"One A9",
+cost:"15 000",
+quantity:5
+},
+{
+title:"Samsung",
+model:"Galaxy",
+cost:"25 500",
+quantity:10
+},
+{
+title:"Huawei ",
+model:"Honor 8",
+cost:"20 500",
+quantity:12,
+}
+]
+}

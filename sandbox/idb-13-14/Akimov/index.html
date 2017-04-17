@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 <style>
 	body{
 	color: #032359;
@@ -45,29 +46,75 @@
 	    $('p:last').text(e.text);
 	});
 	});
+	</script>
+<script>
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("#p4").toggle();
+    });
+});
 </script>
 </head>
-<body>
+<body style="background-color: brown">
 	<h1 align="center">ИДБ 13-14</h1>
 	<br>
-	<h2 align="center">Акимов Михаил Владимирович</h2>
+	<h2 align="center">Акимов Михаил Владимирович</h2><br><br>
+	
+	<p align="center"><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-14/Akimov">Исходники</a>
+        </p><br>
+	
+	<div style="background-color: green"><h2 align="left" style="color: black">Задача №1: изучить тег "INPUT", составить пример с использованием этого тега, построить диаграмму классов</h2></div>
+	<br>Ход работы:<br><div style="background-color: green"><h4 align="left" style="color: grey">Тег input является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем. Главным образом input предназначен для создания текстовых полей, различных кнопок, переключателей и флажков. Хотя элемент input не требуется помещать внутрь контейнера <form>, определяющего форму, но если введенные пользователем данные должны быть отправлены на сервер, где их обрабатывает серверная программа, то указывать form обязательно. То же самое обстоит и в случае обработки данных с помощью клиентских приложений, например, скриптов на языке JavaScript.
+        Основной атрибут тега input, определяющий вид элемента — type. Он позволяет задавать следующие элементы формы: текстовое поле (text), поле с паролем (password), переключатель (radio), флажок (checkbox), скрытое поле (hidden), кнопка (button), кнопка для отправки формы (submit), кнопка для очистки формы (reset), поле для отправки файла (file) и кнопка с изображением (image). Для каждого элемента существует свой список атрибутов, которые определяют его вид и характеристики. Кроме того, в HTML5 добавлено еще более десятка новых элементов.</div>
+	<form method="post" action="" class="login">
+    <p>
+      <label for="login">Логин:</label>
+      <input type="text" style="width: 157px;" name="login" id="login">
+    </p>
+
+
+    <p>
+      <label for="password">Пароль:</label>
+      <input type="password" style="width: 150px;" name="password" id="password">
+    </p>
+
+
+    <p class="login-submit">
+      <button type="submit" class="boton1" style="margin-left: 165px;">Войти</button><br><br>
+    </p>
+</form><br>
+
 	<h3 align="center">Моя задача - изменить стиль выделяемого текса, добавить функцию вставки этого текста в другой параграф</h3>
 	<p style="font-size: 12px;">Выделите текст в параграфе</p>
 	<div><p class="p">Тег <i>p</i> определяет текстовый абзац. Тег является блочным элементом, всегда начинается с новой строки, абзацы текста идущие друг за другом разделяются<br> между собой отбивкой. Величиной отбивки можно управлять с помощью стилей. Если закрывающего тега нет, считается, что конец абзаца совпадает с<br> началом следующего блочного элемента.</p></div>
 	<p style="font-size: 12px;">Здесь отобразится выделенный текст</p>		
 	<p></p>
-	<h3 align="center">Диаграмма классов</h3>
-	<img style="display: block; margin: 0 auto;" src="diagram.png" alt="Здесь должна быть диаграмма классов">
-	<h3 align="center">
-		UML.Диаграмма состояний<br>
-	<a href="https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B9
-	">Click it!</a>
-	</h3>
-	<h1 align="center">Пока что моё SPA</h1>
-	<h2>Файл</h2>
-	<h4>Hello!</h4>
-	<h4>World!</h4>
-	<h4>Yahoo!</h4>
-	<iframe src="alesya.html" height="800" width="600" style="border:none;"></iframe> 
+	<h1 align="center">Диаграмма классов</h1>
+	<img height="40%" width="40%" style="display: block; margin: 0 auto;" src="1e4bc2dc1.png" alt="Здесь должна быть диаграмма развертывания 1">
+	<br><br><h1 align="center">
+	<div style="background-color: green"><h4 align="left" style="color: black">Задача №2: создать wiki-страницу UML. Диаграмма развертывания</h4>
+
+		UML.Диаграммы развертывания<br><br></h1>
+	<h3 align="center"><a href="https://github.com/stankin/oop/wiki/UML.-Диаграмма-развертывания">Нажми здесь!</a></h3><br><br>
+	<img height="40%" width="40%" style="display: block; margin: 0 auto;" src="5144ad98.png" alt="Здесь должна быть диаграмма развертывания 2"><br><br>
+
+	<div style="background-color: green"><h1 align="left" style="color: black">Требования к приложению "Часы"</h1>
+	<ol>
+	<li>Создать имитационную форму циферблата.</li>
+ 		
+     <ul><li>Форма окно, котором изображён циферблат.</li></ul>
+     <li>Приложение позволит:</li>
+	<ul>
+	<ul><li>Узнать время сегодня с точностью до секунды.</li>
+    	<li>Красивый дизайн циферблата часов.</li>
+	</ul></ul>
+</ol></div>
+	
+	<br>Ход работы:<br>		
+
+	<h1 align="left">Приложение часы</h1>
+
+	<button id="p1">Показать/спрятать часы</button>
+	<iframe src="Akimov.html" height="200" width="150" style="border:none;"></iframe> 
 </body>
 </html>

@@ -31,3 +31,13 @@ $("#div-btn").click(function(){
 $("#diag-btn").click(function(){
 	$("#diag").slideToggle();
 });
+$("#code-btn").click(function(){
+	$.get({url: "/stankin/oop/sandbox/index.js", cache: "false", dataType: "text", success: function( data ) {
+		var safedata = data.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+		$("#code-snippet").html(safedata);
+		$("#code-container").slideToggle();
+		$('pre code').each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
+	}});
+});

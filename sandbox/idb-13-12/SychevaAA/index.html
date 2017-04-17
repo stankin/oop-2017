@@ -32,11 +32,22 @@
 		</div>
 		</div>
 		<div class="div">
-		<h2 align="center">SPA.</h2><hr>
-		<p>Single Page Application – сокращенно SPA, в переводе на русский язык означает “Приложение одной страницы”. Другими словами SPA – это web-приложение, размещенное на одной web-странице, которая для обеспечения работы загружает весь необходимый код вместе с загрузкой самой страницы. 
+		<h2 align="center">MPA.</h2><hr>
+		<p>Multi Page Application – сокращенно MPA, в переводе на русский язык означает “Приложение на нескольких страницах”. Другими словами MPA – это web-приложение, размещенное на нескольких web-страницах, которое для обеспечения работы загружает весь необходимый код вместе с загрузкой самих страниц. 
+		<br/>
+		Примером MPA в данном случае служит имитация системы авторизации.<br/>
+		Требовалось реализовать:
+		<ul>
+			<li>методы взаимодействия клиент-сервер (form, ajax)</li>
+			<li>взаимодействие с технологиями серверной части (php, sql)</li>
+			<li>систему авторизации с различными правами для пользователя и администратора</li>
+		</ul>
 		</p>
-		<input id="spaB" type="button" class="button" value="пример SPA"/>
-		<iframe id="spaF" style="display: none" src="1.html" height="500" width="100%"></iframe>
+		<p>Для первого входа в систему используется логин "admin" с пустым паролем. Сбросить настройки MPA до изначального уровня можно с помощью кнопки "сброс данных" на главной странице.</p>
+		<form action="http://thebloodarrow.ru/pis/mpa/index.php">
+		<input id="spaB" type="submit" class="button" value="пример MPA"/>
+		<!--<iframe id="spaF" style="display: none" src="1.html" height="500" width="100%"></iframe -->
+		</form>
 		</div>
 <footer class="footer">
 © 2017 ИДБ-13-12,Сычева А.А.
@@ -51,14 +62,13 @@ $("#diagB").click(function(){
                  $("#diag").hide("slow");
                 }	
 })
-$("#spaB").click(function(){
+/*$("#spaB").click(function(){
         if ($("#spaF").is(":hidden")) {
              $("#spaF").show("slow");
          } else {
                  $("#spaF").hide("slow");
                 }	
-})
-
+})*/
 $("#rB").click(function(){
 var degR;
 degR=document.getElementById ('imgR').style.transform;
@@ -67,7 +77,6 @@ if (degR=="rotate(90deg)"){document.getElementById ('imgR').style.transform="rot
 if (degR=="rotate(180deg)"){document.getElementById ('imgR').style.transform="rotate(270deg)";}
 if (degR=="rotate(270deg)"){document.getElementById ('imgR').style.transform="rotate(0deg)";}	
 })
-
 $("#lB").click(function(){
 var degR;
 degR=document.getElementById ('imgR').style.transform;
@@ -77,5 +86,4 @@ if (degR=="rotate(180deg)"){document.getElementById ('imgR').style.transform="ro
 if (degR=="rotate(270deg)"){document.getElementById ('imgR').style.transform="rotate(180deg)";}
 degR=document.getElementById ('imgR').style.transform;
 })
-
 </script>

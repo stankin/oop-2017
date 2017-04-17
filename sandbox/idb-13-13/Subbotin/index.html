@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<meta charset="UTF-8">
 	<head> 
 		<title>Субботин</title>
 		<link rel="stylesheet" type="text/css" href="style.css" >
@@ -171,91 +172,166 @@ changeButtonStatus();
 	<br>
 	<br>
 	<br>
-	<h2>SPA</h2>
+	<h2>Требования к SPA</h2>
+<ol>
+	<li>Создать форму авторизации.</li>
+ 		
+     <ul><li>Если выполнен вход пользователя, то появляется доступ к тесту.</li></ul>
+     <li>Разработать тест.</li>
+	<ul>
+	<li>SPA должна содержать 3 варианта прохождения теста (3 раздела).</li>
+	<ul><li>Тест должен содержать вопрос и несколько вариантов ответа (разработка производится на языке JS).</li>
+    	<li>Ответ на вопрос производится выбором ответа и подтверждением действия (Варианты вопросов и ответов выбираются путём обмена данными с базой JSON).</li>
+	<li>Отображение правильности ответа на вопрос.</li>
+	</ul></ul>
+	<li>Вывод статистики по тесту.</li>	
+	<ul><li>SPA должна предоставлять возможность скрыть/показать статистику (Это делается с использованием Angular).</li></ul>
+</ol>
+	<style>
+		
+		input[type="password"] {
+			width: 300px;
+			font-size: 13px;
+			padding: 6px 0 4px 10px;
+			border: 1px solid #cecece;
+			background: #F6F6f6;
+			border-radius: 8px;
+		}
+	</style>	
+<form name="avtoriz" method=POST action=''> 
+   <table width="50%" cellspacing="0" cellpadding="2">
+    <tr> 
+     <td align="left" width="100">Логин:</td>
+     <td><input type="text" placeholder="Логин"></td>
+    </tr>
+    <tr> 
+     <td align="left" width="110">Пароль:</td>
+     <td><input type="password" placeholder="Пароль"></td>
+    </tr>
+     <tr> 
+     <td></td>
+     <td><input type="submit"  value="Войти" name=enter></td>
+    </tr>
+   </table>
+  </form>
+	<iframe src="http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/testpdd/index.html" height="500" width="575"></iframe>
+	
+<style type="text/css">
 
+	.wrapper{
+		margin: 0 auto;
+		display: none;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+	}
 
-<canvas id="canvas" width="400" height="400"
-style="background-color:white">
-</canvas>
+</style>
 
-<script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90
-setInterval(drawClock, 1000);
-function drawClock() {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
-}
-function drawFace(ctx, radius) {
-  var grad;
-  ctx.beginPath();
-  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
-  ctx.fill();
-  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-  grad.addColorStop(0, 'red');
-  grad.addColorStop(0.5, 'white');
-  grad.addColorStop(1, 'black');
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = radius*0.1;
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  ctx.fillStyle = 'black';
-  ctx.fill();
-}
-function drawNumbers(ctx, radius) {
-  var ang;
-  var num;
-  ctx.font = radius*0.15 + "px arial";
-  ctx.textBaseline="middle";
-  ctx.textAlign="center";
-  for(num = 1; num < 13; num++){
-    ang = num * Math.PI / 6;
-    ctx.rotate(ang);
-    ctx.translate(0, -radius*0.85);
-    ctx.rotate(-ang);
-    ctx.fillText(num.toString(), 0, 0);
-    ctx.rotate(ang);
-    ctx.translate(0, radius*0.85);
-    ctx.rotate(-ang);
-  }
-}
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-    //hour
-    hour=hour%12;
-    hour=(hour*Math.PI/6)+
-    (minute*Math.PI/(6*60))+
-    (second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.5, radius*0.07);
-    //minute
-    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.8, radius*0.07);
-    // second
-    second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02);
-}
-function drawHand(ctx, pos, length, width) {
-    ctx.beginPath();
-    ctx.lineWidth = width;
-    ctx.lineCap = "round";
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
-    ctx.stroke();
-    ctx.rotate(-pos);
-}
+<script type="text/javascript">
+
+	var countQuest = 0;
+	var plus = 0;
+	var test_start = 0;
+	
+	function check(num){
+	
+		if(num == 4){ 
+			
+			document.getElementById('area').style.display='block'; //
+			document.getElementById('start').style.display='none';
+			document.getElementById('end').style.display='inline';
+
+			if(test_start == 0){
+			
+					//Массив вопросов
+				var questions = ["Как по русски будет Hello?","Вопрос 2. Как по английски будет Дом","Вопрос 3. Как по английски будет Дерево","Вопрос 4. Что означает Homeland"];
+
+					//Массивы вариантов ответов
+				var number1 = ["Как дела","House","House"];	
+				var number2 = ["Привет","Cat","Door"];	
+				var number3 = ["Пока","Dog","Wall"];	
+				var number4 = ["Дом","Tree","Tree"];
+
+				document.getElementById('question').innerHTML=questions[countQuest];
+				
+				document.getElementById('option1').innerHTML=number1[countQuest];
+				document.getElementById('option2').innerHTML=number2[countQuest];
+				document.getElementById('option3').innerHTML=number3[countQuest];
+				document.getElementById('option4').innerHTML=number4[countQuest];
+				
+					//Массив правильных ответов
+				var answer = [1,0,3,1];
+				
+				test_start = 1;	
+			}
+		}
+		else{
+					//Массив вопросов
+			var questions = ["Вопрос 1. Как по русски будет hello?","Вопрос 2. Как по английски будет Дом?","Вопрос 3. Как по английски будет Дерево","Вопрос 4. Что означает Homeland"];
+			
+				//Массивы вариантов ответов
+			var number1 = ["Как дела","House","House","Природа"];	
+			var number2 = ["Привет","Cat","Door","Родина"];	
+			var number3 = ["Пока","Dog","Wall","Остров"];	
+			var number4 = ["Дом","Tree","Tree","Планета"];	
+			
+				//Массив правильных ответов
+			var answer = [1,0,3,1];
+			
+			if(num == answer[countQuest]) plus++;
+			
+			if(questions.length - 1> countQuest){
+
+				countQuest++;
+				
+				document.getElementById('question').innerHTML=questions[countQuest];
+			
+				document.getElementById('option1').innerHTML=number1[countQuest];
+				document.getElementById('option2').innerHTML=number2[countQuest];
+				document.getElementById('option3').innerHTML=number3[countQuest];
+				document.getElementById('option4').innerHTML=number4[countQuest];
+
+			}
+			else{ 
+			
+				document.getElementById('area').style.display='none';
+				alert('У Вас ' + plus + ' правильных ответа!');
+			}
+		}
+	}
+	
 </script>
+
+	<div border="10">
+
+		<div id="area" class="wrapper">
+
+					
+			
+				<p style="font-size: 38px;font-weight: bold;padding-top: 2px;color: ##000000;" id="question"></p>
+				
+				<button onclick="check(0)" class="myButton" id="option1"></button>
+				
+				<button onclick="check(1)" class="myButton" id="option2"></button>
+				
+				<button onclick="check(2)" class="myButton" id="option3"></button>
+				
+				<button onclick="check(3)" class="myButton" id="option4"></button>
+			
+			
+
+		</div>
+	
+	</div>	
+	
+	<br>
+		<button id="start" class="myButton" onclick="check(4)">Приступить к тесту</button>
+		<script type="text/javascript"> var curent_url = document.URL; document.write("<a id='end' style='display: none;' class='myButton' href='" + curent_url + "'>Начать сначала</a>"); </script>	
+	
 
 </div>
 
+	
 </body>
 </html>

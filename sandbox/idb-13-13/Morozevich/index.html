@@ -7,7 +7,29 @@
 	<meta charset="utf-8">
 	<title>Личная страница: Морозевич В.С.</title>
 </head>
-<body>
+<style>
+div {
+  transition: all linear 0.5s;
+  /*background-color: lightblue;*/
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<body ng-app="ngAnimate">
 <h1 style="text-align: center">Личная страница студента группы ИДБ-13-13 Морозевич В.С.</h1>
 	<h1><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-13/Morozevich">Исходники</a></h1>
 	<h1>Задачи:</h1>
@@ -51,7 +73,14 @@
 		<p><strong><a href="ansi.html">Несовпадение кодировок</a></strong></p>
 <h1>UML-диаграмма классов</h1>
 	<p><img src="https://github.com/stankin/oop/raw/master/sandbox/idb-13-13/Morozevich/UML.png" width="777" height="472" alt=""/></p>
+<h1>Требования к SPA:</h1>
+	<ol>
+		<li>Выплывающие часы с помощью AngularJS Animations</li>
+		<li>Предоставление доступа к AngularJS Animations при помощи пароля</li>
+	</ol>
 <h1>SPA</h1>
+<h1>AngularJS Animations: <input type="checkbox" ng-model="myCheck"></h1>
+	<div ng-hide="myCheck">
 <iframe src="app1.html" height="300" width="400"></iframe>
 
 <canvas id="canvas" width="300" height="300"
@@ -59,21 +88,6 @@ style="background-color:#333">
 </canvas>
 <br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#p1").click(function(){
-        $("#p3").toggle();
-    });
-	$("#p2").click(function(){
-        $("#p1").toggle();
-    });
-});
-</script>
-<p id="p1">Параграф 1</p>
-<p id="p2">Параграф 2</p>
-<p id="p3">Параграф 3<br></p>
-<p id="p4">Параграф 4<br></p>
-
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -150,6 +164,7 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 </script>
+</div>
 
 </body>
 </html>
