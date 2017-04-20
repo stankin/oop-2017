@@ -1,76 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-}
-</style>
+	<meta charset="UTF-8">
+	<title>SPA</title>
+	<link rel="stylesheet" href="single/css/bootstrap.min.css">
+	<link rel="stylesheet" href="single/css/bootstrap-theme.min.css">
+	<script src="single/js/bootstrap.min.js"></script>
+	<script src="single/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="main.css">
 </head>
-<body onload="startGame()">
-<script>
+<body>
+	<div class="container">
+		<div class="col-md-1">
+			<div id="top">Наверх</div>
+		</div>
+		<div class="col-md-10">
 
-var myGamePiece;
+				<div class="navbar">
+					<ul class="nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="spa.html">SPA</a></li>
+						<li><a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%961">wiki</a></li>
+						<li><a href="https://github.com/stankin/oop/tree/master/sandbox/idb-13-12/kuvanova">Source</a></li>
+					</ul>
+				</div>
+				
+				<p id="title">Личная страница студентки группы ИДБ-13-12 <br>
+  	Кувановой А.К.</p>
+	
+			<strong>
+			1. Разработать меню с помощью тега &lta><br>
+			2. Описать WIKI-страницу по лабораторной работе №1. <a href="https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%961">github</a><br>
+			</strong><br>
+				<p>Тег &lta> является одним из важных элементов HTML и предназначен для создания ссылок. В зависимости от присутствия атрибутов name или href тег &lta> устанавливает ссылку или якорь. Якорем называется закладка внутри страницы, которую можно указать в качестве цели ссылки. При использовании ссылки, которая указывает на якорь, происходит переход к закладке внутри веб-страницы.
+				Для создания ссылки необходимо сообщить браузеру, что является ссылкой, а также указать адрес документа, на который следует сделать ссылку. В качестве значения атрибута href используется адрес документа (URL, Universal Resource Locator, универсальный указатель ресурсов), на который происходит переход. Адрес ссылки может быть абсолютным и относительным. Абсолютные адреса работают везде и всюду независимо от имени сайта или веб-страницы, где прописана ссылка. Относительные ссылки, как следует из их названия, построены относительно текущего документа или корня сайта. <br></p>
+			<strong>
+				Синтаксис:
+			</strong>
+				<blockquote>
+		  			&lta> href="URL">...&lt/a><br>
+					&lta> name="идентификатор">содержание тега&lt/a>
+				</blockquote>
+			<strong>
+				Атрибуты тега:
+			</strong>
+				<blockquote>
+		  			<strong>accesskey</strong> Активация ссылки с помощью комбинации клавиш.<br>
+					<strong>coords</strong> Устанавливает координаты активной области.<br>
+					<strong>download</strong> Предлагает скачать указанный по ссылке файл.<br>
+					<strong>href</strong> Задает адрес документа, на который следует перейти.<br>
+					<strong>hreflang</strong> Идентифицирует язык текста по ссылке.<br>
+					<strong>name</strong> Устанавливает имя якоря внутри документа.<br>
+					<strong>rel</strong> Отношения между ссылаемым и текущим документами.<br>
+					<strong>rev</strong> Отношения между текущим и ссылаемым документами.<br>
+					<strong>shape</strong> Задает форму активной области ссылки для изображений.<br>
+					<strong>tabindex</strong> Определяет последовательность перехода между ссылками при нажатии на кнопку Tab.<br>
+					<strong>target</strong> Имя окна или фрейма, куда браузер будет загружать документ.<br>
+					<strong>title</strong> Добавляет всплывающую подсказку к тексту ссылки.<br>
+					<strong>type</strong> Указывает MIME-тип документа, на который ведёт ссылка.<br>
+				</blockquote>
+			<strong>
+				<abbr title="Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.">Универсальные атрибуты</abbr>
+			</strong>
+				<blockquote>
+		  			<strong>onblur </strong>Потеря фокуса.<br>
+					<strong>onchange </strong>Изменение значения элемента формы.<br>
+					<strong>onclick </strong>Щелчок левой кнопкой мыши на элементе. <br>
+					<strong>ondblclick </strong>Двойной щелчок левой кнопкой мыши на элементе. <br>
+					<strong>onfocus </strong> Получение фокуса<br>
+					<strong>onkeydown </strong>Клавиша нажата, но не отпущена. <br>
+					<strong>onkeypress </strong>Клавиша нажата и отпущена. <br>
+					<strong>onkeyup </strong> Клавиша отпущена.<br>
+					<strong>onload </strong>Документ загружен. <br>
+					<strong>onmousedown </strong> Нажата левая кнопка мыши.<br>
+					<strong>onmousemove </strong>Перемещение курсора мыши. <br>
+					<strong>onmouseout </strong>Курсор покидает элемент. <br>
+					<strong>onmouseover </strong> Курсор наводится на элемент.<br>
+					<strong>onmouseup </strong> Левая кнопка мыши отпущена.<br>
+					<strong>onreset </strong>Форма очищена. <br>
+					<strong>onselect </strong>Выделен текст в поле формы. <br>
+					<strong>onsubmit </strong>Форма отправлена. <br>
+					<strong>onunload </strong>Закрытие окна.<br>
+				</blockquote>
+			
+			<br>
+			<br><br>
 
-function startGame() {
-    myGamePiece = new component(30, 30, "red", 225, 225);
-    myGameArea.start();
-}
-
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 20);
-    },
-    stop : function() {
-        clearInterval(this.interval);
-    },    
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
-}
-
-function component(width, height, color, x, y, type) {
-
-    this.type = type;
-    this.width = width;
-    this.height = height;
-    this.speed = 1;
-    this.angle = 0;
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.fillStyle = color;
-        ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);        
-        ctx.restore();    
-    }
-    this.newPos = function() {
-        this.x += this.speed * Math.sin(this.angle);
-        this.y -= this.speed * Math.cos(this.angle);
-    }
-}
-
-function updateGameArea() {
-    myGameArea.clear();
-    myGamePiece.newPos();
-    myGamePiece.update();
-}
-
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+<script type="text/javascript">
+  var top_show = 150;
+  var delay = 450;
+  $(document).ready(function() {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > top_show) $('#top').fadeIn();
+      else $('#top').fadeOut();
+    });
+    $('#top').click(function () {
+      $('body, html').animate({
+        scrollTop: 0
+      }, delay);
+    });
+  });
 </script>
-
-<p>The red square will move forward.</p>
-<p>Try changing the speed property, and you will see the red square will move accordingly.</p>
 </body>
 </html>
-

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div id="container">
+	
+</div>
+	<div class="container">
+
+		<div class="ready">
+			<strong><h3>Эмуляция включена</h3></strong>
+		</div>
+		<button type="button" class="play"><img class="playimg" src="play-black.svg" width="50" height="50" onclick="playSystem(); ChangeSourcePlay();"></button>
+		<button type="button" class="stop"><img class="stopimg" src="stop-green.svg" width="47" height="47" onclick="stopSystem(); ChangeSourceStop();"></button>
+
+		<img class="controller1" src="controller.svg">
+		<img class="controller2" src="controller.svg">
+
+		<img class="room" src="roomAI2.svg">
+
+		<img class="withLigh1" id="one" src="with-light.png" onclick="ChangeSource();"
+		>
+
+		<img class="withLigh2" id="two" src="with-light.png" onclick="ChangeSource2();">
+
+		<strong><div id="sensor-value"></div></strong>
+		
+	</div>
+
+	
+	<script>
+	$(".ready").hide();
+	// включение и выключение лампочек
+	var counter = 0;
+	var counter2 = 0;
+		function ChangeSource(){
+			if (parseInt(++counter % 2) != 0)
+				$(".withLigh1").attr("src","without-light.png");
+			else
+				$(".withLigh1").attr("src","with-light.png");
+		}
+		function ChangeSource2(){
+			if (parseInt(++counter2 % 2) != 0)
+				$(".withLigh2").attr("src","without-light.png");
+			else
+				$(".withLigh2").attr("src","with-light.png");
+		}
+
+// старт стоп
+	var counter3 = false;
+	var counter4 = false;
+		function ChangeSourcePlay(){
+			if(!counter3){
+				$(".ready").show();
+				$(".playimg").attr("src","play-green.svg");
+				$(".stopimg").attr("src","stop-black.svg");
+				counter3 = true;
+				counter4 = false;
+			}
+				
+		}
+		function ChangeSourceStop(){
+			$(".ready").hide();
+			if (!counter4) {
+				$(".playimg").attr("src","play-black.svg");
+				$(".stopimg").attr("src","stop-green.svg");
+				counter3 = false;
+			}
+		}
+		// 
+		$(document).ready(function(){
+			$("#sensor-value").hide();
+	    		$(".controller1, .controller2").mouseover(function(){
+					$("#sensor-value").show();
+	    		});
+	    		$(".controller1, .controller2").mouseout(function(){
+					$("#sensor-value").hide();
+	    		});
+		});
+	</script>
+	<script src="sysman.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body{
+	background: #f9f9f9;
+}
+ul{
+	font-family: Tahoma;
+	font-size: 17px;
+	list-style-type: none;
+	text-align: center;
+}
+li{
+	width: 130px;
+	height: 40px;
+	margin-top: 5px;
+}
+li:hover{
+	background: #e8e8e8;
+}
+.nav>li{
+	display: inline-block;
+}
+a{
+	color: #000;
+}
+a:hover{
+	text-decoration: none;
+}
+a:visited{
+	color: #000;
+}
+.navbar{
+	margin-top: 14px;
+}
+iframe{
+	border: 0px;
+	margin-top: 20px;
+}
+p{
+	font-size: 16px;
+}
+blockquote{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+#top {
+	font-size: 14px;
+	margin-bottom: 10px;
+	bottom: 0;
+	cursor: pointer;
+	display: none;
+	font-size: 150%;
+	position: fixed;
+	float: left;
+}
+iframe{
+	overflow-y: none;
+}
