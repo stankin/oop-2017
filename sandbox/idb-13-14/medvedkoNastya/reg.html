@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Информация</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+
+
+<nav id="primary_nav_wrap">
+<ul>
+  <li><a href="index.html">Информация</a></li>
+  <li class="current-menu-item"><a href="reg.html">Регистрация</a>
+ 
+  <li><a href="event.html">События</a>
+  </li>
+  <li><a href="sotr.html">Сотрудники</a>
+      </li>
+</ul>
+</nav>
+<body>
+<article class="article">
+<br><br>
+	<form>
+		
+  		Имя:<br>
+  		<input type="text" name="firstname" required><br>
+ 	 	Фамилия:<br>
+  		<input type="text" name="lastname" required><br>
+		Отчество:<br>
+  		<input type="text" name="otchestvo"><br>
+		
+		
+		
+		
+			
+		Команда:<br>
+  		<input type="radio" name="kom" value="sok1" checked> Сокол1<br>
+  		<input type="radio" name="kom" value="sok2"> Сокол2<br>
+  		<input type="radio" name="kom" value="sok3"> Сокол3<br>
+		
+		
+		E-mail:<br>
+  		<input type="email" name="email" required placeholder="email@mail.ru"><br>
+		
+		Ваш город:<br>
+		<select name="namespisok">
+        <option value="1">Москва</option>
+   		<option value="2">Санкт-Петербург</option>
+		<option value="3">Электросталь</option>
+		<option value="4">Ногинск</option>
+  		</select><br>
+		
+		Амплуа:<br>
+		
+		<input type="checkbox" name="1">Защитник<br>
+		<input type="checkbox" name="2">Нападающий<br>
+	<input type="checkbox" name="3">Вратарь<br>
+		<br>
+		
+		Информация о себе:<br>
+		<textarea name="message" rows="10" cols="30">
+	
+		</textarea><br>
+		<input type="submit" value="Отправить">
+		<input type="reset" value="Очистить"><br>
+  </form>
+</article>
+</body>
