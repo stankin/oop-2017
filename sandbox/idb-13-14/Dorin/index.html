@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Страница  </title>
+</head>
+<body>
+<body style="background-color:#B0C4DE;">
+<canvas id="canvas" width="400" height="400"
+style="background-color:#4169E1">
+
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+<h1 align ="center" style="color:#191970"> Личная страница студента. </h1>
+<h2 align = "right" style="color:#191970">ИДБ 13-14</h2>
+<h3 align = "right" style="color:#191970">Дорин Д.В.</h3>
+<h4 align ="center" style="color:#191970"> Тег &lt img &gt. </h4>
+
+<p> <b>Описание:</b> <br> Тег &lt img &gt предназначен для отображения на веб-странице изображений в графическом формате GIF, JPEG или PNG. Адрес файла с картинкой задаётся через атрибут src. <br>
+ Если необходимо, то рисунок можно сделать ссылкой на другой файл, поместив тег &lt img &gt в контейнер &lt a &gt. При этом вокруг изображения отображается рамка, которую можно убрать, добавив атрибут border="0" в тег &lt img &gt.</p>
+ <p>Рисунки также могут применяться в качестве карт-изображений, когда картинка содержит активные области, выступающие в качестве ссылок.<br>
+ Такая карта по внешнему виду ничем не отличается от обычного изображения, но при этом оно может быть разбито на невидимые зоны разной формы, где каждая из областей служит ссылкой. </p>
+ <p><b>Синтаксис:</b> HTML - &lt img src="URL" alt="альтернативный текст" &gt, XHTML - &lt img src="URL" alt="альтернативный текст" / &gt </p>
+ <p><b>Атрибуты:</b> <br> Align - Определяет как рисунок будет выравниваться по краю и способ обтекания текстом.
+ <br> Alt - Альтернативный текст для изображения.
+ <br> Border - Толщина рамки вокруг изображения.
+ <br> Height - Высота изображения.
+ <br> Hspace - Горизонтальный отступ от изображения до окружающего контента.
+ <br> Ismap - Говорит браузеру, что картинка является серверной картой-изображением.
+ <br> Src - Путь к графическому файлу.
+ <br> Width - Ширина изображения.
+</p>
+ <hr>
+ <p> <a href="https://github.com/stankin/oop.wiki.git"> Wiki-страница </a> </p> 
+
+</body>
+
+</html>
