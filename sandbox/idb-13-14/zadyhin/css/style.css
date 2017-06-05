@@ -1,0 +1,68 @@
+@font-face {
+	font-family: 'PantonSemiBold';
+	src: url('fonts/PantonSemiBold.eot');
+	src: url('fonts/PantonSemiBold.eot') format('embedded-opentype'),
+	url('fonts/PantonSemiBold.woff2') format('woff2'),
+	url('fonts/PantonSemiBold.woff') format('woff'),
+	url('fonts/PantonSemiBold.ttf') format('truetype'),
+	url('fonts/PantonSemiBold.svg#PantonSemiBold') format('svg');
+}
+
+@font-face {
+	font-family: 'PantonBold';
+	src: url('fonts/PantonBold.eot');
+	src: url('fonts/PantonBold.eot') format('embedded-opentype'),
+	url('fonts/PantonBold.woff2') format('woff2'),
+	url('fonts/PantonBold.woff') format('woff'),
+	url('fonts/PantonBold.ttf') format('truetype'),
+	url('fonts/PantonBold.svg#PantonBold') format('svg');
+}
+
+@font-face {
+	font-family: 'PantonBlack';
+	src: url('fonts/PantonBlack.eot');
+	src: url('fonts/PantonBlack.eot') format('embedded-opentype'),
+	url('fonts/PantonBlack.woff2') format('woff2'),
+	url('fonts/PantonBlack.woff') format('woff'),
+	url('fonts/PantonBlack.ttf') format('truetype'),
+	url('fonts/PantonBlack.svg#PantonBlack') format('svg');
+}
+
+.head {
+	background-image: url(../img/header.png);
+	height: 140px;
+}
+
+
+img {
+	width: 550px;
+	margin-top: 10px;
+}
+
+.text p{
+	font-family: 'PantonBold';
+	font-size: 24px;
+}
+
+.text2 {
+	width: 550px;
+	font-family: 'PantonBold';
+	font-size: 26px;
+}
+
+blockquote {
+	text-align: center;
+	font-family: 'PantonBlack';
+	font-size: 30px;
+}
+
+
+
+form {
+margin: 0 auto;
+border: 3px solid #EEEEEE;
+width: 200px;
+-webkit-birder-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px; }
+}
