@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-
 <html >
-
 <head>
-  
 <meta charset="UTF-8">
-
   <title>Список ИДБ-13-14</title>
-  
-
-  
   <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.css'>
   <link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-
   <link rel="stylesheet" href="application.css">
-  
 </head>
 <body>
   
@@ -39,12 +30,12 @@
       </div>
     </div>
     <md-content layout="column" flex="flex" ng-click="toggleSearch=false">
-      <md-table headers="headers" content="content" sortable="sortable" filters="search" custom-class="custom" thumbs="thumbs" count="count"></md-table>
+      <md-table headers="headers" content="content" sortable="sortable" filters="search" 
+                custom-class="custom" thumbs="thumbs" count="count">
+      </md-table>
     </md-content>
   </body>
 </html>
-
-
 
 <!-- md-table jade template-->
 <div id="md-table-template" ng-hide="true">
@@ -52,7 +43,9 @@
     <thead>
       <tr class="md-table-headers-row">
         <th class="md-table-header" ng-repeat="h in headers">
-          <a href="#" ng-if="handleSort(h.field)" ng-click="reverse=!reverse;order(h.field,reverse)">{{h.name}} <i class="ion-android-arrow-dropup" ng-show="reverse &amp;&amp; h.field == predicate"></i><i class="ion-android-arrow-dropdown" ng-show="!reverse &amp;&amp; h.field == predicate"></i>
+          <a href="#" ng-if="handleSort(h.field)" ng-click="reverse=!reverse;order(h.field,reverse)">{{h.name}} 
+            <i class="ion-android-arrow-dropup" ng-show="reverse &amp;&amp; h.field == predicate"></i>
+            <i class="ion-android-arrow-dropdown" ng-show="!reverse &amp;&amp; h.field == predicate"></i>
           </a>
           <span ng-if="!handleSort(h.field)">{{h.name}}</span>
         </th>
@@ -60,8 +53,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-click="goToHref(c.href)" class="md-table-content-row" ng-repeat="c in content | filter:filters | startFrom:tablePage*count | limitTo: count">
-        <td class="md-table-content" ng-repeat="h in headers" ng-class="customClass[h.field]" ng-if="h.field != thumbs">{{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}</td>
+      <tr ng-click="goToHref(c.href)" class="md-table-content-row" 
+          ng-repeat="c in content | filter:filters | startFrom:tablePage*count | limitTo: count">
+        <td class="md-table-content" 
+            ng-repeat="h in headers" ng-class="customClass[h.field]" 
+            ng-if="h.field != thumbs">{{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}</td>
         <td class="md-table-td-more">
           <md-button aria-label="Info"><i class="ion-android-more-vertical"></i></md-button>
         </td>
@@ -77,18 +73,21 @@
     </span>
     <span flex="flex"></span>
     <span ng-show="nbOfPages() &gt; 1">
-      <md-button class="md-primary md-hue-2" ng-disabled="tablePage==0" ng-click="tablePage=tablePage-1" aria-label="Previous Page"><i class="ion-chevron-left" style="font-size:16px"></i>
+      <md-button class="md-primary md-hue-2" ng-disabled="tablePage==0" 
+                 ng-click="tablePage=tablePage-1" aria-label="Previous Page"><i class="ion-chevron-left" style="font-size:16px"></i>
       </md-button>
       <a href="#" ng-repeat="i in getNumber(nbOfPages()) track by $index">
         <md-button class="md-primary md-hue-2 md-table-footer-item" ng-click="goToPage($index)">
           <span ng-class="{ 'md-table-active-page': tablePage==$index}">{{$index+1}}</span>
         </md-button>
       </a>
-      <md-button class="md-primary md-hue-2" ng-disabled="tablePage==nbOfPages()-1" ng-click="tablePage=tablePage+1" aria-label="Next Page"><i class="ion-chevron-right" style="font-size:16px"></i></md-button>
+      <md-button class="md-primary md-hue-2" ng-disabled="tablePage==nbOfPages()-1" 
+                 ng-click="tablePage=tablePage+1" aria-label="Next Page"><i class="ion-chevron-right" 
+                 style="font-size:16px"></i>
+      </md-button>
     </span>
   </div>
 </div>
-
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.10/angular.min.js'></script>
@@ -99,4 +98,3 @@
 <script type="text/javascript" src="application.js"></script>
 </body>
 </html>
-
